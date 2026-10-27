@@ -91,3 +91,16 @@ scores (216ax addendum 6). Kas is testing arm-control alone (one variable). Deci
 - If arm-control hangs alone too, the cause is the new kernel or the arms dataset, not simultaneity; no Kaggle arm
   runs until that is fixed and this section is amended.
 - A run that hangs before BOOT and is cancelled has no score and is simply re-queued in the same slot of the order.
+
+## Clarification 4 (05:12 CDT 10-27; ruled before any Kaggle score exists)
+
+Every run version on the quick-save-created arm kernels hung before BOOT (round 1 both arms; arm-control v4 alone).
+A probe on a NEW kernel created by a run push (probe-arms-newk, run 362774583: arms dataset @ 12a000d, no SYN_*)
+booted within seconds (BOOT 09:50:20 UTC, image 9a6bcfda, "switches checked: {}"). Ruling:
+- Kernel identity is not part of an arm. An arm is defined by its notebook content (harness dataset and commit,
+  SYN_* env, budget, model, tower, runtime), as in the table above.
+- probe-arms-newk counts as slot C1 of C A A C C A, provided its notebook differs from the staged arm-control only
+  in label strings (title, ARM_NAME/ARM_KERNEL, banner, About text), checked by a cell-by-cell diff while it runs;
+  otherwise it is cancelled and does not count.
+- Every remaining run (C and A) goes to a kernel created by a run push, never a quick save first. A run counts if its
+  notebook matches its arm's staged notebook up to labels and its BOOT gates pass (GPU image, switches-checked line).
