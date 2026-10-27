@@ -104,3 +104,12 @@ booted within seconds (BOOT 09:50:20 UTC, image 9a6bcfda, "switches checked: {}"
   otherwise it is cancelled and does not count.
 - Every remaining run (C and A) goes to a kernel created by a run push, never a quick save first. A run counts if its
   notebook matches its arm's staged notebook up to labels and its BOOT gates pass (GPU image, switches-checked line).
+
+## Clarification 5 (05:14 CDT 10-27; before any Kaggle score)
+
+Clarification 3's serial order applied only IF one session booted alone and two at once did not. That condition
+did not hold: arm-control hung alone, and the cause was the quick-save-created kernels (Clarification 4); T1 and T2
+ran in parallel and T2 booted. So the original design stands: Kaggle rounds are same-time pairs, (C1 + A1),
+(C2 + A2), (C3 + A3), each pair pushed together on fresh run-push kernels. C1 = probe-arms-newk (diff: labels only);
+A1 is pushed as soon as the second session frees, so round 1's pair starts hours apart. That is reported, and the
+analysis stays paired by game over all runs of each arm, as pre-stated.
