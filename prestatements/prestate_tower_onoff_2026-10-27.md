@@ -74,3 +74,9 @@ may be a better number than the endpoint. Pre-stated as EXPLORATORY (the primary
 - Reading: a faster OFF slope with an equal endpoint means the channel's cost is time, not score; a slower OFF slope
   means the board part buys progress per minute. Both tails named now.
 - Not yet computed for any run as of this clarification.
+- AMENDMENT (15:14 CDT, still before any OFF slope): the axis is PLAY time, not notebook time. Every run writes its
+  periodic summary every 600 s of benchmark time (periodic_save_interval_s = 600; v36's first summary is 604 s after
+  its benchmark start, and locally the model loads faster, so notebook-minutes are not comparable). Summary k is at
+  10k play-minutes. The slope window is the first TEN summaries (play minutes 10-100; v36's knee at 120
+  notebook-minutes is ~100 play-minutes). The 60/90/120 checkpoints become the summaries at 60, 90 and 100
+  play-minutes. Same window for every run, ON and OFF.
