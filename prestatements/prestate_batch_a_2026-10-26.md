@@ -131,3 +131,13 @@ GPU slot idle while one member re-rolls. Rule from now on: a free slot takes a r
 completed runs (control on a tie); stop when each arm has 3. This keeps both arms' runs interleaved in time, which
 is what pairing was for. Analysis unchanged (per game over all runs of each arm); each run's start time is
 reported so the interleaving can be inspected. C1 = probe-arms-newk is complete.
+
+## Clarification 8 (10-27 12:55 CDT, before the push): a fresh dataset slug with identical bytes still counts
+Kaggle forum 753192 (10-27) reports RTX Pro 6000 sessions hanging with no output and one participant's workaround:
+re-upload the same code archive as a NEW dataset and start a fresh kernel pointing at it. Kas's probe on this trigger
+is therefore a new private dataset (codywhatleymd/arc3-synesthesia-harness-arms2) with the bytes of arms @12a000d,
+and a fresh kernel (arm-batch-a-k3) built with the same Batch A --env switches. Ruling: it differs from the arm only in
+labels and the dataset slug, so it counts as A1 if it boots and completes, PROVIDED a per-file sha256 comparison shows
+the uploaded dataset identical to the local arms dataset dir (name and size are not enough). Any file differing makes
+it a probe only. Same read-back, 20/40-minute reads, 40-minute cancel, one probe per trigger. Whether it boots is
+itself a finding about the hang (per dataset version vs per host), recorded either way.
