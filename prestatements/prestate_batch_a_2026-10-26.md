@@ -123,3 +123,11 @@ first copy of v22/3 onto some GPU servers fits but is unconfirmed. Clarification
 identity is not part of an arm; C1 = probe-arms-newk). Cutoff for a run with no BOOT line: 40 min from RUNNING,
 kept, because the observed boots are ~0, ~19 and ~25 min (the 10-25 first attach), and max + 50% ~ 38 min.
 Timings per run go in notes/kaggle_run_timings.csv.
+
+## Clarification 7 (07:20 CDT 10-27; slot filling under frequent hangs, before any Kaggle batch-a score)
+
+7 of 9 Kaggle sessions have hung before BOOT (both arm configs; not arm-specific). Strict same-time pairs leave a
+GPU slot idle while one member re-rolls. Rule from now on: a free slot takes a run of whichever arm has FEWER
+completed runs (control on a tie); stop when each arm has 3. This keeps both arms' runs interleaved in time, which
+is what pairing was for. Analysis unchanged (per game over all runs of each arm); each run's start time is
+reported so the interleaving can be inspected. C1 = probe-arms-newk is complete.
