@@ -80,3 +80,8 @@ may be a better number than the endpoint. Pre-stated as EXPLORATORY (the primary
   10k play-minutes. The slope window is the first TEN summaries (play minutes 10-100; v36's knee at 120
   notebook-minutes is ~100 play-minutes). The 60/90/120 checkpoints become the summaries at 60, 90 and 100
   play-minutes. Same window for every run, ON and OFF.
+- CONTROLS READ (15:16 CDT; no OFF score or slope read yet). Slope over summaries 1-10 (play min 10-100):
+  r2 0.352, r3 0.416, r4 0.427 pts/min (mean 0.398; spread 0.075); v36 (Kaggle, same config, for reference only,
+  never pooled) 0.419. Scores at 60/90/100 play-min: r2 21.1/34.2/37.8, r3 21.8/38.2/40.1, r4 29.0/35.9/38.4;
+  v36 24.4/35.5/41.5. All four curves are near-linear to 100 play-min and bend after, so the window is confirmed on
+  both platforms. The 40.2-47.4 endpoint spread comes mostly from the last three summaries (the budget tail).
