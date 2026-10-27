@@ -113,3 +113,13 @@ ran in parallel and T2 booted. So the original design stands: Kaggle rounds are 
 (C2 + A2), (C3 + A3), each pair pushed together on fresh run-push kernels. C1 = probe-arms-newk (diff: labels only);
 A1 is pushed as soon as the second session frees, so round 1's pair starts hours apart. That is reported, and the
 analysis stays paired by game over all runs of each arm, as pre-stated.
+
+## Clarification 6 (05:55 CDT 10-27; amends Clarification 4's stated CAUSE only, before any Kaggle score)
+
+T1 (probe-anchor-newk, run 362774566: a run-push kernel, the anchor dataset) hung (empty log at 61 min) while T2 (a
+run-push kernel, the arms dataset) booted, and the anchor dataset booted in v36. So "quick-save-created kernels hang"
+is WRONG: neither creation method, dataset nor simultaneity separates hangs from boots. The cause is unknown; a slow
+first copy of v22/3 onto some GPU servers fits but is unconfirmed. Clarification 4's rulings are unchanged (kernel
+identity is not part of an arm; C1 = probe-arms-newk). Cutoff for a run with no BOOT line: 40 min from RUNNING,
+kept, because the observed boots are ~0, ~19 and ~25 min (the 10-25 first attach), and max + 50% ~ 38 min.
+Timings per run go in notes/kaggle_run_timings.csv.
