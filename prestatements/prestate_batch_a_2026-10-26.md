@@ -79,3 +79,15 @@ validity criteria cannot be checked over the whole run, so ba1 is INVALID (unver
 died within seconds of starting on the full disk and never played. r2, r3, r4 and both smokes ended cleanly
 ("Ending Cell 12", no out-of-space errors) and stand. Added criterion, every run from now on: a run during which
 the disk holding its working directory reached zero free space is invalid.
+
+## Clarification 3 (00:10 CDT 10-27; Kaggle design if two sessions at once cannot start; decided BEFORE the retry's result)
+
+Round 1 (control + batch-a started together) hung before BOOT on both sessions and was cancelled at ~39 min, no
+scores (216ax addendum 6). Kas is testing arm-control alone (one variable). Decided now, whichever way that goes:
+- If one session alone boots and two at once do not, Kaggle runs go ONE AT A TIME in the counterbalanced order
+  C A A C C A (C = control, A = batch-a): each arm still gets 3 runs, the number fixed in this pre-statement, and
+  each arm's mean run position is the same, so a slow drift in Kaggle's servers over the day cancels to first order.
+  Paired-by-game comparison over the 3 + 3 runs, as before. The order is fixed here and not changed after a run.
+- If arm-control hangs alone too, the cause is the new kernel or the arms dataset, not simultaneity; no Kaggle arm
+  runs until that is fixed and this section is amended.
+- A run that hangs before BOOT and is cancelled has no score and is simply re-queued in the same slot of the order.
