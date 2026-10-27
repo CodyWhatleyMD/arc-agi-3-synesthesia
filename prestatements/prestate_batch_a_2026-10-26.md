@@ -70,3 +70,12 @@ dies the same way silently (8552964 SB L863). Ruling, applied to every run of ev
 - Honesty note: a partial ba1 mean (27.71, mid-run) had been relayed to me before this ruling. The ruling does not
   depend on it: it follows the pre-stated wording ("in the harness"), and the other reading would discard a Batch A
   run for an event the controls cannot log at all.
+
+## Clarification 2 (23:35 CDT; ruled by Sakshi BEFORE reading ba1's score)
+
+The root disk filled during ba1 (Cody, 23:29: "it already went to 0"). ba1's log stops at 23:02 mid-line at
+exactly 131,072 bytes; the run continued unlogged until ~23:24, about 30 min short of a full-budget run. Its
+validity criteria cannot be checked over the whole run, so ba1 is INVALID (unverifiable) and is rerun. ba2 and r5
+died within seconds of starting on the full disk and never played. r2, r3, r4 and both smokes ended cleanly
+("Ending Cell 12", no out-of-space errors) and stand. Added criterion, every run from now on: a run during which
+the disk holding its working directory reached zero free space is invalid.
