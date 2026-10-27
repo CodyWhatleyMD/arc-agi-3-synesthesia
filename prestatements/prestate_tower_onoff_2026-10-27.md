@@ -44,3 +44,20 @@ is replaced, not patched.
 ## What this does not test
 The student tower vs the native vision tower (pixels); that is the F208b question and needs a PNG arm on the same
 harness, not built here. It does not test the hidden set. It does not speak to Batch A.
+
+## Clarification 1 (10:50 CDT, before the relaunch; bo1 produced no score)
+- bo1 (09:55) died at cell 10's flipped assertion five minutes in: the harness dataset's setup_commands.json froze
+  `'MULTIMODAL_CONTEXT': 'current_grid'` as a literal, and cell 7 re-applies that setup env over os.environ after the
+  arm's switch is set (Kas's read, confirmed in the log: line 65 printed env MULTIMODAL_CONTEXT=none, line 1175 the
+  assertion). The guard did its job; nothing was scored. bo1 is invalid and its tag is retired.
+- The OFF arm's harness is now 8552964 plus ONE inert change (branch syn/env-multimodal-context): setup_commands.json
+  reads `os.environ.get('MULTIMODAL_CONTEXT', 'current_grid')` the way it already reads ARM_UPSCALE, and the template
+  line in kaggle.py that rendered the literal renders that lookup. With the variable unset it evaluates to
+  'current_grid': the ON controls (r2, r3, r4, run on 8552964 itself) are unaffected in behaviour, and the ON arm of
+  this harness would be byte-identical in effect. It is built into its own dataset (arc3-synesthesia-harness-off),
+  never the anchor's.
+- "The channel" includes the system prompt's MULTIMODAL_CONTEXT_ADDENDUM (tool_agent.py:264-265), which the OFF arm
+  drops. The arm therefore measures the board part AND its prompt section together, as 214d did.
+- Belt and braces for the negative gate (Kas): after each OFF run, the saved request logs are checked for zero image
+  parts of any kind; an OFF run whose requests carry a board part is invalid.
+- Tags for the relaunch: bo1b, bo2b, bo3b.
