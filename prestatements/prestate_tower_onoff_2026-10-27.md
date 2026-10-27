@@ -61,3 +61,16 @@ harness, not built here. It does not test the hidden set. It does not speak to B
 - Belt and braces for the negative gate (Kas): after each OFF run, the saved request logs are checked for zero image
   parts of any kind; an OFF run whose requests carry a board part is invalid.
 - Tags for the relaunch: bo1b, bo2b, bo3b.
+
+## Clarification 2 (15:02 CDT, before any OFF score or slope is read): score-rate as an exploratory outcome
+Cody, on the v36 curve (mean score vs minutes, near-linear ~0.43/min until the budget bites, then flat): the slope
+may be a better number than the endpoint. Pre-stated as EXPLORATORY (the primary outcome is unchanged):
+- Score-rate = OLS slope of "mean score" against minutes-since-notebook-start over the periodic summaries from the
+  first summary up to and including the last summary at or before 120 min (the v36 knee; fixed here so it is not
+  picked per run). Also reported: mean score at the summary nearest 60, 90 and 120 min.
+- Computed identically for every run in the comparison (r2, r3, r4, bo1b, bo2b, bo3b), from their own logs;
+  same bootstrap-by-game machinery does not apply (one slope per run), so OFF-vs-ON slopes are reported as
+  group means with the run-level spread, n=3 vs 3, no significance claim.
+- Reading: a faster OFF slope with an equal endpoint means the channel's cost is time, not score; a slower OFF slope
+  means the board part buys progress per minute. Both tails named now.
+- Not yet computed for any run as of this clarification.
