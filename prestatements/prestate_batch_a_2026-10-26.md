@@ -54,3 +54,19 @@ Franzen's whole stack scored 27.89 hidden vs our ~20, but these are only his age
 expect a public-25 gain of 0 to +6 if any. At local 2 v 3 runs that is inside the noise: I put ~65% on
 "not resolved" locally and ~60% on a positive point estimate. Three Kaggle rounds help; a reading of
 "gain" would need a larger effect than I expect.
+
+## Clarification 1 (22:12 CDT, during ba1; ruled by Sakshi on Kas's question)
+
+The invalid-run criterion says "a traceback **in the harness**". ba1's log has one `Traceback`, printed under
+"sandbox process exited unexpectedly; stderr follows:": the model's own code in the sandbox child hit MemoryError
+(`File "<string>"`, `_sanitize_exception`, the child's 768 MB RLIMIT_AS). That is the sandboxed model code's stderr,
+not the harness. It is printed only because SYN_SANDBOX_HYGIENE logs child stderr (12a000d SB L906); the anchor
+dies the same way silently (8552964 SB L863). Ruling, applied to every run of every arm:
+- A traceback inside a "sandbox process ... stderr follows:" block does not count as a harness traceback.
+  Everything else still does.
+- Sandbox deaths are counted SYMMETRICALLY in all arms from what the model was told: tool results containing
+  "Sandbox process exited unexpectedly." (identical text in 8552964 SB L863 and 12a000d SB L1088), deduplicated by
+  tool call. Reported as an exploratory observation, never deciding.
+- Honesty note: a partial ba1 mean (27.71, mid-run) had been relayed to me before this ruling. The ruling does not
+  depend on it: it follows the pre-stated wording ("in the harness"), and the other reading would discard a Batch A
+  run for an event the controls cannot log at all.
