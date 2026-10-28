@@ -43,3 +43,23 @@ invalid run is replaced, not patched.
 
 ## What this does not test
 The hidden set; Batch A; the channel vs nothing (today's other test). It tests the student against its teacher.
+
+## Clarification 1 (19:20 CDT; na1 stopped at 19:19, no score read)
+- na1 is INVALID: 33,617 requests in 45 min, 33,604 rejected HTTP 400. The harness keeps TWO image_url boards per
+  request (the current and the previous), and ARM_LIMIT_MM image:1 made the server reject every two-board request;
+  the harness retried in a loop. My error: I set the limit from the student arm's "one board" picture without
+  measuring the PNG path's own history policy. The chain was halted before na2.
+- The confound a side agent flagged, now measured: the shipped STUDENT arm carries a median of 13 boards per request
+  (min 1, max 48; r2's 2,817 requests) because the history stripper recognises only text and image_url parts
+  (vision_context.py:164) and image_embeds parts are invisible to it; the PNG path keeps 2 (na1: median 2, max 2).
+  "Only the encoder differs" was false as designed: the arms would also have differed in board history, 13-48 vs 2.
+- This also annotates today's on/off result: the ON arm there was the shipped student arm WITH its 13-48-board
+  history; the channel it measured includes that history. Noted in the on/off result file.
+- Redesign, before any further run: MATCHED HISTORY. Both arms keep the harness's designed TWO boards per request.
+  NATIVE: ARM_LIMIT_MM image:2 (the server accepts two), PNG path as before. STUDENT-2: a new harness switch that
+  applies the same two-board policy to image_embeds parts (the fix the stripper always needed), built into its own
+  dataset like faab14c, default off = shipped behaviour. r2/r3/r4 are NOT the controls for this test (they carry
+  13-48 boards); the test is three STUDENT-2 runs vs three NATIVE-2 runs, six runs, ~16 h. The shipped 13-48-board
+  student arm vs STUDENT-2 is a separate, exploratory question (the history window), not decided here.
+- Primary outcome, prior, gates unchanged, with the gate's image_url count now "max 2 per request" for NATIVE and
+  "max 2 image_embeds per request" for STUDENT-2, both checked in the request logs after each run.
