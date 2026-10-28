@@ -148,3 +148,15 @@ comes out of play. Play seconds (soft end − benchmark start): v36 7,907; C1 8,
 (weight loading 732-907 s on the fresh-slug hosts). Pair 1 is load-confounded (A1 had 708 s less play than C1 and
 tied); pair 2 is balanced. Ruling: play seconds are reported beside each pair in the read, as a covariate, never as a
 correction to the score; the pre-stated statistic is unchanged.
+
+## Clarification 10 (10-27 20:58 CDT, before any round-4 push): the ultrareview fix and comparability
+Cody's cloud review of 12a000d (notes/ultrareview_batch_a_2026-10-27.md) found that under SYN_REQUEST_ROBUST a 400
+after a reply kept the turn's exchanges and re-sent them: if the body was what the server rejected, the same 400
+repeats until the game clock runs out. Rounds 1-3 (A1, A2, A3) and the local ba1b/ba2b ran 12a000d. Every completed
+run passed the "0 HTTP 400" gate, so the loop never fired in a counted run, and if it fires in A3 the gate declares
+A3 invalid rather than scoring it. The fix (syn/batch-a-s2, for Kas's review and merge into syn/batch-a) makes
+400/413/422 roll the turn back, as the anchor did; it changes only trajectories that contain an HTTP 400, which the
+gates already exclude, so a valid run of the fixed commit is comparable with a valid run of 12a000d. Rounds after the
+merge run the fixed commit; the arm's tag names the commit in each round's row. The other review items in the same
+commit (board-strip count in the compaction event; negative SYN_ ints rejected at runtime; SWITCHES wording) change
+no model-facing behaviour.
