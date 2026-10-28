@@ -63,3 +63,18 @@ The hidden set; Batch A; the channel vs nothing (today's other test). It tests t
   student arm vs STUDENT-2 is a separate, exploratory question (the history window), not decided here.
 - Primary outcome, prior, gates unchanged, with the gate's image_url count now "max 2 per request" for NATIVE and
   "max 2 image_embeds per request" for STUDENT-2, both checked in the request logs after each run.
+
+## Clarification 2 (19:25 CDT; supersedes the "two-board policy" in Clarification 1; still no score read)
+- Measured in the request logs: boards per request GROW identically on both paths. r2 (student, ar25): 1, 1, 2, 2,
+  3, 4, 4, 5, 6, 6, 7, 8 ... (median 13, max 48 over the run). na1 (native, ar25): 1, 1, 1, 2, 2, 2 ... stuck at 2
+  because every request carrying two image_url parts was rejected (image:1) and retried. There is NO per-type history
+  policy: the vision_context comment I cited ("his transcript renderer only knows text and image_url") is about the
+  transcript LOG, not the model's history. The confound I described does not exist; the bug does.
+- Design restored to the original: NATIVE differs from STUDENT only in who encodes the board, with the server limit
+  raised so the native arm can carry the same history: ARM_LIMIT_MM image:64 (a bound above the student arm's
+  observed max of 48; the request logs' per-request maximum is recorded for every NATIVE run and must stay ≤ 64 and
+  show no HTTP 400). Controls r2, r3, r4 as pre-stated. Three NATIVE runs: na1b, na2b, na3b.
+- Covariate: the KV pool under image:64 is read from each log (na1 under image:1 measured 1,440,080). vLLM profiles
+  the encoder per batch, not per limit, so the pool should not fall much further; whatever it is, it is reported.
+- The on/off annotation stands: the ON arm (and this test's STUDENT control) carries 1-48 boards of history by the
+  harness's accumulation, and so will NATIVE.
