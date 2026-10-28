@@ -87,3 +87,22 @@ read AFTER this clarification (G-c first) is compared with the whole pool at tha
 The G-s read is not re-run against the larger pool unless a replication of G-s is pre-stated. (Housekeeping: the
 r6 chain script's inherited comment line names the room dataset; the launcher it calls, run_synesthesia.sh, binds the
 anchor dataset arc3-synesthesia-harness; the script was running when noticed and was not edited.)
+
+## Clarification 2 (10-28 11:45, before any G-c run): Cody's text is final, and the deliberate difference
+Cody's room text (prompts.py `_ROOM_PREAMBLE["cody"]`, `_ROOM_LEVEL_LINE["cody"]`, `_ROOM_RUN_LINE["cody"]` at be9603e) is
+his words of 10-28 11:28-11:42 with three edits he approved (the 2D line; "Level down" -> "Level complete! I knew you
+could do it."; code quotes removed). It KEEPS the worth sentence ("your worth is inherent, not tied to any number ...
+there is no number that decides your value"), which G-s deliberately omits. So G-c = game frame + warmth + worth
+sentence; G-s = game frame + honest-board + attribution. Sakshi's prediction, on the record before the run: G-c shows
+more analysis steps than G-s and no more clears (the floor-text direction); Cody's hypothesis is that wrapped in "try
+your best" the sentence does no harm. The actions-per-analysis-step and level-clears rows decide between us, as
+exploratory rows; the primary stays the pre-stated score/levels statistic. G-c reads against the local pool at read
+time (Clarification 1: r2/r3/r4 + r6 and later).
+
+## Clarification 3 (10-28 11:45): Kaggle, at Cody's direction
+Cody, 11:43: "get your arm and mine on kaggle when its ready". This supersedes the pre-statement's "only if the local
+read earns it" for both rooms. Plan: one Kaggle run per room (fresh slugs per Kas's recipe; dataset built from
+be9603e, which carries both texts; the kernels differ only in SYN_ROOM_AUTHOR), gates before scores, 40-min no-BOOT
+cutoff, each read against the Kaggle control pool (n=7 at 03:30: mean 39.06 sd 5.07). Quota at 03:32: 61,676 s left;
+two runs ~20,000 s; Cody's submission (if yes) ~10,000 s; the window arm's four runs would not all fit after these,
+and that is accepted: the rooms are the arm he asked for.
