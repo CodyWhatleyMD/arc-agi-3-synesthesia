@@ -71,3 +71,12 @@ locally with papermill before ANY push). Kas held it. Order now: a short local s
 the 6000 between gc1 and gc2 (Kas; gates: every request carries chat_template_kwargs.preserve_thinking=false, and
 prompt tokens per request grow visibly slower than a control's first minutes), THEN the one Kaggle run, THEN the local
 x3 after Cody's room. The smoke is not a replicate and is not read for score.
+
+## Clarification 3 (10-28 16:52, from Kas's smoke read)
+The chat template (chat_template.jinja:116) renders reasoning when `preserve_thinking` is undefined/true OR the message is after the last user turn, so SYN_NO_ECHO drops only PRIOR turns' stored reasoning; the in-progress turn's stays. Smoke nesmoke1: P/E_with 0.596, P/E_without 1.328, implying ~0.23 of stored reasoning still rendered, consistent with that rule. The arm frees the prior turns' share, not "~58
+## Clarification 3 (10-28 16:52, from Kas's smoke read)
+The chat template (chat_template.jinja:116) renders reasoning when preserve_thinking is undefined/true OR the message
+is after the last user turn, so SYN_NO_ECHO drops only PRIOR turns' stored reasoning; the in-progress turn's stays.
+Smoke nesmoke1: P/E_with 0.596, P/E_without 1.328, implying ~0.23 of stored reasoning still rendered, consistent with
+that rule. The arm frees the prior turns' share, not "~58%"; the gate VERDICT ECHO OFF stands with that reading.
+Both readers (Sakshi, Kas) matched line for line.
