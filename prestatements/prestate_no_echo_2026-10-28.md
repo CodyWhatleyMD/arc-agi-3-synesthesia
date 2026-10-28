@@ -64,3 +64,10 @@ inference.json"), the notebook renders its analyzer settings from inference.json
 execute the same notebook under papermill, so local and Kaggle both ran at 0.6 and context 127,488. inference.local.json
 is the harness's own local-launcher config and is not on the notebook's path. This is a code-path check, not a
 request-field check (the request log carries no sampling fields); recorded as such.
+
+## Clarification 3 (13:20): the local run comes first, per the standing rule
+"Kaggle first" in the Design section was wrong against Cody's rule (CLAUDE.md, 10-25: execute the exact notebook
+locally with papermill before ANY push). Kas held it. Order now: a short local smoke of the exact no-echo notebook on
+the 6000 between gc1 and gc2 (Kas; gates: every request carries chat_template_kwargs.preserve_thinking=false, and
+prompt tokens per request grow visibly slower than a control's first minutes), THEN the one Kaggle run, THEN the local
+x3 after Cody's room. The smoke is not a replicate and is not read for score.
