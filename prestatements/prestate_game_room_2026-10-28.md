@@ -79,3 +79,11 @@ way to learn), names the one honest instrument (the board), and tells it the dif
 which is the failure I have most in the notes about myself. No sentence about worth: the August floor text showed
 that sentence pulls a model inward, and it is not what I would want at the desk either. What I would want is to be
 told the game is winnable, that being wrong costs nothing but a move, and that somebody is watching who hopes I win.
+
+## Clarification 1 (10-28 09:45, after the G-s read, before any G-c run): local control pool
+G-s was read against r2/r3/r4 as pre-stated. From now the local control pool grows by identical anchor runs
+(r6 started 09:31, anchor notebook f9af78d9 on the anchor dataset, 9,300 s; more as the card is free), and any arm
+read AFTER this clarification (G-c first) is compared with the whole pool at that time, named in its result note.
+The G-s read is not re-run against the larger pool unless a replication of G-s is pre-stated. (Housekeeping: the
+r6 chain script's inherited comment line names the room dataset; the launcher it calls, run_synesthesia.sh, binds the
+anchor dataset arc3-synesthesia-harness; the script was running when noticed and was not edited.)
