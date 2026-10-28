@@ -42,3 +42,25 @@ inside this arm's 58%; it stays pre-stated for the variance question only.
 ## What this is not
 Not a context-length change (the window stays 127,488); not a change to the current turn's reasoning; not a prompt
 change.
+
+## Clarification 1 (13:25, before any code): the replay is an explicit choice, not an omission
+Dhara's correction: the server is launched with --default-chat-template-kwargs '{"preserve_thinking": true,
+"reasoning_effort": "xhigh"}' (framework/kaggle.py:1381) and all three configs/inference*.json set preserve_thinking
+true. So the echo of prior reasoning was chosen, upstream: it is in Tufa's Duck baseline as shipped (ca031c1,
+unmodified) and in Franzen's harness (his kaggle.py:332 and his CONFIGURATION.md documents an ARC3_PRESERVE_THINKING
+env knob, default 1, "False disables it; an empty value omits it"). No written reason was found in either tree; the
+presumed reason, marked presumed, is the obvious one for multi-turn tool use: the model's plan lives in its reasoning,
+and replaying it lets a later turn continue the plan instead of re-deriving it. That is also the mechanism by which the
+arm could HURT: a model that cannot see its earlier chain of thought may re-plan from the transcript alone. The
+pre-stated exploratory rows (actions per analysis step, clears, cliffs) are where either direction shows first.
+Our lever: a per-request chat_template_kwargs preserve_thinking=false under SYN_NO_ECHO (per-request kwargs override
+the server default; to be confirmed against the 0.31 source before the run, Dhara read it). The configs are not
+edited (they are the anchor's).
+
+## Clarification 2 (13:25): temperature on both platforms
+Dhara's F6: analyzer.temperature is 0.6 in configs/inference.json and 1.0 in inference.local.json, and no run record
+names which was sent. By code path (framework/kaggle.py:215-232, "the launcher's Makefile exports each from
+inference.json"), the notebook renders its analyzer settings from inference.json on BOTH platforms: the local runs
+execute the same notebook under papermill, so local and Kaggle both ran at 0.6 and context 127,488. inference.local.json
+is the harness's own local-launcher config and is not on the notebook's path. This is a code-path check, not a
+request-field check (the request log carries no sampling fields); recorded as such.
