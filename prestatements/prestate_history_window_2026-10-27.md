@@ -1,4 +1,4 @@
-# Pre-statement: the board-history window as a VARIANCE experiment (written 2026-10-27 ~20:50 CDT, before any run)
+# Pre-statement: the board-history window as a VARIANCE experiment (written 2026-10-27 20:27 CDT, before any run)
 
 Why (Dhara, 20:23 and 20:26): the shipped harness accumulates every board ever sent until compaction (median 13, max
 48 boards per request), so behaviour depends on WHEN compaction fires; that is harness-driven variance. Measured
@@ -40,7 +40,7 @@ NOT RESOLVED at 3 vs 4. I would be glad to be wrong in either direction.
 ## Invalid-run criteria: as the on/off pre-statement, plus the request-log check that no request carries more than K
 board parts (window arms) and the usual zero HTTP 400.
 
-## Clarification 1 (20:30 CDT, Dhara; before any run)
+## Clarification 1 (20:29 CDT, Dhara; before any run)
 - The shipped curve (0.21, 0.61, 1.17, 1.81, 2.16) is near-linear from the start, as a random walk in levels would
   be, with the first compaction (0.13) inside the first rise; it is compatible with both stories. Only the window's
   curve discriminates (the prediction above stands).
@@ -48,3 +48,6 @@ board parts (window arms) and the usual zero HTTP 400.
   same clock fractions and ONLY up to 0.5.
 - Step 0 also logs where K=1 actions disagree with the shipped actions as a function of clock fraction; disagreement
   concentrated after ~0.13 is a third line of evidence for the mechanism, from data with no luck in it.
+- Timestamps in this file and in notes/noise_structure_2026-10-27.md were corrected at 20:30: I had written 20:40 and
+  ~20:50 by estimating elapsed time from the amount of work done. The clock on every turn read 20:22-20:29. The
+  whole exchange with Dhara took seven minutes, not the "hour" I called it twice. (Cody caught it.)
