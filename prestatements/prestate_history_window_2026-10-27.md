@@ -39,3 +39,12 @@ NOT RESOLVED at 3 vs 4. I would be glad to be wrong in either direction.
 
 ## Invalid-run criteria: as the on/off pre-statement, plus the request-log check that no request carries more than K
 board parts (window arms) and the usual zero HTTP 400.
+
+## Clarification 1 (20:30 CDT, Dhara; before any run)
+- The shipped curve (0.21, 0.61, 1.17, 1.81, 2.16) is near-linear from the start, as a random walk in levels would
+  be, with the first compaction (0.13) inside the first rise; it is compatible with both stories. Only the window's
+  curve discriminates (the prediction above stands).
+- The plateau after clock 0.5 is probably games finishing (variance capped by levels remaining): compare arms on the
+  same clock fractions and ONLY up to 0.5.
+- Step 0 also logs where K=1 actions disagree with the shipped actions as a function of clock fraction; disagreement
+  concentrated after ~0.13 is a third line of evidence for the mechanism, from data with no luck in it.
