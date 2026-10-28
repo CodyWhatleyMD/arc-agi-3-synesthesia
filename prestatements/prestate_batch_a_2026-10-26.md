@@ -141,3 +141,10 @@ labels and the dataset slug, so it counts as A1 if it boots and completes, PROVI
 the uploaded dataset identical to the local arms dataset dir (name and size are not enough). Any file differing makes
 it a probe only. Same read-back, 20/40-minute reads, 40-minute cancel, one probe per trigger. Whether it boots is
 itself a finding about the hang (per dataset version vs per host), recorded either way.
+
+## Clarification 9 (10-27 19:35 CDT, before the three-pair read): play time as a covariate
+Kas: per-game budgets are identical (3,918 s) but the soft end is fixed at BOOT + ~8,710 s, so model-load time
+comes out of play. Play seconds (soft end − benchmark start): v36 7,907; C1 8,110; A1 7,402; C2 7,454; A2 7,521
+(weight loading 732-907 s on the fresh-slug hosts). Pair 1 is load-confounded (A1 had 708 s less play than C1 and
+tied); pair 2 is balanced. Ruling: play seconds are reported beside each pair in the read, as a covariate, never as a
+correction to the score; the pre-stated statistic is unchanged.

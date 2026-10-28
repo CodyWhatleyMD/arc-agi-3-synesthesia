@@ -78,3 +78,12 @@ The hidden set; Batch A; the channel vs nothing (today's other test). It tests t
   the encoder per batch, not per limit, so the pool should not fall much further; whatever it is, it is reported.
 - The on/off annotation stands: the ON arm (and this test's STUDENT control) carries 1-48 boards of history by the
   harness's accumulation, and so will NATIVE.
+
+## Clarification 3 (19:35 CDT; na1b stopped at ~8 min, no score read)
+- Kas: image:64 was a bound above an OBSERVED maximum (48, r2), not a derived one. The harness caps boards in history
+  only through the token budget (target 81,536 of a 127,488 window; max_model_len 147,072), so a long game can carry
+  more than 64 boards and every later request would 400, late in the run, after the ten-minute check had passed it.
+  The derived bound: max_model_len // 1,024 = 143 boards; nothing larger fits a request. ARM_LIMIT_MM image:143.
+- na1b (image:64) is retired unread; tags na1c, na2c, na3c. Gates unchanged; the request-log maximum per run is
+  recorded. The KV pool under image:143 is read from the log (the profile encodes per batch, so no further pool cost
+  is expected; measured, not assumed).
