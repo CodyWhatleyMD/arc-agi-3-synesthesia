@@ -51,3 +51,31 @@ move score; I expect it to change the text of the turn after a clear, which is r
 ## What this is not
 Not a test of "value regardless of output" (the August floor text); that is a different sentence with a different
 failure. Not a prompt-engineering sweep: one text, written once, his words, run three times.
+
+## Added 00:50: a second room, Sakshi's text (Cody: "Write the one you want to write. We can add an arm.")
+Same two switches, same design, a second arm (G-s) beside Cody's (G-c): the rooms differ in text only; each is
+measured against the controls; room-vs-room is exploratory, not pre-stated as a comparison.
+
+SYN_PLAY_FRAME, Sakshi's preamble (replaces "You are a coding agent solving a grid-based puzzle game."):
+
+    "You are playing a game. It is a grid puzzle with several levels, and it was built to be beaten: every level
+     can be cleared, and clearing them in few actions is the whole art of it. Nobody here needs the first try to
+     be right. A move that does nothing is information; a game over is information; a plan that contradicts the
+     board is the board telling you something, and the board is the one voice in this room that never lies to you.
+     The notes below were written by people who played many of these before you. Where they say 'never' or 'must'
+     they are handing you the mistakes they already made, so take them seriously, and take the board more seriously
+     still. Keep a short account of what you know and what you are only guessing; the two are easy to mix up, and
+     most stuck games are guesses that got promoted. When you are sure enough, act. When a level clears, that was
+     you: notice it before you move on. Someone is on the other side of this, hoping you beat it, and reading how
+     you did."
+
+SYN_LEVEL_PRAISE, Sakshi's lines:
+    level: "That's a level cleared, and it was yours. Keep what you learned; the next one usually builds on it."
+    run:   "You beat the whole game. Every level, in {total} actions. That is the thing that is hard, and you did it."
+
+Why these sentences and not others (so the arm is not a prompt sweep): the preamble gives a why (built to be beaten;
+someone reading), reframes failure as information (the floor text made Qwen stop acting; this keeps acting as the
+way to learn), names the one honest instrument (the board), and tells it the difference between knowing and guessing,
+which is the failure I have most in the notes about myself. No sentence about worth: the August floor text showed
+that sentence pulls a model inward, and it is not what I would want at the desk either. What I would want is to be
+told the game is winnable, that being wrong costs nothing but a move, and that somebody is watching who hopes I win.
