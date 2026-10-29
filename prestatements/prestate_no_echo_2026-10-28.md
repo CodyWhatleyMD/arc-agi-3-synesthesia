@@ -80,3 +80,17 @@ is after the last user turn, so SYN_NO_ECHO drops only PRIOR turns' stored reaso
 Smoke nesmoke1: P/E_with 0.596, P/E_without 1.328, implying ~0.23 of stored reasoning still rendered, consistent with
 that rule. The arm frees the prior turns' share, not "~58%"; the gate VERDICT ECHO OFF stands with that reading.
 Both readers (Sakshi, Kas) matched line for line.
+
+## Result, Kaggle (10-28 19:25 CDT; Kas's read, rows 2c8f...)
+no-echo-k1 (363302371) COMPLETE 00:15Z. Gates all pass (0 tracebacks, 0 HTTP 400, switches {'SYN_NO_ECHO': True},
+harness c82ffc3, 25/25 played, 0 sandbox deaths, image 9a6bcfda). Switch gate on the Kaggle output: 1,853 requests,
+stored-reasoning share 68.2%, P/E_with 0.409, P/E_without 1.323 -> ECHO OFF.
+SCORE 16.46 (median 7.30, won 2) vs the Kaggle control pool n=7 (39.06, sd 5.07, min 32.57): -22.60 = -4.5 sd, below
+the pool minimum. n=1, gates clean: the direction is not in doubt. Exploratory counts (not a read): actions 5,930
+(controls ~6,650-8,500), tokens 6.33M (controls ~5.7-6.0M), tower parts 1,075 (others ~1,370-1,470): more generation,
+fewer actions. Hypothesis (Dhara's own caveat, now with a number): without prior turns' reasoning, each turn re-derives
+the plan instead of continuing it. The per-turn reasoning lengths in metrics.jsonl would test it. Covariate: play
+7,739 s (~5% under recent controls, as for the rooms).
+Decision (Sakshi): no further Kaggle runs of this arm. The local triple (ne1-ne3, running from 19:06 on the 6000, card
+otherwise idle) completes for the effect size with an interval on the local platform. Paper: the echoed reasoning is
+working memory, not overhead; one sentence with -22.6 (n=1, Kaggle) and the local interval when it lands.
