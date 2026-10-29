@@ -106,3 +106,11 @@ direct measure. Correction (Kas's own): action() CALLS != executed actions; exec
 previous_game_over, 8,725 of them one streak in sk48: a snippet loop that never checked game over; SYN_TERMINAL_RAISE's
 case, off here as in the anchor) is NOT what moved the score: 22 of 25 games below the C3-C7 averages by >1 (ar25 -92,
 vc33 -71, tr87 -57, tu93 -53); without sk48, 17.14 vs 41.31. The drop is broad.
+
+## Result, local (10-29 01:54 CDT; the pre-stated read, scripts/compare_arm_groups.py, boot 4000)
+ne1 14.01, ne2 13.75, ne3 10.08 (all gates clean: Ending Cell 12, 0 tracebacks, 0 HTTP 400, ARM banner SYN_NO_ECHO=1)
+vs controls r2 40.19, r3 44.26, r4 41.41, r6 42.96 (RTX PRO 6000, 25 public games, 9,300 s):
+score: arm 12.61, control 42.21, delta -29.60, 95% CI [-38.43, -21.38], sign 0/25/0 (every game lower), p = 0.000 -> LOSS (RESOLVED)
+levels: arm 2.17, control 4.21, delta -2.04, 95% CI [-2.46, -1.60], sign 0/25/0 -> LOSS (RESOLVED)
+With Kaggle (16.46 vs pool 39.06, n=1): the same direction and size on both platforms. The first resolved result of the
+program, and it is a loss: the echoed prior-turn reasoning is the model's working memory. Arm closed.
