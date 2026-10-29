@@ -36,7 +36,7 @@ a public score carries those 25 games' weights.
 | room G-c (be9603e, cody) | Kaggle commit run room-c-k1 | 1 | 4.76 (21/25 per-game lines captured) | 42.57 | pending (slot tonight, Sakshi's plan) |
 | v36 Kaggle control pool (12a000d all-off) | Kaggle C1-C7 | 7 | [per-run levels not yet tabulated] | 39.06 (sd 5.07) | - |
 | Batch A (12a000d) | Kaggle ba* | 3 | 4.19 (controls 4.13) | +0.98 vs controls | none yet |
-| no-echo (c82ffc3) | pending smoke | - | - | - | - |
+| no-echo (c82ffc3) | Kaggle commit run no-echo-k1 | 1 | [levels not tabulated] | 16.46 | none (arm dropped: -4.5 sd below the pool) |
 
 Caveat: with at most ~7 slots left, the test is over 5-8 points; a directional answer with n stated, not a result.
 Parser: scripts/compare_arm_groups.py gives both means per run.
