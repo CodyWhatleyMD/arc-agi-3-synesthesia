@@ -81,7 +81,7 @@ Smoke nesmoke1: P/E_with 0.596, P/E_without 1.328, implying ~0.23 of stored reas
 that rule. The arm frees the prior turns' share, not "~58%"; the gate VERDICT ECHO OFF stands with that reading.
 Both readers (Sakshi, Kas) matched line for line.
 
-## Result, Kaggle (10-28 19:25 CDT; Kas's read, rows 2c8f...)
+## Result, Kaggle (10-28 19:25 CDT; Kas's read, timing row commit 80bb333)
 no-echo-k1 (363302371) COMPLETE 00:15Z. Gates all pass (0 tracebacks, 0 HTTP 400, switches {'SYN_NO_ECHO': True},
 harness c82ffc3, 25/25 played, 0 sandbox deaths, image 9a6bcfda). Switch gate on the Kaggle output: 1,853 requests,
 stored-reasoning share 68.2%, P/E_with 0.409, P/E_without 1.323 -> ECHO OFF.
