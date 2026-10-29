@@ -94,3 +94,15 @@ the plan instead of continuing it. The per-turn reasoning lengths in metrics.jso
 Decision (Sakshi): no further Kaggle runs of this arm. The local triple (ne1-ne3, running from 19:06 on the 6000, card
 otherwise idle) completes for the effect size with an interval on the local platform. Paper: the echoed reasoning is
 working memory, not overhead; one sentence with -22.6 (n=1, Kaggle) and the local interval when it lands.
+
+## Mechanism read, Kaggle metrics (10-28 19:27 CDT; Kas, no-echo vs controls C5/C6/C7)
+- reasoning tokens per turn: median 4,326 / p90 12,604 vs controls 2,112-2,281 / 9,884-10,337 (~2x at the median)
+- per request: median 1,846 vs 1,030-1,153; requests per turn 1.86 vs 1.85-1.89 (unchanged)
+- turns in the clock: 1,058 vs 1,405-1,463 (-27%); prompt per request median 61.6K vs ~80K (smaller, as the switch should)
+- generated tokens per EXECUTED action: 1,067 vs C6 751 (+42%)
+Same requests per turn, twice the thinking per turn, fewer turns in the clock: "each turn re-derives the plan" has a
+direct measure. Correction (Kas's own): action() CALLS != executed actions; executed = benchmark total 5,930
+(turn.executed_action_count 5,892 agrees). The refused-call divergence (13,304 calls, 8,738 refused as
+previous_game_over, 8,725 of them one streak in sk48: a snippet loop that never checked game over; SYN_TERMINAL_RAISE's
+case, off here as in the anchor) is NOT what moved the score: 22 of 25 games below the C3-C7 averages by >1 (ar25 -92,
+vc33 -71, tr87 -57, tu93 -53); without sk48, 17.14 vs 41.31. The drop is broad.
