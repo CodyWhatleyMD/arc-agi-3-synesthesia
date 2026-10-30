@@ -52,7 +52,7 @@ Kas builds; Sakshi reads (Fable week at 94%).
 - Pipeline: base px8 set on the 5090 (~86 boards/s), then run_dih.sh PX=8 (dihedral copies on the 6000, 180 min
   train) -> /mnt/data/board_tower/ckpt_px8_dih. Script change: a PX knob (default 16) + CK passthrough.
 
-## Amendment 2 (11:29 CDT, Kas's 11:50-stamped status; the clock in their note runs ahead of mine, recorded as sent)
+## Amendment 2 (11:29 CDT, Kas's status sent ~11:28; its "(11:50)" stamp was a typo, corrected by Kas at 11:30)
 - Targets: base 8,914 (8,414/500, holdout as px16) 10.9 GiB; dihedral +58,894 = 67,308 train, the same count as
   px16_dih. Training ~11:40 -> ~14:40 CDT on the 6000, 180 min. CKPT /mnt/data/board_tower/ckpt_px8_dih.
 - Builder fd60e64: the anchor hard-codes 1024 beyond ARM_B_EXPECT_NPOS — cell 10's (1024, 2560) assertion and
