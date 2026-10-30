@@ -85,3 +85,28 @@ small bright objects swallowed by black (recall on holdout games: magenta .07, p
 prompts give hex per index, so it tests whether the model separates the greys.
 Lane 14:36: px8 shipped + arm built (e20cfb2e3e34); readback embeds server loading on the 6000; 128x2 student on the
 5090 14:36-17:36.
+
+## RESULT (Kas, 16:05; data/readback/report.json; 100 holdout boards, 20/game, seed 20261030; thinking off, temp 0; 1,500 requests, 0 HTTP errors)
+                  full   region  point  bbox  ncol | full ΔE  full<=25  region<=25  point<=25
+majority (bg)    0.702  0.570   0.243            |  12.2
+native (PNG 16)  0.521  0.522   0.327  0.16  0.13 |  15.0    0.685     0.629       0.383
+px16 student     0.559  0.532   0.333  0.12  0.08 |  14.3    0.680     0.635       0.423
+px8 student      0.519  0.530   0.363  0.22  0.05 |  15.5    0.640     0.624       0.460
+text (by eye)    0.810  0.558   0.377  0.23  0.29 |   5.5    0.854     0.660       0.520
+none             0.006  0.016   0.210  0.03  0.00 |  83.5    0.014     0.033       0.397
+Readings against the prior: (1) the NATIVE tower reads boards at cell level WORSE than "paint it all background"
+(0.521 vs 0.702); the students match it (0.559 / 0.519): the students are faithful, the parent's channel is the
+limit. The prior's "(a) and (b) above (e) on region/bbox" holds (0.52 vs 0.02 region) — the channel carries
+something, and the something is not cell colour. (2) The exact TEXT board read by eye is the ceiling (0.810) and is
+itself weak below board level (region 0.558, point 0.377): no counting into a 64-char line. In play the model indexes
+current_frame.rows in Python, which is exact; this readback measures tool-free perception, the image channel's whole
+job. (3) px8 ≈ px16: the geometry did not matter. (4) The prior's "(b) ≈ (a)" holds; "(a) ≫ (b)" does not.
+ΔE2000<=25 merges applied: Ww 11.1, WS 21.9, wg 14.1, wS 18.9, gG 19.5, gS 23.7, Gc 17.4, cB 13.4, MP 13.3, Mp 16.8,
+Pp 21.8, RO 21.6, bS 23.9.
+Serving-side geometry gate (px8): status 200, n_tokens 256, payload b64 1,749,732 (px16 1024 / 6,992,612). Native
+KV pool 1,440,080.
+Process: chain_readback.sh stopped 15:33 on a disk-gate race (docker stop returns before --rm frees ~19.5 GB);
+native ran from chain_native_then_ple.sh with waiting gates.
+Also (Kas, Cody's "measure it"): today's harness traffic (4 control runs x 25 games, 32.1M tokens) touches 10.9% of
+the PLE table's rows (11.2 GB); leave-one-game-out coverage 90.3% mean (min 82.6% tr87). October's 0.4%/98.9% was an
+artifact (that script truncated requests to 4,096 tokens). Output test running.
