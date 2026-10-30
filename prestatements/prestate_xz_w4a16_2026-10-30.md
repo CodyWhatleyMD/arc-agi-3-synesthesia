@@ -55,3 +55,26 @@ paper's section 6 gains a public W4A16 comparator; if it does not load, the fail
 Not a hidden-set submission (3 slots left; a slot goes to it only if the screen passes and Cody says so). Not a
 claim about xz's method: their harness, prompts and clock are theirs; only the weights are borrowed, under the
 Qwen community licence they carry.
+
+## Amendment 1 (10-30 07:20 CDT, before v2): a second, enabling change, and v1 withdrawn
+v1 (kernel version 1, run 363849435, pushed 07:08) was cancelled at ~100 s on Kas's read of the runtime: the PLE
+embedding method (overlay vllm/models/qwen4_exp/common/ngram_embedding.py, from_quant_config) accepts only
+CompressedTensors, ModelOpt, Fp8 or no quant config and raises NotImplementedError for INCConfig, so the arm as
+first built would have died at model init. v1 produced no score and is not a data point.
+
+Second stated change, enabling only: a hash-pinned post-install runtime patch (scripts/runtime_0310/patch_ple_inc.py,
+Kas; the patch_kv_copy_chunked.py pattern, applied by the setup script from harness/arc3_tools) adding an INC
+branch that returns the unquantized PLE embedding method. PLE is BF16 in xz's checkpoint ("ple" is in Intel's
+ignore list), so the branch changes nothing about the weights it loads; on our checkpoint (CompressedTensors) the
+branch is never taken. Because it lives in harness/arc3_tools, v2 builds from a NEW harness commit on its own
+dataset slug; the harness commit will be named here when it exists: [commit TBD].
+
+Not changed, on purpose: the watchdog's shard prefetcher treats every shard not named `ple-*` as a GPU shard
+(PLE_SHARD_NAME_PREFIX, startswith). Our v22 PLE shards are named `model-ple-NNNNN-of-00022` and xz's
+`model-ple-NNNNN-of-00019`, so on BOTH checkpoints the PLE files are prefetched the same way (the Gc run's
+vllm-shard-prefetch.json lists all 22 of ours under gpu_shards; prefetch finished at 57 s). Fixing the prefix
+would alter the control's load path, so it is left for a separate, pre-stated v36 load-time look.
+
+Also from Kas's read, folded into the reads: which MoE kernel INC picks (Marlin AutoGPTQMoEMethod vs Triton
+MoeWNA16; the server log says), and the "GPU KV cache size" line, since attention, linear_attn, shared experts and
+the MTP head are BF16 here and will leave a smaller pool than v36's under the same 0.98 utilisation.
