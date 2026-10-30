@@ -43,3 +43,19 @@ names no dataset, so AutoRound would tune on its default (pile-10k). Ours = Inte
 ## Not claimed
 That W4A16 is better than NVFP4; that is what v2 and the pair in (4) measure. The requant exists so that if it is,
 the thing we ship is ours.
+
+## Launch log (10-30, before any result)
+- 08:12 attempt 1 (two cards, defaults): AutoProcessor failed (Qwen3VLVideoProcessor needs torchvision), then
+  auto-round's CPU-load fallback hit its own bug (mllm_load_model given a model object). Fix: torchvision 0.28.0+cu130
+  installed in the venv copy (--no-deps; torch unchanged).
+- 08:15 attempt 2 (two cards): model loaded via the meta skeleton, calibration ran, block 0 started, then
+  auto-round's two-card block allocator raised ZeroDivisionError (a parameterless layer sized at 0 in
+  utils/device.py find_best_device). Patched in the venv COPY only: divide by max(estimated_memory, 1e-9).
+- 08:20 attempt 3 (6000 alone): CUDA OOM in block 0's grouped-expert forward (94.6 GB used): the cached calibration
+  inputs/outputs (976 x 4,096 tokens) on the card.
+- 08:33 attempt 4 (two cards, --batch_size 4 --low_gpu_mem_usage): OOM on the 5090 (31 GB) in a compiled kernel.
+- 08:44 attempt 5 (two cards, --batch_size 1 --low_gpu_mem_usage): running; log
+  /mnt/data/arc3_local_model/logs/requant_w4a16_1030_08*.log (newest). Cody asked for the two-card fix rather than
+  a single card.
+Time estimate given to Cody at 08:32: 30-40 h at our calibration size (Intel's 9 h on an H200 was at 128 x 2,048);
+Cody's standing rule (No half-measures) keeps every window; finishing Saturday night/Sunday.
