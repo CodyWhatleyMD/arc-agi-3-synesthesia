@@ -67,7 +67,7 @@ Kas; the patch_kv_copy_chunked.py pattern, applied by the setup script from harn
 branch that returns the unquantized PLE embedding method. PLE is BF16 in xz's checkpoint ("ple" is in Intel's
 ignore list), so the branch changes nothing about the weights it loads; on our checkpoint (CompressedTensors) the
 branch is never taken. Because it lives in harness/arc3_tools, v2 builds from a NEW harness commit on its own
-dataset slug; the harness commit will be named here when it exists: [commit TBD].
+dataset slug; the harness commit is 2e1af90 (Kas, 10-30 07:2x: patch_ple_inc.py in scripts/runtime_0310 and harness/arc3_tools, hash-pinned 8f5a8d02 -> 70f3e775, wired into the install hook after the KV-copy patch, fail-closed; tested on the real extracted runtime with a real INCConfig). v2 = kernel version 2 of arc-agi-3-synesthesia-xz-w4a16-k1, harness dataset codywhatleymd/arc3-synesthesia-harness-xz @ 2e1af90, pushed 07:28 CDT.
 
 Not changed, on purpose: the watchdog's shard prefetcher treats every shard not named `ple-*` as a GPU shard
 (PLE_SHARD_NAME_PREFIX, startswith). Our v22 PLE shards are named `model-ple-NNNNN-of-00022` and xz's
