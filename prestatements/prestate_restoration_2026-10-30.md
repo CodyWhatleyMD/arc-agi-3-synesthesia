@@ -86,3 +86,10 @@ it — R0 and the 14:35 px8 notebook would have raised at cell 2 (px8 needs a re
 --model-source wrote MODEL_PARTS with repr(), so the default build no longer reproduced the pushed anchor. Both fixed;
 the anchor rebuilds byte-identical to f9af78d9 + metadata.
 R5 runs AFTER R0, not alongside (two concurrent games would change per-request batching = serving).
+
+## R0, first finished game (18:19 CDT; ~1.5 h of play at concurrency 1)
+tn36-ef4dde99: WON 7/7 levels, 1,265 actions, 938,367 tokens, score 50.11 (the efficiency term penalises the
+actions). The same game in the 9 timed Kaggle runs: levels 7,3,1,3,4,1,2,3,4 (mean 3.1/7; won once, C1, 279 actions,
+score 88.87). Pace: ~12 s/action at concurrency 1 (no faster per action than 14 concurrent; one sequence does not
+saturate the GPU) -> a 25-game untimed pass is 1-2 days. ONE game, n=1: a direction for P1, not a result. Audits
+fired 11 (action trigger working); auto-RESETs 0.
