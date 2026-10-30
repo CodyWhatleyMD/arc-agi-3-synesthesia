@@ -51,3 +51,19 @@ Kas builds; Sakshi reads (Fable week at 94%).
   beside the fidelity number when it is compared to px16's 0.897.
 - Pipeline: base px8 set on the 5090 (~86 boards/s), then run_dih.sh PX=8 (dihedral copies on the 6000, 180 min
   train) -> /mnt/data/board_tower/ckpt_px8_dih. Script change: a PX knob (default 16) + CK passthrough.
+
+## Amendment 2 (11:29 CDT, Kas's 11:50-stamped status; the clock in their note runs ahead of mine, recorded as sent)
+- Targets: base 8,914 (8,414/500, holdout as px16) 10.9 GiB; dihedral +58,894 = 67,308 train, the same count as
+  px16_dih. Training ~11:40 -> ~14:40 CDT on the 6000, 180 min. CKPT /mnt/data/board_tower/ckpt_px8_dih.
+- Builder fd60e64: the anchor hard-codes 1024 beyond ARM_B_EXPECT_NPOS — cell 10's (1024, 2560) assertion and
+  real-part price, cell 11's evidence gate (n_tokens == 1024 only; a px8 run would have read "no board sent").
+  New options --tower-dataset/--tower-ckpt/--tower-ckpt-sha/--tower-npos rewrite exactly those lines. Payload at
+  256 rows MEASURED 1,749,732 bytes (the method gives the anchor's 6,992,612 at 1024). Old vs new builder with no
+  tower options: byte-identical outputs.
+- Harness commit for the arm: 8552964 (the local controls' 85529646afc4), NOT HEAD (which carries the PLE patch).
+- Tower dataset arc3-board-tower-px8 = armb's 68 files byte for byte + ckpt_px8_dih; serving code byte-identical;
+  model.py takes cell_patch=4. Client shapes at 256 verified (grid [1,32,32]; estimator prices 256). Server
+  acceptance is read from the local run's first request.
+- Fidelity comes from train.py's final_eval (cos_mean/p05/min on 500 eval + per_game holdout) with the noise
+  floor beside it, before any play.
+- Lane: the 6000 is held until ~14:40; the requant (if restarted) waits or runs on the 5090 alone.
