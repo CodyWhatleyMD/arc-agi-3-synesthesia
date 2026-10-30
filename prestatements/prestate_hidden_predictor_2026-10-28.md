@@ -36,6 +36,7 @@ a public score carries those 25 games' weights.
 | room G-c (be9603e, cody) | Kaggle commit run room-c-k1 | 1 | 4.76 (21/25 per-game lines captured) | 42.57 | 15.28 (57761528, submitted 10-29 06:34Z by Cody; read 10-30 06:58 CDT) |
 | v36 Kaggle control pool (12a000d all-off) | Kaggle C1-C7 | 7 | [per-run levels not yet tabulated] | 39.06 (sd 5.07) | - |
 | Batch A (12a000d) | Kaggle ba* | 3 | 4.19 (controls 4.13) | +0.98 vs controls | none yet |
+| XZ: v36 harness + xz W4A16 checkpoint (2e1af90, inc) | Kaggle commit run xz-w4a16-k1 v2 | 1 | 4.48 | 45.49 | none |
 | no-echo (c82ffc3) | Kaggle commit run no-echo-k1 | 1 | [levels not tabulated] | 16.46 | none (arm dropped: -4.5 sd below the pool) |
 
 Caveat: with at most ~7 slots left, the test is over 5-8 points; a directional answer with n stated, not a result.
