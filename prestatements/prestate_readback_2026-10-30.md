@@ -65,3 +65,23 @@ objects (boundary -4.1, 1-4 cells -6.0, 5-55 -8.0): the first colour number for 
 does, it copies a teacher carrying less colour. The readback (what the MODEL reads) is still the deciding measurement.
 Queued (Kas): a 128x2 student (~1.4M params) on px8 targets, same recipe, on the 5090 after the main px8 run
 (Cody's "why 18M"), then all three px8 numbers through the same probe (~17:45).
+
+## Colour probe, corrected split (Kas, 14:36; Cody 14:31 "that's a generalisation")
+The holdout-GAME score measures transfer of a readout fitted on 20 games to 5 others, not whether colour is in the
+token. Same-games/unseen-boards split (every 10th train board held out; possibly optimistic — neighbouring frames can
+be near-duplicates):
+                      same games, unseen boards                 holdout games
+                      all    maj    bound  c1-4   c5-55         all    c1-4
+px16 teacher         0.890  0.671  0.853  0.872  0.854         0.773  0.437
+px8 teacher          0.835  0.667  0.748  0.594  0.711         0.672  0.301
+Reading: at px16 the parent DOES carry cell colour, small objects included (87% exact on 1-4-cell objects), when the
+readout knows the game; the cross-game drop = the colour code is entangled with context (S0), which one fixed linear
+readout can't undo. px8 carries less in both columns. Whether the MODEL's own reading undoes the entanglement is the
+readback's question.
+Cody 14:34, "what you see as one colour isn't necessarily what Qwen calls it": px8 confusion — ~40% of errors are
+grey-for-grey (#000000/#333333/#666666, 88 RGB apart; black->very dark grey alone 21% of holdout errors); the rest are
+small bright objects swallowed by black (recall on holdout games: magenta .07, pink .04, red .15, yellow .18 vs black
+.82). Exact-index grading overstates the blindness on greys and is right about small bright objects. The readback's
+prompts give hex per index, so it tests whether the model separates the greys.
+Lane 14:36: px8 shipped + arm built (e20cfb2e3e34); readback embeds server loading on the 6000; 128x2 student on the
+5090 14:36-17:36.

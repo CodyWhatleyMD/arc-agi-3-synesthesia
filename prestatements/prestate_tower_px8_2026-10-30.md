@@ -75,3 +75,9 @@ harness 8552964, tower px8) STARTS when training ends, with no wait on anyone; r
 the local read as pre-stated. A low fidelity that still plays well is its own finding and is reported as such.
 Only read 5, a hidden slot, waits on Cody. (Cody to Kas, 12:08: "Why?" — the same lesson as 10-28's "Why is there
 ever anything waiting on me?")
+
+## Read 1: fidelity (Kas, 14:36; final_eval, 500 holdout boards, best.pt; 875,151 steps / 105 epochs / 180 min; 16.0M params, cell_patch 4)
+cos_mean 0.7866 | p05 0.4885 | min 0.0608 | rel_mse 0.4766 | per game cd82 .8070 m0r0 .7315 re86 .7971 s5i5 .7945
+sk48 .8027 || px16 0.8972 (p05 0.7099) | px4 0.651 | floor 0.595 || px8 teacher noise floor (two recorder runs) cos min
+0.946/0.987, p05 0.991/0.996, mean 0.998/0.999. Between px4 and px16 as the prior said; p05 well below px16's.
+Caveat now measured: cosine is position-dominated; the colour probe is the colour read.
