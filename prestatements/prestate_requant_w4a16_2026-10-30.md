@@ -59,3 +59,17 @@ the thing we ship is ours.
   a single card.
 Time estimate given to Cody at 08:32: 30-40 h at our calibration size (Intel's 9 h on an H200 was at 128 x 2,048);
 Cody's standing rule (No half-measures) keeps every window; finishing Saturday night/Sunday.
+
+## Amendment 2 (08:50, block 0 running): what attempt 5 actually tunes on (Kas's read of the parser and the log)
+- Effective batch: --batch_size 1, so each of the 200 signSGD steps per block sees ONE 4,096-token window (200 windows
+  per block), where Intel's default is batch 8 (1,600 per block). gradient_accumulate_steps is config-only in
+  0.16.1 (no CLI flag); effective batch 8 at batch 1 would cost ~8x the tuning compute per block, which the Monday
+  deadline rules out, and --seqlen 2048 at batch 4 would halve our windows, which the No-half-measures rule rules out.
+  So this quant is Intel's quantization recipe with OUR calibration data and a SMALLER tuning batch than Intel's;
+  "Intel's recipe" is true of the scheme, the ignore list and the iteration count, not of the tuning batch. Named here
+  so no later sentence calls it a reproduction of Intel's tuning.
+- Samples: AutoRound's length filter at seqlen 4,096 kept 873 of the 976 windows ("Insufficient number of samples:
+  required 976, but only 873", 08:45:37). nsamples is recorded as 873.
+- Host RAM during the run: process RSS ~125 GB, ~53 GB available, 20 GB swap in use (Kas, 08:47). No Open Brain
+  captures (ollama loads 17-25 GB), no transcript walks, no heavy local python until it finishes; the 10-28 memory
+  guard killed jobs at 3 GB free.
