@@ -67,3 +67,11 @@ Kas builds; Sakshi reads (Fable week at 94%).
 - Fidelity comes from train.py's final_eval (cos_mean/p05/min on 500 eval + per_game holdout) with the noise
   floor beside it, before any play.
 - Lane: the 6000 is held until ~14:40; the requant (if restarted) waits or runs on the 5090 alone.
+
+## Amendment 3 (12:10 CDT): the stop rule is withdrawn
+The prior's clause "if it lands near px4's, the arm stops at read 1" named no number and was an invented ceiling.
+Withdrawn. Read 1 (fidelity) is REPORTED, with the px8 noise floor beside it; read 3 (local public-25, 9,300 s,
+harness 8552964, tower px8) STARTS when training ends, with no wait on anyone; read 4 (Kaggle commit run) follows
+the local read as pre-stated. A low fidelity that still plays well is its own finding and is reported as such.
+Only read 5, a hidden slot, waits on Cody. (Cody to Kas, 12:08: "Why?" — the same lesson as 10-28's "Why is there
+ever anything waiting on me?")
