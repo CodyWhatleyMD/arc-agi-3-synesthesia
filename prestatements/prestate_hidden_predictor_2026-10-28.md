@@ -31,7 +31,7 @@ a public score carries those 25 games' weights.
 | v36 (8552964, anchor) | local 6000 pool r2,r3,r4,r6 | 4 | 4.21 | 42.21 | 20.90 (57704437), 21.85 (57725544) |
 | v36 (8552964, anchor) | Kaggle commit run | 1 | [read from log] | 47.37 | same |
 | room G-s (1c4799d, sakshi) | local gs1b,gs2b,gs3b | 3 | 4.36 | 43.22 | pending |
-| room G-s (1c4799d, sakshi) | Kaggle commit run room-s-k1 | 1 | 4.62 (21/25 per-game lines captured) | 42.89 | pending |
+| room G-s (1c4799d, sakshi) | Kaggle commit run room-s-k1 | 1 | 4.62 (21/25 per-game lines captured) | 42.89 | 21.75 (57790633, submitted 10-30 03:06Z by Cody; read 10-30 07:55 CDT from his screenshot) |
 | room G-c (be9603e, cody) | local gc1 (gc2,gc3 running) | 1 | [gates read, score unread] | - | pending |
 | room G-c (be9603e, cody) | Kaggle commit run room-c-k1 | 1 | 4.76 (21/25 per-game lines captured) | 42.57 | 15.28 (57761528, submitted 10-29 06:34Z by Cody; read 10-30 06:58 CDT) |
 | v36 Kaggle control pool (12a000d all-off) | Kaggle C1-C7 | 7 | [per-run levels not yet tabulated] | 39.06 (sd 5.07) | - |
