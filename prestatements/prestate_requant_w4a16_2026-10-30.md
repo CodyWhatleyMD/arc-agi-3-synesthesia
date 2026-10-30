@@ -11,6 +11,16 @@ auto-round --model <BF16 base> --scheme W4A16 --iters 200 \
 INT4 g128 symmetric on the routed experts only; everything named in --ignore_layers stays BF16 (that is why the
 output is ~181 GB with a ~102 GB BF16 PLE table). Intel's card: 99.64% of BF16 on GSM8K/MMLU/PIQA/HellaSwag average.
 
+## Amendment 1 (08:12, before launch): OUR calibration, not pile-10k
+Cody (to Kas): "that's not our specialized trained quant". What made v2/v22 ours was never a different base; it was
+the calibration: calib_v2.jsonl, 976 chat-templated 4,096-token windows of real harness requests
+(/media/ignaz/claude-extra/flashnext_calib_v2/calib_v2.jsonl, rows {"text","src_len","start"}). Intel's card command
+names no dataset, so AutoRound would tune on its default (pile-10k). Ours = Intel's command + `--dataset <calib_v2.jsonl>
+--seqlen 4096 --nsamples 976`, no chat-template flag (rows are already templated). The source stays the BF16 base
+(requantizing our NVFP4 would stack two 4-bit errors). MTP stays BF16 as in Intel's ignore list for this first cut
+(AutoRound-on-MTP is untested; v2.1's lesson that a BF16 MTP head shrinks the KV pool is noted, and v2's pool of
+1,380,332 tokens played fine). So this quant differs from xz's in exactly one input: the calibration data.
+
 ## Inputs and tools (Kas, 08:10)
 - Base: /media/ignaz/model-storage-1/Qwen3.8-Flash-Next (BF16, 131 shards, 360.0 GB = index total_size, 1,658
   tensors, mtp.* and visual.* present; headers checked against file sizes; NOT sha256-checked against HF).
