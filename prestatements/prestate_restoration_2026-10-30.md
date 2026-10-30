@@ -74,3 +74,15 @@ ARM_MAX_RUNTIME_S must be "0" (unset = 2,100 s fallback). Other caps unchanged: 
 PLE output test (Cody's "measure it"): INCONCLUSIVE by instrument — greedy with MTP spec-decode is not repeatable
 (full vs full diverges at the median 3rd token, 7.1% agreement); a real measure needs teacher-forced prompt_logprobs
 on a measurement server. Recorded, not pursued today.
+
+## R0 LAUNCHED 16:42:54 CDT (Kas; tag r0_untimed; notebook synesthesia_r0 sha 630a9c6b9871; commit 331b784; log
+## ~/kaggle_local/run_synesthesia_r0_untimed.log; chain_r0.sh disk-guarded <3 GB = stop/invalid)
+Diff vs v36: ARM_MAX_RUNTIME_S "0"; cell 10 adds max_runtime_s_per_game=None, concurrency=1, max_actions_per_game=5184,
+and the strategy audit on an action trigger every 77 (monkeypatch of _should_audit_strategy keeping the time trigger's
+reset rules: count restarts at a level clear or a delivered audit; prints "strategy audit due at action N").
+analyzer_timeout 900, TARGET 81,536, student tower. Harness dataset = 8552964 byte for byte (metadata aside).
+Generator fixes in 331b784: (a) 2e1af90's cell 2 required patch_ple_inc.py on every build but 8552964 doesn't ship
+it — R0 and the 14:35 px8 notebook would have raised at cell 2 (px8 needs a rebuild before any use); (b) 4cc799f's
+--model-source wrote MODEL_PARTS with repr(), so the default build no longer reproduced the pushed anchor. Both fixed;
+the anchor rebuilds byte-identical to f9af78d9 + metadata.
+R5 runs AFTER R0, not alongside (two concurrent games would change per-request batching = serving).
