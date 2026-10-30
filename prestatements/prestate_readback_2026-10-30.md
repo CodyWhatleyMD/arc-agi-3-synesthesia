@@ -30,3 +30,23 @@ term. If (b) ≈ (a) ≈ (d) on region/bbox: the channel reads layout; keep it; 
 
 ## What this does NOT decide
 A hidden slot (Cody's), the requant (parked), the paper's final config.
+
+## Amendment 1 (12:58 CDT, Kas's build, before any readback number)
+Three forced deviations, accepted: (1) boards: the 500 eval boards are the 5 HOLDOUT games only, so 20 per holdout
+game = 100 boards, seed 20261030 (data/readback/boards.json); the public-25 spread in the original design is not
+available without boards a student trained on. (2) questions: grid_probe's own tiers, unchanged — full 64x64 dump,
+16x16 region dump, objects (distinct colours, largest non-background bbox, 3 point colours); no "region majority"
+tier exists. (3) order: full dumps (~8k output tokens each) run last in each server session; est. 1.3-1.7 h of 6000
+time incl. two loads; if the clock bites, dropping full dumps is Sakshi's call. Conditions as pre-stated: (a) native
+PNG 16 px/cell via the tower's renderer, (b) px16 student (sha 5e4eb805), (c) px8 student, (d) text = the harness's
+symbols WwgGcBMPRbSYOrNp, (e) none; thinking off, temperature 0; the anchor's setup_commands for both loads; first
+request status + embeds rows/bytes logged per condition. Chain pid 739929 (~/kaggle_local/chain_readback.log), commit
+8e56602: px8 ship+build -> embeds session (px16/px8/text/none) -> native -> report -> px8 local play.
+
+## First colour-probe number (Kas, 12:55; the linear LOWER BOUND on colour recoverable from the tokens)
+Kas's first probe (SGD) had not converged (train acc 0.49 < majority 0.75) and was discarded, not reported.
+Closed-form ridge, lambda on a held-out train shard: px8 TEACHER, 500 holdout boards — cell accuracy 0.672 vs
+per-board majority 0.698; interior 0.755, boundary 0.438; components 1-4 cells 0.301, 5-55 0.440, >55 0.703.
+Reading: a linear read of the parent's px8 tokens recovers colour about as well as "say the background" and misses
+most small objects. px16 teacher and the shipped px16 student are running through the same probe; px8 student after
+training. This is the tokens' content, not what the MODEL reads; the readback measures that.
