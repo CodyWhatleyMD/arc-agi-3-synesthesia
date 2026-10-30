@@ -50,3 +50,18 @@ per-board majority 0.698; interior 0.755, boundary 0.438; components 1-4 cells 0
 Reading: a linear read of the parent's px8 tokens recovers colour about as well as "say the background" and misses
 most small objects. px16 teacher and the shipped px16 student are running through the same probe; px8 student after
 training. This is the tokens' content, not what the MODEL reads; the readback measures that.
+
+## Colour probe, px16 (Kas, 12:56; ridge, lambda 1e-6; 500 holdout boards; linear LOWER bound)
+                                  all    majority  interior  boundary  comp1-4  comp5-55  comp>55
+px8 teacher                      0.672   0.698     0.755     0.438     0.301    0.440     0.703
+px16 teacher                     0.773   0.698     0.834     0.604     0.437    0.691     0.790
+px16 student (shipped, cos .897) 0.770   0.698     0.844     0.563     0.377    0.611     0.795
+Per game (px16 teacher/student/majority): cd82 .840/.845/.790 | m0r0 .572/.559/.458 | re86 .917/.909/.912 |
+s5i5 .769/.792/.803 | sk48 .769/.745/.530.
+Readings: (1) at px16 the parent carries colour beyond the background (+7.5 overall) but weakly for small things
+(44% at 1-4 cells). (2) The shipped student keeps large-region colour (interior +1.0) and loses it at edges and small
+objects (boundary -4.1, 1-4 cells -6.0, 5-55 -8.0): the first colour number for the student; the 0.897 cosine hid it.
+(3) px8's parent is markedly weaker than px16's (-10.1 overall, below the majority baseline): whatever the px8 student
+does, it copies a teacher carrying less colour. The readback (what the MODEL reads) is still the deciding measurement.
+Queued (Kas): a 128x2 student (~1.4M params) on px8 targets, same recipe, on the 5090 after the main px8 run
+(Cody's "why 18M"), then all three px8 numbers through the same probe (~17:45).
