@@ -38,3 +38,16 @@ Targets to /mnt/data/board_tower/targets_px8 (claude-extra has 27 GB free; px16'
 / is at 9 GB free, under the 15 GB gate for a local docker run: needs ~6 GB more before read 3 (Cody's call which
 directory moves; ~/kaggle_local/kaggle_runs is 24 GB of downloaded Kaggle outputs and would move, not delete).
 Kas builds; Sakshi reads (Fable week at 94%).
+
+## Amendment 1 (11:22 CDT, from Kas's build report, before any number)
+- Geometry: px8 only. px10 is NOT representable by the student (model.py:59-60 requires cell_patch to divide 64;
+  400 tokens = 3.2 cells per token). Valid points are px32/16/8/4; px8 is the curve's missing interior point.
+- Teacher: the default CK (claude-extra/Qwen3.8-Flash-Next-NVFP4-ours) has a stale index and cannot record; Kas
+  used /mnt/data/arc3_local_model/v22. Same teacher by three checks: all 333 visual.* tensors byte-identical to the
+  BF16 base; recorder sha 5c8207cd2237 = px16's manifest; 4 boards re-recorded at px16 match targets_px16 at
+  cosine min 0.999996.
+- Noise floor at px8 (teacher batch-1 vs batch-2): cosine min 0.946 / p05 0.991 / mean 0.998, vs 0.999998 at
+  px16. Targets are batch 1 (unbiased); the floor caps how closely any px8 student can match and is reported
+  beside the fidelity number when it is compared to px16's 0.897.
+- Pipeline: base px8 set on the 5090 (~86 boards/s), then run_dih.sh PX=8 (dihedral copies on the 6000, 180 min
+  train) -> /mnt/data/board_tower/ckpt_px8_dih. Script change: a PX knob (default 16) + CK passthrough.
