@@ -48,3 +48,29 @@ P4 (the embarrassing one): R5 ≈ R0 untimed. Then the cuts cost only time, and 
 ## Lane
 Starts tonight on the 6000 (idle). Kas maps C1-C6 to the harness's actual flags and reports them verbatim before
 launch; untimed single-game runs have no known duration — the first R0 pass measures it.
+
+## Amendment 1 (16:45 CDT), from Kas's code read of the anchor (8552964 + v36 pickles; before any run)
+CORRECTIONS to "the cuts on record": two of them are NOT in v36. C1: no thinking budget exists in v36 (the 1024 cap
+was an older build's cell); R0 is already uncapped. C2: the request window is already ~127k (LOCAL_ANALYZER_CONTEXT_
+WINDOW 127,488; budget 126,464), not 32k. C3 is real but different: the 30-turn constant never applies while
+TARGET > 0; the actual cut is the trim-back TARGET 81,536 (history grows to 126k, then is cut to 81k). The lobotomy
+in the SHIPPED config is therefore: the job clock (9,300 s), the per-game clock (3,918 s), 14 games sharing one
+server, the 81k trim-back, the strategy-audit cadence tied to the clock, and the student eye. The thinking cap, the
+32k context and the no-echo were ARMS we tested, not v36. The pre-statement's narrative stands with that correction.
+R5 REDEFINED: per-game clock off + concurrency 1 + TARGET 126,463 (history to the limit) + native tower (the staged
+synesthesia_board_native arm: ARM_B_STUDENT_TOWER=0, image limit 143, MULTIMODAL_UPSCALE 16).
+TERMINATION, as the code has it (not as first written): a game ends on WIN or crash only. GAME_OVER auto-RESETs and
+play continues; there is no harness action cap (max_actions_per_game None); analyzer failures retry every 1 s with no
+limit. Untimed games CAN run forever. So the cap is a SAFETY NET derived from measured play, not a budget:
+  max_actions_per_game = 5,184 = 4 x 1,296, where 1,296 is the MAXIMUM per-game action count seen in any of 9 timed
+  Kaggle runs x 25 games (n=225; mean 307, median 251, p90 556). Cap hits are counted and reported; a cap hit is a
+  "did not finish", never a level count. analyzer_timeout stays 900 s.
+STRATEGY AUDIT: with no clock it would never fire (its interval is 25% of the per-game clock, ~980 s in v36). Kept,
+on an ACTION trigger mapping the same fraction: every 77 actions = 25% of the timed mean 307. R0 = v36 minus the clocks
+with the audit on that trigger; named as such.
+EFFECT-TIMING (Kas): LOCAL_ANALYZER_* must be set after cell 7 and before cell 9; bm.solver.* in cell 10 carries.
+ARM_MAX_RUNTIME_S must be "0" (unset = 2,100 s fallback). Other caps unchanged: TOOL_TIMEOUT 30 (hard), TOOL_OUTPUT
+4,096 chars, YIELD 150 s, sampling 0.6/0.95/20, thinking on.
+PLE output test (Cody's "measure it"): INCONCLUSIVE by instrument — greedy with MTP spec-decode is not repeatable
+(full vs full diverges at the median 3rd token, 7.1% agreement); a real measure needs teacher-forced prompt_logprobs
+on a measurement server. Recorded, not pursued today.
