@@ -38,3 +38,14 @@ length (amendment 1's gate). Every run is reported, including failed or discarde
 ## Predictions
 P1: unresolved at the n this weekend allows. P2: AC yields in at least 1 of 4 games per run. P3: neither arm
 records a traceback or a game with zero actions.
+
+## Amendment 1 (2026-11-01 10:55 CST): the AC arm's commit changes after ac1
+
+ac1 ran harness ece6730 and showed the alone ping-pong (prestate_agent_clock_2026-11-01.md, amendment 2: 84
+park/resume cycles on lf52 and 11 on dc22 with no actions between them, in the tail of the run). The fix is
+746434e (a 'stuck' yield with no game waiting finishes the game). From ac2 on, AC = 746434e; CP is unchanged
+(848f336 + boot clock). ac1 is kept and reported as its own row with this note; the paired comparison is run both
+with and without ac1, and the two are reported side by side, not merged. The second Kaggle commit run of the agent
+clock also uses 746434e (harness dataset arc3-syn-harness-agentclock-k2). Expectation unchanged: the comparison is
+most likely unresolved at this n; the fix is expected to remove 0-action park/resume cycles (0 in ac2+), not to move
+the score beyond the replicate spread.
