@@ -105,3 +105,20 @@ game (taken < 400 s before T) takes was then held by a game whose protection end
 on time but the game holding that slot was over its share early (protection ended >= 600 s before T) and its stop
 came late, a long request in flight: its stop came > 200 s after its protection ended or after the breach. If late
 games appear and neither pattern holds, both are refuted.
+
+## Amendment 3 (~01:40 CDT, after the 3 diagnostic runs; before any change or rerun)
+
+Diagnostic runs, R3 seed 2, this checkout: last first actions 548 / 561 / 243 s before T (slots 575 / 628 / 270). Run 3
+traced: the last 4 games (never-095..098) took the slots of never-072, -073, -071, -081, whose protection had ended
+1,218 / 1,212 / 1,253 / 811 s before T (budgets exactly 600 s) and whose stops came 454 / 119 / 182 / 454 s after
+their last analyze call (two 454 s requests, the table's maximum). The other 10 slots held the previous wave, taken
+820-637 s before T and protected to the end. So (b) holds and (a) is refuted: the plan was on time; one budgeted
+wait per transition at the 90th percentile (98 s on the table) is exceeded by about 1 slot in 10, and a final wave that
+depends on specific slots inherits their worst wait. Wait quantiles of C1-C7 (raw / table): p90 99 / 98 s, p95 146 /
+143, p98 221 / 213, p99 283 / 269, p99.9 510 / 422; P(wait > 300 s) = 0.8%.
+Change (one variable): _POLL_WAIT_QUANTILE 0.9 -> 0.99, everything else as is. Expected cost: the reserve's first
+breach comes about ceil(unstarted / 14) x 170-185 s earlier, so the games holding the slots then lose that much play.
+Refuted (as a fix of the failure) if, on this checkout with the change, any of 9 runs of R3 (seeds 1, 2, 3 x 3)
+leaves a game without an action before T or has the last first action < 300 s before T; the full suite is then rerun
+once and every test must pass as pre-stated above (U3/U6 adapt to the constant: U6's table check becomes 255-285 s).
+Reported, not a criterion: the first reserve stop and the marathon games' total actions in those R3 runs.
