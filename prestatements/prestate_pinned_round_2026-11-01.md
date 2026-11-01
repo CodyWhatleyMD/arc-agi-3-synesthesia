@@ -39,3 +39,15 @@ Each run stopped once vLLM logged its first "Available RAM" line (the target-wei
 | arm (harness 2c51989, ARM_PINNED_ROUND_MB=1024) | 73.82 GiB | 73.6 GiB | 104.4 GiB | `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:False,pinned_max_round_threshold_mb:1024` |
 Prediction 1 HOLDS on this machine: +27.4 GiB available by vLLM's own line, -31.7 GiB of container memory
 (expected ~32.6). n=1 each; local disk, so shard idle (prediction 2) is left to the Kaggle run.
+
+## Amendment 1 (2026-11-01 05:05 CST, before any Kaggle run): the boot clock on the candidate only
+Kas found forum topic 753843 (read 05:00): Jeroen Cottaar's team (#2) measured on 10-29/30 that on SCORED runs the
+notebook starts ~40-50 min after the machine (a /proc/uptime > 20 min killswitch fired every time; an empty notebook
+on the RTX 6000 now takes ~50 min to return a Kaggle error) and that the time counts against the 9 h (successful
+submissions take 9 h total, not 9 h 40). Our scored-run clocks count from NOTEBOOK_START_EPOCH, so the pool clock's end
+(and its reserve for unstarted games) would sit ~40-50 min past the real limit. Builder flag `--boot-clock` (default
+off; the candidate rebuilt without it is byte-identical to fb88f6d's): cell 3 sets CLOCK_START_EPOCH from
+/proc/uptime when 0 < uptime < 7200 s (else the notebook start) and prints `BOOT machine_uptime_s=...`; cell 11's clock
+fit and pool end use it. synesthesia_candidate_pinned is rebuilt WITH it (cells 3 and 11 only). The v37 pinned arm stays
+without it, a clean one-variable comparison. A commit run cannot test the boot clock: commit runs use the soft end,
+and the delay was reported on scored runs only.
