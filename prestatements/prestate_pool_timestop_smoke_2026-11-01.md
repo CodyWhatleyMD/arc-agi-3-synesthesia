@@ -77,3 +77,38 @@ Scores or settings: T, S and M are chosen to make both rules fire in ~30 min, no
 600 s over 9 h). The candidate runs with park OFF: its time stops finish the game ("pool clock: stop" line), a path
 this smoke (park on) does not exercise on the real stack; the unit tests (U4) do. Nothing about Kaggle mounts, the
 scored rerun's end of play (pool_end_margin_s applies only without a soft end) or the 110-game hidden run.
+
+## Result (written 2026-11-01 ~08:02 UTC, after the run): PASS, no criterion refuted, not VOID
+
+Run: container arc3-local-ts1_smoke launched 07:17:46 UTC, pool clock on 07:22:25 (load 279 s, so T = 1,974 s, not
+~2,000; games stop at +1,914 s), play ended 07:54:25, papermill exited rc 0 at 07:55:42; afterwards the 6000 showed
+8 MiB used, no compute process, no arc3-local container. Logs: ~/kaggle_local/run_synesthesia_ts1_smoke.log (+ .ts),
+working_ts1_smoke/, copies ts1_smoke_stdout_1101.log / ts1_smoke_server_1101.log, the check's full output
+ts1_smoke_analysis_1101.txt and its scripts ts1_smoke_tools/ (analyze_smoke.py, smoke_design_sim.py). Times below are
+seconds after the pool clock came on.
+
+- Events: 7 time-stall parks (+1,106..+1,153), 7 reserve parks (+1,103..+1,127), 0 action-cut parks, 0 "pool clock:
+  stop" lines, 14 resumes: 3 that played (lp85 L6 at +1,143: 140 action events after it; ar25 L6 at +1,150: 6; tu93
+  L4 at +1,153: 63) and 11 at +1,914-1,915, the soft-end margin, each finishing a parked game with 0 actions.
+- R1 holds: every time-stall had 640-1,134 s without a clear (>= 600) and was 1,105-1,152 s into a 1,100 s share; at
+  each one games were waiting (unstarted until +1,134, parked games after).
+- R2 holds: the 7 reserve parks read "0 of U unstarted games fit 1100 s" with U = 11, 10, 9, 7, 5, 4, 2, each 1,103-1,126
+  s into a 1,100 s share, all before the last start (+1,134). Three of them (lp85, ar25, r11l) came right after a level
+  clear (0 actions since it): the reserve stops games "progressing or not", as designed.
+- R3 holds: the first resume came 9 s after the last start; each resume took the deepest parked level, ties by fewest
+  actions since the last clear (lp85 and ar25 both L6 / 0, lp85 parked first; tu93 L4 / 10 before vc33 L4 / 34). One pair
+  is undecidable from the logs: at +1,914 r11l (L3 / 0) and m0r0 (L3 / 15) were resumed by two threads in the same
+  millisecond (both stamped 1793519659.719, the two lines glued on one line of the papermill log); the papermill log
+  prints r11l first, stdout.log m0r0 first, so neither print order is the pop order. Every other resume is in rule
+  order in both logs.
+- R4 holds: 25 game_start events, every game acted before +1,914; the last start +1,134 s; the last first action
+  +1,331 s (tr87, ~197 s after taking its slot).
+- R5 holds: 0 "Traceback" in the papermill log and stdout.log; the server log has 1,066 HTTP 200 and no other status;
+  14 request errors (= the 14 analyzer retries), all read timeouts ending within 10 s of the soft-end game stop; no
+  crashed game (all 25 stop reasons runtime_limit, the soft-end margin).
+- R6 holds: rc 0, out.ipynb written, summary.txt lists 25 runs (won 0, mean 14.19 over a 32-minute run: no meaning).
+- Against the expectations: time-stall 7 (expected ~8-9), reserve 7 (~5-6), played resumes 3 (~3-4), end-of-run
+  resumes 11 (~10), all started by +1,134 (~1,250).
+Not seen, because nothing printed it: the shares the second wave took (the solver logs them at INFO, which the
+notebook does not show); no game was stopped after +1,153, consistent with their being protected to the end.
+Still not exercised on the real stack: the candidate's park-off path (a time stop that finishes the game).
