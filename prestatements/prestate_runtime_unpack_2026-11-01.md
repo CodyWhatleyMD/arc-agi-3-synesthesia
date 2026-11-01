@@ -103,3 +103,12 @@ tree = archive manifest).
   originals. pswpin/pswpout are recorded around each extraction, and **a repeat with pswpin > 0 during its extraction
   is excluded.**
 - Reruns: A4 r2, A0 r2, A2 r2, A5 r2, A4 r3. Verdict rules are unchanged; A4's are judged on r2 and r3.
+
+## Correction to amendment 2 (found while summarizing, 11-01 ~04:55)
+Two of its statements were wrong when written, and are corrected in notes/runtime_unpack_2026-10-31.md:
+- A4 r1's tree check DID finish (04:47:22, core manifest equal to the archives).
+- A3 r1 HAD run (04:47:2x-04:48:06, input mostly in swap, load 10.9; tree check not finished), so it is excluded,
+  not "dropped".
+
+The swap rule (pswpin > 0) is system-wide. Applied as written, it would exclude all five reruns; the result note
+reports both readings.
