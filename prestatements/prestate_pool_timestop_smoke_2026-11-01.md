@@ -104,7 +104,7 @@ seconds after the pool clock came on.
 - R4 holds: 25 game_start events, every game acted before +1,914; the last start +1,134 s; the last first action
   +1,331 s (tr87, ~197 s after taking its slot).
 - R5 holds: 0 "Traceback" in the papermill log and stdout.log; the server log has 1,066 HTTP 200 and no other status;
-  14 request errors (= the 14 analyzer retries), all read timeouts ending within 10 s of the soft-end game stop; no
+  14 request errors (and 14 analyzer retries), all read timeouts ending within 10 s of the soft-end game stop; no
   crashed game (all 25 stop reasons runtime_limit, the soft-end margin).
 - R6 holds: rc 0, out.ipynb written, summary.txt lists 25 runs (won 0, mean 14.19 over a 32-minute run: no meaning).
 - Against the expectations: time-stall 7 (expected ~8-9), reserve 7 (~5-6), played resumes 3 (~3-4), end-of-run
