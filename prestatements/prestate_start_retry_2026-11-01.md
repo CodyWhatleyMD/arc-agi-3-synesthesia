@@ -13,3 +13,14 @@ unstartable game: crashed + score 0, 109 others start and finish, both diagnosti
 What the commit run can and cannot show: on the public 25 every start succeeds, so the new path is not exercised there.
 The run checks only that nothing else changed. Pass: all 25 games start, no new tracebacks, the switches print, and the
 score is inside v36's control range (32.6-51.4). It cannot show the hidden-run benefit; that rests on the code and the tests.
+
+## Amendment before any run (01:45): the scorecard hold
+
+Sakshi's review of a2e31b2 found that the skip would zero the run if the FIRST game failed: game_api finished the failed
+game's run on the shared competition scorecard, dropping its count to 0 and closing it, so every later open_run raised
+"already closed". Fixed in 4d63b91: under ARC3_START_SKIP a failed start holds its open run, and Benchmark releases the held
+runs after the setup loop (again, idempotently, in finally). tests/start_retry/test_scorecard_hold.py (real Benchmark and
+_CompetitionScorecard, counted fake arcade): first / middle / first+last / every game failing -> scorecard closes exactly
+once, after the last finish; skip off raises as before. The same test fails on a2e31b2 (first fails -> all 11 others
+crashed), so it discriminates. a2e31b2 never ran: its push queue was stopped after the dataset upload (sr-k1), before the
+notebook push. The arm now runs 4d63b91 on dataset sr-k2.
