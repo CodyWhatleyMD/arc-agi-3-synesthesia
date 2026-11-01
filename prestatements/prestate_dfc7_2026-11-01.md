@@ -23,3 +23,11 @@ epoch 5; paired on 13,518 held-out blocks +0.047 at 3 drafts, +0.143 at 7 drafts
 serving layout and uploaded as private dataset codywhatleymd/arc3-flashnext-dflash2-ours-tuned-k1 (4 files,
 model.safetensors 1,206,140,040 B, SHA256SUMS verified before upload). Only ARM_DFLASH_MODEL and the extra dataset
 change; the criteria above are unchanged. dfr3 (stock drafter, K=3, retention, dflash-cache branch) is the parts test.
+
+Amendment 2 (10:55 CST): dfc7 died at engine init (~560 s), before play: with ARM_QSA_RING_FIT and 7 drafts the
+attention block became 1,744 tokens (group block sizes [1744 x6, 16]) and the prefix match unit 128 does not divide it
+(`ValueError: Invalid prefix_match_unit=128`, vllm-openai-server.log:211). The ring-16 boot risk dflash-cache flagged.
+dfr3 (parts test: stock drafter, 3 drafts, SW retain) ran clean: prefix hits 85-88% in every 10-min window for 60 min
+(no collapse; l9 fell 78%->59%), generation 761-850 tok/s, acceptance 2.80, i.e. parity with MTP (2.75, 754-866 tok/s).
+dfc4 = dfc7 with 4 drafts and NO ring fit (capacity 8 divides 1664: the block stays 1664, as in dfr3), same tuned
+drafter, same criteria 1-3 above. dfc7b (7 drafts with a prefix unit that divides the new block) follows if fixed.
