@@ -51,3 +51,14 @@ off; the candidate rebuilt without it is byte-identical to fb88f6d's): cell 3 se
 fit and pool end use it. synesthesia_candidate_pinned is rebuilt WITH it (cells 3 and 11 only). The v37 pinned arm stays
 without it, a clean one-variable comparison. A commit run cannot test the boot clock: commit runs use the soft end,
 and the delay was reported on scored runs only.
+
+## Local repeat on the quiet box (2026-11-01 04:59-05:05 CST; arm first, then v37; recorded after the run)
+Kas's runtime-unpack bench had held ~18.85 GB of /dev/shm and pushed swap 20 -> 60 GiB during the first pair, so the
+pair was repeated after it finished (start: 174 GiB available, swap 22 GiB), in reverse order.
+| run | vLLM "Available RAM" | host MemAvailable (+20 s) | container memory |
+|---|---|---|---|
+| arm (2c51989, ARM_PINNED_ROUND_MB=1024) | 72.43 GiB | 72.4 GiB | 103.6 GiB |
+| v37 (8552964) | 33.43 GiB | 47.0 GiB | 136.6 GiB |
+Container memory, the stable measure: -33.0 GiB here, -31.7 GiB in the first pair (expected 32.6). vLLM's Available RAM
+line moves with the box's state (swap rose 22 -> 49 GiB during this v37 run, which pins 128 GiB on a 188 GiB host), so
+its +39.0 here and +27.4 before bracket the same effect. Prediction 1 holds in both orders.
