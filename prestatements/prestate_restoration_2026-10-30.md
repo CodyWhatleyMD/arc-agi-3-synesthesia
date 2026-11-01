@@ -93,3 +93,18 @@ actions). The same game in the 9 timed Kaggle runs: levels 7,3,1,3,4,1,2,3,4 (me
 score 88.87). Pace: ~12 s/action at concurrency 1 (no faster per action than 14 concurrent; one sequence does not
 saturate the GPU) -> a 25-game untimed pass is 1-2 days. ONE game, n=1: a direction for P1, not a result. Audits
 fired 11 (action trigger working); auto-RESETs 0.
+
+## R0 AT STOP (Kas stopped it 10-31 ~14:43 CDT at 13 of 25 for the DFlash2 sprint; summary ~/kaggle_local/r0_untimed_summary_at_stop_1031.txt; read by Sakshi 10-31 19:05)
+Comparator: the four LOCAL timed controls r2/r3/r4/r6 (same card and runtime as R0), game by game on the 13 finished.
+  13 games: R0 mean levels 6.15 vs timed 4.23 (+1.92); score 66.23 vs 42.31.
+  R0 >= the timed MEAN on all 13 (above on 11; tied on ar25 and lp85, at ceiling in every run).
+  R0 >= the BEST of the four timed runs on all 13; strictly above it on 5 (cn04 6 vs 5, ka59 5 vs 4, lf52 6 vs 3,
+  r11l 6 vs 4, sp80 5 vs 4).
+  8 wins (tn36 7/7, cn04, lp85, m0r0, vc33, ar25, tu93, r11l); Kas's "7 wins" miscounts the same list.
+  5 of 13 hit the 5,184-action safety cap (lf52, bp35, wa30, sp80, ka59) and still out-levelled the timed runs.
+Pace: 33,260 actions in 21 h 55 min = 2.37 s/action. My "12 s/action, 1-2 days" (10-30 17:08) was measured over the
+first 25 minutes, which included the server load; wrong rate, range right by accident. Cap games are 78% of all
+actions, so an untimed pass's length is set by how many games hit the cap: 25 games ~ 27-63 h, central ~41 h.
+Status per this pre-statement: n=1 untimed run; NOTHING at n=1 is called resolved. P1's direction is consistent
+across every game, but the untimed condition's own run-to-run spread is unmeasured, and the 13 are the run order's
+first 13, not a random draw. Remaining 12 (sc25 at 4/6 when stopped, 11 never started) can run alone later.
