@@ -49,3 +49,13 @@ with and without ac1, and the two are reported side by side, not merged. The sec
 clock also uses 746434e (harness dataset arc3-syn-harness-agentclock-k2). Expectation unchanged: the comparison is
 most likely unresolved at this n; the fix is expected to remove 0-action park/resume cycles (0 in ac2+), not to move
 the score beyond the replicate spread.
+
+## Amendment 2 (2026-11-01 13:35 CST): AC = 34ac764 from ac3 on; ac2 is a failed start, not a run
+
+ac2 (746434e build) died in its first minute: the swapped notebook expected the dataset under the k2 mount name
+while the queue mounts the folder under the k1 name (my check covered contents, not the path). It is a failed start
+with no play and is excluded from every comparison; its slot is replaced by ac2b, appended to the queue. Kaggle v3
+(746434e) showed the mutual ping-pong (prestate_agent_clock amendment 3), so the server's agent-clock arm is now
+harness 34ac764 (amendments 2 + 3), built against the k1 mount name and installed during cp2 (no ac container
+running). Rows: ac1 = ece6730; ac3, ac4, ..., ac2b = 34ac764. CP unchanged. Comparisons are reported per commit
+group and pooled, side by side, never merged silently.
