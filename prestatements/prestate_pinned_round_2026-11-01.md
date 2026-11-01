@@ -30,3 +30,12 @@ Local disk is not Kaggle's mount, so local shard idle is not read for prediction
 
 **If it holds:** the same switch on the candidate (harness fa326e3, branch candidate-1101), one Kaggle test run before
 the 17:59 CST window. Which run takes a submission slot is Cody's call.
+
+## Local check result (2026-11-01 04:43-04:46 CST, 6000, Kaggle image, local NVMe model; recorded after the run)
+Each run stopped once vLLM logged its first "Available RAM" line (the target-weight load, right after the PLE pin).
+| run | vLLM "Available RAM" | host MemAvailable | container memory | allocator line |
+|---|---|---|---|---|
+| v37 (harness 8552964) | 46.45 GiB | 46.1 GiB | 136.1 GiB | absent |
+| arm (harness 2c51989, ARM_PINNED_ROUND_MB=1024) | 73.82 GiB | 73.6 GiB | 104.4 GiB | `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:False,pinned_max_round_threshold_mb:1024` |
+Prediction 1 HOLDS on this machine: +27.4 GiB available by vLLM's own line, -31.7 GiB of container memory
+(expected ~32.6). n=1 each; local disk, so shard idle (prediction 2) is left to the Kaggle run.
