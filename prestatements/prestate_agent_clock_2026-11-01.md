@@ -43,3 +43,16 @@ that picked them is flat from 900 to 2,400 s and was built from public-game timi
 ## Not claimed
 The arm does not test whether removing the fixed clock helps (the candidate does that); it tests whether the agent's
 own reading of its progress schedules better than arbitrary cutoffs. One hidden run is n=1.
+
+## Amendment 1 (2026-11-01 07:05 CST; after the build ece6730, before any run with a model)
+- A yield takes effect at once, not at the end of the tool call: the harness polls should_stop before every action, so
+  no action after `yield_slot` in that call runs. The model-facing text says so ("no further action in the call runs").
+- The reserve's median has no floor (as specified): if first clears come fast, late-starting games get little
+  guaranteed time. Left as specified, reported.
+- Added gate, from my review of the code: if the agent seldom yields, waiting games start only when the reserve forces
+  them, late in the run (hidden run: 96 games waiting behind 14 slots, reserve binding at ~68 min before the end at
+  600 s per game). So the commit run also reports every game's first-start time; if the last game started in the final
+  15% of the run, or fewer than a quarter of games ever yielded, the arm does NOT go to a hidden slot.
+- Built and tested (all CPU): sandbox 6/6, units 18/18, end-to-end 11/11, switch-off identical on 5 scenarios;
+  existing pool and start-guard suites pass with the switch off (park_resume 9/9, time_stop 43/43, end_of_play 14/14,
+  start_retry ALL PASS, scorecard_hold ALL PASS, off_unchanged pass); re-run by me on a clean checkout of ece6730.
