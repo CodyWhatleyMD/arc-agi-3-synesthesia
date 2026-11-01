@@ -30,3 +30,13 @@ PASS on all four pre-stated items.
 4. Mean 38.58 >= 32.6: 6 won, 19 gave_up, 99 levels, 25/25 games > 0.
 
 Context: inside the v36 control spread (32.6-46.0, n=7) and below v37 (51.37) and Cody's interactive run of the same code (49.80, snapshot of a session stopped before its soft end). On the public 25 the time stop is not distinguishable from the capped clock; its case is the 110-game hidden run (sim +3.00 [+0.93,+4.92]). Long plays the time stop allowed: tr87 1,309 actions (5/6 levels, 69.67), wa30 1,224 (3/9, 13.33).
+
+## candidate_pinned (848f336 + --boot-clock + ARM_PINNED_ROUND_MB=1024), commit run, 2026-11-01 08:11 CST
+Same cut, PASS on all four: 0 tracebacks, 0 server 500s, 0 failed starts; ended itself (`ended 14:08:50`, 2h 13m 57s;
+the 16 "Read timed out" all at 8,647-8,648 s, the end of play); switch lines printed (POOL CLOCK on, stall 1500 /
+min share 600, ARC3_START_ATTEMPTS=4 / SKIP=1, ARM_PINNED_ROUND_MB=1024, `BOOT machine_uptime_s=162
+clock_start_offset_s=162`); all 25 games played (min 90 actions); mean 54.70 (10 won, 127 levels, 24/25 > 0).
+Play started ~600 s after notebook start against the candidate's ~915 s (POOL CLOCK `end in 8096 s` vs 7792 s of the
+same 8,700 s commit budget): ~5 min faster to play, consistent with the pinned-memory fix (n=1 each).
+Same morning, v37-pinned arm (2c51989, v36 clock + pinned): 40.74, 5 won, 103 levels.
+Public-25 spread of this stack remains ~32.6-54.7 (n=12); one run is not a resolved difference.
