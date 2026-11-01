@@ -32,3 +32,15 @@ Every run is reported, not only those that support a hypothesis.
   the parked game resumed next is always the deepest (A), including right after A itself was parked, and the resume
   gives A a fresh share and stall window, so A takes the slot back again and again while B and C, parked, never
   resume. Refuted if B or C resumes at least once before T.
+
+## Amendment 2 (~00:05 CDT 11-01, after H1-H8 ran; before H3r)
+
+Measured from the Kaggle 14-stream controls C1-C7 (metrics `request` events, 18,684 requests): request latency mean
+32.4 s, p50 19.6, p90 72.0, p99 198, max 718 s; the expected wait from a random moment to the next request boundary
+(where should_stop is polled) is E[L^2]/2E[L] = 41.4 s, against a per-game mean of 13.0 s per action (median over 175
+games), which is what `pool_boundary_wait_s` budgets. H3's "mix" model (one poll per inter-action gap) has a 106 s
+expected wait, heavier than this; H3's fixed-25 s model has 12.5 s, lighter.
+- H3r (added): as H3 (14 marathon + 85 never, T 8,000 s, M 600 s, S off, 100x), with each analyzer call sleeping a
+  latency resampled from those 18,684 requests and then sending a batch of geometric(mean 2.5) actions (32.4 / 13.0).
+  3 seeds. Hypothesis: at least one game never starts in at least one seed, and the last start is < 60 s before T in
+  every seed. Refuted if every game starts in every seed with the last first action >= 300 s before T.
