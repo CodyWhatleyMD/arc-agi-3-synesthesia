@@ -21,3 +21,14 @@ from a scratch runner outside the repo (rv_scen.py). Clock compressed 100x unles
 | H7 | the planned config: S 1,500 s, M 600 s, park off; 110 games in the author's mix (seed 1031), measured heavy-tailed polls, 200x | all 110 start | any game never starts |
 
 Every run is reported, not only those that support a hypothesis.
+
+## Amendment 1 (~23:50 CDT, after H1, H2, H4, H5 and the first H6 runs; before H8 and the H6 reruns)
+
+- The first H6 runs (H6p, H6n, H6p_ctl) were misconfigured: 14 slots for 5-8 games and T 1,000 s, so no game ever
+  waited, parked or resumed. They test nothing about H6 and are reported as void. H6 is rerun on 2 slots, T 200 s,
+  killed at 1,000 s, criterion unchanged.
+- H8 (added): park on. 1 slot, 3 games in this order: A clears 3 levels in its first 6 actions then never again; B and
+  C never clear. S 30 s, floor 20 s, T 600 s (100x), no kill before 600 s. Hypothesis: once every game has started,
+  the parked game resumed next is always the deepest (A), including right after A itself was parked, and the resume
+  gives A a fresh share and stall window, so A takes the slot back again and again while B and C, parked, never
+  resume. Refuted if B or C resumes at least once before T.
