@@ -122,3 +122,16 @@ Refuted (as a fix of the failure) if, on this checkout with the change, any of 9
 leaves a game without an action before T or has the last first action < 300 s before T; the full suite is then rerun
 once and every test must pass as pre-stated above (U3/U6 adapt to the constant: U6's table check becomes 255-285 s).
 Reported, not a criterion: the first reserve stop and the marathon games' total actions in those R3 runs.
+
+## Amendment 4 (01:40 CDT, after the 9 runs at 0.99; before the final full suite)
+
+Header times of amendments 2 and 3 are estimates and wrong; the commits are the record: amendment 2 01:18:18 (8d7643a;
+the diagnostic runs finished 01:19:49-01:22:35), amendment 3 01:26:03 (a7db82d; the solver edit is from 01:26:19).
+The 9 R3 runs at 0.99, this checkout (s before T; "slot" = when the last never game took its slot): every game acted
+in every run; last first action seed 1: 676 / 661 / 653 (slot 731 / 681 / 672); seed 2: 453 / 438 / 472 (480 / 466 /
+499); seed 3: 490 / 434 / 615 (514 / 458 / 640). So the change is not refuted: minimum 434 s >= 300. It still does not
+give every game 600 s: in 6 of 9 runs the last game had 458-514 s. Cost: first reserve stop 5,762-5,765 / 5,383-5,385
+/ 5,853-5,861 s before T (seed 2 at 0.9: 4,705-4,710); marathon actions 1,568-1,608 / 1,981-1,998 / 1,645-1,719 (at
+0.9, every run: seed 1 1,961-1,962, seed 2 2,265-2,462, seed 3 2,130-2,220). For the record, all 9 R3 runs at 0.9
+(last first action): seed 1 584, 634; seed 2 468, 204, 548, 561, 243; seed 3 501, 461. Unit tests 43/43 and 9 of 9
+mutants caught at 0.99.
