@@ -1,0 +1,74 @@
+# Pre-statement: a faster unpack of the vLLM runtime dataset (local CPU bench), 2026-11-01
+
+Written before any timing in this bench. The result goes in `notes/runtime_unpack_2026-10-31.md`. Nothing here
+ships: no dataset version, no harness or notebook change, no Kaggle run.
+
+## Facts checked before writing (inventory, not timings)
+- The Kaggle image: all 13 Kaggle runs whose logs we hold (C2-C7, A1-A3, Gc, Gs, NE, XZ; BOOT lines) ran
+  `gcr.io/kaggle-gpu-images/python@sha256:9a6bcfda6d03...`. The local `gcr.io/kaggle-gpu-images/python:latest` has
+  that same repo digest (`docker image inspect`).
+- That image ships **pigz 2.8 at /usr/bin/pigz**; `shutil.which('pigz')` finds it on the image's PATH. The harness's
+  `extract_layer` (kaggle.py:1126, unchanged since 8552964) uses pigz whenever `which` finds it. So the Kaggle unpack
+  already runs pigz, not single-threaded `tar -z`. This is inferred from the digest and the code, because the
+  harness does not log which decompressor ran.
+- Also in the image: GNU tar 1.35, gzip 1.12, xz, the Python `zstandard` 0.25.0 C extension (libzstd 1.5.7), and
+  cramjam 2.12.1 (zstd/lz4/gzip, no ISA-L). Not in the image: a `zstd`/`unzstd`/`pzstd` binary, lz4, pixz, igzip,
+  rapidgzip.
+- pigz -d reads its input 32 KiB at a time; gzip -d reads 256 KiB at a time (strace, host pigz 2.8 / gzip 1.12).
+- The local copy of the dataset is `/mnt/data/arc3_runtime313/dataset`. Its runtime-manifest.json is byte-identical to
+  the one kagglehub fetched from Kaggle (version 1), and its 8 files have the names and sizes that `kaggle datasets files`
+  lists. Layer 100 is 6,920,985,983 B gzip and layer 8 is 1,453,071,769 B gzip.
+- Kaggle layer times from those 13 runs. The harness prints when each layer finishes; layer 100 time = its line minus
+  layer 8's line. Layer 8: 10-48 s. Layer 100: 86, 98, 98, 103, 110, 110, 125, 130, 144, 151, 158, 175, 209 s.
+  The machine is an AMD EPYC 9B45 with 46 usable vCPUs; busy cores read ~4.1 GHz (host probe v2).
+- Local layer times from 58 earlier local runs (same image, same harness code, unpinned CPUs, the blob in page cache):
+  layer 8 = 5 s in all 58; layer 100 = 31 s (6 runs), 32 s (37), 33 s (14), 34 s (1).
+
+## Conditions (all arms)
+- Everything runs in the Kaggle image above, as root (as on Kaggle), with `--network none`, `--cpuset-cpus 16-19`
+  (4 E-cores at 4.9 GHz max), `--cpu-shares 2` and `nice -n 19`. Host-side builds use `taskset -c 16-19 nice -n 19`.
+- Input comes from RAM in every arm: the original blobs come from page cache, warmed and checked by a full sha256
+  read, and the variant blobs sit in `/dev/shm`. So the bench measures CPU plus write cost. It cannot measure
+  Kaggle's NFS read.
+- Output goes to `/media/ignaz/claude-extra` (ext4 on a USB SSD), one tree at a time. Between repeats: manifest the
+  tree, delete it, syncfs, and wait for Dirty+Writeback below 512 MB. No repeat starts with under 22 GB free, and a
+  repeat is aborted if free space falls below 3 GB.
+- Each repeat extracts layer 8, then layer 100, into one root, as `install_image_runtime` does. Whiteout replay is
+  skipped. It is identical in every arm and touches only layer 8's 64 markers.
+- Repeats: 3 per arm. Block 1 alternates A3 and A0 (A3 needs the 16.5 GB raw tar in RAM, deleted after the block).
+  Block 2 runs 3 rotated rounds of A0, A1, A2, A4, A5. Every repeat is reported.
+
+## Arms (each differs from its comparator in one thing)
+- **A0, current:** `tar -xf <blob> -C <root> --no-same-owner --use-compress-program=pigz`. This is kaggle.py's command.
+- **A1:** as A0 with `-z` (single-threaded gzip), the harness's no-pigz fallback. Comparator: A0.
+- **A2:** layers 8 and 100 hold the same raw tar streams recompressed with zstd, and decompress through the image's
+  Python `zstandard` (`--use-compress-program="python3 zstd_decompress.py"`). Comparator: A0. The level comes from a
+  1 GiB sample sweep, reported with the result.
+- **A3:** layer 100 is the uncompressed raw tar (`tar -xf`), layer 8 as in A0. This is the floor for any single tar
+  stream, and it tells decompression cost from tar's own write cost. Comparator: A0.
+- **A4:** layer 100 is split at member boundaries into 4 contiguous gzip parts (pigz -6, the original's level), with
+  4 `tar ... pigz` running at once. Layer 8 as in A0. Comparator: A0.
+- **A5:** as A4 with zstd parts and the zstd helper. Layer 8 as in A2. Comparator: A2.
+
+## Hypotheses and what refutes them (layer 100, median of 3 unless stated)
+- **H1 (the Kaggle unpack is not inflate-bound).** Local A0 on these 4 E-cores takes <= 50 s, under 0.6x Kaggle's
+  fastest 86 s. **Refuted** if A0 >= 70 s. In that case CPU alone could explain Kaggle's times.
+- **H2 (pigz beats gzip).** A1 >= 1.15x A0. **Refuted** if A1 <= 1.05x A0.
+- **H3 (zstd, single stream).** A2 <= 0.6x A0. **Refuted** if A2 > 0.8x A0.
+- **H4 (diagnostic, no pass/fail).** A3 versus A2: if A3 is within 15% of A2, tar's write path, not zstd, bounds A2.
+- **H5 (4 gzip parts).** A4 <= 0.5x A0. **Refuted** if A4 > 0.75x A0.
+- **H6 (4 zstd parts).** A5 <= 0.5x A2. **Refuted** if A5 > 0.75x A2.
+- **H7 (identity, a gate).** In every repeat of every arm, the tree's core manifest must equal A0 repeat 1's: paths,
+  types, modes, uid/gid, sizes, file and symlink mtimes, symlink targets, hardlink groups, and sha256 of every regular
+  file. A0 repeat 1 must itself equal the manifest read from the archives' members, layer 100 over layer 8. Any
+  mismatch makes that arm **VOID** (not shippable) whatever its speed. Directory mtimes are reported separately.
+  They are expected to differ in A4/A5, where parallel tars write into directories after another tar has set their
+  times. Nothing reads them: .pyc checks use file mtimes.
+
+## Kaggle estimate (method fixed now)
+No Kaggle run is made, so the estimate is a band between two models, given for each of the 13 Kaggle sessions.
+- **CPU-bound:** Kaggle time x (local arm / local A0).
+- **Read-bound single stream:** Kaggle time x (arm's compressed bytes / 6.92 GB) for single-file arms. For N-part
+  arms the read speedup lies between 1x and Nx and is unknown.
+
+The note will say which model the local data favour (H1), and that only a Kaggle validation run settles the question.
