@@ -22,3 +22,5 @@ Readings, fixed now:
 3. Also reported: games > 0 (of 100), levels, game-runs that never started (expected 0 for both), tracebacks/500s.
 Invalid if: either run errors before its soft end, root disk < 3 GB, or the host's memory is shared with another
 GPU/CPU job during either run.
+
+Restart (09:50 CST): the first A run (tag x4_a, 06:06) was stopped at 06:49 to free the 6000 for the drafter lane (Cody's priority); it is void. Rerun as tags x4a2 then x4b2, same notebooks (sha d8fede5e70b7 for A), same readings.
