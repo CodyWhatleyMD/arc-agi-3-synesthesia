@@ -86,3 +86,24 @@ hypothesis on a later resume loses the chance; accepted, the agent is told the r
 Replicate series (prestate_server_replicates_2026-11-01.md): ac1 stays as run (ece6730, with the ping-pong, which
 affected only the tail of the run); ac2 onward and the second Kaggle commit run use the fixed commit. ac1 is
 reported with that note, not pooled silently with the fixed runs.
+
+## Amendment 3 (2026-11-01 13:20 CST, before any code): the mutual ping-pong, seen in Kaggle v3
+
+Observed in Kaggle agent-clock v3 (746434e, COMPLETE, 39.03, 8,467 actions, 0 tracebacks): the amendment-2 rule
+fired once (1 YIELD_FINAL); 115 zero-action park/resume cycles remained (cn04 58, tu93 30, sp80 22, dc22 21). The
+amendment-2 expectation ("0-action cycles drop to 0") is refuted as written. Mechanism: the rule tests "no game
+waiting"; late in the run two or more 'stuck' games are parked at once, each counts as waiting for the other, and
+the resume worker hands the free slot back and forth between games that take no action in it.
+
+Rule 3 (added to rules 1-2, which stay): a 'stuck' yield made with ZERO actions since the game's last resume
+finishes the game (YIELD_FINAL, reason "resumed and took no action"). The game asked for a pause, was given the
+slot back, and declined to use it; a second pause would only be resumed into itself or into another such game.
+Not affected: a 'stuck' yield after >= 1 action in the slot (parks as before: the agent tried something); 'close'
+and 'working' yields (park as before); the first yield of a game (no resume yet). The status line says, after a
+resume, "This slot was resumed for you: yielding 'stuck' again before taking an action ends this game."
+
+Expectation, before the fix runs: zero-action park/resume cycles 115 -> 0 on a 25-game run (a game can still
+be resumed once into a zero-action stuck yield, so cycles with 0 actions are bounded by the number of games, not
+by the clock); yields with play between them unchanged; score within the replicate spread. Risk: a game that
+would have acted on its second resume loses the chance; it is told the rule in the status line before it decides.
+Applies to the server series from ac3 (ac2b included), not to Kaggle today.
