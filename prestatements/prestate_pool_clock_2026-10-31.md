@@ -55,3 +55,15 @@ Which config takes a hidden slot. The record says the remaining slots go to v36 
   before the 9,300 s soft end fails the gate even if the score is high (the hidden set has 110 games / 14 slots).
 - PARK adds one more gate: every parked game either resumed or was still parked at the soft end (count both); 0 crashes
   on resume.
+
+## Amendment 2 (Kas, 19:34 CDT, before either log is read; Sakshi's arithmetic, agreed)
+- At 14-way sharing an action costs a game ~12 s (C1: 8,459 actions over ~7,050 s play x 14 slots = 11.7 s; v36 timed
+  3,918 s / ~307 actions = 12.8 s). The stall cuts are in actions: 750 ~ 2.5 h, 1,500 ~ 5 h. Inside a 9,300 s commit run
+  (and mostly inside the 8.8 h hidden run) no game hands back; a game holds its slot until it wins, and waiting games start
+  only on wins. This is the F44 wave-cap mechanism in a new form.
+- So: (1) "a never-started game fails the gate" is replaced by a REPORTED quantity: games never started (scored 0, as
+  Kaggle scores them) and each game's start time; (2) P2 is moot: expect handbacks ~ 0.
+- Design consequence (for the slot decision, not this read): the action-based cut is mis-scaled for time. The fix is a
+  TIME-based stall cut sized to the hidden budget: while games wait, a game with no level clear for its fair share
+  (~14 x 8.8 h / 110 ~ 67 min on the hidden run; ~79 min on the public commit run) hands back its slot (parked, with
+  pool_park, so long levels resume in the tail). Progressing games stay uncapped. Not built yet; its own test before any slot.
