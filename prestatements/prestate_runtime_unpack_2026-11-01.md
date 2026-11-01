@@ -88,3 +88,18 @@ tree = archive manifest).
 - With 2 repeats, a verdict needs both repeats on the same side of its threshold; otherwise it is NOT RESOLVED.
   Thresholds are unchanged. H4 uses A3's single repeat.
 - The separate variant-decode check is dropped. The tree-manifest gate (H7) is the identity check.
+
+## Amendment 2 (11-01 04:50 CDT, after A0 r1, A2 r1, A5 r1 and A4 r1; before any rerun)
+- **A4 r1 is excluded**, not treated as a measurement of the arm. Layer 100 took 121.9 s. While it ran, something
+  outside the bench took about 57 GB of shared memory: at 04:46:30 `free` showed 97 GB shared against my 38 GB in
+  /dev/shm. The kernel pushed my /dev/shm variants out to swap: at 04:46:44 resident Shmem was 0.87 GB while /dev/shm
+  still held 40 GB, and swap use had grown from about 20 GB to 62 GB. So A4 read its gzip parts back from swap. Its
+  tree check never finished, because I stopped the chain during the manifest. The record is kept aside and reported
+  in the result. I did not identify the outside process.
+- The repeats before it ran at 04:39:42-04:41:51 and match the earlier local history (A0 34.3 s vs 31-34 s), but
+  there is no swap counter for them.
+- A3 is dropped and its raw tar deleted: re-warming the swapped 18 GB would cost the time budget. H4 goes untested.
+- Driver change for every rerun: before each repeat the arm's /dev/shm inputs are read back in, alongside the
+  originals. pswpin/pswpout are recorded around each extraction, and **a repeat with pswpin > 0 during its extraction
+  is excluded.**
+- Reruns: A4 r2, A0 r2, A2 r2, A5 r2, A4 r3. Verdict rules are unchanged; A4's are judged on r2 and r3.
