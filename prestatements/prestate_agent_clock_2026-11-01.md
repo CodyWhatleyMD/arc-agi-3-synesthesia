@@ -56,3 +56,33 @@ own reading of its progress schedules better than arbitrary cutoffs. One hidden 
 - Built and tested (all CPU): sandbox 6/6, units 18/18, end-to-end 11/11, switch-off identical on 5 scenarios;
   existing pool and start-guard suites pass with the switch off (park_resume 9/9, time_stop 43/43, end_of_play 14/14,
   start_retry ALL PASS, scorecard_hold ALL PASS, off_unchanged pass); re-run by me on a clean checkout of ece6730.
+
+## Amendment 2 (2026-11-01 10:40 CST, before any fix is written): the alone ping-pong, seen in ac1
+
+Observed in ac1 (sakshis-server, harness ece6730, log /data/run_synesthesia_ac_srv.log): once every other game had
+finished, lf52 yielded 'stuck' ("no viable hypothesis for level 2"), the resume worker gave it the free slot at
+once (nothing else was parked or unstarted), the agent yielded 'stuck' again, and so on: 84 park/resume cycles on
+lf52 in ~50 min, 0 actions between them, each cycle one model turn with a full prefill. dc22 showed the same shape
+(11 cycles) while it was the only waiting game. This is failure mode 3 of the original pre-statement (yielding too
+eagerly), in the form "a yield when no other game can use the slot is resumed into the same yield".
+
+Why: the status line and the yield reply tell the agent how many games are unstarted, not whether any game is
+waiting for the slot at all, and the harness resumes the best parked game whenever a slot is free, however many
+times it has just yielded.
+
+Fix (one switch, ARM_AGENT_CLOCK unchanged in name; the fixed commit replaces ece6730 in later runs):
+1. The status line adds the waiting count (unstarted + paused games). When it is zero it says so and states the new
+   rule: pausing now gives the time to no one; `yield_slot(reason, 'stuck')` with no game waiting ENDS this game with
+   its score so far, instead of pausing it. 'close' and 'working' yields are unchanged (they park and resume).
+2. The yield handler applies that rule at yield time: outlook 'stuck' and no game unstarted or parked -> the game
+   finishes (not parked), logged as "ARC3 YIELD_FINAL", counted in metrics as agent_yield with final=true.
+3. No other change: resume order, reserve, stall timers off, park on, all as in ece6730.
+
+Expectation, written before the fix runs: the number of park/resume cycles with 0 actions between them drops from
+95 (ac1: 84 lf52 + 11 dc22) to 0; yields and resumes with play between them continue as before; score unchanged
+within the replicate spread (the cycles happened in idle slot time). Risk named: an agent that would have found a
+hypothesis on a later resume loses the chance; accepted, the agent is told the rule in the same line.
+
+Replicate series (prestate_server_replicates_2026-11-01.md): ac1 stays as run (ece6730, with the ping-pong, which
+affected only the tail of the run); ac2 onward and the second Kaggle commit run use the fixed commit. ac1 is
+reported with that note, not pooled silently with the fixed runs.
