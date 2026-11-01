@@ -84,3 +84,8 @@ Expectations, not criteria: R2/R6 last never game's first action ~550-600 s befo
 A local GPU run (container arc3-local-kvtier_kt3) holds the RTX 6000. Every test process runs alone (sequentially),
 nice 19, OMP_NUM_THREADS=1, pinned with taskset to 4 CPUs, so its 14 mostly-sleeping game threads can use at most 4
 hardware threads. Every run is reported, including failures and VOIDs.
+
+## Amendment 1 (~00:45 CDT, after the first runs)
+
+The header's "~00:50 CDT" is wrong: this note was committed at 00:39:06 (4e89493) and the first test log is from
+00:39:15. The text above is unchanged.
