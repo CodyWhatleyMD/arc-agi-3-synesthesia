@@ -36,3 +36,18 @@ buy what removing the clock entirely bought locally.
 ## Not decided here
 Which config takes a hidden slot. The record says the remaining slots go to v36 replicates (Cody 10-30 16:23; 10-31
 15:37 per Kas's handoff); Kas's 10-31 plan has these runs deciding Sunday's slot. That is Cody's call, asked 19:20.
+
+## Amendment (Kas, 19:12 CDT, before either log's scores are read)
+- STAGE is not a valid arm for P3. The cold-start lane's live read of pool-stage: the copier hit "No space left on device"
+  at 82 GB and the root overlay went READ-ONLY (OSError 30 on the next 19 files); usable root space on this host is
+  ~100 GB incl. the 19.5 GB runtime unpack (the "~1 TB free" setup comment is false here; statvfs over-reported). The copy
+  ran ~0.29 GB/s with 16 streams vs vLLM's own ~0.52 GB/s mount read, and slowed the runtime unpack (layer 8: 48 s vs
+  22 s). Staging cannot beat the mount read on this hardware. If pool-stage plays at all it is at most a degraded second
+  POOL sample (slower start, read-only /tmp); if its own log shows it broken it is cancelled for the PARK run.
+- POOL loaded slowly (server not ready after 1,220 s; controls 553-1,247 s), so it has less play time than most controls:
+  report play seconds (BOOT/first game -> soft end) beside every score, as with the controls.
+- Gate 0b, specific to a commit run: with no per-game cap the first 14 games keep their slots until they stall, so the
+  11 waiting games may start late; report each game's start time, not just whether it started. A game that never starts
+  before the 9,300 s soft end fails the gate even if the score is high (the hidden set has 110 games / 14 slots).
+- PARK adds one more gate: every parked game either resumed or was still parked at the soft end (count both); 0 crashes
+  on resume.
