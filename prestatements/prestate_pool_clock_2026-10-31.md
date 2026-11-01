@@ -42,7 +42,11 @@ Which config takes a hidden slot. The record says the remaining slots go to v36 
   at 82 GB and the root overlay went READ-ONLY (OSError 30 on the next 19 files); usable root space on this host is
   ~100 GB incl. the 19.5 GB runtime unpack (the "~1 TB free" setup comment is false here; statvfs over-reported). The copy
   ran ~0.29 GB/s with 16 streams vs vLLM's own ~0.52 GB/s mount read, and slowed the runtime unpack (layer 8: 48 s vs
-  22 s). Staging cannot beat the mount read on this hardware. If pool-stage plays at all it is at most a degraded second
+  22 s). The tested STAGE was invalid: it copied 318 s, past the unpack window, and filled the disk the runtime unpacks
+  to. A serial copy cannot beat vLLM's mount read here, but copy-DURING-unpack (the mount is idle for the model while the
+  runtime unpacks, ~28->152 s; stop at vLLM launch; stay under the space beside the runtime) is untested, est. gain
+  <= ~1 min of startup (Sakshi, from Cody's pushback, 19:13). Whether to spend a run on it is Cody's call. [pool-stage
+  ended in ERROR at 19:07 before vLLM started; it is no arm.] If pool-stage plays at all it is at most a degraded second
   POOL sample (slower start, read-only /tmp); if its own log shows it broken it is cancelled for the PARK run.
 - POOL loaded slowly (server not ready after 1,220 s; controls 553-1,247 s), so it has less play time than most controls:
   report play seconds (BOOT/first game -> soft end) beside every score, as with the controls.
