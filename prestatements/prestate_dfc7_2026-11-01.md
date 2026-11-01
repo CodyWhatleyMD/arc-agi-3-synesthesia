@@ -31,3 +31,10 @@ dfr3 (parts test: stock drafter, 3 drafts, SW retain) ran clean: prefix hits 85-
 (no collapse; l9 fell 78%->59%), generation 761-850 tok/s, acceptance 2.80, i.e. parity with MTP (2.75, 754-866 tok/s).
 dfc4 = dfc7 with 4 drafts and NO ring fit (capacity 8 divides 1664: the block stays 1664, as in dfr3), same tuned
 drafter, same criteria 1-3 above. dfc7b (7 drafts with a prefix unit that divides the new block) follows if fixed.
+
+Amendment 3 (11:30 CST): dfc4 also died at engine init (~578 s): block sizes [1680 x6, 8]; 128 does not divide 1680.
+My amendment-2 claim "4 drafts keeps the 1664 block" was wrong: the ring is not the only K-dependent page; the GDN conv
+state holds conv_kernel-1+K rows, so the attention block is 1664 only at K=3 (1680 at K=4, 1744 at K=7; dflash-cache's
+mechanism, 2b98e50). dfc7b (K=7 + ARM_PREFIX_MATCH_UNIT=16, staged by dflash-cache 84305d6) took the freed slot at
+11:01. dfc4b = dfc4 + ARM_PREFIX_MATCH_UNIT=16 (1680 % 16 == 0), queued for the next free slot. Criteria unchanged;
+VOID for either unless the server reaches ready.
