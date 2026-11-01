@@ -89,3 +89,19 @@ hardware threads. Every run is reported, including failures and VOIDs.
 
 The header's "~00:50 CDT" is wrong: this note was committed at 00:39:06 (4e89493) and the first test log is from
 00:39:15. The text above is unchanged.
+
+## Amendment 2 (~01:25 CDT, after the first full suite; before any diagnostic run)
+
+Results so far, every run: test_time_stop 43/43 (twice); test_off_unchanged and test_park_resume pass (twice);
+test_run_110 passes (A 58 never started, PLAN 110/110, returned 39.78 s, scorecard closed 39.80 s of 40.5);
+test_end_of_play passes twice (both comparators miss, as they must). test_reserve_tail run 1 passed (R1 290 s, R2 598,
+R6 585 and 587, R3 seeds 1-3 584 / 468 / 501; 8d10d07 missed R1 R2 R6, and R3 had 1 / 2 / 1 never acting). In the
+full suite (run 2) it FAILED: R3 seed 2 on this checkout, last two first actions 204 / 211 s before T (slots taken
+238 / 260 s before T); R1 290, R2 593, R6 590, R3 seeds 1 / 3 634 / 461. So "it is fixed" is refuted for R3 as
+pre-stated. Two candidate mechanisms, to be told apart with per-game end times and slot segments (instrumentation
+added now) on R3 seed 2, this checkout, 3 runs: (a) a game took a slot when the reserve did not bind (need <= 0) and
+got its uncapped fluid share, so its slot stayed protected past the point the plan later needed it: the slot a late
+game (taken < 400 s before T) takes was then held by a game whose protection ended < 400 s before T; (b) the plan was
+on time but the game holding that slot was over its share early (protection ended >= 600 s before T) and its stop
+came late, a long request in flight: its stop came > 200 s after its protection ended or after the breach. If late
+games appear and neither pattern holds, both are refuted.
