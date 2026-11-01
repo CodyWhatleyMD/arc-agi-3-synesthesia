@@ -44,3 +44,10 @@ expected wait, heavier than this; H3's fixed-25 s model has 12.5 s, lighter.
   latency resampled from those 18,684 requests and then sending a batch of geometric(mean 2.5) actions (32.4 / 13.0).
   3 seeds. Hypothesis: at least one game never starts in at least one seed, and the last start is < 60 s before T in
   every seed. Refuted if every game starts in every seed with the last first action >= 300 s before T.
+
+## Amendment 3 (~00:05 CDT 11-01)
+
+H3r was NOT run: a local GPU run (container arc3-local-kvtier_kt3, RTX 6000 at 100%) started ~23:31, and the house
+rule limits CPU work during someone else's GPU run to nice 19 and <= 4 threads; H3r needs 14 game threads. My earlier
+runs (the author's suite ~23:24-23:30, H1-H8 ~23:35-00:00) were nice 19 with 14 mostly-sleeping threads, and those
+from ~23:31 on overlapped that GPU run. Results are reported to the orchestrator, not in this note.
