@@ -72,3 +72,19 @@ No Kaggle run is made, so the estimate is a band between two models, given for e
   arms the read speedup lies between 1x and Nx and is unknown.
 
 The note will say which model the local data favour (H1), and that only a Kaggle validation run settles the question.
+
+## Amendment 1 (11-01 04:38 CDT, before any arm was timed): scope cut by the orchestrator
+At 04:31 the orchestrator asked me to stop the zstd -19 builds, use -3 (or -9 at most) at -T4 and nice 19, measure
+decompress wall time and the byte-identical tree check, and finish in about 30 minutes. These changes were made before
+any full-arm timing. Only two things had run: the 1 GiB sample sweep and a layer-8 smoke test of the driver (14.3 s,
+tree = archive manifest).
+- A2 and A5 use zstd level 3 with --long=27. Sample sweep: 1 GiB = 4 x 256 MiB slices of layer 100, Kaggle image,
+  4 E-cores. Bytes per GiB: -3 314.8 MB, -9 290.2, -15 279.1, -19 258.0, pigz -6 389.4. Decode, zstandard helper to
+  /dev/null: -3 0.73-0.75 s, -19 0.84 s, pigz -d 2.07 s. With sha256 in the pipe, gzip -d took 3.93-3.96 s. The -19
+  single streams had finished before the stop (layer 100: 4,546,611,315 B in 1,781 s; layer 8: 1,090,404,772 B in
+  291 s). They enter only as sizes, in the read-bound estimate. The -19 part builds were stopped and deleted.
+- Repeats: 2 each for A0, A2, A4 and A5, and 1 for A3. A1 is dropped: the image has pigz, so the gzip fallback never
+  runs there, and H2 goes untested. Order: A0 A2 A5 A4 A3 A0 A2 A5 A4.
+- With 2 repeats, a verdict needs both repeats on the same side of its threshold; otherwise it is NOT RESOLVED.
+  Thresholds are unchanged. H4 uses A3's single repeat.
+- The separate variant-decode check is dropped. The tree-manifest gate (H7) is the identity check.
