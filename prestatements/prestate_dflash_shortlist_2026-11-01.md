@@ -38,3 +38,26 @@ Measurement B (microbenchmark, 5090, bf16, hidden 2560): candidate head + top-16
 Reading, fixed now: the shortlist is worth a Kaggle run only if BOTH (A) tuned eal_d4 drops by <= 0.02 with the
 shortlist (MTP accepts the same constraint) and (B) it saves >= 0.5 ms per draft step at 56 rows (>= ~1.2% of the
 40.8 ms K=4 decode cadence Codex measured). Otherwise it is staged but not recommended.
+
+## Result (2026-11-02 ~00:40 CST): both readings pass; staged as dfnd4s (not pushed)
+Code: harness branch candidate-dflash cc62e0b (on 255503f): scripts/runtime_0310/patch_dflash_shortlist.py (+ harness/arc3_tools copy),
+hash-pinned on qwen3_dflash2.py 11ac6ba8 -> dbf24fc8 and dflash/utils.py f0584417 -> bfe08bad; ARM_DFLASH_SHORTLIST=1 wired in
+harness/setup_commands.json (installs the patch with the DFlash patches; passes ARC3_DFLASH_DRAFT_VOCAB = the ARM_DRAFT_VOCAB file to
+the server; refuses without ARM_SPEC_METHOD=dflash). Default off: no patch, server env unchanged.
+Claims: tests/dflash/test_dflash_shortlist.py, all pass: C5 (installs on the pinned files, results = pinned hashes, idempotent,
+refuses one drifted file and writes neither, head built after the target LM head is shared), C4 (off = stock exactly),
+C1, C2, C3 (98/98 rows with full top-16 inside the shortlist: same ids, values within 1e-2).
+A, offline acceptance (seeded paired, 13,518 held-out blocks; scripts/drafter_tune/eval_shortlist.py; /mnt/data/drafter_tune/runs_sl):
+| checkpoint | eal_d3 | eal_d4 | eal_d7 | esl_d3 | esl_d4 | esl_d7 |
+| stock, full vocab | 3.1460 | 3.5982 | 4.4901 | 3.0856 | 3.5222 | 4.3835 |
+| stock, 32k shortlist | 3.1416 | 3.5917 | 4.4785 | 3.0815 | 3.5162 | 4.3729 |
+| tuned ep5, full vocab | 3.1929 | 3.6679 | 4.6333 | 3.1268 | 3.5846 | 4.5184 |
+| tuned ep5, 32k shortlist | 3.1884 | 3.6616 | 4.6227 | 3.1225 | 3.5786 | 4.5083 |
+Sanity holds (no-shortlist eal_d3 = drafter-tune's 3.146 / 3.193 exactly). Tuned eal_d4 drop -0.0063 (bar <= 0.02): PASS.
+B, microbenchmark (RTX 5090, bf16, torch.topk; scratchpad bench_shortlist.py): full-vocab head + top-16 892 / 992 / 1030 us vs
+shortlist head + top-16 + gather 161 / 172 / 177 us at 56 / 70 / 98 rows: saves 0.73 ms at 56 rows (bar >= 0.5 ms): PASS
+(~1.8% of the 40.8 ms K=4 cadence; the 5090 and Kaggle's RTX PRO 6000 Server are both GB202; serving uses FlashInfer's top-k).
+So, by the pre-stated reading, worth one Kaggle run. Staged: notebooks_duck/kaggle_staged/synesthesia_dfnd4s (= dfnd4 + ARM_DFLASH_SHORTLIST=1
+on cc62e0b; harness dataset codywhatleymd/arc3-syn-harness-dfnd4s-k1 uploaded, ready; kernel NOT pushed). Unverified until it boots:
+the vLLM log should show "ARC3 DFlash2 drafts over 32000 of 248320 tokens" and the setup "ARC3 DFlash shortlist patch: installed".
+Expected size of effect: ~1-2% throughput at K=4; it does not touch the cache-reuse loss (Codex: the larger term).
