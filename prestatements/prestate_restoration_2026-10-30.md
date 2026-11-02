@@ -120,3 +120,14 @@ so a run boundary between games changes nothing the games see, but it is not one
 Expectations: same gates (0 tracebacks, 0 HTTP 400); cap hits counted; by R0's pace (2.37 s/action, cap games 78%
 of actions) the 12 take 12-30 h. Comparator unchanged: the four local timed controls, game by game. n stays 1.
 Launcher: ~/kaggle_local/run_synesthesia_r0b.sh (run_synesthesia_r0.sh with the filtered input mount).
+
+## r0b FAILED AT START (02:54 CST, 6 min in): the game list is not the input directory
+The arcade scanned exactly the 12 filtered games, but the harness's game list is pickled in the harness dataset
+(benchmark_initial.pkl, 25 games), so it asked for tn36 and `Arcade.make` returned None; 8552964 has no start guard,
+so the run died. The filtered-input idea is invalid for this harness (my check covered the arcade, not the harness).
+REPLACEMENT, pre-stated before launch (03:50 CST): r0rep2 = a FULL second untimed R0 pass on all 25 games, the same
+notebook (synesthesia_r0, sha 630a9c6b9871), harness (8552964), card and runtime, unfiltered input. This is the "R0
+twice if the week allows" the pre-statement asked for: the 12 unfinished games get their first untimed measurement,
+the 13 finished ones get n=2 and the untimed run-to-run spread is measured for the first time. Expected 27-63 h
+(central ~41 h); disk guard <3 GB; gates unchanged; NOTHING is called resolved at n<=2. Launcher:
+~/kaggle_local/run_synesthesia_r0.sh r0rep2 <staged synesthesia_r0>.
