@@ -17,3 +17,15 @@ play seconds already moved Kaggle scores.
    outcome at n=4 vs 7 with sd ~5: half-width ~5-6, so the pools likely stay separate and the claimable margin is ~+/-6.)
 3. The first Colab run (c1, anchor f9af78d9 / 8552964) is a plumbing test and the first member of the Colab pool;
    its score is reported, not interpreted against Kaggle.
+
+## Amendment 1 (11-02 09:12 CST): c2 = the fit test, before it runs
+c1 (10-29) reached live play and died on host memory: 137 GiB worker + 20 GiB runtime tmpfs against 176 GiB. Since
+then the pinned-memory rounding fix (PYTORCH_CUDA_ALLOC_CONF, arms 2c51989/848f336) took 31.7–33.0 GiB off the
+worker locally. c2 = the candidate_pinned staged notebook (848f336 + boot clock, harness candpin-k1) on a fresh G4
+through colab_run.sh, unchanged otherwise. Pass = vLLM serves AND the benchmark prints its "ended:" line with 25
+games played; the host peak (worker RSS + /dev/shm) is recorded either way. c2's score, if any, joins the Colab pool
+under Rule 1 (reported, not compared with Kaggle). Prediction: it fits (worker ≈ 105 GiB + 20 GiB shm < 176 GiB);
+if it OOMs again the next step is the runtime on disk instead of /dev/shm (c1's disk had 207 GB free), not more tuning.
+Cody's own Colab notebook (ARC_AGI_3_Synesthesia_Kitchensink) stopped at the model: per-file download over the
+paginated Kaggle file list (20 per page) fetched 8 of 22 PLE shards and no index; the runner pulls with
+kagglehub.model_download, which does not have that problem.
