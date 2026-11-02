@@ -44,3 +44,19 @@ channel does not read cell colour and the paper says so in its own section.
 Starts after the competition closes (Mon 2026-11-02 17:59 CDT): both cards free; Kaggle quota untouched. Paper due
 Nov 9. Franzen's harness first (known to run), then Duck, then any other release. Porting work for the others is
 unsized and is reported as such.
+
+## Amendment 2 (2026-11-02 13:45 CST, Sakshi) — R0 replicates on sakshis-server, unattended
+
+The restoration pre-statement's item 4 ("the untimed run-to-run noise: R0 twice if the week allows") is run on the
+server, which otherwise sits idle: queue entries ut1, ut2, ut3 = the R0 harness (arc3-synesthesia-harness-r0,
+notebook sha 630a9c6b = R0's and r0rep3's) run one game at a time, untimed, on sakshis-server (RTX PRO 6000 server
+edition, g4-standard-48). Written before any of them starts.
+- Same Spot rule as the replicate series: a run counts only if it exits (DONE file); a preempted run is re-run from
+  scratch by the queue. The watcher stops the VM when the queue is empty.
+- Host difference: R0 and r0rep3 are on the local Max-Q 6000; ut1-3 on the server edition. The untimed metric is
+  levels and actions, not wall-clock, so host speed should not enter the score; if ut runs differ from the local R0
+  pair beyond the local pair's own spread, the host is a candidate cause and is said so.
+- Expectation: R0's untimed levels/game sit near 6 (R0: 6.15 on 13 games); ut runs land in that range with a spread
+  no larger than the timed CP spread (sd 4.50 at n=6). No comparison is made before ≥2 ut runs exit.
+- Budget: ~$1.10/h Spot; a pass's duration is unknown (r0rep3 is 5.5 h in at 10.7k actions); three passes are
+  expected to cost on the order of the remaining $32 of credits. Cody: "set them up and let them run" (13:39).
