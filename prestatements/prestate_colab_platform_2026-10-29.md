@@ -29,3 +29,11 @@ if it OOMs again the next step is the runtime on disk instead of /dev/shm (c1's 
 Cody's own Colab notebook (ARC_AGI_3_Synesthesia_Kitchensink) stopped at the model: per-file download over the
 paginated Kaggle file list (20 per page) fetched 8 of 22 PLE shards and no index; the runner pulls with
 kagglehub.model_download, which does not have that problem.
+
+## Result, c3 (11-02 12:37 CST): the model FITS on a Colab G4 with the pinned-memory fix
+c3 (candidate_pinned, candpin-k1, runtime in a 26 GB exec tmpfs, model on disk) reached play: worker RSS 100.6 GiB
+(c1: 137), runtime tmpfs 20 GB, GPU 96.9 GB used, 47 GB host available, no OOM; chat completions flowing with
+spec decoding (mean acceptance 2.94, ~322 tok/s generation at this moment). Prediction held (~105 + 20 < 176).
+Amendment 1's pass criterion (vLLM serves AND the benchmark's "ended:" line with 25 games) is half met at 12:37; the
+score, when it comes, joins the Colab pool under Rule 1. c2 (same test) was lost before its load to my own retry
+trap; c3's first notebook attempt died on a cache symlink I had added; both fixed in colab_runner.py / colab_retry_nb.sh.
