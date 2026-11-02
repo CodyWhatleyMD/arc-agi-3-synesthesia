@@ -37,3 +37,10 @@ spec decoding (mean acceptance 2.94, ~322 tok/s generation at this moment). Pred
 Amendment 1's pass criterion (vLLM serves AND the benchmark's "ended:" line with 25 games) is half met at 12:37; the
 score, when it comes, joins the Colab pool under Rule 1. c2 (same test) was lost before its load to my own retry
 trap; c3's first notebook attempt died on a cache symlink I had added; both fixed in colab_runner.py / colab_retry_nb.sh.
+
+## RESULT (2026-11-02 14:53 CST): c3 COMPLETE on Colab G4 — the fit holds and the run scores in range
+candidate_pinned (848f336 + boot clock + pinned fix), runtime in a 26 GB exec tmpfs, model on local disk: papermill RC 0,
+25 games, won 10, 11,151 actions, 2h 11m 49s of play, 813-824 tok/s, mean 50.21, median 44.78, 0 tracebacks. Worker RSS
+peaked ~100.6 GiB (c1 died at 137). Colab G4 (176 GiB host, RTX PRO 6000 server edition) now runs the full model.
+Third platform, n=1: Kaggle 38.58 / 54.70 / 32.22, server CP 35.78-47.94 (n=6), Colab 50.21. Output: ~/kaggle_local/
+colab/working_c3/ (papermill.log, out.ipynb). The Colab credits are therefore a usable second card for the paper week.

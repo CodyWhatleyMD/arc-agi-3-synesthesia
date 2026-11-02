@@ -60,3 +60,11 @@ edition, g4-standard-48). Written before any of them starts.
   no larger than the timed CP spread (sd 4.50 at n=6). No comparison is made before ≥2 ut runs exit.
 - Budget: ~$1.10/h Spot; a pass's duration is unknown (r0rep3 is 5.5 h in at 10.7k actions); three passes are
   expected to cost on the order of the remaining $32 of credits. Cody: "set them up and let them run" (13:39).
+
+### Correction to amendment 2 (14:58 CST): the cost line was wrong by ~8x; ut2 and ut3 withdrawn
+r0rep3 (local) after 6 h: three games, ~2-2.5 h per game (the per-game action cap is 5,184; R0's capped games ran
+4-5k actions at ~2.4 s/action). A 25-game untimed pass is therefore ~2.5-3 DAYS, not hours; three passes ≈ 9 days ≈
+$240 at $1.10/h, far past the Nov 9 paper and the $32 of credits. ut2 and ut3 withdrawn (DONE=skip on the VM, queue
+lines removed); ut1 runs on (~3 days, ~$80; finishes ~Nov 5-6). The paper's "R0 twice" is then R0 (13 games) +
+r0rep3 (local, ~Nov 5) + ut1 (server). Cody can re-add ut2/ut3 by appending "ut2 r0" to ~/queue.txt on the VM and
+removing /data/runs/ut2/DONE (and a fresh line in /data/queue.log).
