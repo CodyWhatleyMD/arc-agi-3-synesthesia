@@ -108,3 +108,15 @@ actions, so an untimed pass's length is set by how many games hit the cap: 25 ga
 Status per this pre-statement: n=1 untimed run; NOTHING at n=1 is called resolved. P1's direction is consistent
 across every game, but the untimed condition's own run-to-run spread is unmeasured, and the 13 are the run order's
 first 13, not a random draw. Remaining 12 (sc25 at 4/6 when stopped, 11 never started) can run alone later.
+
+## R0 COMPLETION (r0b), pre-stated 2026-11-02 02:55 CST (Sakshi), before launch
+Cody freed the local 6000 (02:46: "the GPU is all yours"). R0 stopped at 13 of 25 on 10-31; the remaining 12 (cd82,
+dc22, ft09, g50t, ls20, re86, s5i5, sb26, sc25, sk48, su15, tr87; sc25 restarted from scratch, its 4/6 partial
+discarded) run now as r0b: the SAME staged notebook (synesthesia_r0, sha 630a9c6b9871) and harness dataset
+(arc3-synesthesia-harness-r0 = 8552964) as R0, on the same card and runtime, with the competition input filtered to
+those 12 game directories (~/kaggle_local/input/competitions_r0rest). Nothing else differs. R0 is then reported as
+13 games (10-30/31) + 12 games (11-02), and the split is stated: at concurrency 1 each game is its own server session,
+so a run boundary between games changes nothing the games see, but it is not one continuous run.
+Expectations: same gates (0 tracebacks, 0 HTTP 400); cap hits counted; by R0's pace (2.37 s/action, cap games 78%
+of actions) the 12 take 12-30 h. Comparator unchanged: the four local timed controls, game by game. n stays 1.
+Launcher: ~/kaggle_local/run_synesthesia_r0b.sh (run_synesthesia_r0.sh with the filtered input mount).
