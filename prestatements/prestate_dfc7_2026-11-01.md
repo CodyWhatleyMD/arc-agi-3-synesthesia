@@ -38,3 +38,15 @@ state holds conv_kernel-1+K rows, so the attention block is 1664 only at K=3 (16
 mechanism, 2b98e50). dfc7b (K=7 + ARM_PREFIX_MATCH_UNIT=16, staged by dflash-cache 84305d6) took the freed slot at
 11:01. dfc4b = dfc4 + ARM_PREFIX_MATCH_UNIT=16 (1680 % 16 == 0), queued for the next free slot. Criteria unchanged;
 VOID for either unless the server reaches ready.
+
+## Result (2026-11-01 18:20 CST): DFlash does not beat MTP on this stack; Monday stays MTP (candidate_pinned line)
+Both combinations ran clean (0 tracebacks, ended themselves, ~2h10m of play) and booted with ARM_PREFIX_MATCH_UNIT=16.
+| run | acceptance | gen tok/s (job) | prefix hits, 20-min windows | mean | won |
+| candidate_pinned (MTP, reference) | 2.78 | 833.6 | 91.3-92.0% | 54.70 | 10 |
+| dfc4b (tuned drafter, K=4, unit 16) | 3.09 | 794.7 | 84.4-86.1% | 41.88 | 6 |
+| dfc7b (tuned drafter, K=7, unit 16) | 3.49 | 762.8 | 82.2-86.3% | 40.16 | 5 |
+Criterion 1 PASS (both). Criterion 2 PASS (no collapse: hits within 10 points of the first window and of candidate_pinned
+in every window; worst 82.2 vs 91.4). Criterion 3 FAIL (both: 794.7 and 762.8 < 833.6). As pre-stated: DFlash does not
+beat MTP here. Mechanism: acceptance rises with drafts (2.78 -> 3.09 -> 3.49) but per-step verification cost rises faster
+(14 x (1+K) tokens per step) and block-granular hits sit ~6-8 points under MTP's. Scores reported only (n=1 each, inside
+the 32.6-54.7 spread). Outputs: ~/kaggle_local/kaggle_runs/DF_dfc4b, DF_dfc7b.
