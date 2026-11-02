@@ -33,3 +33,19 @@ Readings, fixed now:
   over MTP; between 794.7 and 875.3 = read together with tonight's diagnostics-off pair (cpnd vs dfnd4); <= 794.7 = no
   gain over dfc4b.
 - n = 1; one machine draw. Scores reported, not used for these readings.
+
+## Amendment 1 (02:05 CST, before any dfc4znd number): the read for dfc4znd (diagnostics OFF; pushed by kasoti, d6a7cfa)
+kasoti stopped the dfc4z queue before it pushed and pushed dfc4znd = dfc4z + ARM_CACHE_DIAGNOSTICS=0, paired with cpnd
+(MTP, diagnostics off) under notes/prestate_dflash_fair_2026-11-01.md amendment 1. Without per-request diagnostics the
+CACHE reading above uses scripts/dflash_recompute_nodiag.py instead:
+- MEAN computed prompt tokens per request = integral of the server log's prompt throughput / harness request count
+  (validated exact: candidate_pinned 1.000, dfc4b 0.997 vs the diagnostics). Baselines: candidate_pinned (MTP) 6,724;
+  dfc4b (drop on) 11,140; dfc7b 12,024 (= Codex's ~12,080). Same-night MTP baseline: cpnd, same script.
+- LARGE RECOMPUTES = harness history entries with uncached_input_tokens > 60k, per request (validated as a count:
+  candidate_pinned 150 vs 143 requests in the diagnostics, dfc4b 195 vs 212). Baselines: MTP 4.8%, dfc4b 6.8%.
+- Readings: the fix WORKS (cache) if dfc4znd's mean <= 8,000/request (>= 71% of the dfc4b-MTP gap closed; predicted
+  ~7.4k = MTP + ~650/request of remaining block granularity) AND large recomputes <= 5.5% of requests; PARTIAL if
+  exactly one holds; FAILS if neither. If cpnd lands, the same comparison is also reported against cpnd.
+- Not available without diagnostics: the append-only median, the exact zero-hit share, the boundary-rule share; those
+  wait for the diagnostics-on dfc4z if quota allows.
+Acceptance and throughput readings are unchanged (server log; no diagnostics needed).
