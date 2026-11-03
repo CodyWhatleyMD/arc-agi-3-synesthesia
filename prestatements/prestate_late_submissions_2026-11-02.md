@@ -39,3 +39,10 @@ What can be seen: hidden scores only (no logs, no boot times, no per-game result
 boost is detectable only if it exceeds ~7 points, and host assignment of the scorer is unknown (a hot NFS cache is
 per-server, so concurrency does not guarantee a shared host). A result either way is NOT RESOLVED unless the gap
 exceeds the two sets' spread; the honest product is six candidate_pinned hidden scores, labelled by concurrency.
+
+### Result 1 (2026-11-03 02:43 CST): 57925231 (candidate_pinned, LATE, unranked) = 19.37 public half
+candidate_pinned on the hidden public half, n=3: 23.21 (counted), 21.90 (counted copy), 19.37 (late) — mean 21.49,
+sd 1.93, range 3.84. Private column still empty for every entry (board not yet published). Replicates "5 and 6"
+(Cody, 18:13, to be submitted concurrently) do not appear in the submission list: only one entry after 57902610
+exists, so either they were not accepted (one late entry per day?) or not sent — Cody to say; the hot-cache test
+has no concurrent entries yet.
