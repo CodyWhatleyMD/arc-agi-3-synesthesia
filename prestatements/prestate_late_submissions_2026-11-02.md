@@ -28,3 +28,14 @@ Block 3 (if the count allows): v36 anchor to n=5; the untimed design cannot be s
 - Pre-stated comparisons use scripts/compare_arm_groups.py --cluster on per-game hidden results only if Kaggle
   exposes them (it exposes totals; per-game hidden results are not available, so hidden comparisons are run-level
   means and sds only: no paired-by-game CI on the hidden set).
+
+## Amendment 1 (18:15 CST): Cody's hot-cache test, stated before the scores
+57925231 = candidate_pinned (Cody's "replicate 4"; the 3rd hidden run of that config after 57886730, 57902610).
+Cody is submitting candidate_pinned replicates 5 and 6 WHILE 4 is being scored, "seeing if a hot cache will boost
+the score" (the room S v1/v2 boot-to-play gap of 265 s is the motivation). Prediction under his hypothesis: entries
+scored concurrently with another copy of the same notebook reach play sooner and score higher than isolated runs.
+What can be seen: hidden scores only (no logs, no boot times, no per-game results). Comparison: the concurrent set
+{5, 6, and 4 if it overlaps them} vs the isolated set {57886730, 57902610}, run-level means; at sd ~4.5 and n=3 vs 2 a
+boost is detectable only if it exceeds ~7 points, and host assignment of the scorer is unknown (a hot NFS cache is
+per-server, so concurrency does not guarantee a shared host). A result either way is NOT RESOLVED unless the gap
+exceeds the two sets' spread; the honest product is six candidate_pinned hidden scores, labelled by concurrency.
