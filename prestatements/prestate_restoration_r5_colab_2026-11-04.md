@@ -53,4 +53,4 @@ NOT RESOLVED unless the interval excludes zero; platform (GCP server / vast box 
 and reported as a sensitivity, never pooled across the timed controls (which stay on the local 6000).
 Predictions, first: P4 the rented boxes reproduce ut1's levels/game within +/-1.0 (same harness, same weights, no
 clock); P5 the native arm's untimed levels/game sits within +/-1.0 of the student's (as timed, +2.07 unresolved).
-Stop rule: any run not finished by 11-09 12:00 CST is reported censored at its last snapshot. Cost cap: the $200.
+Stop rule: any run not finished by 11-09 12:00 CST is reported censored at its last snapshot.
