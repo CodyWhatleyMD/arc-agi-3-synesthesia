@@ -40,3 +40,17 @@ reported as a sensitivity beside the server pair, never pooled with it. ut1 (ser
 levels/game, notes/untimed_ut1_result_2026-11-07.md) is the second untimed run of the anchor and the server-side
 reference for R0c14's concurrency sensitivity. Predictions P1-P3 stand; P3's "one Colab session" becomes "one Spot
 lease": a preempted run is re-run from scratch by the queue, and a run cut by the deadline is reported censored.
+
+## Amendment 2 (2026-11-07 03:50 CST, before any rented box plays): untimed replicates on rented RTX PRO 6000s
+Cody put $200 on vast.ai ("200 in the girls pocket", 03:39). Up to four single-card boxes, Kaggle's card family
+(RTX PRO 6000; Server edition where offered, WS/Max-Q editions otherwise — same chip, different power limit; under NO
+clock the edition changes only wall time), host RAM >= 180 GB (the pinned PLE table + the worker need ~130-170 GB),
+CUDA >= 13.2, the Kaggle GPU image as the instance image, papermill as on the server (~/kaggle_local/vast_run.sh).
+Arms, same notebooks as the server (nb/r5.ipynb, nb/r0c14.ipynb): r5x1..r5xN = R5 (native tower, untimed, c14);
+r0x1..r0xN = R0c (student, untimed, c14). Target by the paper deadline: untimed anchor n>=4 (ut1, r0c14 local,
+r0c14s server, r0x*), native untimed n>=3 (r5s, r5x*). Comparisons stay as pre-stated: run-level, paired by game,
+NOT RESOLVED unless the interval excludes zero; platform (GCP server / vast box / local Max-Q) is recorded per run
+and reported as a sensitivity, never pooled across the timed controls (which stay on the local 6000).
+Predictions, first: P4 the rented boxes reproduce ut1's levels/game within +/-1.0 (same harness, same weights, no
+clock); P5 the native arm's untimed levels/game sits within +/-1.0 of the student's (as timed, +2.07 unresolved).
+Stop rule: any run not finished by 11-09 12:00 CST is reported censored at its last snapshot. Cost cap: the $200.
