@@ -131,3 +131,6 @@ twice if the week allows" the pre-statement asked for: the 12 unfinished games g
 the 13 finished ones get n=2 and the untimed run-to-run spread is measured for the first time. Expected 27-63 h
 (central ~41 h); disk guard <3 GB; gates unchanged; NOTHING is called resolved at n<=2. Launcher:
 ~/kaggle_local/run_synesthesia_r0.sh r0rep2 <staged synesthesia_r0>.
+
+## Amendment 4 (11-07 16:20 CST, Sakshi): r0c14b
+A second untimed anchor pass at concurrency 14 on the local RTX PRO 6000 (tag r0c14b, staged synesthesia_r0_untimed_c14, identical to r0c14), started 16:20 CST after r0c14 finished (25/25, 13 won, 52.31, 12 capped, 14 h 52 m). Purpose: the c14 untimed arm at n=4 (r0c14, r0x1, r0x2, r0c14b) against the timed controls, paired by game, --cluster CI. Expected: inside the untimed spread seen so far (52.31 local, 56.88 at c1, the vast boxes 57-60 on their last games); the finding is already in the direction of more levels per game off the clock, and this run can only widen or narrow the interval, not reverse the sign at n=4 unless it lands below ~45. Reported however it lands.
