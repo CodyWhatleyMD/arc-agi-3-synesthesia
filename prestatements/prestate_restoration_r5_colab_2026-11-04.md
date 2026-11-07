@@ -30,3 +30,13 @@ P3. Both runs finish inside one Colab session (<= 24 h); if either is cut by the
 
 ## Not claimed
 Anything about the hidden set; anything resolved from one pair. Cost: Cody's Colab credits (his word, 08:35).
+
+## Amendment 1 (2026-11-07 01:35 CST, before either run starts): platform
+Colab is out: the 11-04 sessions expired at 24 h with their pollers dead in the workstation crash; nothing was
+retrieved. R5 and R0c move to sakshis-server (g4-standard-48 Spot, RTX PRO 6000, the Kaggle-shaped host), one after
+the other through the replicate queue (r5 first, then r0c14), paid from Cody's cloud credit (his word, 11-07 01:28:
+"cloud is paid up"). The local 6000 (Max-Q) runs its own r0c14 since 11-07 00:55 CST: same notebook, different host,
+reported as a sensitivity beside the server pair, never pooled with it. ut1 (server, concurrency 1, 56.88, 5.96
+levels/game, notes/untimed_ut1_result_2026-11-07.md) is the second untimed run of the anchor and the server-side
+reference for R0c14's concurrency sensitivity. Predictions P1-P3 stand; P3's "one Colab session" becomes "one Spot
+lease": a preempted run is re-run from scratch by the queue, and a run cut by the deadline is reported censored.
