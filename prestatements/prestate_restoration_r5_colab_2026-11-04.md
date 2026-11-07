@@ -54,3 +54,18 @@ and reported as a sensitivity, never pooled across the timed controls (which sta
 Predictions, first: P4 the rented boxes reproduce ut1's levels/game within +/-1.0 (same harness, same weights, no
 clock); P5 the native arm's untimed levels/game sits within +/-1.0 of the student's (as timed, +2.07 unresolved).
 Stop rule: any run not finished by 11-09 12:00 CST is reported censored at its last snapshot.
+
+## Amendment 3 (2026-11-07 05:08 CST, Sakshi), before any of these runs started
+Cody, 05:06: "just do whatever - the money is spent" = go inside the $200 vast credit. The batch, all untimed at the
+anchor's concurrency 14 (the clock test holds the sharing and the KV pool; see memory feedback-hold-the-design-not-
+the-last-message): r0x1 (vast 55911915, France, Server) and r0x2 (52632728, France, Server) = r0c14 replicates
+(nb/r0c14.ipynb); r5x1 (53005989, Virginia, Server) and r5x2 (59063712, UK, Server) = r5 replicates (nb/r5.ipynb,
+native tower, c14, untimed); the GCP server resumes r5s then r0c14s; r0c14 on the 6000 (started 01:13) continues.
+Kas runs the vast lane (kas_vast_box.sh, one detached runner per box; inputs pushed from home; destroy only after
+DONE + benchmark.json + run.log are local). KV pool: by the same memory math as the anchor on the same card type
+(ut1 1,501,360 vs r2 1,502,892 tokens, 0.1%); no pin needed on RTX PRO 6000 Server/WS at 0.98.
+What counts: r0c14 group = {r0c14, r0c14s, r0x1, r0x2} (target n=4) against the twelve timed runs, paired by game,
+run-level interval; r5 group = {r5s, r5x1, r5x2} (target n=3) against the r0c14 group (the tower off the clock, same
+concurrency). A run cut by preemption/deadline is reported partial on matched games, never scaled. The shelved R5 at
+concurrency 1 (r5p) is not in this batch. Stop rule: the deadline (Mon 11-09 17:59 CST) or the credit; no second batch
+without Cody's word. Expected wall time per run ~13-15 h at c14 (r0c14's pace: 15,201 actions at 3 h).
