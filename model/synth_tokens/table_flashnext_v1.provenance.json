@@ -1,0 +1,229 @@
+{
+ "created": "2026-10-03T16:39:46",
+ "px_per_cell": 32,
+ "flat_input": "32x32 px square of the colour -> grid (1,2,2) -> 1 merged token",
+ "board_input": "64x64 cells x 32 px -> 2048x2048 px -> grid (1,128,128) -> 4096 tokens, row-major (k = r*64 + c)",
+ "render": "palette LUT per cell, each cell one flat 32x32 block (== vision_context NEAREST upscale); rescale 1/255, normalise mean 0.5 std 0.5, patch 16, merge 2, temporal dup 2",
+ "patchify_check": {
+  "processor_class": "Qwen2VLImageProcessor",
+  "hf_shape": [
+   16384,
+   1536
+  ],
+  "hf_grid": [
+   1,
+   128,
+   128
+  ],
+  "mine_shape": [
+   16384,
+   1536
+  ],
+  "mine_grid": [
+   1,
+   128,
+   128
+  ],
+  "max_abs_diff": 5.587935447692871e-08,
+  "ok": true
+ },
+ "tower": "vllm.model_executor.models.qwen3_vl.Qwen3_VisionTransformer(config.vision_config, norm_eps=config.text_config.rms_norm_eps, quant_config=None, prefix='model.visual') -- as RT/models/qwen3_8_flash_next/nvidia/model.py:871; visual.* are in the quant ignore list",
+ "vision_config": {
+  "depth": 27,
+  "hidden_size": 1152,
+  "num_heads": 16,
+  "intermediate_size": 4304,
+  "hidden_act": "gelu_pytorch_tanh",
+  "patch_size": 16,
+  "spatial_merge_size": 2,
+  "temporal_patch_size": 2,
+  "num_position_embeddings": 2304,
+  "out_hidden_size": 2560,
+  "deepstack_visual_indexes": [],
+  "in_channels": 3
+ },
+ "norm_eps": 1e-06,
+ "attn_backend": "AttentionBackendEnum.FLASH_ATTN",
+ "dtype": "torch.bfloat16",
+ "checkpoint": "/model",
+ "checkpoint_config_sha256": "8b7dc2aec73df7dcd2148e34afcfdfe0da53c116d43be2314165393bd53d7d25",
+ "weights": {
+  "n_visual_tensors": 333,
+  "n_visual_params": 448931056,
+  "dtypes": [
+   "torch.bfloat16"
+  ],
+  "visual_tensor_bytes_sha256": "5c8207cd2237d0d713edd280887035199f0e2af4b17af03a499ee32f6a1ccdb2",
+  "shards": [
+   {
+    "file": "model-00002-of-00005.safetensors",
+    "bytes": 20009711176,
+    "mtime": "2026-09-30T13:10:11.971129"
+   }
+  ],
+  "n_loaded_param_names": 333,
+  "extra_loaded_names": []
+ },
+ "palette": {
+  "source_files": [
+   "runs/route_a/franzen_verbatim/src/tufa-arc-agi-framework/src/taaf/game.py",
+   "runs/route_a/franzen_verbatim/src/ARC3-Inference/inference/agent/vision_context.py"
+  ],
+  "sha256": "d3bddf3838ba814e650fc6cd69e07840329efc439c2a1a7bdeddca0aed3675ce",
+  "rgb": [
+   [
+    255,
+    255,
+    255
+   ],
+   [
+    204,
+    204,
+    204
+   ],
+   [
+    153,
+    153,
+    153
+   ],
+   [
+    102,
+    102,
+    102
+   ],
+   [
+    51,
+    51,
+    51
+   ],
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    229,
+    58,
+    163
+   ],
+   [
+    255,
+    123,
+    204
+   ],
+   [
+    249,
+    60,
+    49
+   ],
+   [
+    30,
+    147,
+    255
+   ],
+   [
+    136,
+    216,
+    241
+   ],
+   [
+    255,
+    220,
+    0
+   ],
+   [
+    255,
+    133,
+    27
+   ],
+   [
+    146,
+    18,
+    49
+   ],
+   [
+    79,
+    204,
+    48
+   ],
+   [
+    163,
+    86,
+    214
+   ]
+  ]
+ },
+ "runtime": {
+  "torch": "2.13.0+cu130",
+  "cuda": "13.0",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "vllm": "0.1.dev20073+g8e685d198",
+  "transformers": "5.15.1",
+  "docker_image_id": "sha256:fc120ece0a388cc0aa1caad4a9f1cd92113484ab7ec2fd0efadd62585be05bf8",
+  "git_sha_worktree": "844f7759e07439d2a01efc12b57ba7e621dbde72"
+ },
+ "boards": [
+  {
+   "file": "/repo/runs/opus55_docker/artifacts/vc33-5430563c_p0_events.jsonl",
+   "line": 40,
+   "title": "Action 28",
+   "level": 3,
+   "game": "vc33",
+   "n_colours": 9,
+   "board_sha1": "3cc23148d1c40aa07c45f902ce7250b4cf783747"
+  },
+  {
+   "file": "/repo/runs/opus55_docker/artifacts/ls20-9607627b_p0_events.jsonl",
+   "line": 40,
+   "title": "Analysis Step 5",
+   "level": 2,
+   "game": "ls20",
+   "n_colours": 9,
+   "board_sha1": "bfa127244598b6ff21b86fd35bad40f70209978a"
+  },
+  {
+   "file": "/repo/runs/opus55_docker/artifacts/ft09-0d8bbf25_p0_events.jsonl",
+   "line": 4,
+   "title": "Action 3",
+   "level": 1,
+   "game": "ft09",
+   "n_colours": 8,
+   "board_sha1": "b4cb5abb3c211c598254f9f7877076b868189643"
+  }
+ ],
+ "position_table": {
+  "path": "/scratch/table_flashnext_pos_v1.pt",
+  "sha256": "b0f31a0911cc93b3669a0e7e68397846284450496534f6677645a5935a6d1b27",
+  "bytes": 356518045
+ },
+ "hf_crosscheck": {
+  "hf_class": "Qwen3VLVisionModel",
+  "attn_implementation": "sdpa",
+  "missing_keys": [],
+  "unexpected_keys": [],
+  "cases": {
+   "flat_square_colour8": {
+    "n_tokens": 1,
+    "cos_min": 0.9997128248214722,
+    "cos_mean": 0.9997128248214722,
+    "max_abs_diff": 0.0052490234375,
+    "rel_fro": 0.024276630952954292
+   },
+   "solid_board_colour8": {
+    "n_tokens": 4096,
+    "cos_min": 0.8287535905838013,
+    "cos_mean": 0.9968079328536987,
+    "max_abs_diff": 0.171875,
+    "rel_fro": 0.11466764658689499
+   },
+   "real_board_0": {
+    "n_tokens": 4096,
+    "cos_min": 0.8395752906799316,
+    "cos_mean": 0.9974863529205322,
+    "max_abs_diff": 0.09814453125,
+    "rel_fro": 0.08300357311964035
+   }
+  }
+ },
+ "seconds": 31.9
+}

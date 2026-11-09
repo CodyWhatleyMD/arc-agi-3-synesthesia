@@ -41,3 +41,6 @@ a public score carries those 25 games' weights.
 
 Caveat: with at most ~7 slots left, the test is over 5-8 points; a directional answer with n stated, not a result.
 Parser: scripts/compare_arm_groups.py gives both means per run.
+
+
+Correction (11-09 14:32 CST, CL1): the cn04 example at l.13-14 (3.9 / 71.4 / 4.8 "across identical runs") mixes the Kaggle v36_anchor run (3.91, 1 level) with the local r2 (71.43, 5 levels) and r3 (4.76, 1 level); the level swing is four, not one. The same-platform triple is r2 / r3 / r4 = 71.43 / 4.76 / 47.62 at 5 / 1 / 4 levels; the fifth level alone is worth 23.8 points.

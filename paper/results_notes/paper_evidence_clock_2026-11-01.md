@@ -82,3 +82,6 @@ host. The investigator's observation ("each replicate has started a little quick
 not carry the score: 42.89 → 34.04 (the per-game lottery dominates). Sources: ~/kaggle_local/kaggle_runs/
 Gs_room-s-k1_363241028/arc-agi-3-synesthesia-room-s-k1.log; scratchpad rooms_v2log/arc-agi-3-synesthesia-room-s-k1.log
 (copied to notes/kaggle_logs/room-s-k1_v2_2026-11-02.log).
+
+
+Correction (11-09 14:30 CST, CL1): l.63's "similar or fewer actions and 1.5 to 2 times the tokens per action" misstates the six games. From the final per-game tables of CP_candidate-pinned-k1 and candidate_pinned_v3: tn36, r11l, sb26 and s5i5 fewer actions at 2.1-2.4x the tokens per action; tr87 the same on both counts (1.08x); ar25 twice the actions (386 -> 763) at 0.71x the tokens per action.
