@@ -107,7 +107,9 @@ five hidden runs of one other notebook's code (Franzen's, including Tamrazov's c
 and sds with no paired-by-game interval [LS:28-30].
 
 
-The repository's `main` branch is a publication snapshot assembled on November 8 and 9, and its commit history says nothing about when a pre-statement was written. The branch `prestatement-history` does: it is the lab repository's own history for the forty pre-statement files, 150 commits from October 26 to November 8 with their dates as recorded, filtered to those files and otherwise unchanged, \1\n\n\2Why game resampling called identical code a loss, and what the run-level bootstrap does
+The repository's `main` branch is a publication snapshot assembled on November 8 and 9, and its commit history says nothing about when a pre-statement was written. The branch `prestatement-history` does: it is the lab repository's own history for the forty pre-statement files, 150 commits from October 26 to November 8 with their dates as recorded, filtered to those files and otherwise unchanged.
+
+### 2.4 Why game resampling called identical code a loss, and what the run-level bootstrap does
 
 Every interval in this paper came from analysis/compare_arm_groups.py resampling games only [PRL:10-11]. Each game is its own conversation, a fresh agent with nothing carried across games
 [results_notes/taaf_review_qwen_flash_2026-10-14.md:40], but the games of one run share a host, whose load time sets the per-game clock, a concurrency
@@ -763,7 +765,7 @@ harness is Tufa's; our changes are the patch set in the repository, each behind 
 - NR = results_notes/tower_native_local_result_2026-10-28.md
 - RM = results_notes/room_arms_cluster_2026-11-09_gs.json; results_notes/room_arms_cluster_2026-11-09_gc.json (compare_arm_groups --cluster on the room arms' logs, 11-09 13:10; same script and seed as RL)
 - ME = results_notes/move_efficiency_timed_vs_untimed_2026-11-09.json (analysis/move_efficiency.py: same-action-window, matched-cell and whole-run move-efficiency statistics, timed controls vs the four untimed concurrency-14 runs; 11-09)
-\1also cover/native_final.json; the pre-stated compare is analysis/tools/native_now.sh)
+- NF = results_notes/native_final_2026-11-09.json (compare_arm_groups --cluster over the six native runs against the four untimed student runs; computed 2026-11-09 12:55 CST with r5sb complete at the cap; also cover/native_final.json; the pre-stated compare is analysis/tools/native_now.sh)
 - NS = results_notes/noise_structure_2026-10-27.md
 - VS = results_notes/v36_settings_evidence_2026-10-31.md
 - LT = results_notes/levels_per_token_2026-11-04.md
