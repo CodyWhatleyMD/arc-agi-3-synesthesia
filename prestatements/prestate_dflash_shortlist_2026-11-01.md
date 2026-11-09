@@ -1,4 +1,4 @@
-# Pre-statement: a vocabulary shortlist for the DFlash2 drafter's candidate head (2026-11-02 ~00:15 CST, kasoti fork)
+# Pre-statement: a vocabulary shortlist for the DFlash2 drafter's candidate head (2026-11-02 ~00:15 CST, CL2 fork)
 
 Mechanism (primary source, our vLLM 0.31 runtime contract/rt):
 - MTP drafts over a 32k shortlist: models/qwen4_exp/nvidia/mtp.py `Qwen4ExpDraftVocabHead` (rows of the LM head for

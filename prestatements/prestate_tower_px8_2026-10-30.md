@@ -1,6 +1,6 @@
-# Pre-statement: the px8 student tower (256 tokens per board), 2026-10-30 11:25 CDT (Sakshi)
+# Pre-statement: the px8 student tower (256 tokens per board), 2026-10-30 11:25 CDT (CL1)
 
-Cody, 11:16: "Lets do it - we've got nothing to lose." His question that led here: "what is the smallest unit on the
+The investigator, 11:16: "Lets do it - we've got nothing to lose." His question that led here: "what is the smallest unit on the
 boards where a single color appears?" — the cell; game logic moves in 4- or 8-cell steps (dossier); only the 1-cell
 HUD meters live below. The shipped student is px16 (one token per 2x2 cell block, 1,024 tokens/board, 18.2M params,
 held-out cosine 0.8972). A px4 student (8x8 blocks, 64 tokens) fit poorly: 0.651 vs the 0.595 board-blind floor
@@ -19,15 +19,15 @@ such (boards per request is a pre-stated read below).
 ## Reads, in order, before any number is quoted
 1. Fidelity: held-out per-token cosine to the teacher on the 500 eval boards and on the 5 holdout games, reported
    beside px16 (0.8972) and px4 (0.651) and the floor (0.595). No threshold is invented here; the number is reported
-   and the next step is Cody's call with it in hand.
+   and the next step is the investigator's call with it in hand.
 2. Serving gates: student loads, n_pos=256 accepted by assert_request_shapes/token_estimate (only 1,024 and 4,096 are
-   verified today — Kas verifies 256 before the first request), 0 tracebacks, 0 HTTP 400, consumption gate PASS
+   verified today — CL2 verifies 256 before the first request), 0 tracebacks, 0 HTTP 400, consumption gate PASS
    (scripts/consumption_gate.py).
 3. Local public-25 vs the local controls r2/r3/r4/r6 (RTX PRO 6000, 9,300 s): score, levels, actions, tok/s,
    boards per request, by scripts/compare_arm_groups.py (paired-by-game 95% bootstrap). n=1 first; replicate if the
    first read is not worse.
 4. Kaggle commit run vs the Kaggle pool C1-C7 (39.06, sd 5.07), same script.
-5. A hidden slot only if 3 and 4 read "not worse" AND Cody says yes to that slot.
+5. A hidden slot only if 3 and 4 read "not worse" AND the investigator says yes to that slot.
 
 ## Prior (written before any number)
 Score: direction unknown. Throughput: up (4x fewer prefill tokens per board). Fidelity: between 0.651 and 0.8972;
@@ -35,14 +35,14 @@ if it lands near px4's, the arm stops at read 1 and the result is still reported
 
 ## Disk and lane
 Targets to /mnt/data/board_tower/targets_px8 (claude-extra has 27 GB free; px16's set is 44 GB, px8 ~11 GB).
-/ is at 9 GB free, under the 15 GB gate for a local docker run: needs ~6 GB more before read 3 (Cody's call which
+/ is at 9 GB free, under the 15 GB gate for a local docker run: needs ~6 GB more before read 3 (the investigator's call which
 directory moves; ~/kaggle_local/kaggle_runs is 24 GB of downloaded Kaggle outputs and would move, not delete).
-Kas builds; Sakshi reads (Fable week at 94%).
+CL2 builds; CL1 reads (Fable week at 94%).
 
-## Amendment 1 (11:22 CDT, from Kas's build report, before any number)
+## Amendment 1 (11:22 CDT, from CL2's build report, before any number)
 - Geometry: px8 only. px10 is NOT representable by the student (model.py:59-60 requires cell_patch to divide 64;
   400 tokens = 3.2 cells per token). Valid points are px32/16/8/4; px8 is the curve's missing interior point.
-- Teacher: the default CK (claude-extra/Qwen3.8-Flash-Next-NVFP4-ours) has a stale index and cannot record; Kas
+- Teacher: the default CK (claude-extra/Qwen3.8-Flash-Next-NVFP4-ours) has a stale index and cannot record; CL2
   used /mnt/data/arc3_local_model/v22. Same teacher by three checks: all 333 visual.* tensors byte-identical to the
   BF16 base; recorder sha 5c8207cd2237 = px16's manifest; 4 boards re-recorded at px16 match targets_px16 at
   cosine min 0.999996.
@@ -52,7 +52,7 @@ Kas builds; Sakshi reads (Fable week at 94%).
 - Pipeline: base px8 set on the 5090 (~86 boards/s), then run_dih.sh PX=8 (dihedral copies on the 6000, 180 min
   train) -> /mnt/data/board_tower/ckpt_px8_dih. Script change: a PX knob (default 16) + CK passthrough.
 
-## Amendment 2 (11:29 CDT, Kas's status sent ~11:28; its "(11:50)" stamp was a typo, corrected by Kas at 11:30)
+## Amendment 2 (11:29 CDT, CL2's status sent ~11:28; its "(11:50)" stamp was a typo, corrected by CL2 at 11:30)
 - Targets: base 8,914 (8,414/500, holdout as px16) 10.9 GiB; dihedral +58,894 = 67,308 train, the same count as
   px16_dih. Training ~11:40 -> ~14:40 CDT on the 6000, 180 min. CKPT /mnt/data/board_tower/ckpt_px8_dih.
 - Builder fd60e64: the anchor hard-codes 1024 beyond ARM_B_EXPECT_NPOS — cell 10's (1024, 2560) assertion and
@@ -73,10 +73,10 @@ The prior's clause "if it lands near px4's, the arm stops at read 1" named no nu
 Withdrawn. Read 1 (fidelity) is REPORTED, with the px8 noise floor beside it; read 3 (local public-25, 9,300 s,
 harness 8552964, tower px8) STARTS when training ends, with no wait on anyone; read 4 (Kaggle commit run) follows
 the local read as pre-stated. A low fidelity that still plays well is its own finding and is reported as such.
-Only read 5, a hidden slot, waits on Cody. (Cody to Kas, 12:08: "Why?" — the same lesson as 10-28's "Why is there
+Only read 5, a hidden slot, waits on the investigator. (the investigator to CL2, 12:08: "Why?" — the same lesson as 10-28's "Why is there
 ever anything waiting on me?")
 
-## Read 1: fidelity (Kas, 14:36; final_eval, 500 holdout boards, best.pt; 875,151 steps / 105 epochs / 180 min; 16.0M params, cell_patch 4)
+## Read 1: fidelity (CL2, 14:36; final_eval, 500 holdout boards, best.pt; 875,151 steps / 105 epochs / 180 min; 16.0M params, cell_patch 4)
 cos_mean 0.7866 | p05 0.4885 | min 0.0608 | rel_mse 0.4766 | per game cd82 .8070 m0r0 .7315 re86 .7971 s5i5 .7945
 sk48 .8027 || px16 0.8972 (p05 0.7099) | px4 0.651 | floor 0.595 || px8 teacher noise floor (two recorder runs) cos min
 0.946/0.987, p05 0.991/0.996, mean 0.998/0.999. Between px4 and px16 as the prior said; p05 well below px16's.

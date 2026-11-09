@@ -1,6 +1,6 @@
 # Pre-statement: student embeds vs the native vision tower, same harness, same hardware (written 2026-10-27 ~18:35 CDT, before any run)
 
-Cody, 18:27: "for the thesis - don't we need to show that?" Yes. Today's on/off replication tested the visual channel
+The investigator, 18:27: "for the thesis - don't we need to show that?" Yes. Today's on/off replication tested the visual channel
 against nothing (notes/tower_onoff_local_result_2026-10-27.md: −3.62 [−9.89, +3.22] without it, not resolved, leaning
 toward the channel). The Synesthesia claim proper is that the 18.2M student standing in for the 449M native tower is
 an adequate substitute. The only evidence is F208b (native 49.51 vs student 46.26, n=2 each, an 8-GPU BF16 box, not
@@ -80,7 +80,7 @@ The hidden set; Batch A; the channel vs nothing (today's other test). It tests t
   harness's accumulation, and so will NATIVE.
 
 ## Clarification 3 (19:35 CDT; na1b stopped at ~8 min, no score read)
-- Kas: image:64 was a bound above an OBSERVED maximum (48, r2), not a derived one. The harness caps boards in history
+- CL2: image:64 was a bound above an OBSERVED maximum (48, r2), not a derived one. The harness caps boards in history
   only through the token budget (target 81,536 of a 127,488 window; max_model_len 147,072), so a long game can carry
   more than 64 boards and every later request would 400, late in the run, after the ten-minute check had passed it.
   The derived bound: max_model_len // 1,024 = 143 boards; nothing larger fits a request. ARM_LIMIT_MM image:143.

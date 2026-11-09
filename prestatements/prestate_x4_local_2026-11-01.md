@@ -1,4 +1,4 @@
-# Pre-statement: local 100-game scale test, time stop vs capped clock (2026-11-01 ~06:25 CST, kasoti)
+# Pre-statement: local 100-game scale test, time stop vs capped clock (2026-11-01 ~06:25 CST, CL2)
 
 Question. The candidate's simulated gain over v36's 65-min clock (+3.00 [+0.93,+4.92] on 110 games,
 notes/pool_timestop_sim_2026-10-31.md) rests entirely on games still clearing levels after 3,918 s of their own play
@@ -23,4 +23,4 @@ Readings, fixed now:
 Invalid if: either run errors before its soft end, root disk < 3 GB, or the host's memory is shared with another
 GPU/CPU job during either run.
 
-Restart (09:50 CST): the first A run (tag x4_a, 06:06) was stopped at 06:49 to free the 6000 for the drafter lane (Cody's priority); it is void. Rerun as tags x4a2 then x4b2, same notebooks (sha d8fede5e70b7 for A), same readings.
+Restart (09:50 CST): the first A run (tag x4_a, 06:06) was stopped at 06:49 to free the 6000 for the drafter lane (by priority decision); it is void. Rerun as tags x4a2 then x4b2, same notebooks (sha d8fede5e70b7 for A), same readings.

@@ -1,4 +1,4 @@
-# Pre-statement: DFlash drafter-cache retention and K pricing on Kaggle (dflash-cache lane, kasoti fork, 2026-11-01 ~07:45 CST)
+# Pre-statement: DFlash drafter-cache retention and K pricing on Kaggle (dflash-cache lane, CL2 fork, 2026-11-01 ~07:45 CST)
 
 Harness: branch dflash-cache 5509581 (= 55e7f3e, the l10 harness, + three default-off switches):
 - ARM_DFLASH_SW_RETAIN=1 -> scripts/runtime_0310/patch_dflash_sw_retain.py: SlidingWindowManager keeps the reachable

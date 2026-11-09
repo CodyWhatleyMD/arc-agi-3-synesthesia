@@ -1,6 +1,6 @@
 # Pre-statement: experience efficiency, measured off the clock (2026-11-04 08:05 CST)
 
-Written before any number is computed. Cody, 08:04: "with the untimed runs we should be able to measure that -
+Written before any number is computed. The investigator, 08:04: "with the untimed runs we should be able to measure that -
 the real efficiency - not compute or throughput."
 
 ## Claim under test
@@ -16,7 +16,7 @@ right-censors them. Untimed runs remove the censoring and let the same model's e
 - E3  full-clear rate and levels per game, timed vs untimed (the headline we already have at n=1: 4.23 -> 6.15).
 - E4  censoring rate under the clock: fraction of timed games ended by the cap (anchor: 17-21 of 25).
 Data: metrics.jsonl / benchmark.json per run. Timed arms: the fixed-host controls r2, r3, r4, r6 (9,300 s, public 25).
-Untimed: R0 (local 6000, 13 games finished, n=1), r0rep4 (local, running since 11-03 23:40), ut1 (sakshis-server,
+Untimed: R0 (local 6000, 13 games finished, n=1), r0rep4 (local, running since 11-03 23:40), ut1 (the GCP server,
 running since 11-03 01:30). Same model, same harness commit (synesthesia_r0 nb 630a9c6b), same games.
 
 ## Predictions, written first

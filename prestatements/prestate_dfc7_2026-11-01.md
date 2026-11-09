@@ -1,10 +1,10 @@
-# Pre-statement: dfc7, the Monday DFlash combination (2026-11-01 ~09:40 CST, kasoti)
+# Pre-statement: dfc7, the Monday DFlash combination (2026-11-01 ~09:40 CST, CL2)
 
 What: candidate_pinned's exact notebook (pool clock 1500/600, start retry, boot clock, ARM_PINNED_ROUND_MB=1024) on
 harness branch candidate-dflash 42bae15, plus dfr7 v2's DFlash switches (stock incoai drafter, ARM_MTP_TOKENS=7,
 ARM_QSA_RING_FIT=1, ARM_DFLASH_SW_RETAIN=1, draft group, KV group log, Triton drafter attention) and the drafter
 dataset; commit run, 9,300 s budget like candidate_pinned. It replaces dfr7 v2 (built on the dflash-cache branch,
-which tests DFlash's parts but not the combination the Monday notebook would submit; Sakshi's point, 09:29).
+which tests DFlash's parts but not the combination the Monday notebook would submit; CL1's point, 09:29).
 Notebook diff vs staged candidate_pinned: names, harness dataset/commit, the DFlash switches, the extra dataset,
 and cell 2's tool check gaining patch_ple_inc.py (present in 42bae15).
 

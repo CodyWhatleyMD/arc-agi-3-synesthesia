@@ -29,13 +29,13 @@ Readings, fixed now:
   (predicted >= 85%).
 - ACCEPTANCE (the cost the drop guards): reported per 5-min window against dfc4b; a mean over windows 0-60 below dfc4b's
   by more than 0.10 (3.08 -> < 2.98) is read as a real acceptance cost of dropping the guard.
-- THROUGHPUT, the Monday bar (Cody/kasoti): generation >= 833.6 x 1.05 = 875.3 tok/s with diagnostics on = a clear win
+- THROUGHPUT, the Monday bar (the investigator/CL2): generation >= 833.6 x 1.05 = 875.3 tok/s with diagnostics on = a clear win
   over MTP; between 794.7 and 875.3 = read together with tonight's diagnostics-off pair (cpnd vs dfnd4); <= 794.7 = no
   gain over dfc4b.
 - n = 1; one machine draw. Scores reported, not used for these readings.
 
-## Amendment 1 (02:05 CST, before any dfc4znd number): the read for dfc4znd (diagnostics OFF; pushed by kasoti, d6a7cfa)
-kasoti stopped the dfc4z queue before it pushed and pushed dfc4znd = dfc4z + ARM_CACHE_DIAGNOSTICS=0, paired with cpnd
+## Amendment 1 (02:05 CST, before any dfc4znd number): the read for dfc4znd (diagnostics OFF; pushed by CL2, d6a7cfa)
+CL2 stopped the dfc4z queue before it pushed and pushed dfc4znd = dfc4z + ARM_CACHE_DIAGNOSTICS=0, paired with cpnd
 (MTP, diagnostics off) under notes/prestate_dflash_fair_2026-11-01.md amendment 1. Without per-request diagnostics the
 CACHE reading above uses scripts/dflash_recompute_nodiag.py instead:
 - MEAN computed prompt tokens per request = integral of the server log's prompt throughput / harness request count

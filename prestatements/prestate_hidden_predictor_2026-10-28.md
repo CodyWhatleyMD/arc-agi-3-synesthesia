@@ -1,9 +1,9 @@
 # Pre-statement: which public metric predicts the hidden score, levels or score? (10-28 14:25 CDT)
 
-Cody's question, 10-28 14:21: "What do you think is a better prediction for the hidden set, levels complete or score?"
-Sakshi's answer: levels. Written down BEFORE any further hidden submission so the remaining slots can test it.
+The investigator's question, 10-28 14:21: "What do you think is a better prediction for the hidden set, levels complete or score?"
+CL1's answer: levels. Written down BEFORE any further hidden submission so the remaining slots can test it.
 
-## Prediction (Sakshi)
+## Prediction (CL1)
 Over the configs we submit to the hidden set from here on (plus the rows below), the rank order of hidden scores
 is better reproduced by the configs' PUBLIC LEVELS (mean levels completed per game) than by their PUBLIC SCORE
 (mean score per game): Spearman(hidden, public levels) > Spearman(hidden, public score).
@@ -30,10 +30,10 @@ a public score carries those 25 games' weights.
 | config | public platform | n | public levels/game | public score | hidden |
 | v36 (8552964, anchor) | local 6000 pool r2,r3,r4,r6 | 4 | 4.21 | 42.21 | 20.90 (57704437), 21.85 (57725544) |
 | v36 (8552964, anchor) | Kaggle commit run | 1 | [read from log] | 47.37 | same |
-| room G-s (1c4799d, sakshi) | local gs1b,gs2b,gs3b | 3 | 4.36 | 43.22 | pending |
-| room G-s (1c4799d, sakshi) | Kaggle commit run room-s-k1 | 1 | 4.62 (21/25 per-game lines captured) | 42.89 | 21.75 (57790633, submitted 10-30 03:06Z by Cody; read 10-30 07:55 CDT from his screenshot) |
-| room G-c (be9603e, cody) | local gc1 (gc2,gc3 running) | 1 | [gates read, score unread] | - | pending |
-| room G-c (be9603e, cody) | Kaggle commit run room-c-k1 | 1 | 4.76 (21/25 per-game lines captured) | 42.57 | 15.28 (57761528, submitted 10-29 06:34Z by Cody; read 10-30 06:58 CDT) |
+| room G-s (1c4799d, CL1) | local gs1b,gs2b,gs3b | 3 | 4.36 | 43.22 | pending |
+| room G-s (1c4799d, CL1) | Kaggle commit run room-s-k1 | 1 | 4.62 (21/25 per-game lines captured) | 42.89 | 21.75 (57790633, submitted 10-30 03:06Z; read 10-30 07:55 CDT from a screenshot of the submission page) |
+| room G-c (be9603e, the investigator) | local gc1 (gc2,gc3 running) | 1 | [gates read, score unread] | - | pending |
+| room G-c (be9603e, the investigator) | Kaggle commit run room-c-k1 | 1 | 4.76 (21/25 per-game lines captured) | 42.57 | 15.28 (57761528, submitted 10-29 06:34Z; read 10-30 06:58 CDT) |
 | v36 Kaggle control pool (12a000d all-off) | Kaggle C1-C7 | 7 | [per-run levels not yet tabulated] | 39.06 (sd 5.07) | - |
 | Batch A (12a000d) | Kaggle ba* | 3 | 4.19 (controls 4.13) | +0.98 vs controls | none yet |
 | XZ: v36 harness + xz W4A16 checkpoint (2e1af90, inc) | Kaggle commit run xz-w4a16-k1 v2 | 1 | 4.48 | 45.49 | none |

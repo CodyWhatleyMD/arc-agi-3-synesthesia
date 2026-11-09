@@ -1,6 +1,6 @@
 # Pre-statement: v36 with xz's public W4A16 checkpoint (Kaggle arm XZ), 2026-10-30
 
-Written BEFORE the build is pushed; the numbers come after. Cody, 10-30 07:03 CDT: "just run v36 with his model if
+Written BEFORE the build is pushed; the numbers come after. The investigator, 10-30 07:03 CDT: "just run v36 with his model if
 you can" / 07:04 "just run it on kaggle - we don't have room here" (20 GB free on /, 181 GB needed; the local-first
 rule, CLAUDE.md 10-25, is overridden by that instruction for this arm and nothing else).
 
@@ -43,7 +43,7 @@ Pre-stated reads, in order, before any score is looked at:
 4. Throughput: tokens/s and actions, since INT4 marlin vs NVFP4 kernels on sm_120 is a speed question too and the
    play clock is fixed.
 
-## Prior (Sakshi, before the run)
+## Prior (CL1, before the run)
 Direction unknown; I would not bet. For: AutoRound keeps 99.6% of BF16 on standard evals (Intel's card), INT4 g128
 is a well-trodden kernel path, xz is 3rd on the public board with this checkpoint (under their own harness, which
 we have not seen). Against: NVFP4 g16 with FP8 scales is finer-grained than INT4 g128; BF16 attention/shared
@@ -52,22 +52,22 @@ first run of an unfamiliar kernel path on sm_120 fails in ways a second run fixe
 paper's section 6 gains a public W4A16 comparator; if it does not load, the failure line is the finding.
 
 ## What this arm is not
-Not a hidden-set submission (3 slots left; a slot goes to it only if the screen passes and Cody says so). Not a
+Not a hidden-set submission (3 slots left; a slot goes to it only if the screen passes and the investigator says so). Not a
 claim about xz's method: their harness, prompts and clock are theirs; only the weights are borrowed, under the
 Qwen community licence they carry.
 
 ## Amendment 1 (10-30 07:20 CDT, before v2): a second, enabling change, and v1 withdrawn
-v1 (kernel version 1, run 363849435, pushed 07:08) was cancelled at ~100 s on Kas's read of the runtime: the PLE
+v1 (kernel version 1, run 363849435, pushed 07:08) was cancelled at ~100 s on CL2's read of the runtime: the PLE
 embedding method (overlay vllm/models/qwen4_exp/common/ngram_embedding.py, from_quant_config) accepts only
 CompressedTensors, ModelOpt, Fp8 or no quant config and raises NotImplementedError for INCConfig, so the arm as
 first built would have died at model init. v1 produced no score and is not a data point.
 
 Second stated change, enabling only: a hash-pinned post-install runtime patch (scripts/runtime_0310/patch_ple_inc.py,
-Kas; the patch_kv_copy_chunked.py pattern, applied by the setup script from harness/arc3_tools) adding an INC
+CL2; the patch_kv_copy_chunked.py pattern, applied by the setup script from harness/arc3_tools) adding an INC
 branch that returns the unquantized PLE embedding method. PLE is BF16 in xz's checkpoint ("ple" is in Intel's
 ignore list), so the branch changes nothing about the weights it loads; on our checkpoint (CompressedTensors) the
 branch is never taken. Because it lives in harness/arc3_tools, v2 builds from a NEW harness commit on its own
-dataset slug; the harness commit is 2e1af90 (Kas, 10-30 07:2x: patch_ple_inc.py in scripts/runtime_0310 and harness/arc3_tools, hash-pinned 8f5a8d02 -> 70f3e775, wired into the install hook after the KV-copy patch, fail-closed; tested on the real extracted runtime with a real INCConfig). v2 = kernel version 2 of arc-agi-3-synesthesia-xz-w4a16-k1, harness dataset codywhatleymd/arc3-synesthesia-harness-xz @ 2e1af90, pushed 07:28 CDT.
+dataset slug; the harness commit is 2e1af90 (CL2, 10-30 07:2x: patch_ple_inc.py in scripts/runtime_0310 and harness/arc3_tools, hash-pinned 8f5a8d02 -> 70f3e775, wired into the install hook after the KV-copy patch, fail-closed; tested on the real extracted runtime with a real INCConfig). v2 = kernel version 2 of arc-agi-3-synesthesia-xz-w4a16-k1, harness dataset codywhatleymd/arc3-synesthesia-harness-xz @ 2e1af90, pushed 07:28 CDT.
 
 Not changed, on purpose: the watchdog's shard prefetcher treats every shard not named `ple-*` as a GPU shard
 (PLE_SHARD_NAME_PREFIX, startswith). Our v22 PLE shards are named `model-ple-NNNNN-of-00022` and xz's
@@ -75,6 +75,6 @@ Not changed, on purpose: the watchdog's shard prefetcher treats every shard not 
 vllm-shard-prefetch.json lists all 22 of ours under gpu_shards; prefetch finished at 57 s). Fixing the prefix
 would alter the control's load path, so it is left for a separate, pre-stated v36 load-time look.
 
-Also from Kas's read, folded into the reads: which MoE kernel INC picks (Marlin AutoGPTQMoEMethod vs Triton
+Also from CL2's read, folded into the reads: which MoE kernel INC picks (Marlin AutoGPTQMoEMethod vs Triton
 MoeWNA16; the server log says), and the "GPU KV cache size" line, since attention, linear_attn, shared experts and
 the MTP head are BF16 here and will leave a smaller pool than v36's under the same 0.98 utilisation.

@@ -1,6 +1,6 @@
 # Pre-statement: the board tower on/off, replicated locally (written 2026-10-27 ~10:00 CDT, before any run)
 
-Cody's ruling (10-27 09:21, recorded in notes/paper_draft_v3_changelog_2026-10-26.md): findings 214d (one no-image run,
+The investigator's ruling (10-27 09:21, recorded in notes/paper_draft_v3_changelog_2026-10-26.md): findings 214d (one no-image run,
 34.86, against two image runs, 43.86 / 35.21, in the v2.2 harness on 10-14) is one test, not a finding and not an
 acceptance of the null. This replicates it in the harness we ship, with replicates, on the local 6000, before Nov 9.
 
@@ -48,7 +48,7 @@ harness, not built here. It does not test the hidden set. It does not speak to B
 ## Clarification 1 (10:50 CDT, before the relaunch; bo1 produced no score)
 - bo1 (09:55) died at cell 10's flipped assertion five minutes in: the harness dataset's setup_commands.json froze
   `'MULTIMODAL_CONTEXT': 'current_grid'` as a literal, and cell 7 re-applies that setup env over os.environ after the
-  arm's switch is set (Kas's read, confirmed in the log: line 65 printed env MULTIMODAL_CONTEXT=none, line 1175 the
+  arm's switch is set (CL2's read, confirmed in the log: line 65 printed env MULTIMODAL_CONTEXT=none, line 1175 the
   assertion). The guard did its job; nothing was scored. bo1 is invalid and its tag is retired.
 - The OFF arm's harness is now 8552964 plus ONE inert change (branch syn/env-multimodal-context): setup_commands.json
   reads `os.environ.get('MULTIMODAL_CONTEXT', 'current_grid')` the way it already reads ARM_UPSCALE, and the template
@@ -58,12 +58,12 @@ harness, not built here. It does not test the hidden set. It does not speak to B
   never the anchor's.
 - "The channel" includes the system prompt's MULTIMODAL_CONTEXT_ADDENDUM (tool_agent.py:264-265), which the OFF arm
   drops. The arm therefore measures the board part AND its prompt section together, as 214d did.
-- Belt and braces for the negative gate (Kas): after each OFF run, the saved request logs are checked for zero image
+- Belt and braces for the negative gate (CL2): after each OFF run, the saved request logs are checked for zero image
   parts of any kind; an OFF run whose requests carry a board part is invalid.
 - Tags for the relaunch: bo1b, bo2b, bo3b.
 
 ## Clarification 2 (15:02 CDT, before any OFF score or slope is read): score-rate as an exploratory outcome
-Cody, on the v36 curve (mean score vs minutes, near-linear ~0.43/min until the budget bites, then flat): the slope
+The investigator, on the v36 curve (mean score vs minutes, near-linear ~0.43/min until the budget bites, then flat): the slope
 may be a better number than the endpoint. Pre-stated as EXPLORATORY (the primary outcome is unchanged):
 - Score-rate = OLS slope of "mean score" against minutes-since-notebook-start over the periodic summaries from the
   first summary up to and including the last summary at or before 120 min (the v36 knee; fixed here so it is not

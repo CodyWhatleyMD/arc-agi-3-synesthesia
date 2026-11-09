@@ -8,7 +8,7 @@ v37 baseline (already read): loader 387 s; big shards loader/read 28/28, 79/30, 
 available host memory 4.7-9.3 GiB on shards 1, 2, 4 and 13.5-23.4 GiB on read-bound shard 3; cgroup usage <= 170.8 GiB
 of 175.
 
-Predictions (kasoti): the PLE phase gets SLOWER (the loader reads the PLE files on its own, without the 8 interleaved
+Predictions (CL2): the PLE phase gets SLOWER (the loader reads the PLE files on its own, without the 8 interleaved
 readers): refuted if the arm's PLE phase is <= 145 s. Big shards 2-4 are unchanged in kind (the PLE files load after them,
 so the prefix cannot touch their stalls): refuted if the arm's shards 2-4 show no time beyond their reads while
 available memory during them stays <= 8 GiB. Available memory during the PLE phase rises by >= 4 GiB (no prefetch window

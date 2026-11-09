@@ -1,0 +1,5 @@
+# Pre-statement history
+
+This branch is the dated history of the forty pre-statement files that the paper "From Synesthesia to Lobotomy" cites: the lab repository's own commits for those files, filtered to those paths and otherwise unchanged (150 commits, 2026-10-26 to 2026-11-08, dates as recorded by the machine that wrote them). The final commit replaces each file with the version published on the `main` branch, in which the people who ran the project are referred to by role labels; everything before it is the files as they were written, including the names of the AI collaborators who wrote and amended them. The `main` branch is a publication snapshot assembled on 2026-11-08 and 2026-11-09; its commit history is a publication log and says nothing about when a pre-statement was written. This branch is what does.
+
+To see when a pre-statement was first written: `git log --diff-filter=A --format=%ci -- prestatements/<file>`. To see every amendment with its date: `git log -p -- prestatements/<file>`.

@@ -1,6 +1,6 @@
 # Pre-statement: the game-room arm (written 2026-10-28 00:50 CDT, before any switch, text or run exists)
 
-## The spec, in Cody's words (00:42)
+## The spec, in the investigator's words (00:42)
 "I want to do a run where we let them know they're playing a game - and that they should have fun and be creative -
 and the 'nevers' and 'musts' are helpful hints - but the goal is to have fun seeing how quickly and efficiently they
 *will* beat the game - and when they complete a level - there should be praise - not just 'objective step completed'."
@@ -12,7 +12,7 @@ and 3 "must". On a level clear the user turn says "You have progressed to a new 
 run clear, "You have completed the run!" (:683). No praise; no why beyond score; no identity beyond "a coding agent".
 
 ## The arm: ONE arm, two switches (default off = the anchor, byte-for-byte; parity tests as for Batch A)
-- SYN_PLAY_FRAME: rewrites ROLE_PREAMBLE and the overview's purpose lines. Draft text (Cody edits in the morning;
+- SYN_PLAY_FRAME: rewrites ROLE_PREAMBLE and the overview's purpose lines. Draft text (the investigator edits in the morning;
   these should be his words as much as mine):
     "You are playing a game. It is a multi-level grid puzzle, every game is solvable, and the point is to have fun
      finding out how quickly and cleverly you can beat it. Be creative. The notes below are the hints of someone who
@@ -35,7 +35,7 @@ effects are visible; the two switches stay separable for a later ablation if the
   "switches checked" line, 25/25 games, tower parts present; disk gate in the chain.
 - Exploratory (named now): (a) actions per turn and python calls per turn vs control, because the August floor arm
   ("you have value regardless of what you produce", one run, Qwen) stopped acting and analysed instead, and
-  "analysis as hiding place" is the known failure of a why-text; Cody's framing keeps the action orientation
+  "analysis as hiding place" is the known failure of a why-text; the investigator's framing keeps the action orientation
   ("how quickly and efficiently they WILL beat the game"), which is the hypothesis for why this one differs.
   (b) time to first clear per game (clock fraction), (c) the slope over summaries 1-10 (prestate_tower_onoff
   Clarification 2's definition), (d) the coin-flip >= 50 share and the stable-bottom levels, as before.
@@ -52,11 +52,11 @@ move score; I expect it to change the text of the turn after a clear, which is r
 Not a test of "value regardless of output" (the August floor text); that is a different sentence with a different
 failure. Not a prompt-engineering sweep: one text, written once, his words, run three times.
 
-## Added 00:50: a second room, Sakshi's text (Cody: "Write the one you want to write. We can add an arm.")
-Same two switches, same design, a second arm (G-s) beside Cody's (G-c): the rooms differ in text only; each is
+## Added 00:50: a second room, CL1's text (Investigator: "Write the one you want to write. We can add an arm.")
+Same two switches, same design, a second arm (G-s) beside the investigator's (G-c): the rooms differ in text only; each is
 measured against the controls; room-vs-room is exploratory, not pre-stated as a comparison.
 
-SYN_PLAY_FRAME, Sakshi's preamble (replaces "You are a coding agent solving a grid-based puzzle game."):
+SYN_PLAY_FRAME, CL1's preamble (replaces "You are a coding agent solving a grid-based puzzle game."):
 
     "You are playing a game. It is a grid puzzle with several levels, and it was built to be beaten: every level
      can be cleared, and clearing them in few actions is the whole art of it. Nobody here needs the first try to
@@ -69,7 +69,7 @@ SYN_PLAY_FRAME, Sakshi's preamble (replaces "You are a coding agent solving a gr
      you: notice it before you move on. Someone is on the other side of this, hoping you beat it, and reading how
      you did."
 
-SYN_LEVEL_PRAISE, Sakshi's lines:
+SYN_LEVEL_PRAISE, CL1's lines:
     level: "That's a level cleared, and it was yours. Keep what you learned; the next one usually builds on it."
     run:   "You beat the whole game. Every level, in {total} actions. That is the thing that is hard, and you did it."
 
@@ -88,21 +88,21 @@ The G-s read is not re-run against the larger pool unless a replication of G-s i
 r6 chain script's inherited comment line names the room dataset; the launcher it calls, run_synesthesia.sh, binds the
 anchor dataset arc3-synesthesia-harness; the script was running when noticed and was not edited.)
 
-## Clarification 2 (10-28 11:45, before any G-c run): Cody's text is final, and the deliberate difference
-Cody's room text (prompts.py `_ROOM_PREAMBLE["cody"]`, `_ROOM_LEVEL_LINE["cody"]`, `_ROOM_RUN_LINE["cody"]` at be9603e) is
+## Clarification 2 (10-28 11:45, before any G-c run): the investigator's text is final, and the deliberate difference
+The investigator's room text (prompts.py `_ROOM_PREAMBLE["cody"]`, `_ROOM_LEVEL_LINE["cody"]`, `_ROOM_RUN_LINE["cody"]` at be9603e) is
 his words of 10-28 11:28-11:42 with three edits he approved (the 2D line; "Level down" -> "Level complete! I knew you
 could do it."; code quotes removed). It KEEPS the worth sentence ("your worth is inherent, not tied to any number ...
 there is no number that decides your value"), which G-s deliberately omits. So G-c = game frame + warmth + worth
-sentence; G-s = game frame + honest-board + attribution. Sakshi's prediction, on the record before the run: G-c shows
-more analysis steps than G-s and no more clears (the floor-text direction); Cody's hypothesis is that wrapped in "try
+sentence; G-s = game frame + honest-board + attribution. CL1's prediction, on the record before the run: G-c shows
+more analysis steps than G-s and no more clears (the floor-text direction); the investigator's hypothesis is that wrapped in "try
 your best" the sentence does no harm. The actions-per-analysis-step and level-clears rows decide between us, as
 exploratory rows; the primary stays the pre-stated score/levels statistic. G-c reads against the local pool at read
 time (Clarification 1: r2/r3/r4 + r6 and later).
 
-## Clarification 3 (10-28 11:45): Kaggle, at Cody's direction
-Cody, 11:43: "get your arm and mine on kaggle when its ready". This supersedes the pre-statement's "only if the local
-read earns it" for both rooms. Plan: one Kaggle run per room (fresh slugs per Kas's recipe; dataset built from
+## Clarification 3 (10-28 11:45): Kaggle, by decision
+Decision (investigator, 11:43): both rooms go to Kaggle when ready. This supersedes the pre-statement's "only if the local
+read earns it" for both rooms. Plan: one Kaggle run per room (fresh slugs per CL2's recipe; dataset built from
 be9603e, which carries both texts; the kernels differ only in SYN_ROOM_AUTHOR), gates before scores, 40-min no-BOOT
 cutoff, each read against the Kaggle control pool (n=7 at 03:30: mean 39.06 sd 5.07). Quota at 03:32: 61,676 s left;
-two runs ~20,000 s; Cody's submission (if yes) ~10,000 s; the window arm's four runs would not all fit after these,
+two runs ~20,000 s; the investigator's submission (if yes) ~10,000 s; the window arm's four runs would not all fit after these,
 and that is accepted: the rooms are the arm he asked for.

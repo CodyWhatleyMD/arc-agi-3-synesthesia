@@ -1,7 +1,7 @@
 # Pre-statement: the Batch A arm (written 2026-10-26 19:35 CDT, before any Batch A run)
 
 Written before any arm result exists, so what counts as a result is fixed before the numbers land.
-Owner of the measurement design: Sakshi. Harness: syn/batch-a 12a000d (145/145; all switches off =
+Owner of the measurement design: CL1. Harness: syn/batch-a 12a000d (145/145; all switches off =
 8552964's system prompt byte for byte, test_g5a_prompts.py; per-port parity tests in tests/harness).
 
 ## Arms
@@ -11,7 +11,7 @@ Owner of the measurement design: Sakshi. Harness: syn/batch-a 12a000d (145/145; 
 | control | arc3-synesthesia-harness-arms @ 12a000d | no SYN_* set (= v8 by the parity tests) |
 | batch-a | same dataset | the 11 boolean switches on: SYN_FIX_TRANSITION_RESULT, SYN_TERMINAL_RAISE, SYN_SANDBOX_HYGIENE, SYN_TRANSIENT_HINT, SYN_FIX_OPENER, SYN_GAMEOVER_TEXT, SYN_LEVEL_TRANSFER, SYN_REQUEST_ROBUST, SYN_ACTION_INFO, SYN_UNDO_INFO, SYN_WM_FREE (=1). SYN_HISTORY_BOARDS_KEEP unset: it is its own arm (notes/payload_cost_2026-10-26.md) |
 
-One combined arm, by decision (Cody left it to Sakshi, 10-26 13:08): at n=1-3 only large effects are
+One combined arm, by decision (the investigator left it to CL1, 10-26 13:08): at n=1-3 only large effects are
 visible, so one-switch arms would mostly read null. If batch-a moves, it is ablated switch by switch
 (every switch defaults off, so each ablation is one env line).
 
@@ -48,14 +48,14 @@ A run with a traceback in the harness, an HTTP 400, a missing `synesthesia: swit
 arm log, or fewer than 25 games started. The decision to discard is made from those criteria only, before
 reading the run's score.
 
-## My prior (Sakshi, before any number)
+## My prior (CL1, before any number)
 
 Franzen's whole stack scored 27.89 hidden vs our ~20, but these are only his agent-side changes, so I
 expect a public-25 gain of 0 to +6 if any. At local 2 v 3 runs that is inside the noise: I put ~65% on
 "not resolved" locally and ~60% on a positive point estimate. Three Kaggle rounds help; a reading of
 "gain" would need a larger effect than I expect.
 
-## Clarification 1 (22:12 CDT, during ba1; ruled by Sakshi on Kas's question)
+## Clarification 1 (22:12 CDT, during ba1; ruled by CL1 on CL2's question)
 
 The invalid-run criterion says "a traceback **in the harness**". ba1's log has one `Traceback`, printed under
 "sandbox process exited unexpectedly; stderr follows:": the model's own code in the sandbox child hit MemoryError
@@ -71,9 +71,9 @@ dies the same way silently (8552964 SB L863). Ruling, applied to every run of ev
   depend on it: it follows the pre-stated wording ("in the harness"), and the other reading would discard a Batch A
   run for an event the controls cannot log at all.
 
-## Clarification 2 (23:35 CDT; ruled by Sakshi BEFORE reading ba1's score)
+## Clarification 2 (23:35 CDT; ruled by CL1 BEFORE reading ba1's score)
 
-The root disk filled during ba1 (Cody, 23:29: "it already went to 0"). ba1's log stops at 23:02 mid-line at
+The root disk filled during ba1 (reported at 23:29). ba1's log stops at 23:02 mid-line at
 exactly 131,072 bytes; the run continued unlogged until ~23:24, about 30 min short of a full-budget run. Its
 validity criteria cannot be checked over the whole run, so ba1 is INVALID (unverifiable) and is rerun. ba2 and r5
 died within seconds of starting on the full disk and never played. r2, r3, r4 and both smokes ended cleanly
@@ -83,7 +83,7 @@ the disk holding its working directory reached zero free space is invalid.
 ## Clarification 3 (00:10 CDT 10-27; Kaggle design if two sessions at once cannot start; decided BEFORE the retry's result)
 
 Round 1 (control + batch-a started together) hung before BOOT on both sessions and was cancelled at ~39 min, no
-scores (216ax addendum 6). Kas is testing arm-control alone (one variable). Decided now, whichever way that goes:
+scores (216ax addendum 6). CL2 is testing arm-control alone (one variable). Decided now, whichever way that goes:
 - If one session alone boots and two at once do not, Kaggle runs go ONE AT A TIME in the counterbalanced order
   C A A C C A (C = control, A = batch-a): each arm still gets 3 runs, the number fixed in this pre-statement, and
   each arm's mean run position is the same, so a slow drift in Kaggle's servers over the day cancels to first order.
@@ -134,7 +134,7 @@ reported so the interleaving can be inspected. C1 = probe-arms-newk is complete.
 
 ## Clarification 8 (10-27 12:55 CDT, before the push): a fresh dataset slug with identical bytes still counts
 Kaggle forum 753192 (10-27) reports RTX Pro 6000 sessions hanging with no output and one participant's workaround:
-re-upload the same code archive as a NEW dataset and start a fresh kernel pointing at it. Kas's probe on this trigger
+re-upload the same code archive as a NEW dataset and start a fresh kernel pointing at it. CL2's probe on this trigger
 is therefore a new private dataset (codywhatleymd/arc3-synesthesia-harness-arms2) with the bytes of arms @12a000d,
 and a fresh kernel (arm-batch-a-k3) built with the same Batch A --env switches. Ruling: it differs from the arm only in
 labels and the dataset slug, so it counts as A1 if it boots and completes, PROVIDED a per-file sha256 comparison shows
@@ -143,18 +143,18 @@ it a probe only. Same read-back, 20/40-minute reads, 40-minute cancel, one probe
 itself a finding about the hang (per dataset version vs per host), recorded either way.
 
 ## Clarification 9 (10-27 19:35 CDT, before the three-pair read): play time as a covariate
-Kas: per-game budgets are identical (3,918 s) but the soft end is fixed at BOOT + ~8,710 s, so model-load time
+CL2: per-game budgets are identical (3,918 s) but the soft end is fixed at BOOT + ~8,710 s, so model-load time
 comes out of play. Play seconds (soft end − benchmark start): v36 7,907; C1 8,110; A1 7,402; C2 7,454; A2 7,521
 (weight loading 732-907 s on the fresh-slug hosts). Pair 1 is load-confounded (A1 had 708 s less play than C1 and
 tied); pair 2 is balanced. Ruling: play seconds are reported beside each pair in the read, as a covariate, never as a
 correction to the score; the pre-stated statistic is unchanged.
 
 ## Clarification 10 (10-27 20:58 CDT, before any round-4 push): the ultrareview fix and comparability
-Cody's cloud review of 12a000d (notes/ultrareview_batch_a_2026-10-27.md) found that under SYN_REQUEST_ROBUST a 400
+The investigator's cloud review of 12a000d (notes/ultrareview_batch_a_2026-10-27.md) found that under SYN_REQUEST_ROBUST a 400
 after a reply kept the turn's exchanges and re-sent them: if the body was what the server rejected, the same 400
 repeats until the game clock runs out. Rounds 1-3 (A1, A2, A3) and the local ba1b/ba2b ran 12a000d. Every completed
 run passed the "0 HTTP 400" gate, so the loop never fired in a counted run, and if it fires in A3 the gate declares
-A3 invalid rather than scoring it. The fix (syn/batch-a-s2, for Kas's review and merge into syn/batch-a) makes
+A3 invalid rather than scoring it. The fix (syn/batch-a-s2, for CL2's review and merge into syn/batch-a) makes
 400/413/422 roll the turn back, as the anchor did; it changes only trajectories that contain an HTTP 400, which the
 gates already exclude, so a valid run of the fixed commit is comparable with a valid run of 12a000d. Rounds after the
 merge run the fixed commit; the arm's tag names the commit in each round's row. The other review items in the same

@@ -2,7 +2,7 @@
 
 **Arm:** v37 (harness 8552964) + `ARM_PINNED_ROUND_MB=1024`; harness 2c51989 on branch `pinned-round` (one change:
 setup_commands.json appends `pinned_max_round_threshold_mb:1024` to the server's `PYTORCH_CUDA_ALLOC_CONF`; unset =
-8552964 exactly). Kept off main and off v37's harness dataset (Cody: "keep any major alterations separate from the main").
+8552964 exactly). Kept off main and off v37's harness dataset (Investigator: "keep any major alterations separate from the main").
 
 **Why (measured before this arm):** PyTorch's pinned host allocator rounds a pinned allocation up to the next power of
 two. torch 2.13.0+cu130, one pinned `torch.empty` of 8.64 GiB: unset 15.86 / 16.25 GiB of host memory; with the key in
@@ -29,7 +29,7 @@ after the server is ready; compared on the `Available RAM` line and host memory 
 Local disk is not Kaggle's mount, so local shard idle is not read for prediction 2.
 
 **If it holds:** the same switch on the candidate (harness fa326e3, branch candidate-1101), one Kaggle test run before
-the 17:59 CST window. Which run takes a submission slot is Cody's call.
+the 17:59 CST window. Which run takes a submission slot is the investigator's call.
 
 ## Local check result (2026-11-01 04:43-04:46 CST, 6000, Kaggle image, local NVMe model; recorded after the run)
 Each run stopped once vLLM logged its first "Available RAM" line (the target-weight load, right after the PLE pin).
@@ -41,7 +41,7 @@ Prediction 1 HOLDS on this machine: +27.4 GiB available by vLLM's own line, -31.
 (expected ~32.6). n=1 each; local disk, so shard idle (prediction 2) is left to the Kaggle run.
 
 ## Amendment 1 (2026-11-01 05:05 CST, before any Kaggle run): the boot clock on the candidate only
-Kas found forum topic 753843 (read 05:00): Jeroen Cottaar's team (#2) measured on 10-29/30 that on SCORED runs the
+CL2 found forum topic 753843 (read 05:00): Jeroen Cottaar's team (#2) measured on 10-29/30 that on SCORED runs the
 notebook starts ~40-50 min after the machine (a /proc/uptime > 20 min killswitch fired every time; an empty notebook
 on the RTX 6000 now takes ~50 min to return a Kaggle error) and that the time counts against the 9 h (successful
 submissions take 9 h total, not 9 h 40). Our scored-run clocks count from NOTEBOOK_START_EPOCH, so the pool clock's end
@@ -53,7 +53,7 @@ without it, a clean one-variable comparison. A commit run cannot test the boot c
 and the delay was reported on scored runs only.
 
 ## Local repeat on the quiet box (2026-11-01 04:59-05:05 CST; arm first, then v37; recorded after the run)
-Kas's runtime-unpack bench had held ~18.85 GB of /dev/shm and pushed swap 20 -> 60 GiB during the first pair, so the
+CL2's runtime-unpack bench had held ~18.85 GB of /dev/shm and pushed swap 20 -> 60 GiB during the first pair, so the
 pair was repeated after it finished (start: 174 GiB available, swap 22 GiB), in reverse order.
 | run | vLLM "Available RAM" | host MemAvailable (+20 s) | container memory |
 |---|---|---|---|

@@ -1,6 +1,6 @@
 # Pre-statement: start-retry arm (2026-11-01, before any Kaggle run)
 
-Found by Sakshi's game-loop audit (notes/hidden_path_audit_loop_2026-11-01.md): taaf/benchmark.py starts all games one
+Found by CL1's game-loop audit (notes/hidden_path_audit_loop_2026-11-01.md): taaf/benchmark.py starts all games one
 after another with no per-game handling, and game_api.py raises when arcade.make returns None (arc_agi's remote wrapper
 swallows exceptions and returns None). The enclosing try has only a finally, so one transient gateway failure while
 starting any one of the 110 hidden games fails the whole run. Commit runs never take this path (offline envs).
@@ -16,7 +16,7 @@ score is inside v36's control range (32.6-51.4). It cannot show the hidden-run b
 
 ## Amendment before any run (01:45): the scorecard hold
 
-Sakshi's review of a2e31b2 found that the skip would zero the run if the FIRST game failed: game_api finished the failed
+CL1's review of a2e31b2 found that the skip would zero the run if the FIRST game failed: game_api finished the failed
 game's run on the shared competition scorecard, dropping its count to 0 and closing it, so every later open_run raised
 "already closed". Fixed in 4d63b91: under ARC3_START_SKIP a failed start holds its open run, and Benchmark releases the held
 runs after the setup loop (again, idempotently, in finally). tests/start_retry/test_scorecard_hold.py (real Benchmark and

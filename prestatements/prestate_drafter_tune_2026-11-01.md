@@ -1,4 +1,4 @@
-# Pre-statement: fine-tuning the DFlash2 drafter on our v22 quant (2026-11-01 ~07:45 CST, drafter-tune lane, kasoti fork)
+# Pre-statement: fine-tuning the DFlash2 drafter on our v22 quant (2026-11-01 ~07:45 CST, drafter-tune lane, CL2 fork)
 
 Goal (coordinator, 07:2x): a tuned DFlash drafter in a TESTED, submittable notebook for Monday's slot (window closes
 Mon 17:59 CST). Cause addressed: the stock incoai drafter was trained against Qwen's FP8 Flash-Next; on our NVFP4 quant

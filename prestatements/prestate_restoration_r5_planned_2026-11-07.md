@@ -1,6 +1,6 @@
-# Pre-statement: R5 as planned (2026-11-07 04:50 CST, Sakshi), before any run
+# Pre-statement: R5 as planned (2026-11-07 04:50 CST, CL1), before any run
 
-Supersedes the 11-04 Colab redefinition (notes/prestate_restoration_r5_colab_2026-11-04.md) for the R5 arm. Cody, 04:41:
+Supersedes the 11-04 Colab redefinition (notes/prestate_restoration_r5_colab_2026-11-04.md) for the R5 arm. The investigator, 04:41:
 "if they are running the wrong tests there is no point"; the server's R5-at-concurrency-14 and the vast lane were stopped.
 
 ## The arm, exactly as the 10-30 plan amended it (notes/prestate_restoration_2026-10-30.md, amendment 1)
@@ -28,13 +28,13 @@ safety net the plan called it, so "clock off" is a clean condition and the cappe
    with the unfinished count. A partial R5 is reported as a partial, never scaled.
 
 ## Predictions (before any number)
-P1 (Cody's, from 10-30): R5 clears more levels per game than ut1 — the cuts removed capability, not only time.
-P2 (Sakshi): the native tower alone is small (the clocked native arm was +2.07, not resolved); if R5 differs from ut1
+P1 (the investigator's, from 10-30): R5 clears more levels per game than ut1 — the cuts removed capability, not only time.
+P2 (CL1): the native tower alone is small (the clocked native arm was +2.07, not resolved); if R5 differs from ut1
 beyond ut1's own run-to-run spread, most of it is the history kept to the limit.
 P3: per action, R5 is at least as efficient as ut1 (levels per 100 actions >= 0.25); if it is lower, the extra history
 is costing actions, which is a finding against the restoration.
 Not resolved at n=1 vs 1 by our rule; the direction is still worth stating, as R0's was.
 
-## Host and timing (Cody's call, 04:50): whole on the server (~53 h at ut1's pace; 61 h to the deadline), split
+## Host and timing (the investigator's call, 04:50): whole on the server (~53 h at ut1's pace; 61 h to the deadline), split
 ## across two Kaggle-shaped VMs by game list (the generator's game-slice switch; ~27 h each), or run and report what
 ## finishes. [TO BE FILLED when he decides]

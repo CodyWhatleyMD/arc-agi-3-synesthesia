@@ -1,9 +1,9 @@
-# Pre-statement: DFlash vs MTP with diagnostics off (2026-11-01 ~23:40 CST, kasoti)
+# Pre-statement: DFlash vs MTP with diagnostics off (2026-11-01 ~23:40 CST, CL2)
 
 Why: Codex (notes/codex_review_dflash_throughput_2026-11-01.md) found the commit-run comparison tilted: test-only cache
 diagnostics are on in every commit run and were ~10x larger for DFlash (3.0-3.3 GB vs 0.36 GB); scored runs never enable
 them. On decode-only batches DFlash already breaks even per emitted token; the remaining loss is cache reuse (84% more
-uncached prompt tokens per generated token at K=7). Cody: the throughput gap is a problem to solve, not a verdict.
+uncached prompt tokens per generated token at K=7). Investigator: the throughput gap is a problem to solve, not a verdict.
 
 Design: two commit runs pushed together (same hour, two Kaggle sessions), harness candidate-dflash 255503f (adds
 ARM_CACHE_DIAGNOSTICS, default on; both runs set it 0), candidate_pinned's flags in both:

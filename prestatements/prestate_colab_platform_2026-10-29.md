@@ -1,6 +1,6 @@
 # Pre-statement: Colab G4 as a platform (10-29 01:58 CDT, before any Colab score is read)
 
-Kas's push-back (01:56), accepted: one in-range score cannot establish equivalence (any value ~30-48 "passes" against a
+CL2's push-back (01:56), accepted: one in-range score cannot establish equivalence (any value ~30-48 "passes" against a
 pool with sd ~5; the test cannot fail), and CLAUDE.md's one-platform rule applies. The matching KV pool (1,501,360 tokens)
 shows the SERVING config is the same, not that play is: host CPU (sandbox + tower on CPU), clock and load time differ, and
 play seconds already moved Kaggle scores.
@@ -13,7 +13,7 @@ play seconds already moved Kaggle scores.
    controls exist: paired-by-game bootstrap of (Colab mean - Kaggle mean) over the 25 games, Kaggle n=7; pool ONLY if
    the 90% CI of that platform difference lies entirely within +/-2.0 points (TOST, two one-sided 5% tests) AND Colab
    play seconds are within 5% of the Kaggle controls' mean. Otherwise Colab stays separate and the paper states the CI.
-   (Correction 01:57, Kas: "CI includes 0" rewards noise; equivalence is the whole CI inside the margin. Expected
+   (Correction 01:57, CL2: "CI includes 0" rewards noise; equivalence is the whole CI inside the margin. Expected
    outcome at n=4 vs 7 with sd ~5: half-width ~5-6, so the pools likely stay separate and the claimable margin is ~+/-6.)
 3. The first Colab run (c1, anchor f9af78d9 / 8552964) is a plumbing test and the first member of the Colab pool;
    its score is reported, not interpreted against Kaggle.
@@ -26,7 +26,7 @@ through colab_run.sh, unchanged otherwise. Pass = vLLM serves AND the benchmark 
 games played; the host peak (worker RSS + /dev/shm) is recorded either way. c2's score, if any, joins the Colab pool
 under Rule 1 (reported, not compared with Kaggle). Prediction: it fits (worker ≈ 105 GiB + 20 GiB shm < 176 GiB);
 if it OOMs again the next step is the runtime on disk instead of /dev/shm (c1's disk had 207 GB free), not more tuning.
-Cody's own Colab notebook (ARC_AGI_3_Synesthesia_Kitchensink) stopped at the model: per-file download over the
+The investigator's own Colab notebook (ARC_AGI_3_Synesthesia_Kitchensink) stopped at the model: per-file download over the
 paginated Kaggle file list (20 per page) fetched 8 of 22 PLE shards and no index; the runner pulls with
 kagglehub.model_download, which does not have that problem.
 

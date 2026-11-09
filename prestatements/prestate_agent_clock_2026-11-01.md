@@ -1,6 +1,6 @@
 # Pre-statement: the agent manages its own time (2026-11-01 06:45 CST, written before any code or run)
 
-Owner: Sakshi (Cody 06:36: "Worth a shot"). Arm name: agent clock. Base: the candidate with the pinned fix and the boot
+Owner: CL1 (the investigator 06:36: "Worth a shot"). Arm name: agent clock. Base: the candidate with the pinned fix and the boot
 clock (harness 848f336 = fa326e3 + ARM_PINNED_ROUND_MB; builder --pool-clock --boot-clock). Kept off main and off every
 existing harness dataset.
 
@@ -59,7 +59,7 @@ own reading of its progress schedules better than arbitrary cutoffs. One hidden 
 
 ## Amendment 2 (2026-11-01 10:40 CST, before any fix is written): the alone ping-pong, seen in ac1
 
-Observed in ac1 (sakshis-server, harness ece6730, log /data/run_synesthesia_ac_srv.log): once every other game had
+Observed in ac1 (the GCP server, harness ece6730, log /data/run_synesthesia_ac_srv.log): once every other game had
 finished, lf52 yielded 'stuck' ("no viable hypothesis for level 2"), the resume worker gave it the free slot at
 once (nothing else was parked or unstarted), the agent yielded 'stuck' again, and so on: 84 park/resume cycles on
 lf52 in ~50 min, 0 actions between them, each cycle one model turn with a full prefill. dc22 showed the same shape

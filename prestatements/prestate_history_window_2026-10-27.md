@@ -1,6 +1,6 @@
 # Pre-statement: the board-history window as a VARIANCE experiment (written 2026-10-27 20:27 CDT, before any run)
 
-Why (Dhara, 20:23 and 20:26): the shipped harness accumulates every board ever sent until compaction (median 13, max
+Why (CL3, 20:23 and 20:26): the shipped harness accumulates every board ever sent until compaction (median 13, max
 48 boards per request), so behaviour depends on WHEN compaction fires; that is harness-driven variance. Measured
 tonight (notes/noise_structure_2026-10-27.md and below): 45% of a game's score variance is run-to-run (ICC 0.55);
 compaction first fires at a median 13% of the game's clock (p75 0.17, p90 0.28; 74/75 game-runs compact); the
@@ -8,7 +8,7 @@ between-run variance of levels cleared grows from 0.21 (clock 0.1) to 2.16 (0.5)
 Caveat stated now: that growth is also consistent with luck accumulating over time, so the curve alone does not
 discriminate; the WINDOW's effect on the curve does.
 
-## Step 0 (before the online arm): the offline replay, Dhara's test, derives K instead of picking it
+## Step 0 (before the online arm): the offline replay, CL3's test, derives K instead of picking it
 Take logged requests from the valid ON runs (r2, r3, r4), rebuild each prompt with its board history cut to the
 newest K boards for K in {1, 4, all}, send to the same model at temperature 0, and measure agreement of the
 model's chosen action with the action it actually took. If agreement at K=1 is in the high nineties the model does
@@ -40,7 +40,7 @@ NOT RESOLVED at 3 vs 4. I would be glad to be wrong in either direction.
 ## Invalid-run criteria: as the on/off pre-statement, plus the request-log check that no request carries more than K
 board parts (window arms) and the usual zero HTTP 400.
 
-## Clarification 1 (20:29 CDT, Dhara; before any run)
+## Clarification 1 (20:29 CDT, CL3; before any run)
 - The shipped curve (0.21, 0.61, 1.17, 1.81, 2.16) is near-linear from the start, as a random walk in levels would
   be, with the first compaction (0.13) inside the first rise; it is compatible with both stories. Only the window's
   curve discriminates (the prediction above stands).
@@ -50,4 +50,4 @@ board parts (window arms) and the usual zero HTTP 400.
   concentrated after ~0.13 is a third line of evidence for the mechanism, from data with no luck in it.
 - Timestamps in this file and in notes/noise_structure_2026-10-27.md were corrected at 20:30: I had written 20:40 and
   ~20:50 by estimating elapsed time from the amount of work done. The clock on every turn read 20:22-20:29. The
-  whole exchange with Dhara took seven minutes, not the "hour" I called it twice. (Cody caught it.)
+  whole exchange with CL3 took seven minutes, not the "hour" I called it twice. (the investigator caught it.)
