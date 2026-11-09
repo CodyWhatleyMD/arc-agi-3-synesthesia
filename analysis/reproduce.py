@@ -165,6 +165,10 @@ if run([PY, HERE / "plot_score_vs_playtime.py", "--out", OUT / "score_vs_playtim
 print("7. move efficiency: same action window, matched cells, whole-run aggregates (section 4)")
 if run([PY, HERE / "move_efficiency.py"], "move_efficiency.txt", env={"OUT": str(OUT / "move_efficiency.json")}):
     report("move efficiency (same action window, matched cells)", OUT / "move_efficiency.json", NOTES / "move_efficiency_timed_vs_untimed_2026-11-09.json")
+print("8. end state of the clock-ended control games (section 4): actions into the next level, last clear as a fraction of the game's own clock")
+if run([PY, HERE / "end_state.py"], "end_state.txt", env={"OUT": str(OUT / "end_state.json")}):
+    report("end state of the clock-ended games", OUT / "end_state.json", NOTES / "end_state_controls_2026-11-09.json")
+
 
     S = json.load(open(OUT / "score_vs_playtime.json"))
     print(f"      slope over the first 100 minutes {S['slope_first_100_min_mean']:.2f} points/min (per run: "

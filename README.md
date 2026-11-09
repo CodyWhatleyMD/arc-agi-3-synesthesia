@@ -8,7 +8,7 @@ numbers landed, the notebooks that ran on Kaggle, the harness, and the paper its
 ## The finding, in one paragraph
 
 Under the submission setup (a 65-minute clock per game, fourteen games sharing one GPU), three of every four games
-end at the clock; the median such game cleared its last level three-quarters of the way through its time, and 45% cleared one in the final fifth. Take the clock away and change nothing else, and the same model
+end at the clock; the median such game cleared its last level two-thirds of the way through its own clock, and 37% of those that cleared one did so in the final fifth. Take the clock away and change nothing else, and the same model
 clears 13 to 16 of the 25 public games instead of 6 or 7: +1.88 levels per game, 95% CI [+1.17, +2.63] (paired by
 game, resampled over runs then games), with the score itself +15.3 [+5.2, +25.2], at n = 4 untimed runs against 4
 timed controls. Within the first thousand actions the two regimes reach each level at the same rate (level 5: 0.64 against 0.64, 300 and 100 games); the
@@ -33,7 +33,7 @@ results/          MANIFEST.json + one directory per run: results/<platform>/<tag
                   records (taaf_setup_env.json, vllm-watchdog.json, git_status.txt). Logs over 1 MB are gzipped.
                   Left behind, listed per run in the manifest: per-game request logs, pickles, cache diagnostics,
                   transcripts (tens of GB; available on request).
-analysis/         the scripts that produced every number and figure in the paper, repointed at results/ through
+analysis/         the scripts behind the paper's headline statistics and figures (reproduce.py regenerates eleven artifacts from the run records; the remaining numbers cite the lab's findings file), repointed at results/ through
                   results_index.py; `reproduce.py` regenerates them into analysis/out/
 notebooks/        generator/ (build_synesthesia_notebook.py and its cells: one generator, switches per arm) and
                   staged/ (the notebooks the counted runs used, as pushed to Kaggle)
@@ -81,8 +81,7 @@ notebook our early submissions copied, as the paper's §5 records.
 
 ## License
 
-MIT, see `LICENSE`. The harness is Tufa Labs' under the MIT License its package metadata declares; everything else
-is © 2026 Cody Whatley under the same terms.
+MIT for our own work, see `LICENSE`. Of the harness lineage, Tufa Labs' ARC3-Inference declares the MIT License in its package metadata; tufa-arc-agi-framework ships no license declaration and its upstream repository is no longer public, so it is redistributed as received, with credit. The runtime overlay derives from vLLM and is Apache-2.0. Everything else is © 2026 Cody Whatley, MIT.
 
 ## Pre-statement history
 
