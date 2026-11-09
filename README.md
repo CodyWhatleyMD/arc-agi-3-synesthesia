@@ -15,7 +15,7 @@ timed controls. Scored over the same moves (each untimed run read at the number 
 difference lives in the actions the clock never allows. Every configuration change we tested under the clock, including
 the one the paper is named for, came back NOT RESOLVED inside run-to-run noise that moves identical code by 20 points.
 The one resolved result is negative: remove the model's echoed prior reasoning and it loses 30 points, so that echo is
-the agent's working memory. The paper is `paper/paper.md`; the 1,500-word Kaggle write-up is `paper/writeup.md`.
+the agent's working memory. The paper is `paper/paper.md` (typeset copy: `paper/paper.pdf`, 27 pages, built by `scripts/publish/pdf/` from the same Markdown); the 1,500-word Kaggle write-up is `paper/writeup.md`.
 
 ## Layout
 
