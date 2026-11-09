@@ -1,0 +1,366 @@
+{
+ "_doc": "Per-file disposition of Han Solo's e975732 overlay (e3a6fe0d, 32 members) against vLLM v0.31.0 (db9527a46). keep = v0.31.0's file equals e975732's, his bytes ship unchanged; port = his diff rebased by a 3-way merge (base e975732, ours = his, theirs = v0.31.0), conflicts resolved by recipe/resolutions/<resolution>, then recipe/edits/<edits> applied; drop = the merge result equals v0.31.0 byte for byte, i.e. upstream already carries his change; new = a v0.31.0 file his change has to move into.",
+ "base_commit": "e9757321527ca1ecd514c07c1418dd2c53da3d19",
+ "target_ref": "v0.31.0",
+ "target_commit": "db9527a46873454610df6dbedf79a36d6bf1a7f6",
+ "his_overlay_sha256": "e3a6fe0d9f010bc1fb66e53e7dc6fde43272824d5200da5a49b5c4456065e0cb",
+ "files": [
+  {
+   "target": "vllm/config/vllm.py",
+   "action": "port",
+   "features": [
+    "GDN RecoverSSM switch and validator",
+    "exact C11 M44 and C14 M44/M52 CUDA graph sizes"
+   ],
+   "notes": "clean merge; v0.31.0's new uniform-decode capture logic is skipped under the explicit --max-cudagraph-capture-size 56, so the C14 list stays [1,2,4,8,16,24,32,40,44,48,52,56]"
+  },
+  {
+   "target": "vllm/distributed/kv_transfer/kv_connector/v1/mooncake/store/coordinator.py",
+   "action": "keep",
+   "features": [
+    "Mooncake Mamba/EAGLE boundary reconciliation"
+   ]
+  },
+  {
+   "target": "vllm/envs.py",
+   "action": "port",
+   "features": [
+    "VLLM_QWEN4_EXP_DRAFT_VOCAB"
+   ],
+   "notes": "clean merge"
+  },
+  {
+   "target": "vllm/model_executor/layers/fused_moe/routed_experts.py",
+   "action": "drop",
+   "features": [
+    "vllm#58720 expert mapping indexed by expert id"
+   ],
+   "upstream": [
+    {
+     "pr": "vllm#58720",
+     "commit": "ad6817b68d9b1d138eca2033cf90233bd0100bf3"
+    }
+   ]
+  },
+  {
+   "target": "vllm/model_executor/layers/mamba/abstract.py",
+   "action": "keep",
+   "features": [
+    "GDN RecoverSSM: no per-draft Mamba blocks"
+   ]
+  },
+  {
+   "target": "vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py",
+   "action": "port",
+   "features": [
+    "GDN RecoverSSM records and verify path"
+   ],
+   "notes": "clean merge (upstream added backend=flashinfer to the FlashInfer prefill call)"
+  },
+  {
+   "target": "vllm/model_executor/layers/mamba/ops/arc3_gdn_recoverssm.py",
+   "action": "keep",
+   "features": [
+    "GDN RecoverSSM kernels (new file, upstream PRs vllm#58863/#59366 still open)"
+   ]
+  },
+  {
+   "target": "vllm/model_executor/layers/mamba/ops/causal_conv1d.py",
+   "action": "keep",
+   "features": [
+    "vllm#50021 accepted-token and state-index bounds (PR head 79a2cb27b, unmerged)"
+   ]
+  },
+  {
+   "target": "vllm/model_executor/layers/mamba/ops/mamba_ssm.py",
+   "action": "keep",
+   "features": [
+    "vllm#50021 bounds"
+   ]
+  },
+  {
+   "target": "vllm/model_executor/model_loader/default_loader.py",
+   "action": "port",
+   "resolution": "default_loader.py",
+   "features": [
+    "Qwen4Exp MTP checkpoint weight prefilter (shard preselection + tensor filter)"
+   ],
+   "notes": "3 conflicts: imports; v0.31.0's 4-tuple _prepare_weights and its mm-encoder-only shard filter are kept, his weight-name shard filter runs after it with the same SAFE_WEIGHTS_INDEX_NAME"
+  },
+  {
+   "target": "vllm/model_executor/model_loader/weight_utils.py",
+   "action": "port",
+   "features": [
+    "weight_name_filter in safetensors_weights_iterator (all three load strategies)"
+   ],
+   "notes": "clean merge"
+  },
+  {
+   "target": "vllm/models/kimi_k3/amd/ops/third_party/kda/fused_recurrent.py",
+   "action": "port",
+   "features": [
+    "vllm#50021 bounds"
+   ],
+   "notes": "clean merge onto upstream #58045"
+  },
+  {
+   "target": "vllm/models/kimi_k3/nvidia/ops/third_party/kda/fused_recurrent.py",
+   "action": "keep",
+   "features": [
+    "vllm#50021 bounds"
+   ]
+  },
+  {
+   "target": "vllm/models/qwen4_exp/common/qsa_cache.py",
+   "action": "drop",
+   "features": [
+    "vllm#58961 QSA key views release the profiling KV cache"
+   ],
+   "upstream": [
+    {
+     "pr": "vllm#58961",
+     "commit": "a2be4d3cc7b978a6720dab32d28ae310775acb16"
+    }
+   ]
+  },
+  {
+   "target": "vllm/models/qwen4_exp/nvidia/arc3_sm120_gemm.py",
+   "action": "keep",
+   "features": [
+    "SM120 BF16 GEMM plans for M=40/44/48/52/56/64 (new file)"
+   ]
+  },
+  {
+   "target": "vllm/models/qwen4_exp/nvidia/model.py",
+   "action": "port",
+   "features": [
+    "embed_tokens in pinned host memory (--cpu-offload-params embed_tokens)",
+    "SM120 GEMM install"
+   ],
+   "notes": "clean merge; upstream #58957 now routes input_mix_weight_down_block_inject through a fused CuTe-DSL down+SiLU kernel for M<=48, so his GEMM serves that projection only at M=52/56/64; his other projections are unchanged"
+  },
+  {
+   "target": "vllm/models/qwen4_exp/nvidia/mtp.py",
+   "action": "keep",
+   "features": [
+    "MTP pruned draft vocabulary (VLLM_QWEN4_EXP_DRAFT_VOCAB)",
+    "MTP checkpoint weight predicate should_load_checkpoint_weight"
+   ]
+  },
+  {
+   "target": "vllm/models/qwen4_exp/nvidia/ngram_embedding.py",
+   "action": "drop",
+   "features": [
+    "vllm#58489 PLE prefetch ids out of the CUDA graph pool",
+    "mixed compressed-tensors PLE safeguard (relocated, see common/ngram_embedding.py)"
+   ],
+   "upstream": [
+    {
+     "pr": "vllm#58489",
+     "commit": "48d8880d098c567c64150203110b6a6a4221d44f"
+    },
+    {
+     "pr": "vllm#57497",
+     "commit": "267eee54bf",
+     "why": "moved Qwen4ExpPLEEmbeddingMethod.from_quant_config to common/ngram_embedding.py"
+    }
+   ],
+   "resolution": "ngram_nvidia.py"
+  },
+  {
+   "target": "vllm/models/qwen4_exp/nvidia/ple_layer.py",
+   "action": "drop",
+   "features": [
+    "vllm#58114 PLE short-conv metadata"
+   ],
+   "upstream": [
+    {
+     "pr": "vllm#58114",
+     "commit": "20b52e9f5b5793d56586b91df9b93cbe30a24040"
+    }
+   ]
+  },
+  {
+   "target": "vllm/third_party/flash_linear_attention/ops/fused_recurrent.py",
+   "action": "keep",
+   "features": [
+    "vllm#50021 bounds"
+   ]
+  },
+  {
+   "target": "vllm/third_party/flash_linear_attention/ops/fused_sigmoid_gating.py",
+   "action": "keep",
+   "features": [
+    "vllm#50021 bounds"
+   ]
+  },
+  {
+   "target": "vllm/v1/attention/backends/gdn_attn.py",
+   "action": "port",
+   "resolution": "gdn_attn.py",
+   "edits": [
+    "gdn_attn.py",
+    "gdn_attn_rows.py"
+   ],
+   "features": [
+    "GDN RecoverSSM metadata, commit and row selection"
+   ],
+   "notes": "1 conflict (imports). Two adaptations to v0.31.0: (1) upstream #58762 lets MRV2 reuse one GDN group's metadata for the others via update_block_table/replace(); RecoverSSM metadata (commit rows, source blocks, layer context) is per group, so the reuse is disabled when RecoverSSM is on, as upstream already does for Kimi KDA; (2) upstream #58400 marks one-token prompt extensions as decode rows, including non-final chunks that sample nothing, which RecoverSSM would commit as an empty prefix; the row selector now takes the rows past their prefill from mamba_hybrid, which reproduces e975732's selection"
+  },
+  {
+   "target": "vllm/v1/core/kv_cache_coordinator.py",
+   "action": "port",
+   "features": [
+    "Mamba read-side EAGLE drop",
+    "both replay boundaries with partial hash hits"
+   ],
+   "notes": "clean merge"
+  },
+  {
+   "target": "vllm/v1/core/kv_cache_utils.py",
+   "action": "port",
+   "features": [
+    "Qwen4Exp PLE/GDN cache grouping on one TP/CP rank"
+   ],
+   "notes": "clean merge"
+  },
+  {
+   "target": "vllm/v1/core/single_type_kv_cache_manager.py",
+   "action": "port",
+   "resolution": "single_type_kv_cache_manager.py",
+   "features": [
+    "Mamba read-side EAGLE drop",
+    "Mamba align state retention for multi-turn prefix reuse",
+    "Mamba align prompt-tail state for multi-turn prefix reuse"
+   ],
+   "notes": "1 conflict: upstream #58368 made the same prompt-tail fix (drop_eagle_checkpoint_block); his condition 'use_eagle or drop_eagle_checkpoint_block' is kept, a superset with identical effect"
+  },
+  {
+   "target": "vllm/v1/worker/gpu/model_states/mamba_hybrid.py",
+   "action": "port",
+   "resolution": "mamba_hybrid.py",
+   "edits": [
+    "mamba_hybrid.py"
+   ],
+   "features": [
+    "GDN RecoverSSM state",
+    "Mamba resume-state block divisor",
+    "vllm#58434 padded prompt tails as spec-decode rows"
+   ],
+   "notes": "1 conflict: his #58434 port is superseded by upstream #58400 (prefill_runs_as_decode_np); added the past-prefill row mask that gdn_attn's RecoverSSM row selector needs"
+  },
+  {
+   "target": "vllm/v1/worker/gpu_model_runner.py",
+   "action": "port",
+   "features": [
+    "vllm#53919 accepted-token D2H sync before batch row moves (PR head d172b7f5d, unmerged)"
+   ],
+   "notes": "clean merge"
+  },
+  {
+   "target": "vllm/v1/worker/mamba_utils.py",
+   "action": "keep",
+   "features": [
+    "GDN RecoverSSM temporal copy modes",
+    "vllm#50021 bounds"
+   ]
+  },
+  {
+   "target": "vllm/v1/attention/backends/mamba_attn.py",
+   "action": "drop",
+   "features": [
+    "vllm#58114"
+   ],
+   "upstream": [
+    {
+     "pr": "vllm#58114",
+     "commit": "20b52e9f5b5793d56586b91df9b93cbe30a24040"
+    }
+   ]
+  },
+  {
+   "target": "vllm/v1/attention/backends/short_conv_attn.py",
+   "action": "drop",
+   "features": [
+    "vllm#58114"
+   ],
+   "upstream": [
+    {
+     "pr": "vllm#58114",
+     "commit": "20b52e9f5b5793d56586b91df9b93cbe30a24040"
+    }
+   ]
+  },
+  {
+   "target": "vllm/v1/worker/gpu/spec_decode/rejection_sampler.py",
+   "action": "drop",
+   "features": [
+    "vllm#58784 draft slots padded onto a prefill step are rejected"
+   ],
+   "upstream": [
+    {
+     "pr": "vllm#58784",
+     "commit": "fedbc3b564102efb38f3697acb69920c3ac912be"
+    }
+   ]
+  },
+  {
+   "target": "vllm/v1/worker/gpu_worker.py",
+   "action": "drop",
+   "resolution": "gpu_worker.py",
+   "features": [
+    "vllm#58430 max_split_size_mb 20 during profile_run"
+   ],
+   "upstream": [
+    {
+     "pr": "vllm#58430",
+     "commit": "6491f481a7c0fb3aa77bbc6649584b545c65c871"
+    }
+   ],
+   "notes": "1 conflict only because upstream #58411 touched the same call; resolved to v0.31.0, which equals v0.31.0"
+  },
+  {
+   "target": "vllm/models/qwen4_exp/common/ngram_embedding.py",
+   "action": "new",
+   "edits": [
+    "common_ngram_embedding.py"
+   ],
+   "features": [
+    "mixed compressed-tensors PLE safeguard (moved here by upstream #57497)"
+   ]
+  },
+  {
+   "target": "vllm/models/qwen4_exp/nvidia/hyperconnection.py",
+   "action": "new",
+   "edits": [
+    "hyperconnection.py"
+   ],
+   "features": [
+    "SM120 GEMM keeps its rows on input_mix_weight_down_block_inject (e975732 dispatch above M=4)"
+   ],
+   "notes": "upstream #58957's fused down+SiLU kernel is 2.2x slower than his GEMM at M=40-48 and slower than the linear method from M=8 on sm_120; with his GEMM installed on the projection it serves only M <= 4"
+  },
+  {
+   "target": "vllm/v1/worker/utils.py",
+   "action": "new",
+   "edits": [
+    "kv_copy_chunked.py"
+   ],
+   "features": [
+    "bounded KV block copies (copy-on-write burst OOM fix; not in e975732)"
+   ],
+   "notes": "not one of his files: a fix to upstream code both runtimes share (copy_kv_cache_blocks_inplace is byte-identical in e975732); VLLM_ARC3_KV_COPY_CHUNK=0 restores the stock single gather"
+  },
+  {
+   "target": "vllm/model_executor/warmup/kernel_warmup.py",
+   "action": "new",
+   "edits": [
+    "flashinfer_autotune_seed.py"
+   ],
+   "features": [
+    "shipped FlashInfer autotune tactics (cold-start autotune OOM fix; not in e975732)"
+   ],
+   "notes": "not one of his files: kernel_warmup.py is byte-identical in e975732 and v0.31.0; a missing autotune cache gets the sm_120 fused-MoE tactics this runtime tuned on an RTX PRO 6000, so the post-KV tuning pass profiles nothing; VLLM_ARC3_FLASHINFER_AUTOTUNE_SEED=0 restores stock"
+  }
+ ]
+}

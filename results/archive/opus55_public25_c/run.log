@@ -1,0 +1,282 @@
+MISTRAL COMPAT installed: mistral=False reasoning_effort='high'
+SANDBOX TIMEOUT raised to 120s (source clamps at 30)
+DUCK FIXES -- label-block fix: installed; dead-game kill: installed on _HarnessGameSession (K=120); level cap: installed on _HarnessGameSession (C=200)
+DUCK FIXES -- ACTION7 described: installed
+DUCK FIXES (09-25) -- ACTION7 mapping: installed | unicode tool io: installed (json.dumps ensure_ascii=False inside tool_agent)
+CTX OVERFLOW SHIM INSTALLED  estimate_safety=1.15  (estimate patched: True)  log=runs/opus55_public25_c/ctx_overflow.jsonl
+INDEX POLICY: NOT INSTALLED (INDEX_POLICY=0). Self-test passed: fresh-slot index 0.915, 7/7 table rows reproduced. Set INDEX_POLICY=1 to enable early stopping.
+lownorm: colour vocabulary from /home/ignaz/github/arc-prize-2026/notes/qwen_colour_vocabulary_all16.json
+lownorm: legend in QWEN's words: white, light gray, medium gray, dark gray, charcoal, black, magenta, pink, red, blue, sky blue, yellow, orange, maroon, green, purple
+lownorm: tokenizer check PASSED on /home/ignaz/models/qwen38-nvfp4-baked-centred-a115/tokenizer.json -- 16/16 single-token, non-merging (lownorm_tokenizer_verified=True)
+ARM=lownorm_glyphs
+lownorm: map     WwgGcBMPRbSYOrNp -> 겪쏟눠됩멤굉촬훨꽤ങ탓뀌볍穌썼繽
+lownorm: legend  겪=white, 쏟=light gray, 눠=medium gray, 됩=dark gray, 멤=charcoal, 굉=black, 촬=magenta, 훨=pink, 꽤=red, ങ=blue, 탓=sky blue, 뀌=yellow, 볍=orange, 穌=maroon, 썼=green, 繽=purple
+lownorm: patched ['inference.agent.prompts.ARC_COLOR_LEGEND', 'inference.agent.prompts.GAME_OVERVIEW_ADDENDUM', 'inference.agent.prompts.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'inference.agent.tool_agent.GAME_OVERVIEW_ADDENDUM', 'inference.agent.tool_agent.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'ToolAgent._build_user_prompt (wrapped)']
+lownorm: probe frame:
+굉굉겪
+굉ങ겪
+썼썼썼
+ab: lownorm control window matched to visual arm: 61376
+BREAKER INSTALLED on ToolAgent._chat_completion (log: runs/opus55_public25_c/breaker.jsonl; open at 8 consecutive failures, backoff <= 30s)
+RECALL INSTALLED on ToolAgent._run_python_tool (ledger from /home/ignaz/github/arc-prize-2026/scripts/recall_scaffold.py; DUCK_RECALL_NOTES=0 disables)
+ab: bm.n_passes=1
+ab: ARM=lownorm ctx=65536 games=10 concurrency=2 max_actions=None per_game_s=7920.0 job_dir=runs/opus55_public25_c model=claude-opus-5-5
+ab: 400-storm watchdog armed on /home/ignaz/github/arc-prize-2026/runs/opus55_public25_c/run.log
+benchmark: regenerated diagnostics in runs/opus55_public25_c in 1.05s
+benchmark: 0-history-turns
+solver:    inference
+games:     10
+passes:    1
+runs:      10 (won: 0)
+started:   2026-09-27 07:18:23
+ended:     in progress
+mean score:    10.48
+median score:  0.00
+total actions: 254
+total tokens:  97111
+generated tokens/sec: 161.49 (job wallclock)
+total wallclock: 1123.0s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  cd82-fb555c5d: score=71.43, levels=5.0/6, actions=109, tokens=50290
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tu93-0768757b: score=33.33, levels=5.0/9, actions=145, tokens=46821
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+[finished] cd82-fb555c5d state=won level=6/6 score=100.00 actions=125 tokens=52538 per-level=48/55,6/8,21/41,18/21,16/23,16/23 note="tokens=52538"
+[finished] tu93-0768757b state=won level=9/9 score=100.00 actions=239 tokens=104983 per-level=18/19,15/16,19/34,42/42,43/123,32/80,14/14,26/23,30/111 note="tokens=104983"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_c/movies/gcd82-fb555c5d_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_c/movies/gcd82-fb555c5d_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_c/movies/gcd82-fb555c5d_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+[finished] ar25-0c556536 state=won level=8/8 score=100.00 actions=333 tokens=100848 per-level=18/32,12/50,41/75,22/37,28/89,120/159,42/233,50/73 note="tokens=100848"
+DEAD-GAME KILL: 0 levels after 120 actions (K=120); releasing the slot
+[finished] sp80-589a99af state=gave_up level=0/6 score=0.00 actions=120 tokens=30979 per-level=120/39,0/58,0/25,0/148,0/96,0/152 note="tokens=30979"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_c/movies/gcd82-fb555c5d_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_c/movies/gcd82-fb555c5d_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_c/movies/gcd82-fb555c5d_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+LEVEL CAP: level 6 has cost 201 actions (> 200); releasing the slot with 5 level(s) cleared
+[finished] lf52-271a04aa state=gave_up level=5/10 score=27.27 actions=543 tokens=296085 per-level=11/32,67/81,60/60,72/71,132/205,201/148,0/244,0/109,0/164,0/225 note="tokens=296085"
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+LEVEL CAP: level 5 has cost 201 actions (> 200); releasing the slot with 4 level(s) cleared
+[finished] dc22-fdcac232 state=gave_up level=4/6 score=47.62 actions=398 tokens=145379 per-level=32/59,44/102,49/67,72/98,201/324,0/578 note="tokens=145379"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_c/movies/gcd82-fb555c5d_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_c/movies/gcd82-fb555c5d_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+[finished] sc25-635fd71a state=won level=6/6 score=100.00 actions=181 tokens=67573 per-level=22/36,5/6,18/32,32/83,64/143,40/50 note="tokens=67573"
+[finished] tn36-ef4dde99 state=won level=7/7 score=100.00 actions=190 tokens=130835 per-level=31/32,16/72,12/26,16/40,20/30,46/55,49/62 note="tokens=130835"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_c/movies/gcd82-fb555c5d_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_c/movies/gcd82-fb555c5d_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+[finished] re86-8af5384d state=won level=8/8 score=100.00 actions=674 tokens=101116 per-level=20/26,36/42,47/86,68/108,93/189,82/139,135/424,193/241 note="tokens=101116"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_c/movies/gcd82-fb555c5d_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+LEVEL CAP: level 5 has cost 201 actions (> 200); releasing the slot with 4 level(s) cleared
+[finished] wa30-ee6fef47 state=gave_up level=4/9 score=17.59 actions=595 tokens=104377 per-level=30/71,127/119,80/183,157/98,201/368,0/68,0/79,0/442,0/415 note="tokens=104377"
+smoke: (ignoring movie-render OSError in teardown: Could not find a backend to open `runs/opus55_public25_c/movies/gcd82-fb555c5d_p)
+smoke: run finished in 7502s
+smoke: 11 request-log files under runs/opus55_public25_c
+smoke: 1404 requests; longest conversation 87 msgs; new legend=True old legend=False; new glyphs in tool results=383; old-letter node colours=0
+smoke: PASS -- legend swapped and node colours arrive in the new glyphs
+smoke: summary.txt: 'benchmark: 0-history-turns\nsolver:    inference\ngames:     10\npasses:    1\nruns:      10 (won: 0)\nstarted:   2026-09-27 07:18:23\nended:     in progress\nmean score:    10.48\nmedian score:  0.00\ntotal actions: 254\ntotal tokens:  97111\ngenerated tokens/sec: 161.49 (job wallclock)\ntotal wallclock: 1123.'

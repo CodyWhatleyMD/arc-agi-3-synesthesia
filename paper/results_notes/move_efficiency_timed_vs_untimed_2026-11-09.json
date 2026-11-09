@@ -1,0 +1,185 @@
+{
+ "timed": [
+  "r2",
+  "r3",
+  "r4",
+  "r6"
+ ],
+ "untimed": [
+  "r0c14",
+  "r0c14b",
+  "r0x1",
+  "r0x2"
+ ],
+ "games": [
+  "ar25",
+  "bp35",
+  "cd82",
+  "cn04",
+  "dc22",
+  "ft09",
+  "g50t",
+  "ka59",
+  "lf52",
+  "lp85",
+  "ls20",
+  "m0r0",
+  "r11l",
+  "re86",
+  "s5i5",
+  "sb26",
+  "sc25",
+  "sk48",
+  "sp80",
+  "su15",
+  "tn36",
+  "tr87",
+  "tu93",
+  "vc33",
+  "wa30"
+ ],
+ "bootstrap": {
+  "reps": 10000,
+  "seed": 0,
+  "design": "runs within each arm, then games; percentile 95%"
+ },
+ "same_action_window": {
+  "design": "for each game and each timed run t, N_t = t's actions on the game; untimed runs read at N_t actions (levels whose cumulative cost <= N_t); paired by game; bootstrap runs then games",
+  "levels_within_window": {
+   "timed": 4.21,
+   "untimed": 4.14,
+   "delta": -0.07,
+   "ci95_runlevel": [
+    -0.63,
+    0.487
+   ],
+   "untimed_higher_games": 9,
+   "untimed_lower_games": 16
+  },
+  "levels_per_100_actions_within_window": {
+   "timed": 1.774,
+   "untimed": 1.601,
+   "delta": -0.172,
+   "ci95_runlevel": [
+    -0.414,
+    0.05
+   ]
+  },
+  "pooled_within_window": {
+   "timed_per_100": 1.162,
+   "untimed_per_100": 1.143,
+   "actions_per_run_in_windows": 9055
+  }
+ },
+ "matched_cells_all4_timed_cleared": {
+  "cells": 73,
+  "games": 23,
+  "timed_mean": 54.5,
+  "timed_median": 34.5,
+  "untimed_mean": 60.2,
+  "untimed_median": 30,
+  "delta_mean": 5.7,
+  "delta_mean_ci95_runlevel": [
+   -105.036,
+   65.075
+  ],
+  "delta_median": -0.2,
+  "delta_median_ci95_runlevel": [
+   -6.516,
+   7.25
+  ],
+  "untimed_higher_cells": 35,
+  "untimed_lower_cells": 37
+ },
+ "aggregate_levels_per_100_actions": {
+  "timed": 1.162,
+  "untimed": 0.238,
+  "timed_levels_actions": [
+   421,
+   36221
+  ],
+  "untimed_levels_actions": [
+   609,
+   255502
+  ]
+ },
+ "actions_on_uncompleted_levels": {
+  "untimed": [
+   139684,
+   255502
+  ],
+  "timed": [
+   10636,
+   36221
+  ]
+ },
+ "stats": {
+  "actions per completed level (all levels)": {
+   "timed_mean": 83.7,
+   "untimed_mean": 228.0,
+   "delta_untimed_minus_timed": 144.2,
+   "run_level_ci95": [
+    33.207,
+    269.766
+   ],
+   "games_paired": 25,
+   "untimed_higher_in": 21,
+   "verdict": "RESOLVED",
+   "unit": "actions",
+   "note": "censored on the timed side: the clock lets only fast clears complete"
+  },
+  "actions to reach level 1 (games both reached)": {
+   "timed_mean": 63.7,
+   "untimed_mean": 31.0,
+   "delta_untimed_minus_timed": -33.0,
+   "run_level_ci95": [
+    -123.947,
+    0.93
+   ],
+   "games_paired": 25,
+   "untimed_higher_in": 12,
+   "verdict": "NOT RESOLVED",
+   "unit": "actions"
+  },
+  "actions to reach level 2 (games both reached)": {
+   "timed_mean": 100.5,
+   "untimed_mean": 225.2,
+   "delta_untimed_minus_timed": 122.1,
+   "run_level_ci95": [
+    -21.604,
+    391.87
+   ],
+   "games_paired": 25,
+   "untimed_higher_in": 14,
+   "verdict": "NOT RESOLVED",
+   "unit": "actions"
+  },
+  "actions to reach level 3 (games both reached)": {
+   "timed_mean": 150.0,
+   "untimed_mean": 284.3,
+   "delta_untimed_minus_timed": 127.9,
+   "run_level_ci95": [
+    4.955,
+    365.5
+   ],
+   "games_paired": 24,
+   "untimed_higher_in": 18,
+   "verdict": "RESOLVED",
+   "unit": "actions"
+  },
+  "actions to reach level 5 (games both reached)": {
+   "timed_mean": 199.3,
+   "untimed_mean": 318.5,
+   "delta_untimed_minus_timed": 118.4,
+   "run_level_ci95": [
+    -16.25,
+    344.042
+   ],
+   "games_paired": 15,
+   "untimed_higher_in": 10,
+   "verdict": "NOT RESOLVED",
+   "unit": "actions"
+  }
+ },
+ "note": "Raw 'actions per completed level' is censored on the timed side: the clock lets only fast clears complete, so timed per-level costs are truncated from above. The same-action-window statistic scores both regimes over the identical actions; the matched-cells statistic restricts to (game, level) cells every timed run cleared; the aggregate levels-per-100-actions mixes efficiency with depth (most untimed actions go to levels never completed, in the capped games)."
+}

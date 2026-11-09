@@ -1,0 +1,234 @@
+MISTRAL COMPAT installed: mistral=False reasoning_effort='high'
+SANDBOX TIMEOUT raised to 120s (source clamps at 30)
+DUCK FIXES -- label-block fix: installed; dead-game kill: installed on _HarnessGameSession (K=120); level cap: installed on _HarnessGameSession (C=200)
+DUCK FIXES -- ACTION7 described: installed
+DUCK FIXES (09-25) -- ACTION7 mapping: installed | unicode tool io: installed (json.dumps ensure_ascii=False inside tool_agent)
+NATIVES installed: objs/diff/grid/act_until; persisted defs: ON; tool description updated
+CTX OVERFLOW SHIM INSTALLED  estimate_safety=1.15  (estimate patched: True)  log=runs/fable51_sp80_natives/ctx_overflow.jsonl
+INDEX POLICY: NOT INSTALLED (INDEX_POLICY=0). Self-test passed: fresh-slot index 0.915, 7/7 table rows reproduced. Set INDEX_POLICY=1 to enable early stopping.
+lownorm: colour vocabulary from /home/ignaz/github/arc-prize-2026/notes/qwen_colour_vocabulary_all16.json
+lownorm: legend in QWEN's words: white, light gray, medium gray, dark gray, charcoal, black, magenta, pink, red, blue, sky blue, yellow, orange, maroon, green, purple
+lownorm: tokenizer check PASSED on /home/ignaz/models/qwen38-nvfp4-baked-centred-a115/tokenizer.json -- 16/16 single-token, non-merging (lownorm_tokenizer_verified=True)
+ARM=lownorm_glyphs
+lownorm: map     WwgGcBMPRbSYOrNp -> 겪쏟눠됩멤굉촬훨꽤ങ탓뀌볍穌썼繽
+lownorm: legend  겪=white, 쏟=light gray, 눠=medium gray, 됩=dark gray, 멤=charcoal, 굉=black, 촬=magenta, 훨=pink, 꽤=red, ങ=blue, 탓=sky blue, 뀌=yellow, 볍=orange, 穌=maroon, 썼=green, 繽=purple
+lownorm: patched ['inference.agent.prompts.ARC_COLOR_LEGEND', 'inference.agent.prompts.GAME_OVERVIEW_ADDENDUM', 'inference.agent.prompts.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'inference.agent.tool_agent.GAME_OVERVIEW_ADDENDUM', 'inference.agent.tool_agent.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'ToolAgent._build_user_prompt (wrapped)']
+lownorm: probe frame:
+굉굉겪
+굉ങ겪
+썼썼썼
+ab: lownorm control window matched to visual arm: 61376
+BREAKER INSTALLED on ToolAgent._chat_completion (log: runs/fable51_sp80_natives/breaker.jsonl; open at 8 consecutive failures, backoff <= 30s)
+RECALL INSTALLED on ToolAgent._run_python_tool (ledger from /home/ignaz/github/arc-prize-2026/scripts/recall_scaffold.py; DUCK_RECALL_NOTES=0 disables)
+ab: bm.n_passes=1
+ab: ARM=lownorm ctx=65536 games=1 concurrency=1 max_actions=None per_game_s=7920.0 job_dir=runs/fable51_sp80_natives model=claude-fable-5-1
+ab: 400-storm watchdog armed on /home/ignaz/github/arc-prize-2026/runs/fable51_sp80_natives/run.log
+NATIVES call: preamble 46 lines, persisted defs [], model code 407 chars, uses natives: ['grid(']
+NATIVES call: preamble 46 lines, persisted defs [], model code 176 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 46 lines, persisted defs [], model code 325 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 46 lines, persisted defs [], model code 333 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 46 lines, persisted defs [], model code 324 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 46 lines, persisted defs [], model code 366 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 46 lines, persisted defs [], model code 411 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 46 lines, persisted defs [], model code 485 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 46 lines, persisted defs [], model code 445 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 46 lines, persisted defs [], model code 259 chars, uses natives: ['objs(']
+NATIVES call: preamble 46 lines, persisted defs [], model code 496 chars, uses natives: ['objs(']
+NATIVES call: preamble 46 lines, persisted defs [], model code 484 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 46 lines, persisted defs [], model code 293 chars, uses natives: ['diff(']
+NATIVES call: preamble 46 lines, persisted defs [], model code 1016 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 46 lines, persisted defs [], model code 613 chars, uses natives: ['objs(', 'diff(']
+benchmark: regenerated diagnostics in runs/fable51_sp80_natives in 0.31s
+benchmark: 0-history-turns
+solver:    inference
+games:     1
+passes:    1
+runs:      1 (won: 0)
+started:   2026-09-28 04:44:47
+ended:     in progress
+mean score:    4.76
+median score:  4.76
+total actions: 57
+total tokens:  42110
+generated tokens/sec: 70.13 (job wallclock)
+total wallclock: 579.0s
+
+per-game (mean across passes):
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=57, tokens=42110
+
+NATIVES call: preamble 46 lines, persisted defs [], model code 606 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 46 lines, persisted defs [], model code 511 chars, uses natives: ['objs(']
+NATIVES call: preamble 46 lines, persisted defs [], model code 594 chars, uses natives: ['objs(', 'diff(']
+benchmark: regenerated diagnostics in runs/fable51_sp80_natives in 0.29s
+benchmark: 0-history-turns
+solver:    inference
+games:     1
+passes:    1
+runs:      1 (won: 0)
+started:   2026-09-28 04:44:47
+ended:     in progress
+mean score:    4.76
+median score:  4.76
+total actions: 66
+total tokens:  83693
+generated tokens/sec: 69.70 (job wallclock)
+total wallclock: 1112.8s
+
+per-game (mean across passes):
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=66, tokens=83693
+
+NATIVES call: preamble 46 lines, persisted defs [], model code 1019 chars, uses natives: ['objs(', 'diff(']
+benchmark: regenerated diagnostics in runs/fable51_sp80_natives in 0.34s
+benchmark: 0-history-turns
+solver:    inference
+games:     1
+passes:    1
+runs:      1 (won: 0)
+started:   2026-09-28 04:44:47
+ended:     in progress
+mean score:    4.76
+median score:  4.76
+total actions: 72
+total tokens:  120029
+generated tokens/sec: 66.64 (job wallclock)
+total wallclock: 1596.6s
+
+per-game (mean across passes):
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=72, tokens=120029
+
+NATIVES call: preamble 46 lines, persisted defs [], model code 304 chars, uses natives: ['objs(']
+NATIVES call: preamble 46 lines, persisted defs [], model code 4226 chars, uses natives: []
+benchmark: regenerated diagnostics in runs/fable51_sp80_natives in 0.23s
+benchmark: 0-history-turns
+solver:    inference
+games:     1
+passes:    1
+runs:      1 (won: 0)
+started:   2026-09-28 04:44:47
+ended:     in progress
+mean score:    4.76
+median score:  4.76
+total actions: 72
+total tokens:  120029
+generated tokens/sec: 49.98 (job wallclock)
+total wallclock: 1596.6s
+
+per-game (mean across passes):
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=72, tokens=120029
+
+NATIVES call: preamble 146 lines, persisted defs ['_roll', 'search', 'sim'], model code 908 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 151 lines, persisted defs ['_roll', 'blocks', 'search', 'sim'], model code 2680 chars, uses natives: []
+benchmark: regenerated diagnostics in runs/fable51_sp80_natives in 0.32s
+benchmark: 0-history-turns
+solver:    inference
+games:     1
+passes:    1
+runs:      1 (won: 0)
+started:   2026-09-28 04:44:47
+ended:     in progress
+mean score:    4.76
+median score:  4.76
+total actions: 85
+total tokens:  202626
+generated tokens/sec: 67.50 (job wallclock)
+total wallclock: 2698.0s
+
+per-game (mean across passes):
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=85, tokens=202626
+
+NATIVES call: preamble 173 lines, persisted defs ['_roll', 'blocks', 'roll_sim', 'search', 'sim'], model code 3394 chars, uses natives: []
+NATIVES call: preamble 262 lines, persisted defs ['_roll', 'blocks', 'full', 'lazy', 'overlap', 'roll_dir', 'roll_sim', 'search', 'sim'], model code 878 chars, uses natives: ['objs(', 'diff(']
+benchmark: regenerated diagnostics in runs/fable51_sp80_natives in 0.30s
+benchmark: 0-history-turns
+solver:    inference
+games:     1
+passes:    1
+runs:      1 (won: 0)
+started:   2026-09-28 04:44:47
+ended:     in progress
+mean score:    4.76
+median score:  4.76
+total actions: 95
+total tokens:  248410
+generated tokens/sec: 68.96 (job wallclock)
+total wallclock: 3309.6s
+
+per-game (mean across passes):
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=95, tokens=248410
+
+NATIVES call: preamble 262 lines, persisted defs ['_roll', 'blocks', 'full', 'lazy', 'overlap', 'roll_dir', 'roll_sim', 'search', 'sim'], model code 3202 chars, uses natives: []
+NATIVES call: preamble 319 lines, persisted defs ['_roll', 'blocks', 'full', 'lazy', 'outcome', 'overlap', 'resting', 'roll_dir', 'roll_sim', 'search', 'sim', 'simball'], model code 1477 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 327 lines, persisted defs ['_roll', 'blocks', 'fire', 'full', 'lazy', 'outcome', 'overlap', 'resting', 'roll_dir', 'roll_sim', 'search', 'sim', 'simball'], model code 819 chars, uses natives: ['objs(']
+NATIVES call: preamble 334 lines, persisted defs ['_roll', 'blocks', 'find_tr', 'fire', 'full', 'lazy', 'outcome', 'overlap', 'resting', 'roll_dir', 'roll_sim', 'search', 'sim', 'simball'], model code 870 chars, uses natives: ['objs(', 'diff(']
+benchmark: regenerated diagnostics in runs/fable51_sp80_natives in 0.29s
+benchmark: 0-history-turns
+solver:    inference
+games:     1
+passes:    1
+runs:      1 (won: 0)
+started:   2026-09-28 04:44:47
+ended:     in progress
+mean score:    4.76
+median score:  4.76
+total actions: 105
+total tokens:  309626
+generated tokens/sec: 73.67 (job wallclock)
+total wallclock: 4126.8s
+
+per-game (mean across passes):
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=105, tokens=309626
+
+NATIVES call: preamble 334 lines, persisted defs ['_roll', 'blocks', 'find_tr', 'fire', 'full', 'lazy', 'outcome', 'overlap', 'resting', 'roll_dir', 'roll_sim', 'search', 'sim', 'simball'], model code 665 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 334 lines, persisted defs ['_roll', 'blocks', 'find_tr', 'fire', 'full', 'lazy', 'outcome', 'overlap', 'resting', 'roll_dir', 'roll_sim', 'search', 'sim', 'simball'], model code 743 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 334 lines, persisted defs ['_roll', 'blocks', 'find_tr', 'fire', 'full', 'lazy', 'outcome', 'overlap', 'resting', 'roll_dir', 'roll_sim', 'search', 'sim', 'simball'], model code 2342 chars, uses natives: ['objs(', 'diff(']
+benchmark: regenerated diagnostics in runs/fable51_sp80_natives in 0.32s
+benchmark: 0-history-turns
+solver:    inference
+games:     1
+passes:    1
+runs:      1 (won: 0)
+started:   2026-09-28 04:44:47
+ended:     in progress
+mean score:    4.76
+median score:  4.76
+total actions: 145
+total tokens:  354613
+generated tokens/sec: 73.83 (job wallclock)
+total wallclock: 4728.9s
+
+per-game (mean across passes):
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=145, tokens=354613
+
+NATIVES call: preamble 345 lines, persisted defs ['_roll', 'blocks', 'ev', 'find_tr', 'fire', 'full', 'lazy', 'mv', 'outcome', 'overlap', 'resting', 'roll_dir', 'roll_sim', 'search', 'sim', 'simball'], model code 966 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 350 lines, persisted defs ['_roll', 'blocks', 'ev', 'find_tr', 'fire', 'full', 'lazy', 'mv', 'outcome', 'overlap', 'resting', 'roll_dir', 'roll_sim', 'search', 'sim', 'simball', 'timer'], model code 1150 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 350 lines, persisted defs ['_roll', 'blocks', 'ev', 'find_tr', 'fire', 'full', 'lazy', 'mv', 'outcome', 'overlap', 'resting', 'roll_dir', 'roll_sim', 'search', 'sim', 'simball', 'timer'], model code 2352 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 366 lines, persisted defs ['_roll', 'blocks', 'ev', 'find_tr', 'fire', 'full', 'lazy', 'mv', 'outcome', 'overlap', 'resting', 'roll_dir', 'roll_sim', 'search', 'sel', 'sim', 'simball', 'tag', 'timer'], model code 2306 chars, uses natives: ['objs(', 'diff(']
+NATIVES call: preamble 375 lines, persisted defs ['_roll', 'blocks', 'ev', 'find_tr', 'fire', 'full', 'lazy', 'mv', 'outcome', 'overlap', 'resting', 'roll_dir', 'roll_sim', 'search', 'sel', 'sel_at', 'sim', 'simball', 'tag', 'timer'], model code 1565 chars, uses natives: ['objs(', 'diff(']
+benchmark: regenerated diagnostics in runs/fable51_sp80_natives in 3.04s
+benchmark: 0-history-turns
+solver:    inference
+games:     1
+passes:    1
+runs:      1 (won: 0)
+started:   2026-09-28 04:44:47
+ended:     in progress
+mean score:    4.76
+median score:  4.76
+total actions: 196
+total tokens:  406325
+generated tokens/sec: 75.16 (job wallclock)
+total wallclock: 5406.1s
+
+per-game (mean across passes):
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=196, tokens=406325
+
+NATIVES call: preamble 375 lines, persisted defs ['_roll', 'blocks', 'ev', 'find_tr', 'fire', 'full', 'lazy', 'mv', 'outcome', 'overlap', 'resting', 'roll_dir', 'roll_sim', 'search', 'sel', 'sel_at', 'sim', 'simball', 'tag', 'timer'], model code 656 chars, uses natives: ['objs(']
+NATIVES call: preamble 375 lines, persisted defs ['_roll', 'blocks', 'ev', 'find_tr', 'fire', 'full', 'lazy', 'mv', 'outcome', 'overlap', 'resting', 'roll_dir', 'roll_sim', 'search', 'sel', 'sel_at', 'sim', 'simball', 'tag', 'timer'], model code 2047 chars, uses natives: ['objs(', 'diff(']
+LEVEL CAP: level 2 has cost 201 actions (> 200); releasing the slot with 1 level(s) cleared
+[finished] sp80-589a99af state=gave_up level=1/6 score=4.76 actions=228 tokens=413504 per-level=27/39,201/58,0/25,0/148,0/96,0/152 note="tokens=413504"
+smoke: (ignoring movie-render OSError in teardown: Could not find a backend to open `runs/fable51_sp80_natives/movies/gsp80-589a99a)
+smoke: run finished in 5519s
+smoke: 1 request-log files under runs/fable51_sp80_natives
+smoke: 78 requests; longest conversation 77 msgs; new legend=True old legend=False; new glyphs in tool results=614; old-letter node colours=0
+smoke: PASS -- legend swapped and node colours arrive in the new glyphs
+smoke: summary.txt: 'benchmark: 0-history-turns\nsolver:    inference\ngames:     1\npasses:    1\nruns:      1 (won: 0)\nstarted:   2026-09-28 04:44:47\nended:     in progress\nmean score:    4.76\nmedian score:  4.76\ntotal actions: 196\ntotal tokens:  406325\ngenerated tokens/sec: 75.16 (job wallclock)\ntotal wallclock: 5406.1s\n'

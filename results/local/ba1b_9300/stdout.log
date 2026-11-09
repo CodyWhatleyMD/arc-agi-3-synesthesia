@@ -1,0 +1,693 @@
+benchmark.label : duck-harness-kaggle
+benchmark.solver: HarnessSolver(label='duck-harness', runtime_environment=None, job_dir=None, soft_end_time=None, minimal_diagnostics=False, model='local', analyzer_timeout=900.0, max_actions_per_game=None, max_runtime_s_per_game=3918.0, concurrency=14, save_request_logs=False, start_local_server=False, local_server_config='', local_server_api_key_file='', local_server_repo_dir='/app/ARC3-Inference', local_server_port=None, local_server_tensor_parallel_size=None, local_server_count=1, cancel_drain_timeout_s=120.0)
+benchmark.passes: 1
+benchmark.games : 25
+git status:
+  ARC3-Inference                   ca1bd02     clean  solution-improve-qwen38-flash-next  Let the agent act without full certainty
+  tufa-arc-agi-framework           ca1bd02     clean  solution-improve-qwen38-flash-next  Let the agent act without full certainty
+deploy.kaggle: working_dir             = /kaggle/working
+deploy.kaggle: run_as_submission       = False
+deploy.kaggle: competition_rerun       = False
+deploy.kaggle: soft_end_time           = 2026-10-27 07:00:24.743460
+---
+synesthesia: GEOMETRY px/cell=16 image_tokens_per_board=1024 source=student board tower (image_embeds)
+synesthesia: TOWER EXCLUDED - built under no_init_weights on meta device, weights never allocated
+synesthesia: n_games=25 n_passes=1 per_game_s=3918.0 concurrency=14 max_actions=None soft_end=2026-10-27 07:00:24.743460
+/tmp/ipykernel_32/651347886.py:143: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "started_utc": datetime.utcnow().isoformat() + "Z",
+ARM B: student tower live -- ckpt=/kaggle/input/datasets/codywhatleymd/arc3-board-tower-armb/ckpt_px16_dih/best.pt tag=5e4eb805a8 n_pos=1024 side=32 device=cpu grid_thw=[1, 64, 64] torch_threads=2 (cap, so the student cannot starve the co-resident server)
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 2.09s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-27 04:40:11
+ended:     in progress
+mean score:    3.72
+median score:  0.00
+total actions: 648
+total tokens:  496911
+generated tokens/sec: 824.62 (job wallclock)
+total wallclock: 7297.7s
+
+per-game (mean across passes):
+  ar25-0c556536: score=27.78, levels=4.0/8, actions=111, tokens=34330
+  bp35-0a0ad940: score=0.51, levels=1.0/9, actions=55, tokens=36255
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=28, tokens=38436
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=44, tokens=37863
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=27, tokens=39223
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=23, tokens=36463
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=25, tokens=25871
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=16, tokens=31941
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=40, tokens=24250
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=27, tokens=36772
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=3.57, levels=1.0/7, actions=34, tokens=39363
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=13.06, levels=3.0/9, actions=87, tokens=38231
+  vc33-5430563c: score=21.43, levels=3.0/7, actions=56, tokens=40135
+  wa30-ee6fef47: score=2.22, levels=1.0/9, actions=75, tokens=37778
+
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 1.28s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-27 04:40:11
+ended:     in progress
+mean score:    8.69
+median score:  0.56
+total actions: 1140
+total tokens:  976755
+generated tokens/sec: 811.27 (job wallclock)
+total wallclock: 14744.6s
+
+per-game (mean across passes):
+  ar25-0c556536: score=41.67, levels=5.0/8, actions=140, tokens=71036
+  bp35-0a0ad940: score=0.51, levels=1.0/9, actions=88, tokens=70777
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=41, tokens=74910
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.56, levels=1.0/7, actions=84, tokens=73639
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=84, tokens=74777
+  lp85-305b61c3: score=27.78, levels=4.0/8, actions=55, tokens=70566
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=14.29, levels=2.0/6, actions=76, tokens=78325
+  r11l-495a7899: score=14.29, levels=2.0/6, actions=23, tokens=47639
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=25.71, levels=3.0/6, actions=112, tokens=72040
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=27, tokens=36772
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=10.71, levels=2.0/7, actions=53, tokens=77452
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=46.67, levels=6.0/9, actions=183, tokens=80706
+  vc33-5430563c: score=21.43, levels=3.0/7, actions=93, tokens=77578
+  wa30-ee6fef47: score=2.22, levels=1.0/9, actions=81, tokens=70538
+
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 1.43s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-27 04:40:11
+ended:     in progress
+mean score:    12.69
+median score:  1.82
+total actions: 1701
+total tokens:  1490152
+generated tokens/sec: 825.33 (job wallclock)
+total wallclock: 23192.0s
+
+per-game (mean across passes):
+  ar25-0c556536: score=58.33, levels=6.0/8, actions=194, tokens=93535
+  bp35-0a0ad940: score=0.51, levels=1.0/9, actions=124, tokens=105046
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=72, tokens=107313
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=8.77, levels=2.0/7, actions=159, tokens=108522
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=138, tokens=109039
+  lp85-305b61c3: score=41.67, levels=5.0/8, actions=72, tokens=114073
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=14.29, levels=2.0/6, actions=94, tokens=93857
+  r11l-495a7899: score=28.57, levels=3.0/6, actions=72, tokens=109901
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=34.38, levels=4.0/6, actions=203, tokens=110783
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=29, tokens=91265
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=35.71, levels=4.0/7, actions=107, tokens=112838
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=59.91, levels=7.0/9, actions=205, tokens=106887
+  vc33-5430563c: score=21.43, levels=3.0/7, actions=110, tokens=111454
+  wa30-ee6fef47: score=2.22, levels=1.0/9, actions=122, tokens=115639
+
+[finished] ar25-0c556536 state=won level=8/8 score=100.00 actions=294 tokens=141629 per-level=18/32,19/50,44/75,30/37,29/89,54/159,43/233,57/73 note="tokens=141629"
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 3.05s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 1)
+started:   2026-10-27 04:40:11
+ended:     in progress
+mean score:    18.23
+median score:  1.82
+total actions: 2514
+total tokens:  2069569
+generated tokens/sec: 859.21 (job wallclock)
+total wallclock: 34857.9s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=294, tokens=141629
+  bp35-0a0ad940: score=0.51, levels=1.0/9, actions=161, tokens=134910
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=90, tokens=150280
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=8.77, levels=2.0/7, actions=335, tokens=151962
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=194, tokens=144357
+  lp85-305b61c3: score=77.78, levels=7.0/8, actions=132, tokens=155105
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=28.57, levels=3.0/6, actions=172, tokens=150376
+  r11l-495a7899: score=28.57, levels=3.0/6, actions=87, tokens=141567
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=34.38, levels=4.0/6, actions=283, tokens=149096
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=2, tokens=2727
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=48, tokens=142247
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=75.00, levels=6.0/7, actions=170, tokens=150390
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=59.91, levels=7.0/9, actions=214, tokens=152776
+  vc33-5430563c: score=28.76, levels=4.0/7, actions=150, tokens=152994
+  wa30-ee6fef47: score=2.22, levels=1.0/9, actions=182, tokens=149153
+
+[finished] lp85-305b61c3 state=won level=8/8 score=100.00 actions=169 tokens=171355 per-level=11/17,11/38,17/31,14/16,11/41,50/60,18/26,37/159 note="tokens=171355"
+[finished] tn36-ef4dde99 state=won level=7/7 score=100.00 actions=215 tokens=179493 per-level=19/32,34/72,22/26,32/40,23/30,40/55,45/62 note="tokens=179493"
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 2.87s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 3)
+started:   2026-10-27 04:40:11
+ended:     in progress
+mean score:    24.15
+median score:  2.78
+total actions: 3193
+total tokens:  2543293
+generated tokens/sec: 844.47 (job wallclock)
+total wallclock: 48079.6s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=294, tokens=141629
+  bp35-0a0ad940: score=0.51, levels=1.0/9, actions=178, tokens=165501
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=13, tokens=8576
+  cn04-2fe56bfb: score=10.78, levels=2.0/6, actions=100, tokens=171686
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=33, tokens=22923
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=9.15, levels=3.0/7, actions=459, tokens=179178
+  lf52-271a04aa: score=2.66, levels=2.0/10, actions=242, tokens=184085
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=169, tokens=171355
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=46.19, levels=4.0/6, actions=211, tokens=185511
+  r11l-495a7899: score=28.57, levels=3.0/6, actions=112, tokens=176881
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=51.03, levels=5.0/6, actions=374, tokens=183437
+  sk48-d8078629: score=2.78, levels=1.0/8, actions=36, tokens=43716
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=57, tokens=186766
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=100.00, levels=7.0/7, actions=215, tokens=179493
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=67.16, levels=8.0/9, actions=241, tokens=179801
+  vc33-5430563c: score=73.94, levels=6.0/7, actions=213, tokens=187117
+  wa30-ee6fef47: score=6.28, levels=2.0/9, actions=246, tokens=175638
+
+[finished] vc33-5430563c state=won level=7/7 score=100.00 actions=264 tokens=204401 per-level=13/7,12/18,31/44,86/61,51/131,20/34,51/152 note="tokens=204401"
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 1.75s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 4)
+started:   2026-10-27 04:40:11
+ended:     in progress
+mean score:    29.18
+median score:  4.76
+total actions: 3817
+total tokens:  3077173
+generated tokens/sec: 851.55 (job wallclock)
+total wallclock: 59745.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=294, tokens=141629
+  bp35-0a0ad940: score=0.51, levels=1.0/9, actions=207, tokens=209376
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=40, tokens=35549
+  cn04-2fe56bfb: score=27.20, levels=3.0/6, actions=135, tokens=235623
+  dc22-fdcac232: score=4.45, levels=1.0/6, actions=81, tokens=58045
+  ft09-0d8bbf25: score=47.62, levels=4.0/6, actions=56, tokens=23692
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=10.15, levels=4.0/7, actions=595, tokens=222750
+  lf52-271a04aa: score=2.66, levels=2.0/10, actions=267, tokens=221665
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=169, tokens=171355
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=71.43, levels=5.0/6, actions=264, tokens=220603
+  r11l-495a7899: score=33.49, levels=4.0/6, actions=168, tokens=226586
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=51.03, levels=5.0/6, actions=419, tokens=223813
+  sk48-d8078629: score=2.78, levels=1.0/8, actions=52, tokens=70395
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=57, tokens=186766
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=100.00, levels=7.0/7, actions=215, tokens=179493
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=67.16, levels=8.0/9, actions=245, tokens=222650
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=264, tokens=204401
+  wa30-ee6fef47: score=6.28, levels=2.0/9, actions=289, tokens=222782
+
+analyzer request failed at action 621: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=1.0)
+analyzer request failed at action 247: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=33.0)
+[finished] tu93-0768757b state=gave_up level=8/9 score=67.16 actions=246 tokens=253994 per-level=49/19,15/16,19/34,41/42,29/123,30/80,18/14,36/23,9/111 note="tokens=253994"
+analyzer request timed out at action 72; yielding with 1 reply of this turn kept: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=51.0)
+[finished] sp80-589a99af state=gave_up level=1/6 score=4.76 actions=71 tokens=254063 per-level=8/39,63/58,0/25,0/148,0/96,0/152 note="tokens=254063"
+analyzer request failed at action 318: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=17.0)
+[finished] lf52-271a04aa state=gave_up level=3/10 score=8.94 actions=317 tokens=237071 per-level=25/32,204/81,53/60,35/71,0/205,0/148,0/244,0/109,0/164,0/225 note="tokens=237071"
+analyzer request failed at action 294: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=1.0)
+[finished] m0r0-492f87ba state=gave_up level=5/6 score=71.43 actions=293 tokens=243093 per-level=35/30,40/111,93/203,29/26,52/500,44/237 note="tokens=243093"
+analyzer request failed at action 426: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=22.0)
+[finished] sc25-635fd71a state=gave_up level=5/6 score=51.03 actions=425 tokens=245283 per-level=52/36,7/6,21/32,123/83,171/143,51/50 note="tokens=245283"
+analyzer request timed out at action 137; yielding with 4 replies of this turn kept: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=40.0)
+analyzer request failed at action 357: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=3.0)
+[finished] cn04-2fe56bfb state=gave_up level=3/6 score=27.20 actions=136 tokens=253146 per-level=28/29,70/54,34/85,4/300,0/208,0/113 note="tokens=253146"
+[finished] wa30-ee6fef47 state=gave_up level=2/9 score=6.28 actions=356 tokens=243115 per-level=64/71,130/119,162/183,0/98,0/368,0/68,0/79,0/442,0/415 note="tokens=243115"
+analyzer request failed at action 184: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=15.0)
+analyzer request timed out at action 221; yielding with 3 replies of this turn kept: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=14.0)
+[finished] r11l-495a7899 state=gave_up level=4/6 score=33.49 actions=183 tokens=246997 per-level=6/22,17/33,49/51,90/26,21/52,0/49 note="tokens=246997"
+[finished] bp35-0a0ad940 state=gave_up level=1/9 score=0.51 actions=220 tokens=230616 per-level=44/21,176/48,0/44,0/38,0/33,0/87,0/86,0/131,0/163 note="tokens=230616"
+[finished] ka59-38d34dbb state=gave_up level=5/7 score=30.69 actions=620 tokens=244277 per-level=71/28,48/109,270/51,193/51,26/33,12/132,0/326 note="tokens=244277"
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 4.50s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 4)
+started:   2026-10-27 04:40:11
+ended:     in progress
+mean score:    31.78
+median score:  8.94
+total actions: 4389
+total tokens:  3641890
+generated tokens/sec: 863.37 (job wallclock)
+total wallclock: 95937.4s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=294, tokens=141629
+  bp35-0a0ad940: score=0.51, levels=1.0/9, actions=220, tokens=230616
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=55, tokens=85427
+  cn04-2fe56bfb: score=27.20, levels=3.0/6, actions=136, tokens=253146
+  dc22-fdcac232: score=28.57, levels=3.0/6, actions=193, tokens=102204
+  ft09-0d8bbf25: score=47.62, levels=4.0/6, actions=94, tokens=61631
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=10, tokens=13801
+  ka59-38d34dbb: score=30.69, levels=5.0/7, actions=620, tokens=244277
+  lf52-271a04aa: score=8.94, levels=3.0/10, actions=317, tokens=237071
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=169, tokens=171355
+  ls20-9607627b: score=3.57, levels=1.0/7, actions=15, tokens=15887
+  m0r0-492f87ba: score=71.43, levels=5.0/6, actions=293, tokens=243093
+  r11l-495a7899: score=33.49, levels=4.0/6, actions=183, tokens=246997
+  re86-8af5384d: score=2.78, levels=1.0/8, actions=24, tokens=14304
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=25, tokens=19613
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=34, tokens=18653
+  sc25-635fd71a: score=51.03, levels=5.0/6, actions=425, tokens=245283
+  sk48-d8078629: score=2.78, levels=1.0/8, actions=91, tokens=122484
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=71, tokens=254063
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=21, tokens=21255
+  tn36-ef4dde99: score=100.00, levels=7.0/7, actions=215, tokens=179493
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=18, tokens=18098
+  tu93-0768757b: score=67.16, levels=8.0/9, actions=246, tokens=253994
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=264, tokens=204401
+  wa30-ee6fef47: score=6.28, levels=2.0/9, actions=356, tokens=243115
+
+[finished] ft09-0d8bbf25 state=won level=6/6 score=100.00 actions=138 tokens=85821 per-level=6/43,7/12,14/23,29/28,65/65,17/37 note="tokens=85821"
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 1.77s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 5)
+started:   2026-10-27 04:40:11
+ended:     in progress
+mean score:    37.96
+median score:  28.57
+total actions: 4932
+total tokens:  4058447
+generated tokens/sec: 841.97 (job wallclock)
+total wallclock: 101433.5s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=294, tokens=141629
+  bp35-0a0ad940: score=0.51, levels=1.0/9, actions=220, tokens=230616
+  cd82-fb555c5d: score=5.39, levels=2.0/6, actions=112, tokens=134150
+  cn04-2fe56bfb: score=27.20, levels=3.0/6, actions=136, tokens=253146
+  dc22-fdcac232: score=28.57, levels=3.0/6, actions=224, tokens=132762
+  ft09-0d8bbf25: score=100.00, levels=6.0/6, actions=138, tokens=85821
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=55, tokens=56700
+  ka59-38d34dbb: score=30.69, levels=5.0/7, actions=620, tokens=244277
+  lf52-271a04aa: score=8.94, levels=3.0/10, actions=317, tokens=237071
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=169, tokens=171355
+  ls20-9607627b: score=3.57, levels=1.0/7, actions=58, tokens=63398
+  m0r0-492f87ba: score=71.43, levels=5.0/6, actions=293, tokens=243093
+  r11l-495a7899: score=33.49, levels=4.0/6, actions=183, tokens=246997
+  re86-8af5384d: score=16.67, levels=3.0/8, actions=131, tokens=61967
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=39, tokens=63586
+  sb26-7fbdac44: score=56.94, levels=6.0/8, actions=130, tokens=59428
+  sc25-635fd71a: score=51.03, levels=5.0/6, actions=425, tokens=245283
+  sk48-d8078629: score=2.78, levels=1.0/8, actions=93, tokens=126731
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=71, tokens=254063
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=33, tokens=58475
+  tn36-ef4dde99: score=100.00, levels=7.0/7, actions=215, tokens=179493
+  tr87-cd924810: score=28.57, levels=3.0/6, actions=110, tokens=66896
+  tu93-0768757b: score=67.16, levels=8.0/9, actions=246, tokens=253994
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=264, tokens=204401
+  wa30-ee6fef47: score=6.28, levels=2.0/9, actions=356, tokens=243115
+
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 1.49s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 5)
+started:   2026-10-27 04:40:11
+ended:     in progress
+mean score:    42.67
+median score:  33.49
+total actions: 5581
+total tokens:  4527586
+generated tokens/sec: 835.07 (job wallclock)
+total wallclock: 107791.5s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=294, tokens=141629
+  bp35-0a0ad940: score=0.51, levels=1.0/9, actions=220, tokens=230616
+  cd82-fb555c5d: score=15.39, levels=3.0/6, actions=179, tokens=182192
+  cn04-2fe56bfb: score=27.20, levels=3.0/6, actions=136, tokens=253146
+  dc22-fdcac232: score=47.62, levels=4.0/6, actions=280, tokens=189619
+  ft09-0d8bbf25: score=100.00, levels=6.0/6, actions=138, tokens=85821
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=74, tokens=105142
+  ka59-38d34dbb: score=30.69, levels=5.0/7, actions=620, tokens=244277
+  lf52-271a04aa: score=8.94, levels=3.0/10, actions=317, tokens=237071
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=169, tokens=171355
+  ls20-9607627b: score=3.57, levels=1.0/7, actions=124, tokens=100557
+  m0r0-492f87ba: score=71.43, levels=5.0/6, actions=293, tokens=243093
+  r11l-495a7899: score=33.49, levels=4.0/6, actions=183, tokens=246997
+  re86-8af5384d: score=41.67, levels=5.0/8, actions=277, tokens=106085
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=43, tokens=91806
+  sb26-7fbdac44: score=77.78, levels=7.0/8, actions=214, tokens=98013
+  sc25-635fd71a: score=51.03, levels=5.0/6, actions=425, tokens=245283
+  sk48-d8078629: score=2.78, levels=1.0/8, actions=169, tokens=206709
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=71, tokens=254063
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=52, tokens=107483
+  tn36-ef4dde99: score=100.00, levels=7.0/7, actions=215, tokens=179493
+  tr87-cd924810: score=71.43, levels=5.0/6, actions=222, tokens=105626
+  tu93-0768757b: score=67.16, levels=8.0/9, actions=246, tokens=253994
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=264, tokens=204401
+  wa30-ee6fef47: score=6.28, levels=2.0/9, actions=356, tokens=243115
+
+[finished] sb26-7fbdac44 state=won level=8/8 score=80.49 actions=241 tokens=134023 per-level=18/18,27/28,15/18,34/19,17/31,19/23,33/58,78/18 note="tokens=134023"
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 1.72s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 6)
+started:   2026-10-27 04:40:11
+ended:     in progress
+mean score:    43.84
+median score:  33.49
+total actions: 6201
+total tokens:  4932346
+generated tokens/sec: 818.83 (job wallclock)
+total wallclock: 113119.6s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=294, tokens=141629
+  bp35-0a0ad940: score=0.51, levels=1.0/9, actions=220, tokens=230616
+  cd82-fb555c5d: score=17.80, levels=4.0/6, actions=211, tokens=212231
+  cn04-2fe56bfb: score=27.20, levels=3.0/6, actions=136, tokens=253146
+  dc22-fdcac232: score=47.62, levels=4.0/6, actions=351, tokens=233313
+  ft09-0d8bbf25: score=100.00, levels=6.0/6, actions=138, tokens=85821
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=115, tokens=150392
+  ka59-38d34dbb: score=30.69, levels=5.0/7, actions=620, tokens=244277
+  lf52-271a04aa: score=8.94, levels=3.0/10, actions=317, tokens=237071
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=169, tokens=171355
+  ls20-9607627b: score=11.62, levels=3.0/7, actions=309, tokens=160947
+  m0r0-492f87ba: score=71.43, levels=5.0/6, actions=293, tokens=243093
+  r11l-495a7899: score=33.49, levels=4.0/6, actions=183, tokens=246997
+  re86-8af5384d: score=41.67, levels=5.0/8, actions=308, tokens=150020
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=43, tokens=91806
+  sb26-7fbdac44: score=80.49, levels=8.0/8, actions=241, tokens=134023
+  sc25-635fd71a: score=51.03, levels=5.0/6, actions=425, tokens=245283
+  sk48-d8078629: score=8.33, levels=2.0/8, actions=197, tokens=248977
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=71, tokens=254063
+  su15-1944f8ab: score=12.81, levels=3.0/9, actions=94, tokens=160091
+  tn36-ef4dde99: score=100.00, levels=7.0/7, actions=215, tokens=179493
+  tr87-cd924810: score=71.43, levels=5.0/6, actions=385, tokens=156192
+  tu93-0768757b: score=67.16, levels=8.0/9, actions=246, tokens=253994
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=264, tokens=204401
+  wa30-ee6fef47: score=6.28, levels=2.0/9, actions=356, tokens=243115
+
+analyzer request failed at action 214: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=23.0)
+[finished] sk48-d8078629 state=gave_up level=2/8 score=8.33 actions=213 tokens=268239 per-level=26/61,158/177,29/101,0/103,0/230,0/181,0/125,0/92 note="tokens=268239"
+analyzer request timed out at action 376; yielding with 1 reply of this turn kept: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=2.0)
+[finished] dc22-fdcac232 state=gave_up level=4/6 score=47.62 actions=375 tokens=278953 per-level=61/59,62/102,66/67,72/98,114/324,0/578 note="tokens=278953"
+[finished] cd82-fb555c5d state=won level=6/6 score=55.32 actions=280 tokens=281185 per-level=90/55,13/8,49/41,59/21,52/23,17/23 note="tokens=281185"
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 2.79s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 7)
+started:   2026-10-27 04:40:11
+ended:     in progress
+mean score:    46.14
+median score:  47.62
+total actions: 6865
+total tokens:  5431378
+generated tokens/sec: 819.64 (job wallclock)
+total wallclock: 119178.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=294, tokens=141629
+  bp35-0a0ad940: score=0.51, levels=1.0/9, actions=220, tokens=230616
+  cd82-fb555c5d: score=55.32, levels=6.0/6, actions=280, tokens=281185
+  cn04-2fe56bfb: score=27.20, levels=3.0/6, actions=136, tokens=253146
+  dc22-fdcac232: score=47.62, levels=4.0/6, actions=375, tokens=278953
+  ft09-0d8bbf25: score=100.00, levels=6.0/6, actions=138, tokens=85821
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=161, tokens=199633
+  ka59-38d34dbb: score=30.69, levels=5.0/7, actions=620, tokens=244277
+  lf52-271a04aa: score=8.94, levels=3.0/10, actions=317, tokens=237071
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=169, tokens=171355
+  ls20-9607627b: score=11.62, levels=3.0/7, actions=387, tokens=214127
+  m0r0-492f87ba: score=71.43, levels=5.0/6, actions=293, tokens=243093
+  r11l-495a7899: score=33.49, levels=4.0/6, actions=183, tokens=246997
+  re86-8af5384d: score=52.21, levels=6.0/8, actions=510, tokens=202543
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=55, tokens=201683
+  sb26-7fbdac44: score=80.49, levels=8.0/8, actions=241, tokens=134023
+  sc25-635fd71a: score=51.03, levels=5.0/6, actions=425, tokens=245283
+  sk48-d8078629: score=8.33, levels=2.0/8, actions=213, tokens=268239
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=71, tokens=254063
+  su15-1944f8ab: score=22.22, levels=4.0/9, actions=156, tokens=211707
+  tn36-ef4dde99: score=100.00, levels=7.0/7, actions=215, tokens=179493
+  tr87-cd924810: score=71.43, levels=5.0/6, actions=540, tokens=204931
+  tu93-0768757b: score=67.16, levels=8.0/9, actions=246, tokens=253994
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=264, tokens=204401
+  wa30-ee6fef47: score=6.28, levels=2.0/9, actions=356, tokens=243115
+
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 1.41s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 7)
+started:   2026-10-27 04:40:11
+ended:     in progress
+mean score:    47.35
+median score:  47.62
+total actions: 7309
+total tokens:  5738891
+generated tokens/sec: 793.95 (job wallclock)
+total wallclock: 122413.8s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=294, tokens=141629
+  bp35-0a0ad940: score=0.51, levels=1.0/9, actions=220, tokens=230616
+  cd82-fb555c5d: score=55.32, levels=6.0/6, actions=280, tokens=281185
+  cn04-2fe56bfb: score=27.20, levels=3.0/6, actions=136, tokens=253146
+  dc22-fdcac232: score=47.62, levels=4.0/6, actions=375, tokens=278953
+  ft09-0d8bbf25: score=100.00, levels=6.0/6, actions=138, tokens=85821
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=212, tokens=244695
+  ka59-38d34dbb: score=30.69, levels=5.0/7, actions=620, tokens=244277
+  lf52-271a04aa: score=8.94, levels=3.0/10, actions=317, tokens=237071
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=169, tokens=171355
+  ls20-9607627b: score=17.49, levels=4.0/7, actions=482, tokens=251461
+  m0r0-492f87ba: score=71.43, levels=5.0/6, actions=293, tokens=243093
+  r11l-495a7899: score=33.49, levels=4.0/6, actions=183, tokens=246997
+  re86-8af5384d: score=52.21, levels=6.0/8, actions=525, tokens=245953
+  s5i5-18d95033: score=8.33, levels=2.0/8, actions=118, tokens=277283
+  sb26-7fbdac44: score=80.49, levels=8.0/8, actions=241, tokens=134023
+  sc25-635fd71a: score=51.03, levels=5.0/6, actions=425, tokens=245283
+  sk48-d8078629: score=8.33, levels=2.0/8, actions=213, tokens=268239
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=71, tokens=254063
+  su15-1944f8ab: score=41.07, levels=6.0/9, actions=238, tokens=268474
+  tn36-ef4dde99: score=100.00, levels=7.0/7, actions=215, tokens=179493
+  tr87-cd924810: score=71.43, levels=5.0/6, actions=678, tokens=254271
+  tu93-0768757b: score=67.16, levels=8.0/9, actions=246, tokens=253994
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=264, tokens=204401
+  wa30-ee6fef47: score=6.28, levels=2.0/9, actions=356, tokens=243115
+
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 0.96s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 7)
+started:   2026-10-27 04:40:11
+ended:     in progress
+mean score:    49.23
+median score:  51.03
+total actions: 7719
+total tokens:  6123681
+generated tokens/sec: 782.14 (job wallclock)
+total wallclock: 126390.3s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=294, tokens=141629
+  bp35-0a0ad940: score=0.51, levels=1.0/9, actions=220, tokens=230616
+  cd82-fb555c5d: score=55.32, levels=6.0/6, actions=280, tokens=281185
+  cn04-2fe56bfb: score=27.20, levels=3.0/6, actions=136, tokens=253146
+  dc22-fdcac232: score=47.62, levels=4.0/6, actions=375, tokens=278953
+  ft09-0d8bbf25: score=100.00, levels=6.0/6, actions=138, tokens=85821
+  g50t-5849a774: score=0.32, levels=1.0/7, actions=262, tokens=322380
+  ka59-38d34dbb: score=30.69, levels=5.0/7, actions=620, tokens=244277
+  lf52-271a04aa: score=8.94, levels=3.0/10, actions=317, tokens=237071
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=169, tokens=171355
+  ls20-9607627b: score=17.49, levels=4.0/7, actions=527, tokens=329800
+  m0r0-492f87ba: score=71.43, levels=5.0/6, actions=293, tokens=243093
+  r11l-495a7899: score=33.49, levels=4.0/6, actions=183, tokens=246997
+  re86-8af5384d: score=52.21, levels=6.0/8, actions=573, tokens=319551
+  s5i5-18d95033: score=16.67, levels=3.0/8, actions=170, tokens=335545
+  sb26-7fbdac44: score=80.49, levels=8.0/8, actions=241, tokens=134023
+  sc25-635fd71a: score=51.03, levels=5.0/6, actions=425, tokens=245283
+  sk48-d8078629: score=8.33, levels=2.0/8, actions=213, tokens=268239
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=71, tokens=254063
+  su15-1944f8ab: score=79.41, levels=8.0/9, actions=270, tokens=324307
+  tn36-ef4dde99: score=100.00, levels=7.0/7, actions=215, tokens=179493
+  tr87-cd924810: score=71.43, levels=5.0/6, actions=861, tokens=295344
+  tu93-0768757b: score=67.16, levels=8.0/9, actions=246, tokens=253994
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=264, tokens=204401
+  wa30-ee6fef47: score=6.28, levels=2.0/9, actions=356, tokens=243115
+
+analyzer request failed at action 528: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=32.0)
+analyzer request failed at action 263: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=34.0)
+[finished] g50t-5849a774 state=gave_up level=1/7 score=0.32 actions=262 tokens=322380 per-level=259/78,3/175,0/179,0/230,0/96,0/54,0/67 note="tokens=322380"
+analyzer request timed out at action 862; yielding with 1 reply of this turn kept: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=35.0)
+[finished] tr87-cd924810 state=gave_up level=5/6 score=71.43 actions=861 tokens=310345 per-level=34/54,33/58,43/40,25/45,62/71,664/146 note="tokens=310345"
+[finished] ls20-9607627b state=gave_up level=4/7 score=17.49 actions=527 tokens=329800 per-level=15/22,173/123,121/73,131/84,87/96,0/192,0/186 note="tokens=329800"
+analyzer request failed at action 574: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=13.0)
+[finished] re86-8af5384d state=gave_up level=6/8 score=52.21 actions=573 tokens=319551 per-level=23/26,36/42,47/86,67/108,63/189,274/139,63/424,0/241 note="tokens=319551"
+analyzer request timed out at action 171; yielding with 1 reply of this turn kept: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=10.0)
+[finished] s5i5-18d95033 state=gave_up level=3/8 score=16.67 actions=170 tokens=338596 per-level=15/20,71/89,40/106,44/54,0/162,0/38,0/86,0/83 note="tokens=338596"
+analyzer request failed at action 271: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=16.0)
+[finished] su15-1944f8ab state=gave_up level=8/9 score=79.41 actions=270 tokens=324307 per-level=8/22,55/42,17/26,74/115,73/36,11/31,7/8,11/40,14/41 note="tokens=324307"
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 4.16s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 7)
+started:   2026-10-27 04:40:11
+ended:     2026-10-27 06:50:48
+duration:  2h 10m 37s
+mean score:    49.23
+median score:  51.03
+total actions: 7719
+total tokens:  6141733
+generated tokens/sec: 783.62 (job wallclock)
+total wallclock: 126725.1s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=294, tokens=141629
+  bp35-0a0ad940: score=0.51, levels=1.0/9, actions=220, tokens=230616
+  cd82-fb555c5d: score=55.32, levels=6.0/6, actions=280, tokens=281185
+  cn04-2fe56bfb: score=27.20, levels=3.0/6, actions=136, tokens=253146
+  dc22-fdcac232: score=47.62, levels=4.0/6, actions=375, tokens=278953
+  ft09-0d8bbf25: score=100.00, levels=6.0/6, actions=138, tokens=85821
+  g50t-5849a774: score=0.32, levels=1.0/7, actions=262, tokens=322380
+  ka59-38d34dbb: score=30.69, levels=5.0/7, actions=620, tokens=244277
+  lf52-271a04aa: score=8.94, levels=3.0/10, actions=317, tokens=237071
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=169, tokens=171355
+  ls20-9607627b: score=17.49, levels=4.0/7, actions=527, tokens=329800
+  m0r0-492f87ba: score=71.43, levels=5.0/6, actions=293, tokens=243093
+  r11l-495a7899: score=33.49, levels=4.0/6, actions=183, tokens=246997
+  re86-8af5384d: score=52.21, levels=6.0/8, actions=573, tokens=319551
+  s5i5-18d95033: score=16.67, levels=3.0/8, actions=170, tokens=338596
+  sb26-7fbdac44: score=80.49, levels=8.0/8, actions=241, tokens=134023
+  sc25-635fd71a: score=51.03, levels=5.0/6, actions=425, tokens=245283
+  sk48-d8078629: score=8.33, levels=2.0/8, actions=213, tokens=268239
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=71, tokens=254063
+  su15-1944f8ab: score=79.41, levels=8.0/9, actions=270, tokens=324307
+  tn36-ef4dde99: score=100.00, levels=7.0/7, actions=215, tokens=179493
+  tr87-cd924810: score=71.43, levels=5.0/6, actions=861, tokens=310345
+  tu93-0768757b: score=67.16, levels=8.0/9, actions=246, tokens=253994
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=264, tokens=204401
+  wa30-ee6fef47: score=6.28, levels=2.0/9, actions=356, tokens=243115
+
+diagnostics: /kaggle/working/synesthesia/diagnostics.html
+synesthesia: evidence gate: 1499 student image_embeds parts at 1024 tokens
+taaf.kaggle: teardown command: "$PYTHON" - <<'PYTEARDOWN'
+import os
+import shutil
+import signal
+import time
+from pathlib import Path
+
+WORKING_DIR = Path(os.environ['TAAF_KAGGLE_WORKING_DIR'])
+
+
+def stop_process(pid_path: Path, name: str) -> None:
+    '''Terminate the process recorded in pid_path, escalating to SIGKILL after 30 seconds.'''
+    if not pid_path.exists():
+        return
+    try:
+        pid = int(pid_path.read_text(encoding='utf-8').strip())
+        print(f'Stopping {name}', flush=True)
+        os.kill(pid, signal.SIGTERM)
+        deadline = time.monotonic() + 30
+        while time.monotonic() < deadline:
+            try:
+                os.kill(pid, 0)
+            except OSError:
+                break
+            time.sleep(1)
+        else:
+            os.kill(pid, signal.SIGKILL)
+    except Exception as exc:
+        print(f'Could not stop {name} cleanly: {exc!r}', flush=True)
+    pid_path.unlink(missing_ok=True)
+
+
+stop_process(WORKING_DIR / 'vllm-watchdog.pid', 'vLLM watchdog')
+stop_process(WORKING_DIR / 'vllm-openai-server.pid', 'vLLM server')
+image_runtime_root = Path(os.environ.get('TAAF_IMAGE_RUNTIME_ROOT', '/tmp/vllm-image-runtime'))
+for runtime_path in (image_runtime_root, image_runtime_root.with_name(image_runtime_root.name + '-cache')):
+    if runtime_path.exists():
+        shutil.rmtree(runtime_path, ignore_errors=True)
+        print(f'Removed image runtime files at {runtime_path}', flush=True)
+
+PYTEARDOWN

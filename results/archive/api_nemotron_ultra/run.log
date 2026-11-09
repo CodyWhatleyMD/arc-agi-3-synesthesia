@@ -1,0 +1,1090 @@
+MISTRAL COMPAT installed: mistral=False reasoning_effort='high'
+SANDBOX TIMEOUT raised to 120s (source clamps at 30)
+DUCK FIXES -- label-block fix: installed; dead-game kill: installed on _HarnessGameSession (K=120)
+DUCK FIXES -- ACTION7 described: installed
+RATE LIMIT installed: 34 rpm, burst 6, in-flight<=4, gap>=1.76s, shared across threads
+CTX OVERFLOW SHIM INSTALLED  estimate_safety=1.15  (estimate patched: True)  log=runs/api_nemotron_ultra/ctx_overflow.jsonl
+INDEX POLICY: NOT INSTALLED (INDEX_POLICY=0). Self-test passed: fresh-slot index 0.915, 7/7 table rows reproduced. Set INDEX_POLICY=1 to enable early stopping.
+lownorm: legend in QWEN's words: white, light gray, medium gray, dark gray, charcoal, black, magenta, pink, red, blue, sky blue, yellow, orange, maroon, green, purple
+lownorm: tokenizer check PASSED on /home/ignaz/models/qwen38-nvfp4-baked-centred-a115/tokenizer.json -- 16/16 single-token, non-merging (lownorm_tokenizer_verified=True)
+ARM=lownorm_glyphs
+lownorm: map     WwgGcBMPRbSYOrNp -> 겪쏟눠됩멤굉촬훨꽤ങ탓뀌볍穌썼繽
+lownorm: legend  겪=white, 쏟=light gray, 눠=medium gray, 됩=dark gray, 멤=charcoal, 굉=black, 촬=magenta, 훨=pink, 꽤=red, ങ=blue, 탓=sky blue, 뀌=yellow, 볍=orange, 穌=maroon, 썼=green, 繽=purple
+lownorm: patched ['inference.agent.prompts.ARC_COLOR_LEGEND', 'inference.agent.prompts.GAME_OVERVIEW_ADDENDUM', 'inference.agent.prompts.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'inference.agent.tool_agent.GAME_OVERVIEW_ADDENDUM', 'inference.agent.tool_agent.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'ToolAgent._build_user_prompt (wrapped)']
+lownorm: probe frame:
+굉굉겪
+굉ങ겪
+썼썼썼
+ab: lownorm control window matched to visual arm: 61376
+BREAKER INSTALLED on ToolAgent._chat_completion (log: runs/api_nemotron_ultra/breaker.jsonl; open at 8 consecutive failures, backoff <= 30s)
+RECALL INSTALLED on ToolAgent._run_python_tool (ledger from /home/ignaz/github/arc-prize-2026/scripts/recall_scaffold.py; DUCK_RECALL_NOTES=0 disables)
+ab: bm.n_passes=1
+ab: ARM=lownorm ctx=65536 games=25 concurrency=8 max_actions=None per_game_s=7920.0 job_dir=runs/api_nemotron_ultra model=nvidia/nemotron-3-ultra-550b-a55b
+ab: 400-storm watchdog armed on /home/ignaz/github/arc-prize-2026/runs/api_nemotron_ultra/run.log
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 2: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 2: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: three consecutive failed turns on server 500s -- this agent runs image-less from here on
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 2: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+analyzer request failed at action 2: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 2: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 4: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 5: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 5: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+benchmark: regenerated diagnostics in runs/api_nemotron_ultra in 2.30s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-23 22:49:47
+ended:     in progress
+mean score:    0.00
+median score:  0.00
+total actions: 60
+total tokens:  47837
+generated tokens/sec: 79.36 (job wallclock)
+total wallclock: 3618.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=0, tokens=0
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=4, tokens=5614
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=4, tokens=5411
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=0.00, levels=0.0/8, actions=4, tokens=8394
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=4, tokens=5917
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=0, tokens=0
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=5, tokens=6313
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=3, tokens=8214
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=36, tokens=7974
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 4: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+analyzer request failed at action 5: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 6: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 4: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+analyzer request failed at action 6: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: 5 consecutive image-less successes -- re-enabling images
+analyzer request failed at action 6: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 6: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 5: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 8: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 7: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 18: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 504 Server Error: Gateway Timeout for url: https://integrate.api.nvidia.com/v1/chat/completions
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 24: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 11: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 70: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 28: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 28: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 70: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 15: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 28: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 15: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 34: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 70: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 34: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 28: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 70: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 70: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 16: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 16: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 16: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 70: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 28: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 16: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 70: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 28: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+benchmark: regenerated diagnostics in runs/api_nemotron_ultra in 0.94s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-23 22:49:47
+ended:     in progress
+mean score:    0.00
+median score:  0.00
+total actions: 176
+total tokens:  95459
+generated tokens/sec: 79.30 (job wallclock)
+total wallclock: 7496.0s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=0, tokens=0
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=27, tokens=11177
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=10, tokens=10823
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=0.00, levels=0.0/8, actions=10, tokens=12764
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=33, tokens=15203
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=0, tokens=0
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=15, tokens=14233
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=12, tokens=17510
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=69, tokens=13749
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+analyzer request failed at action 16: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 16: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 70: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 28: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 28: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] g50t-5849a774 state=crashed level=0/7 score=0.00 actions=27 tokens=11177 per-level=27/78,0/175,0/179,0/230,0/96,0/54,0/67 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 11: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] lp85-305b61c3 state=crashed level=0/8 score=0.00 actions=10 tokens=12764 per-level=10/17,0/38,0/31,0/16,0/41,0/60,0/26,0/159 note="error: RuntimeError: Analyzer did not return a result."
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 16: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 16: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 16: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 16: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 70: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 70: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] su15-1944f8ab state=crashed level=0/9 score=0.00 actions=69 tokens=13749 per-level=69/22,0/42,0/26,0/115,0/36,0/31,0/8,0/40,0/41 note="error: RuntimeError: Analyzer did not return a result."
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 16: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 16: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 16: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] sb26-7fbdac44 state=crashed level=0/8 score=0.00 actions=15 tokens=14233 per-level=15/18,0/28,0/18,0/19,0/31,0/23,0/58,0/18 note="error: RuntimeError: Analyzer did not return a result."
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 16: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 38: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 38: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 38: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 16: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 38: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] tr87-cd924810 state=crashed level=0/6 score=0.00 actions=0 tokens=0 per-level=0/54,0/58,0/40,0/45,0/71,0/146 note="error: RuntimeError: Analyzer did not return a result."
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 16: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 16: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] sk48-d8078629 state=crashed level=0/8 score=0.00 actions=15 tokens=21880 per-level=15/61,0/177,0/101,0/103,0/230,0/181,0/125,0/92 note="error: RuntimeError: Analyzer did not return a result."
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 38: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] s5i5-18d95033 state=crashed level=0/8 score=0.00 actions=0 tokens=0 per-level=0/20,0/89,0/106,0/54,0/162,0/38,0/86,0/83 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] ls20-9607627b state=crashed level=0/7 score=0.00 actions=0 tokens=0 per-level=0/22,0/123,0/73,0/84,0/96,0/192,0/186 note="error: RuntimeError: Analyzer did not return a result."
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] bp35-0a0ad940 state=crashed level=0/9 score=0.00 actions=0 tokens=0 per-level=0/21,0/48,0/44,0/38,0/33,0/87,0/86,0/131,0/163 note="error: RuntimeError: Analyzer did not return a result."
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 38: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] r11l-495a7899 state=crashed level=0/6 score=0.00 actions=0 tokens=0 per-level=0/22,0/33,0/51,0/26,0/52,0/49 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 38: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 38: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] m0r0-492f87ba state=crashed level=0/6 score=0.00 actions=37 tokens=22427 per-level=37/30,0/111,0/203,0/26,0/500,0/237 note="error: RuntimeError: Analyzer did not return a result."
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 11: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] ka59-38d34dbb state=crashed level=0/7 score=0.00 actions=10 tokens=10823 per-level=10/28,0/109,0/51,0/51,0/33,0/132,0/326 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] ft09-0d8bbf25 state=crashed level=0/6 score=0.00 actions=0 tokens=0 per-level=0/43,0/12,0/23,0/28,0/65,0/37 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] tu93-0768757b state=crashed level=0/9 score=0.00 actions=0 tokens=0 per-level=0/19,0/16,0/34,0/42,0/123,0/80,0/14,0/23,0/111 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] ar25-0c556536 state=crashed level=0/8 score=0.00 actions=0 tokens=0 per-level=0/32,0/50,0/75,0/37,0/89,0/159,0/233,0/73 note="error: RuntimeError: Analyzer did not return a result."
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] cd82-fb555c5d state=crashed level=0/6 score=0.00 actions=0 tokens=0 per-level=0/55,0/8,0/41,0/21,0/23,0/23 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] sp80-589a99af state=crashed level=0/6 score=0.00 actions=0 tokens=0 per-level=0/39,0/58,0/25,0/148,0/96,0/152 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] vc33-5430563c state=crashed level=0/7 score=0.00 actions=0 tokens=0 per-level=0/7,0/18,0/44,0/61,0/131,0/34,0/152 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] cn04-2fe56bfb state=crashed level=0/6 score=0.00 actions=0 tokens=0 per-level=0/29,0/54,0/85,0/300,0/208,0/113 note="error: RuntimeError: Analyzer did not return a result."
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] lf52-271a04aa state=crashed level=0/10 score=0.00 actions=0 tokens=0 per-level=0/32,0/81,0/60,0/71,0/205,0/148,0/244,0/109,0/164,0/225 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] tn36-ef4dde99 state=crashed level=0/7 score=0.00 actions=0 tokens=0 per-level=0/32,0/72,0/26,0/40,0/30,0/55,0/62 note="error: RuntimeError: Analyzer did not return a result."
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] sc25-635fd71a state=crashed level=0/6 score=0.00 actions=0 tokens=0 per-level=0/36,0/6,0/32,0/83,0/143,0/50 note="error: RuntimeError: Analyzer did not return a result."
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] re86-8af5384d state=crashed level=0/8 score=0.00 actions=0 tokens=0 per-level=0/26,0/42,0/86,0/108,0/189,0/139,0/424,0/241 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] dc22-fdcac232 state=crashed level=0/6 score=0.00 actions=0 tokens=0 per-level=0/59,0/102,0/67,0/98,0/324,0/578 note="error: RuntimeError: Analyzer did not return a result."
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_nemotron_ultra/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 3: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 3: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 3: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 4: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 4: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 4: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 4: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 4: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 4: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 4: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 4: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_nemotron_ultra/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 10: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 15: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 15: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 15: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 15: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 31: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 31: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 31: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 31: 500 Server Error: Internal Server Error for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"Internal server error","type":"Internal Server Error","code":500}}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 31: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 31: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 31: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_nemotron_ultra/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 91: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 91: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 91: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 91: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+DEAD-GAME KILL: 0 levels after 120 actions (K=120); releasing the slot
+[finished] wa30-ee6fef47 state=gave_up level=0/9 score=0.00 actions=120 tokens=20189 per-level=120/71,0/119,0/183,0/98,0/368,0/68,0/79,0/442,0/415 note="tokens=20189"
+smoke: (ignoring movie-render OSError in teardown: Could not find a backend to open `runs/api_nemotron_ultra/movies/gsb26-7fbdac44_)
+smoke: run finished in 3152s
+smoke: 26 request-log files under runs/api_nemotron_ultra
+smoke: 881 requests; longest conversation 77 msgs; new legend=True old legend=False; new glyphs in tool results=4447; old-letter node colours=0
+smoke: PASS -- legend swapped and node colours arrive in the new glyphs
+smoke: summary.txt: 'benchmark: 0-history-turns\nsolver:    inference\ngames:     25\npasses:    1\nruns:      25 (won: 0)\nstarted:   2026-09-23 22:49:47\nended:     in progress\nmean score:    0.00\nmedian score:  0.00\ntotal actions: 176\ntotal tokens:  95459\ngenerated tokens/sec: 79.30 (job wallclock)\ntotal wallclock: 7496.0s'

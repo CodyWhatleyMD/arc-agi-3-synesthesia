@@ -1,0 +1,81 @@
+Input Notebook:  /nb/ac.ipynb
+Output Notebook: /kaggle/working/out.ipynb
+Executing notebook with kernel: python3
+Executing Cell 1---------------------------------------
+Ending Cell 1------------------------------------------
+Executing Cell 2---------------------------------------
+ARM: ARC-AGI-3 Synesthesia agent clock env: ARC3_START_ATTEMPTS=4 ARC3_START_SKIP=1 ARM_AGENT_CLOCK=1 ARM_PINNED_ROUND_MB=1024
+
+BOOT 2026-11-01 19:04:00 UTC | python 3.13.16 | Linux-7.0.0-1014-gcp-x86_64-with-glibc2.39 | pid 57
+
+BOOT env: {} | other KAGGLE_* names (values not printed): []
+
+BOOT image packages: {'torch': '2.11.0+cu130', 'numpy': '2.1.3', 'pillow': '13.0.0', 'papermill': '2.7.0', 'ipykernel': '6.17.1', 'jupyter_client': '7.4.9'}
+
+BOOT input dataset codywhatleymd/arc3-syn-harness-agentclock-k2: NOT MOUNTED (tried ['/kaggle/input/datasets/codywhatleymd/arc3-syn-harness-agentclock-k2', '/kaggle/input/arc3-syn-harness-agentclock-k2'])
+
+BOOT input dataset codywhatleymd/arc3-board-tower-armb: /kaggle/input/datasets/codywhatleymd/arc3-board-tower-armb | 11 entries | read 6,389 B of SHA256SUMS | 0.00s
+
+BOOT input dataset codywhatleymd/vllm-v0310-arc3-py313: /kaggle/input/datasets/codywhatleymd/vllm-v0310-arc3-py313 | 9 entries | read 30,437 B of PATCH_IDENTITY.json | 0.00s
+
+BOOT input model codywhatleymd/arc3-flashnext-nvfp4-ours-v22/PyTorch/v22/3: /kaggle/input/models/codywhatleymd/arc3-flashnext-nvfp4-ours-v22/pytorch/v22/3 | 43 entries | read 3,235 B of LICENSE | 0.00s
+
+BOOT input competition arc-prize-2026-arc-agi-3: /kaggle/input/competitions/arc-prize-2026-arc-agi-3 | 3 entries | read 0 B of - | 0.00s
+
+BOOT inputs checked in 0.0s
+
+Ending Cell 2------------------------------------------
+Executing Cell 3---------------------------------------
+Ending Cell 3------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/bin/papermill", line 10, in <module>
+    sys.exit(papermill())
+             ~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/dist-packages/click/core.py", line 1631, in __call__
+    return self.main(*args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/click/core.py", line 1552, in main
+    rv = self.invoke(ctx)
+  File "/usr/local/lib/python3.13/dist-packages/click/core.py", line 1415, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/click/core.py", line 910, in invoke
+    return callback(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/click/decorators.py", line 34, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/papermill/cli.py", line 235, in papermill
+    execute_notebook(
+    ~~~~~~~~~~~~~~~~^
+        input_path=input_path,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ...<15 lines>...
+        execution_timeout=execution_timeout,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/papermill/execute.py", line 131, in execute_notebook
+    raise_for_execution_errors(nb, output_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/papermill/execute.py", line 251, in raise_for_execution_errors
+    raise error
+papermill.exceptions.PapermillExecutionError: 
+---------------------------------------------------------------------------
+Exception encountered at "In [2]":
+---------------------------------------------------------------------------
+RuntimeError                              Traceback (most recent call last)
+/tmp/ipykernel_57/2820392142.py in <cell line: 0>()
+     19 
+     20 # ---- 1. the harness: our commit, copied, nothing patched -------------------------------------------------------
+---> 21 HARNESS_SRC = _dataset_dir("codywhatleymd", "arc3-syn-harness-agentclock-k2", "taaf-kaggle-bundle.json")
+     22 _commit = (HARNESS_SRC / "HARNESS_COMMIT.txt").read_text().split()[0]
+     23 if not _commit.startswith(EXPECT_HARNESS_COMMIT):
+
+/tmp/ipykernel_57/2820392142.py in _dataset_dir(owner, slug, marker)
+     15         if (cand / marker).is_file():
+     16             return cand
+---> 17     raise RuntimeError(f"dataset {owner}/{slug} is not mounted (no {marker} at either mount path)")
+     18 
+     19 
+
+RuntimeError: dataset codywhatleymd/arc3-syn-harness-agentclock-k2 is not mounted (no taaf-kaggle-bundle.json at either mount path)
+

@@ -1,0 +1,372 @@
+MISTRAL COMPAT installed: mistral=False reasoning_effort='high'
+SANDBOX TIMEOUT raised to 120s (source clamps at 30)
+DUCK FIXES -- label-block fix: installed; dead-game kill: installed on _HarnessGameSession (K=120); level cap: installed on _HarnessGameSession (C=200)
+DUCK FIXES -- ACTION7 described: installed
+DUCK FIXES (09-25) -- ACTION7 mapping: installed | unicode tool io: installed (json.dumps ensure_ascii=False inside tool_agent)
+DUCK FIXES -- UNDO available but off (DUCK_UNDO=1 enables)
+NATIVES available but off (DUCK_NATIVES=1 enables)
+RATE LIMIT installed: 34 rpm, burst 6, in-flight<=4, gap>=1.76s, shared across threads
+CTX OVERFLOW SHIM INSTALLED  estimate_safety=1.15  (estimate patched: True)  log=runs/api_k3_images_unlimited/ctx_overflow.jsonl
+INDEX POLICY: NOT INSTALLED (INDEX_POLICY=0). Self-test passed: fresh-slot index 0.915, 7/7 table rows reproduced. Set INDEX_POLICY=1 to enable early stopping.
+ARM=duck_baseline (LOWNORM_GLYPHS_ENABLED=False -- exact 6.295 configuration)
+BREAKER INSTALLED on ToolAgent._chat_completion (log: runs/api_k3_images_unlimited/breaker.jsonl; open at 8 consecutive failures, backoff <= 30s)
+RECALL INSTALLED on ToolAgent._run_python_tool (ledger from /home/ignaz/github/arc-prize-2026/scripts/recall_scaffold.py; DUCK_RECALL_NOTES=0 disables)
+ab: bm.n_passes=1
+ab: ARM=baseline ctx=65536 games=25 concurrency=6 max_actions=None per_game_s=7920.0 job_dir=runs/api_k3_images_unlimited model=moonshotai/kimi-k3
+ab: 400-storm watchdog armed on /home/ignaz/github/arc-prize-2026/runs/api_k3_images_unlimited/run.log
+benchmark: regenerated diagnostics in runs/api_k3_images_unlimited in 2.34s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-06 15:51:20
+ended:     in progress
+mean score:    0.00
+median score:  0.00
+total actions: 18
+total tokens:  6734
+generated tokens/sec: 11.17 (job wallclock)
+total wallclock: 2953.1s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=0, tokens=0
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=1, tokens=604
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=0.00, levels=0.0/8, actions=2, tokens=1158
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=1, tokens=509
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=0, tokens=0
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=9, tokens=1969
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=4, tokens=1354
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=1, tokens=1140
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+benchmark: regenerated diagnostics in runs/api_k3_images_unlimited in 0.75s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-06 15:51:20
+ended:     in progress
+mean score:    0.22
+median score:  0.00
+total actions: 49
+total tokens:  16673
+generated tokens/sec: 13.85 (job wallclock)
+total wallclock: 5626.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=0, tokens=0
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=1, tokens=604
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=6, tokens=2521
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=3, tokens=4217
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=0, tokens=0
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=25, tokens=4634
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=12, tokens=3202
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=2, tokens=1495
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 15: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 15: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 15: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+benchmark: regenerated diagnostics in runs/api_k3_images_unlimited in 0.79s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-06 15:51:20
+ended:     in progress
+mean score:    0.44
+median score:  0.00
+total actions: 101
+total tokens:  31275
+generated tokens/sec: 17.33 (job wallclock)
+total wallclock: 8688.5s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=0, tokens=0
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=2, tokens=5443
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=22, tokens=6204
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=19, tokens=4964
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=0, tokens=0
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=42, tokens=8772
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=14, tokens=4397
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=2, tokens=1495
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 15: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 15: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 15: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 15: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 30: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+benchmark: regenerated diagnostics in runs/api_k3_images_unlimited in 0.81s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-06 15:51:20
+ended:     in progress
+mean score:    0.63
+median score:  0.00
+total actions: 199
+total tokens:  51908
+generated tokens/sec: 21.58 (job wallclock)
+total wallclock: 12835.4s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=0, tokens=0
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=8, tokens=7608
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=29, tokens=8655
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=26, tokens=7719
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=0, tokens=0
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=83, tokens=15441
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=14, tokens=4397
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=4.76, levels=1.0/6, actions=39, tokens=8088
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 15: circuit breaker: 8 consecutive analyzer request failures (last: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type") -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] su15-1944f8ab state=crashed level=0/9 score=0.00 actions=14 tokens=4397 per-level=14/22,0/42,0/26,0/115,0/36,0/31,0/8,0/40,0/41 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 30: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+analyzer request failed at action 27: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 27: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 30: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 27: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+analyzer request failed at action 30: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 27: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 30: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+analyzer request failed at action 27: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 30: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 27: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 30: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 27: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_images_unlimited/movies/gsu15-1944f8ab_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 30: circuit breaker: 8 consecutive analyzer request failures (last: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type") -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] lp85-305b61c3 state=crashed level=2/8 score=8.33 actions=29 tokens=8655 per-level=6/17,16/38,7/31,0/16,0/41,0/60,0/26,0/159 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 27: circuit breaker: 8 consecutive analyzer request failures (last: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type") -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] m0r0-492f87ba state=crashed level=0/6 score=0.00 actions=26 tokens=7719 per-level=26/30,0/111,0/203,0/26,0/500,0/237 note="error: RuntimeError: Analyzer did not return a result."
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_images_unlimited/movies/gsu15-1944f8ab_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_images_unlimited/movies/gsu15-1944f8ab_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+analyzer request failed at action 9: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_images_unlimited/movies/gsu15-1944f8ab_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 91: 504 Server Error: Gateway Timeout for url: https://integrate.api.nvidia.com/v1/chat/completions
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 9: circuit breaker: 8 consecutive analyzer request failures (last: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type") -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] ka59-38d34dbb state=crashed level=0/7 score=0.00 actions=8 tokens=3784 per-level=8/28,0/109,0/51,0/51,0/33,0/132,0/326 note="error: RuntimeError: Analyzer did not return a result."
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_images_unlimited/movies/gsu15-1944f8ab_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 15: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_images_unlimited/movies/gsu15-1944f8ab_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 15: 400 Client Error: Bad Request for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"error":{"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"invalid_request_error","param":null,"code":400},"message":"At most 8 image(s) may be provided in one prompt. (parameter=image)","type":"Bad Request","code":400}

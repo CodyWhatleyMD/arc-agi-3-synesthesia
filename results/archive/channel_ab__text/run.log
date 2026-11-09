@@ -1,0 +1,886 @@
+MISTRAL COMPAT installed: mistral=False reasoning_effort='high'
+SANDBOX TIMEOUT raised to 120s (source clamps at 30)
+DUCK FIXES -- label-block fix: installed; dead-game kill: installed on _HarnessGameSession (K=120)
+DUCK FIXES -- ACTION7 described: installed
+CTX OVERFLOW SHIM INSTALLED  estimate_safety=1.15  (estimate patched: True)  log=runs/channel_ab/text/ctx_overflow.jsonl
+INDEX POLICY: NOT INSTALLED (INDEX_POLICY=0). Self-test passed: fresh-slot index 0.915, 7/7 table rows reproduced. Set INDEX_POLICY=1 to enable early stopping.
+lownorm: legend in QWEN's words: white, light gray, medium gray, dark gray, charcoal, black, magenta, pink, red, blue, sky blue, yellow, orange, maroon, green, purple
+lownorm: tokenizer check PASSED on /home/ignaz/models/qwen38-nvfp4/tokenizer.json -- 16/16 single-token, non-merging (lownorm_tokenizer_verified=True)
+ARM=lownorm_glyphs
+lownorm: map     WwgGcBMPRbSYOrNp -> 겪쏟눠됩멤굉촬훨꽤ങ탓뀌볍穌썼繽
+lownorm: legend  겪=white, 쏟=light gray, 눠=medium gray, 됩=dark gray, 멤=charcoal, 굉=black, 촬=magenta, 훨=pink, 꽤=red, ങ=blue, 탓=sky blue, 뀌=yellow, 볍=orange, 穌=maroon, 썼=green, 繽=purple
+lownorm: patched ['inference.agent.prompts.ARC_COLOR_LEGEND', 'inference.agent.prompts.GAME_OVERVIEW_ADDENDUM', 'inference.agent.prompts.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'inference.agent.tool_agent.GAME_OVERVIEW_ADDENDUM', 'inference.agent.tool_agent.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'ToolAgent._build_user_prompt (wrapped)']
+lownorm: probe frame:
+굉굉겪
+굉ങ겪
+썼썼썼
+ab: lownorm control window matched to visual arm: 61376
+BREAKER INSTALLED on ToolAgent._chat_completion (log: runs/channel_ab/text/breaker.jsonl; open at 8 consecutive failures, backoff <= 30s)
+RECALL INSTALLED on ToolAgent._run_python_tool (ledger from /home/ignaz/github/arc-prize-2026/scripts/recall_scaffold.py; DUCK_RECALL_NOTES=0 disables)
+ab: bm.n_passes=1
+ab: ARM=lownorm ctx=65536 games=25 concurrency=12 max_actions=None per_game_s=7920.0 job_dir=runs/channel_ab/text model=qwen38
+ab: 400-storm watchdog armed on /home/ignaz/github/arc-prize-2026/runs/channel_ab/text/run.log
+benchmark: regenerated diagnostics in runs/channel_ab/text in 2.35s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-23 11:05:42
+ended:     in progress
+mean score:    0.00
+median score:  0.00
+total actions: 73
+total tokens:  172976
+generated tokens/sec: 286.89 (job wallclock)
+total wallclock: 4678.8s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=8, tokens=17427
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=3, tokens=18276
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=2, tokens=15763
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=0.00, levels=0.0/8, actions=0, tokens=0
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=3, tokens=13082
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=2, tokens=6278
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=2, tokens=16316
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=9, tokens=20002
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=35, tokens=21408
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=2, tokens=21434
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=5, tokens=15435
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=2, tokens=7555
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 3: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+benchmark: regenerated diagnostics in runs/channel_ab/text in 1.23s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-23 11:05:42
+ended:     in progress
+mean score:    0.26
+median score:  0.00
+total actions: 167
+total tokens:  346536
+generated tokens/sec: 287.76 (job wallclock)
+total wallclock: 11026.6s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=17, tokens=32168
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=5, tokens=35388
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=5, tokens=35653
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=0.00, levels=0.0/8, actions=0, tokens=0
+  ls20-9607627b: score=3.57, levels=1.0/7, actions=20, tokens=34868
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=20, tokens=30549
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=8, tokens=34768
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=15, tokens=34244
+  sb26-7fbdac44: score=0.62, levels=1.0/8, actions=54, tokens=34474
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=8, tokens=31119
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=13, tokens=35750
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=2, tokens=7555
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+benchmark: regenerated diagnostics in runs/channel_ab/text in 1.27s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-23 11:05:42
+ended:     in progress
+mean score:    0.64
+median score:  0.00
+total actions: 258
+total tokens:  496495
+generated tokens/sec: 274.98 (job wallclock)
+total wallclock: 18431.8s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=22, tokens=47581
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=7, tokens=47773
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=8, tokens=49932
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=0.00, levels=0.0/8, actions=3, tokens=16137
+  ls20-9607627b: score=3.57, levels=1.0/7, actions=38, tokens=45983
+  m0r0-492f87ba: score=4.76, levels=1.0/6, actions=30, tokens=42643
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=12, tokens=40908
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=19, tokens=48528
+  sb26-7fbdac44: score=0.62, levels=1.0/8, actions=62, tokens=49316
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=36, tokens=50117
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=19, tokens=50022
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=2, tokens=7555
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+benchmark: regenerated diagnostics in runs/channel_ab/text in 1.22s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-23 11:05:42
+ended:     in progress
+mean score:    0.75
+median score:  0.00
+total actions: 344
+total tokens:  652502
+generated tokens/sec: 271.10 (job wallclock)
+total wallclock: 25825.1s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=22, tokens=47581
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=14, tokens=59924
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=10, tokens=58068
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=9, tokens=34342
+  ls20-9607627b: score=3.57, levels=1.0/7, actions=39, tokens=54246
+  m0r0-492f87ba: score=4.76, levels=1.0/6, actions=52, tokens=62942
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=20, tokens=61744
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=31, tokens=64169
+  sb26-7fbdac44: score=0.62, levels=1.0/8, actions=62, tokens=49316
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=47, tokens=63898
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=21, tokens=59402
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=17, tokens=36870
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 63: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 23: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+benchmark: regenerated diagnostics in runs/channel_ab/text in 1.02s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-23 11:05:42
+ended:     in progress
+mean score:    0.75
+median score:  0.00
+total actions: 375
+total tokens:  737175
+generated tokens/sec: 245.07 (job wallclock)
+total wallclock: 30213.0s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=22, tokens=47581
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=23, tokens=76088
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=10, tokens=58068
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=10, tokens=42193
+  ls20-9607627b: score=3.57, levels=1.0/7, actions=41, tokens=70371
+  m0r0-492f87ba: score=4.76, levels=1.0/6, actions=52, tokens=62942
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=26, tokens=76783
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=35, tokens=71384
+  sb26-7fbdac44: score=0.62, levels=1.0/8, actions=64, tokens=52383
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=47, tokens=63898
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=28, tokens=78614
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=17, tokens=36870
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+benchmark: regenerated diagnostics in runs/channel_ab/text in 0.87s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-23 11:05:42
+ended:     in progress
+mean score:    0.75
+median score:  0.00
+total actions: 460
+total tokens:  828526
+generated tokens/sec: 229.57 (job wallclock)
+total wallclock: 34963.8s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=23, tokens=69877
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=24, tokens=84857
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=10, tokens=58068
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=12, tokens=63347
+  ls20-9607627b: score=3.57, levels=1.0/7, actions=104, tokens=89187
+  m0r0-492f87ba: score=4.76, levels=1.0/6, actions=52, tokens=62942
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=28, tokens=84621
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=35, tokens=71384
+  sb26-7fbdac44: score=0.62, levels=1.0/8, actions=64, tokens=52383
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=47, tokens=63898
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=44, tokens=91092
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=17, tokens=36870
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+benchmark: regenerated diagnostics in runs/channel_ab/text in 2.91s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-23 11:05:42
+ended:     in progress
+mean score:    0.75
+median score:  0.00
+total actions: 531
+total tokens:  994702
+generated tokens/sec: 236.16 (job wallclock)
+total wallclock: 41939.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=28, tokens=80967
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=24, tokens=84857
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=12, tokens=103612
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=13, tokens=74825
+  ls20-9607627b: score=3.57, levels=1.0/7, actions=104, tokens=89187
+  m0r0-492f87ba: score=4.76, levels=1.0/6, actions=52, tokens=62942
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=29, tokens=105949
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=35, tokens=71384
+  sb26-7fbdac44: score=0.62, levels=1.0/8, actions=69, tokens=78841
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=47, tokens=63898
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=47, tokens=95450
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=71, tokens=82790
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+DEAD-GAME KILL: 0 levels after 120 actions (K=120); releasing the slot
+[finished] tr87-cd924810 state=gave_up level=0/6 score=0.00 actions=120 tokens=86980 per-level=120/54,0/58,0/40,0/45,0/71,0/146 note="tokens=86980"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gtr87-cd924810_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gtr87-cd924810_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gtr87-cd924810_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 36: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gtr87-cd924810_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gtr87-cd924810_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 41: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gtr87-cd924810_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 33: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=36.807483074999254)
+[finished] r11l-495a7899 state=gave_up level=1/6 score=4.76 actions=32 tokens=204551 per-level=12/22,20/33,0/51,0/26,0/52,0/49 note="tokens=204551"
+[finished] s5i5-18d95033 state=gave_up level=0/8 score=0.00 actions=37 tokens=148524 per-level=37/20,0/89,0/106,0/54,0/162,0/38,0/86,0/83 note="tokens=182937"
+[finished] su15-1944f8ab state=gave_up level=1/9 score=2.22 actions=48 tokens=126935 per-level=13/22,35/42,0/26,0/115,0/36,0/31,0/8,0/40,0/41 note="tokens=207174"
+[finished] lp85-305b61c3 state=gave_up level=1/8 score=2.78 actions=13 tokens=74825 per-level=9/17,4/38,0/31,0/16,0/41,0/60,0/26,0/159 note="tokens=177979"
+[finished] bp35-0a0ad940 state=gave_up level=0/9 score=0.00 actions=40 tokens=121291 per-level=40/21,0/48,0/44,0/38,0/33,0/87,0/86,0/131,0/163 note="tokens=162187"
+[finished] ka59-38d34dbb state=gave_up level=0/7 score=0.00 actions=12 tokens=103612 per-level=12/28,0/109,0/51,0/51,0/33,0/132,0/326 note="tokens=209052"
+[finished] sk48-d8078629 state=gave_up level=0/8 score=0.00 actions=82 tokens=131739 per-level=82/61,0/177,0/101,0/103,0/230,0/181,0/125,0/92 note="tokens=209607"
+[finished] ls20-9607627b state=gave_up level=1/7 score=3.57 actions=104 tokens=89187 per-level=20/22,84/123,0/73,0/84,0/96,0/192,0/186 note="tokens=210341"
+[finished] m0r0-492f87ba state=gave_up level=1/6 score=4.76 actions=77 tokens=192506 per-level=30/30,47/111,0/203,0/26,0/500,0/237 note="tokens=210130"
+[finished] sb26-7fbdac44 state=gave_up level=1/8 score=0.62 actions=79 tokens=142489 per-level=38/18,41/28,0/18,0/19,0/31,0/23,0/58,0/18 note="tokens=190438"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+[finished] g50t-5849a774 state=gave_up level=0/7 score=0.00 actions=36 tokens=150141 per-level=36/78,0/175,0/179,0/230,0/96,0/54,0/67 note="tokens=222773"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 23: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 23: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 24: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=73.7950185539994)
+[finished] cn04-2fe56bfb state=gave_up level=0/6 score=0.00 actions=23 tokens=160531 per-level=23/29,0/54,0/85,0/300,0/208,0/113 note="tokens=160531"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 58: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 30: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 28: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 21: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 343: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 93: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=164.20772989600118)
+[finished] ft09-0d8bbf25 state=gave_up level=3/6 score=28.57 actions=92 tokens=200441 per-level=60/43,7/12,18/23,7/28,0/65,0/37 note="tokens=201398"
+[finished] tu93-0768757b state=gave_up level=1/9 score=2.01 actions=33 tokens=109566 per-level=20/19,13/16,0/34,0/42,0/123,0/80,0/14,0/23,0/111 note="tokens=179984"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 46: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=667.8772182989997)
+[finished] lf52-271a04aa state=gave_up level=1/10 score=1.82 actions=45 tokens=162319 per-level=19/32,26/81,0/60,0/71,0/205,0/148,0/244,0/109,0/164,0/225 note="tokens=162652"
+[finished] cd82-fb555c5d state=gave_up level=1/6 score=1.23 actions=110 tokens=193142 per-level=108/55,2/8,0/41,0/21,0/23,0/23 note="tokens=205328"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 105: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=118.20998837800289)
+[finished] sp80-589a99af state=gave_up level=0/6 score=0.00 actions=104 tokens=176461 per-level=104/39,0/58,0/25,0/148,0/96,0/152 note="tokens=176461"
+[finished] ar25-0c556536 state=gave_up level=1/8 score=2.78 actions=92 tokens=122133 per-level=27/32,65/50,0/75,0/37,0/89,0/159,0/233,0/73 note="tokens=206126"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 97: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=27.003741714997886)
+[finished] tn36-ef4dde99 state=gave_up level=0/7 score=0.00 actions=96 tokens=203645 per-level=96/32,0/72,0/26,0/40,0/30,0/55,0/62 note="tokens=203645"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 31: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=86.58016697900166)
+[finished] dc22-fdcac232 state=gave_up level=0/6 score=0.00 actions=30 tokens=176978 per-level=30/59,0/102,0/67,0/98,0/324,0/578 note="tokens=178793"
+[finished] sc25-635fd71a state=gave_up level=1/6 score=4.76 actions=76 tokens=90062 per-level=32/36,44/6,0/32,0/83,0/143,0/50 note="tokens=209491"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+[finished] re86-8af5384d state=gave_up level=4/8 score=22.09 actions=403 tokens=152758 per-level=45/26,39/42,48/86,158/108,113/189,0/139,0/424,0/241 note="tokens=185190"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 38: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+[finished] vc33-5430563c state=gave_up level=2/7 score=8.90 actions=37 tokens=77362 per-level=16/7,12/18,9/44,0/61,0/131,0/34,0/152 note="tokens=200444"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 90: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=74.43359424799928)
+[finished] wa30-ee6fef47 state=gave_up level=0/9 score=0.00 actions=89 tokens=335235 per-level=89/71,0/119,0/183,0/98,0/368,0/68,0/79,0/442,0/415 note="tokens=335235"
+smoke: (ignoring movie-render OSError in teardown: Could not find a backend to open `runs/channel_ab/text/movies/gsb26-7fbdac44_p0.)
+smoke: run finished in 20358s
+smoke: 26 request-log files under runs/channel_ab/text
+smoke: 3206 requests; longest conversation 64 msgs; new legend=True old legend=False; new glyphs in tool results=117; old-letter node colours=0
+smoke: PASS -- legend swapped and node colours arrive in the new glyphs
+smoke: summary.txt: 'benchmark: 0-history-turns\nsolver:    inference\ngames:     25\npasses:    1\nruns:      25 (won: 0)\nstarted:   2026-09-23 11:05:42\nended:     in progress\nmean score:    0.75\nmedian score:  0.00\ntotal actions: 531\ntotal tokens:  994702\ngenerated tokens/sec: 236.16 (job wallclock)\ntotal wallclock: 41939'

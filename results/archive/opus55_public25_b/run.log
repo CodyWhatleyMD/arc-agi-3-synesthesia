@@ -1,0 +1,789 @@
+MISTRAL COMPAT installed: mistral=False reasoning_effort='high'
+SANDBOX TIMEOUT raised to 120s (source clamps at 30)
+DUCK FIXES -- label-block fix: installed; dead-game kill: installed on _HarnessGameSession (K=120); level cap: installed on _HarnessGameSession (C=200)
+DUCK FIXES -- ACTION7 described: installed
+DUCK FIXES (09-25) -- ACTION7 mapping: installed | unicode tool io: installed (json.dumps ensure_ascii=False inside tool_agent)
+CTX OVERFLOW SHIM INSTALLED  estimate_safety=1.15  (estimate patched: True)  log=runs/opus55_public25_b/ctx_overflow.jsonl
+INDEX POLICY: NOT INSTALLED (INDEX_POLICY=0). Self-test passed: fresh-slot index 0.915, 7/7 table rows reproduced. Set INDEX_POLICY=1 to enable early stopping.
+lownorm: colour vocabulary from /home/ignaz/github/arc-prize-2026/notes/qwen_colour_vocabulary_all16.json
+lownorm: legend in QWEN's words: white, light gray, medium gray, dark gray, charcoal, black, magenta, pink, red, blue, sky blue, yellow, orange, maroon, green, purple
+lownorm: tokenizer check PASSED on /home/ignaz/models/qwen38-nvfp4-baked-centred-a115/tokenizer.json -- 16/16 single-token, non-merging (lownorm_tokenizer_verified=True)
+ARM=lownorm_glyphs
+lownorm: map     WwgGcBMPRbSYOrNp -> 겪쏟눠됩멤굉촬훨꽤ങ탓뀌볍穌썼繽
+lownorm: legend  겪=white, 쏟=light gray, 눠=medium gray, 됩=dark gray, 멤=charcoal, 굉=black, 촬=magenta, 훨=pink, 꽤=red, ങ=blue, 탓=sky blue, 뀌=yellow, 볍=orange, 穌=maroon, 썼=green, 繽=purple
+lownorm: patched ['inference.agent.prompts.ARC_COLOR_LEGEND', 'inference.agent.prompts.GAME_OVERVIEW_ADDENDUM', 'inference.agent.prompts.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'inference.agent.tool_agent.GAME_OVERVIEW_ADDENDUM', 'inference.agent.tool_agent.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'ToolAgent._build_user_prompt (wrapped)']
+lownorm: probe frame:
+굉굉겪
+굉ങ겪
+썼썼썼
+ab: lownorm control window matched to visual arm: 61376
+BREAKER INSTALLED on ToolAgent._chat_completion (log: runs/opus55_public25_b/breaker.jsonl; open at 8 consecutive failures, backoff <= 30s)
+RECALL INSTALLED on ToolAgent._run_python_tool (ledger from /home/ignaz/github/arc-prize-2026/scripts/recall_scaffold.py; DUCK_RECALL_NOTES=0 disables)
+ab: bm.n_passes=1
+ab: ARM=lownorm ctx=65536 games=19 concurrency=3 max_actions=None per_game_s=7920.0 job_dir=runs/opus55_public25_b model=claude-opus-5-5
+ab: 400-storm watchdog armed on /home/ignaz/github/arc-prize-2026/runs/opus55_public25_b/run.log
+benchmark: regenerated diagnostics in runs/opus55_public25_b in 1.82s
+benchmark: 0-history-turns
+solver:    inference
+games:     19
+passes:    1
+runs:      19 (won: 0)
+started:   2026-09-26 12:01:19
+ended:     in progress
+mean score:    1.24
+median score:  0.00
+total actions: 319
+total tokens:  144052
+generated tokens/sec: 239.21 (job wallclock)
+total wallclock: 1625.6s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=0, tokens=0
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=21.43, levels=3.0/7, actions=193, tokens=52188
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=0, tokens=0
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=45, tokens=42428
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=81, tokens=49436
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+benchmark: regenerated diagnostics in runs/opus55_public25_b in 8.60s
+benchmark: 0-history-turns
+solver:    inference
+games:     19
+passes:    1
+runs:      19 (won: 0)
+started:   2026-09-26 12:01:19
+ended:     in progress
+mean score:    3.81
+median score:  0.00
+total actions: 748
+total tokens:  308679
+generated tokens/sec: 254.90 (job wallclock)
+total wallclock: 3602.9s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=0, tokens=0
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=53.57, levels=5.0/7, actions=416, tokens=96023
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=0, tokens=0
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=8.33, levels=2.0/8, actions=168, tokens=103824
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=10.43, levels=3.0/9, actions=164, tokens=108832
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+LEVEL CAP: level 6 has cost 201 actions (> 200); releasing the slot with 5 level(s) cleared
+[finished] g50t-5849a774 state=gave_up level=5/7 score=53.57 actions=496 tokens=110943 per-level=50/78,31/175,72/179,80/230,62/96,201/54,0/67 note="tokens=110943"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_b/movies/gg50t-5849a774_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_b/movies/gg50t-5849a774_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_b/movies/gg50t-5849a774_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+[finished] ls20-9607627b state=won level=7/7 score=100.00 actions=497 tokens=173490 per-level=20/22,45/123,63/73,61/84,109/96,86/192,113/186 note="tokens=173490"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_b/movies/gg50t-5849a774_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_b/movies/gg50t-5849a774_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+LEVEL CAP: level 8 has cost 201 actions (> 200); releasing the slot with 7 level(s) cleared
+[finished] sk48-d8078629 state=gave_up level=7/8 score=77.78 actions=763 tokens=331976 per-level=61/61,52/177,73/101,35/103,127/230,108/181,106/125,201/92 note="tokens=331976"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_b/movies/gg50t-5849a774_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+[finished] r11l-495a7899 state=won level=6/6 score=100.00 actions=94 tokens=100215 per-level=11/22,14/33,15/51,13/26,21/52,20/49 note="tokens=100215"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_b/movies/gg50t-5849a774_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 317: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"2e433d0f-3286-49bf-99b7-b96b4339d911\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 317: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"1924bcf8-5082-4e88-aa57-d907f70d2168\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: three consecutive failed turns on server 500s -- this agent runs image-less from here on
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 390: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"5679eabb-696a-4f44-a37f-eeb383daaee0\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 317: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"17056184-a650-4316-a9a1-23e84a56907b\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 390: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e4821827-fb73-4408-9632-0db05d9401e7\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_b/movies/gg50t-5849a774_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+analyzer request failed at action 153: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"16f44c4e-c24a-4872-8180-35fd1373d2d0\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: three consecutive failed turns on server 500s -- this agent runs image-less from here on
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 153: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"2d4395fe-ad79-46c3-9130-d30b27e01d4a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: three consecutive failed turns on server 500s -- this agent runs image-less from here on
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 390: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"7e0ee3fe-2d22-4663-a6c9-1706305b54ae\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 317: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ed2007cb-3247-48c3-aa7f-adeba2297546\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 153: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"6fe6168f-eb44-4aec-834f-568acd9a87e5\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 390: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"60016ea2-b6a8-4695-8be2-5582896ce4ca\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 153: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e8aa5574-8ab9-4540-9685-66c7ee17652d\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 317: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"c720ac3f-a815-4a68-8cab-a017bd6ce421\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 390: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"a5c9f5bc-e7f4-4ccb-9213-9e03f130ff0d\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 153: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d2bba3cc-8ce6-4144-af92-4713d7d4a8db\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 317: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"9f86e17f-00d8-4e92-a50c-94d282b16bfd\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 390: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"87715421-60bf-4a20-a4bb-3883a7a13cf1\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 153: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"8c0f0bbb-775b-4cf4-954b-078bb75c5c78\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 317: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"7f84983e-e308-47d0-bbe6-e2ee17ef013a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 317: circuit breaker: 8 consecutive analyzer request failures (last: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reaso) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] bp35-0a0ad940 state=crashed level=6/9 score=35.49 actions=316 tokens=214123 per-level=20/21,56/48,37/44,38/38,45/33,118/87,2/86,0/131,0/163 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"346ff80c-34dc-4df0-9b48-046584ed560f\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"1c291a79-9137-488d-9226-664af9d1e800\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: three consecutive failed turns on server 500s -- this agent runs image-less from here on
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 390: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"233a6b07-6ba0-4722-aaa5-f9a80163883c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 390: circuit breaker: 8 consecutive analyzer request failures (last: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reaso) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] su15-1944f8ab state=crashed level=8/9 score=64.76 actions=389 tokens=529955 per-level=21/22,77/42,26/26,80/115,31/36,35/31,48/8,27/40,44/41 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"9c606dd6-0b90-4a99-87f2-713815c2bc61\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"432cbece-4c4d-42d6-a1ee-b1d109ed6bed\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 153: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"5f043d06-e968-427e-9132-6b4f04a7765f\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 153: circuit breaker: 8 consecutive analyzer request failures (last: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reaso) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] cn04-2fe56bfb state=crashed level=4/6 score=47.62 actions=152 tokens=57068 per-level=24/29,55/54,32/85,38/300,3/208,0/113 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"5f7cbd98-fbbb-42b9-bfa2-ccf08318f246\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"57faa793-e881-4fd5-9fbe-204cde4306ae\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: three consecutive failed turns on server 500s -- this agent runs image-less from here on
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"a1bfcc20-ba86-4a2b-a645-e16e91462742\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: three consecutive failed turns on server 500s -- this agent runs image-less from here on
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"3880bfd2-9bc1-48e4-8c0a-5690893dd2a8\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"b073429a-6a09-4de2-a9d1-cd59f867a4ee\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"2fd70fc8-f1b4-42de-bc97-1789a45810f5\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e6cf4b3a-059a-484a-a2d9-0c157048e4df\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"635622e9-a9c7-4c80-a345-660388d1e5be\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"4b018faa-fe67-4f57-8120-a5137131fc8d\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"99ae5210-c779-4867-9e7d-094aba885ce6\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ddf34313-9cb7-4c18-a92c-4f4ebb563c1a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"c29b6bf4-30a7-4aa7-b1cc-330ee38894fa\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"6ec1ee53-4e39-4532-a5a4-8d03cc0d19b8\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"5aa19e60-a22f-4b82-9615-0a1e927548c7\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"3282b743-5f78-4cda-8129-78fc27cb7419\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reaso) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] ft09-0d8bbf25 state=crashed level=0/6 score=0.00 actions=0 tokens=0 per-level=0/43,0/12,0/23,0/28,0/65,0/37 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e862c2ef-a9db-4a88-bcd6-90d582f9fc1c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"41c28544-80f0-44d0-bdc2-1c2c3aff7774\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: three consecutive failed turns on server 500s -- this agent runs image-less from here on
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"4fc3a89b-beca-42d0-ad30-d9ec909b73fe\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reaso) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] cd82-fb555c5d state=crashed level=0/6 score=0.00 actions=0 tokens=0 per-level=0/55,0/8,0/41,0/21,0/23,0/23 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"b60dc939-5677-40b6-a096-309e9babc374\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"066658db-c89e-4e59-ab64-1b3151d93d92\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"62fc27f4-6854-4789-90f8-68a6224d8c40\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reaso) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] tu93-0768757b state=crashed level=0/9 score=0.00 actions=0 tokens=0 per-level=0/19,0/16,0/34,0/42,0/123,0/80,0/14,0/23,0/111 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"87172f73-1ad8-44a9-8244-5c73f9abdcc8\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"40fc8821-62af-4f8f-847f-81705560947a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: three consecutive failed turns on server 500s -- this agent runs image-less from here on
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"5c60366f-b5ff-4a87-be66-e44a3ee2fc7a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: three consecutive failed turns on server 500s -- this agent runs image-less from here on
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"c37021d8-9b5d-49f7-8f39-5a36b22ae7de\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"a855787d-bb72-4d96-8c40-e6b3328cb51e\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"66bacc93-154f-4ef6-91c1-5856e4555f97\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"34e25a67-fbde-40d9-a197-a53fbda702f7\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"76e86d1a-9b29-4923-aefb-5aa982887c37\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"0d67fde3-4e5d-48d3-9198-bd4cb593cd49\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"b463a25f-f10d-4e71-9b05-2bcb2ed3df5c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"9d647e48-2a73-433b-8bbc-d7df84f860fa\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"995e1c80-f51f-47e5-8866-f55b59ba1e74\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"99f03f3e-2e4d-44a0-91cf-c82b588a0c4a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"95073251-6ca0-4336-afce-d9329bfeb6f2\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"c7044ff8-4d32-4c85-941f-b681ee3694b5\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reaso) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] lf52-271a04aa state=crashed level=0/10 score=0.00 actions=0 tokens=0 per-level=0/32,0/81,0/60,0/71,0/205,0/148,0/244,0/109,0/164,0/225 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"81792ca8-dd13-4d04-ad7a-84b6637811e7\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"fa9ba8e4-f4ba-4788-b191-31190dc7b97b\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: three consecutive failed turns on server 500s -- this agent runs image-less from here on
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"826f891e-37e2-47ca-a44e-8fba4f5866b4\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reaso) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] ar25-0c556536 state=crashed level=0/8 score=0.00 actions=0 tokens=0 per-level=0/32,0/50,0/75,0/37,0/89,0/159,0/233,0/73 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"8e936851-f198-4631-9880-30a2a69a297a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"194c680e-af5f-4a7e-ac6d-b48cd736867f\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"25889aa3-de4f-4bd3-9bc3-7c3ad918e003\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reaso) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] sp80-589a99af state=crashed level=0/6 score=0.00 actions=0 tokens=0 per-level=0/39,0/58,0/25,0/148,0/96,0/152 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"40d654d9-55dc-4011-b99f-475a95f81186\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"c8cc2728-1602-41f9-ad00-c0773b50199c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: three consecutive failed turns on server 500s -- this agent runs image-less from here on
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"dff1406f-78a4-466d-a6a9-ed609940b370\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: three consecutive failed turns on server 500s -- this agent runs image-less from here on
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"708b023e-0432-4234-9c20-4848eed5a43c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"4090044e-3959-4234-b38b-a4b2ed0698e8\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e84426fc-4b10-4093-964d-cc745555ce82\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"915baaec-aa8e-4743-aa23-0c89050c63c5\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"69903378-96a1-4053-9cbf-a228b4bdbedb\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"583c7de6-9e5f-4fd9-b5b8-48115be46f97\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"72383922-f2f7-4e34-ad57-7967681dc684\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"deb0b749-2a99-4b82-81c2-f2ac73f925ea\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"edda65c7-772c-4cfe-a8b7-83316effd6d5\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ec97c51f-873f-41bb-84e6-326e3b59ba2b\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"51510932-3933-4df5-a339-92354c7250f6\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ea8abeec-b32e-4e3a-a26e-0a5e82b6ddd6\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reaso) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] vc33-5430563c state=crashed level=0/7 score=0.00 actions=0 tokens=0 per-level=0/7,0/18,0/44,0/61,0/131,0/34,0/152 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d5238d2e-e30c-4092-b614-6b764a32a20c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"c0415bfe-c253-497b-9336-d2e060275615\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: three consecutive failed turns on server 500s -- this agent runs image-less from here on
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"b3f740b7-44da-433b-8e1e-bdab3384afaa\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reaso) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] dc22-fdcac232 state=crashed level=0/6 score=0.00 actions=0 tokens=0 per-level=0/59,0/102,0/67,0/98,0/324,0/578 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"a4b2993e-d873-41ee-a353-81624be81857\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"eeb88366-6bce-4d7c-a9e6-e678fe0878a9\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"3f8660f0-1645-4afb-b64e-a853851c960e\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reaso) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] tn36-ef4dde99 state=crashed level=0/7 score=0.00 actions=0 tokens=0 per-level=0/32,0/72,0/26,0/40,0/30,0/55,0/62 note="error: RuntimeError: Analyzer did not return a result."
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"de59fdb6-5445-47e2-a0d7-ee85586a6569\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"3df5b263-b165-4206-9a62-d555671a135c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: three consecutive failed turns on server 500s -- this agent runs image-less from here on
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"13a0cc30-c51a-450f-9002-9e986dd02e41\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: three consecutive failed turns on server 500s -- this agent runs image-less from here on
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"48f8991a-1c97-4f25-bcee-bc7354e71355\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d81d1b52-f3c1-4fe5-b1f0-2ca9ea033407\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"a4eee972-1eb4-477f-b86a-13c237ce9858\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"2bcf8d36-c13b-4740-9bdf-f5875d292a6f\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"628e19f4-e54f-4697-b5b9-e2c87f6f6fb7\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"15197672-daab-466f-b049-248cd4d810fb\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/opus55_public25_b/movies/gsu15-1944f8ab_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"9c6281a6-95a1-4c2a-a6b8-61f2cbe2a339\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"c19f082b-4a4f-478e-97ee-63194e42107a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 6/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"587b9439-4dec-4e69-a4ca-10e76ad27b3f\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"3fd6458e-1b50-4b9d-9de3-9adab7ddc4de\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"9fda746a-9af7-43c2-8b96-c324b2170e81\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 7/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"8f710199-1022-4983-a79a-ffb8264339e7\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reaso) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] sc25-635fd71a state=crashed level=0/6 score=0.00 actions=0 tokens=0 per-level=0/36,0/6,0/32,0/83,0/143,0/50 note="error: RuntimeError: Analyzer did not return a result."
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"8ccedbc0-5546-4533-a68a-f724372af5b4\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reaso) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] re86-8af5384d state=crashed level=0/8 score=0.00 actions=0 tokens=0 per-level=0/26,0/42,0/86,0/108,0/189,0/139,0/424,0/241 note="error: RuntimeError: Analyzer did not return a result."
+analyzer request failed at action 1: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d2a31aba-6bca-4d84-88ef-7b14d58ce35c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standa", "type": "proxy_error"}}
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER OPEN: 8 consecutive request failures -- raising RuntimeError so the solver stops retrying and ends this game
+analyzer failed at action 1: circuit breaker: 8 consecutive analyzer request failures (last: 500 Server Error: Internal Server Error for url: http://127.0.0.1:5302/v1/chat/completions | response: {"error": {"message": "RuntimeError('claude -p (docker) rc=1: {\"duration_api_ms\":0,\"stop_reaso) -- giving up on this game instead of retrying at 1 Hz until the wall clock expires
+[finished] wa30-ee6fef47 state=crashed level=0/9 score=0.00 actions=0 tokens=0 per-level=0/71,0/119,0/183,0/98,0/368,0/68,0/79,0/442,0/415 note="error: RuntimeError: Analyzer did not return a result."
+smoke: (ignoring movie-render OSError in teardown: Could not find a backend to open `runs/opus55_public25_b/movies/gsu15-1944f8ab_p)
+smoke: run finished in 6704s
+smoke: 20 request-log files under runs/opus55_public25_b
+smoke: 1622 requests; longest conversation 83 msgs; new legend=True old legend=False; new glyphs in tool results=11028; old-letter node colours=0
+smoke: PASS -- legend swapped and node colours arrive in the new glyphs
+smoke: summary.txt: 'benchmark: 0-history-turns\nsolver:    inference\ngames:     19\npasses:    1\nruns:      19 (won: 0)\nstarted:   2026-09-26 12:01:19\nended:     in progress\nmean score:    3.81\nmedian score:  0.00\ntotal actions: 748\ntotal tokens:  308679\ngenerated tokens/sec: 254.90 (job wallclock)\ntotal wallclock: 3602.'

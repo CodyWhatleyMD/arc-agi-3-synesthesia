@@ -1,0 +1,32 @@
+MISTRAL COMPAT installed: mistral=False reasoning_effort='high'
+SANDBOX TIMEOUT raised to 120s (source clamps at 30)
+DUCK FIXES -- label-block fix: installed; dead-game kill: installed on _HarnessGameSession (K=120); level cap: installed on _HarnessGameSession (C=200)
+DUCK FIXES -- ACTION7 described: installed
+DUCK FIXES (09-25) -- ACTION7 mapping: installed | unicode tool io: installed (json.dumps ensure_ascii=False inside tool_agent)
+NATIVES installed: objs/diff/grid/act_until; v2 (geometry/memory/contrast/plan/report): ON; persisted defs: ON; tool description updated
+CTX OVERFLOW SHIM INSTALLED  estimate_safety=1.15  (estimate patched: True)  log=runs/flashnext_ours_smoke/ctx_overflow.jsonl
+INDEX POLICY: NOT INSTALLED (INDEX_POLICY=0). Self-test passed: fresh-slot index 0.915, 7/7 table rows reproduced. Set INDEX_POLICY=1 to enable early stopping.
+lownorm: colour vocabulary from /home/ignaz/github/arc-prize-2026/notes/qwen_colour_vocabulary_all16.json
+lownorm: legend in QWEN's words: white, light gray, medium gray, dark gray, charcoal, black, magenta, pink, red, blue, sky blue, yellow, orange, maroon, green, purple
+lownorm: tokenizer check PASSED on /home/ignaz/models/qwen38-nvfp4-baked-centred-a115/tokenizer.json -- 16/16 single-token, non-merging (lownorm_tokenizer_verified=True)
+ARM=lownorm_glyphs
+lownorm: map     WwgGcBMPRbSYOrNp -> 겪쏟눠됩멤굉촬훨꽤ങ탓뀌볍穌썼繽
+lownorm: legend  겪=white, 쏟=light gray, 눠=medium gray, 됩=dark gray, 멤=charcoal, 굉=black, 촬=magenta, 훨=pink, 꽤=red, ങ=blue, 탓=sky blue, 뀌=yellow, 볍=orange, 穌=maroon, 썼=green, 繽=purple
+lownorm: patched ['inference.agent.prompts.ARC_COLOR_LEGEND', 'inference.agent.prompts.GAME_OVERVIEW_ADDENDUM', 'inference.agent.prompts.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'inference.agent.tool_agent.GAME_OVERVIEW_ADDENDUM', 'inference.agent.tool_agent.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'ToolAgent._build_user_prompt (wrapped)']
+lownorm: probe frame:
+굉굉겪
+굉ങ겪
+썼썼썼
+ab: lownorm control window matched to visual arm: 32768
+BREAKER INSTALLED on ToolAgent._chat_completion (log: runs/flashnext_ours_smoke/breaker.jsonl; open at 8 consecutive failures, backoff <= 30s)
+RECALL INSTALLED on ToolAgent._run_python_tool (ledger from /home/ignaz/github/arc-prize-2026/scripts/recall_scaffold.py; DUCK_RECALL_NOTES=0 disables)
+ab: bm.n_passes=1
+ab: ARM=lownorm ctx=32768 games=2 concurrency=2 max_actions=None per_game_s=420.0 job_dir=runs/flashnext_ours_smoke model=flashnext
+ab: 400-storm watchdog armed on /home/ignaz/github/arc-prize-2026/runs/flashnext_ours_smoke/run.log
+[finished] vc33-5430563c state=gave_up level=1/7 score=0.61 actions=17 tokens=11098 per-level=17/7,0/18,0/44,0/61,0/131,0/34,0/152 note="tokens=13011"
+[finished] ft09-0d8bbf25 state=gave_up level=0/6 score=0.00 actions=8 tokens=10265 per-level=8/43,0/12,0/23,0/28,0/65,0/37 note="tokens=13478"
+smoke: (ignoring movie-render OSError in teardown: Could not find a backend to open `runs/flashnext_ours_smoke/movies/gft09-0d8bbf2)
+smoke: run finished in 437s
+smoke: 3 request-log files under runs/flashnext_ours_smoke
+smoke: 68 requests; longest conversation 41 msgs; new legend=True old legend=False; new glyphs in tool results=4874; old-letter node colours=0
+smoke: PASS -- legend swapped and node colours arrive in the new glyphs

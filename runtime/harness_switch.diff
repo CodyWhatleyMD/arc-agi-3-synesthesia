@@ -1,0 +1,74 @@
+--- setup_commands.json[0] (frozen bundle)
++++ setup_commands.json[0] (vLLM 0.31.0 runtime)
+@@ -20,8 +20,8 @@
+     )
+ 
+ 
+-RUNTIME_OWNER = 'lordhansolo'
+-RUNTIME_SLUG = 'vllm-main-e975732-arc3'
++RUNTIME_OWNER = 'codywhatleymd'
++RUNTIME_SLUG = 'vllm-v0310-arc3'
+ MODEL_SOURCE_PARTS = ('lordhansolo', 'qwen3-8-flash-next-mixed-nvfp4-fp8', 'PyTorch', 'hf-mixed-mtp-nvfp4', '1')
+ SERVED_MODEL_NAME = 'primitive-ai/Qwen3.8-Flash-Next-mixed-NVFP4-FP8'
+ VLLM_HOST = '127.0.0.1'
+@@ -79,41 +79,41 @@
+ # Pixel area of the agent's grid image, embedded from MULTIMODAL_UPSCALE at build time.
+ VLLM_IMAGE_MAX_PIXELS = 65536
+ FINE_PREFIX_CACHE_RUNTIME_IDENTITY = {
+-    'image': 'vllm/vllm-openai:nightly-e9757321527ca1ecd514c07c1418dd2c53da3d19',
+-    'amd64_manifest_digest': 'sha256:e0eee5c5506bea9bfe350f7d99b07dc49e37d42647a128c2a57ff184551fba10',
+-    'vllm_version': '0.29.1rc1.dev573+ge97573215',
++    'image': 'vllm/vllm-openai:v0.31.0',
++    'amd64_manifest_digest': 'sha256:a4a4c0437bf7240089da5f08aa370c4aee17ae5290f7a3b468825ee26c4c3a6b',
++    'vllm_version': '0.31.0'
+ }
+ FINE_PREFIX_CACHE_PATCH_IDENTITY = {
+-    'artifact': 'arc3_vllm_main_e975732_arc3_overlay.tar.blob',
+-    'applier': 'apply_vllm_main_e975732_arc3.py',
+-    'overlay_sha256': 'e3a6fe0d9f010bc1fb66e53e7dc6fde43272824d5200da5a49b5c4456065e0cb',
+-    'vllm_commit': 'e9757321527ca1ecd514c07c1418dd2c53da3d19',
++    'artifact': 'arc3_vllm_v0310_arc3_overlay.tar.blob',
++    'applier': 'apply_vllm_v0310_arc3.py',
++    'overlay_sha256': '4848d1892a1fb6ad8bc8adc3475077735318d68ce97bd918d0ba6baee956218b',
++    'vllm_commit': 'db9527a46873454610df6dbedf79a36d6bf1a7f6'
+ }
+ FINE_PREFIX_CACHE_REQUIRED_OVERLAYS = {
+     'vllm/v1/core/kv_cache_coordinator.py': {
+-        'stock_sha256': '7fa4065d19021e77b3424d24e1b088c530ed70b90c5ed9bc52cf4b7581d5fc48',
+-        'sha256': '7494e9f76d4a6b0bb469e80816e4052fb52171bc63b34799c3b9588092bc243e',
++        'stock_sha256': '6a1e00227b981a7bb6108a42db0e446c716f789274f40c63eb9a6ce4d699ddcb',
++        'sha256': '536b5d00dba5a21cc2d6c565fbb4d7abd2816422e66842bb51846188ca85b4ba'
+     },
+     'vllm/v1/core/kv_cache_utils.py': {
+-        'stock_sha256': 'd359221ef91a94f7e570220f083979297c297227c1ad1b8ccdbec76cc24565b7',
+-        'sha256': '816aea33eaa28a15b8d739be602a877aa0be1a8ec83853cdc92412dcdd137b4e',
++        'stock_sha256': '1b20c836aece4982dd87f7e06e14f5ae07a1fc2636101074cfad11584b1a0dcf',
++        'sha256': 'ec59a62aa78811f52d766503c44ecaa5c6dda3d875ec8fa1c3cd1ee424db0021'
+     },
+     'vllm/v1/core/single_type_kv_cache_manager.py': {
+-        'stock_sha256': '6ebd4ddb5210d500b52b300dfaf462e2e92f58a4ee0e15691a860549dc086d68',
+-        'sha256': '97a0a4518c757cbe48e0d13d7a1890f48bc0db777004a3d66a8eb9ea73ba2405',
++        'stock_sha256': '3a3cb20bd6aa1e0ad46471fc9e5e01ee5797ab4bb759e00ef5fb309d2830db13',
++        'sha256': '9aa82d189fcd725a081b56c30080081c0ec50235cf275438a62b35e49a5ff9dd'
+     },
+     'vllm/v1/worker/gpu/model_states/mamba_hybrid.py': {
+-        'stock_sha256': '6ea89adcb39762b533f0c5b765a66e6f942cbde90208a5d13a758ef86a4ac6f1',
+-        'sha256': '8cd9eac0da31add7685ba7f23dfc2dcd7d6d422470fa98281aa73f90d5a8408d',
++        'stock_sha256': '1ddd7dc921d74789e77d3319dc167820ad7fc47ed51d8d9a35ba3938f5c6a079',
++        'sha256': 'a52bd61fc6d7eb345213023779516a5c991b73f4dfc32d11deca0dc1cc86579d'
+     },
+     'vllm/v1/worker/gpu_model_runner.py': {
+-        'stock_sha256': '95dbd301feae580913938cafe4151da7af2cbd5d3f37fa645fab62a8cd1b54ef',
+-        'sha256': 'a2d3709963d463256b8b62ecb5264bce10e1b133d552ab10afdd31f68b42d1b2',
++        'stock_sha256': 'bb903dffcb5a6e5b8a477daf0854b3812e135349d61fc20c6133f91cd3c9752a',
++        'sha256': '59eab61b5e838dfbdf98809c3ef286244e93b534b1578e984a7ed9d35b508718'
+     },
+     'vllm/v1/worker/mamba_utils.py': {
+         'stock_sha256': '28c8a9bb07a56e3612e245ccc48cd7f29d85181dbe5e4cf8940c6bcd086df856',
+-        'sha256': 'b5e30c8ab2343340f478c9c8ea94b9369649c74044cd42ea11b246dc84e11243',
+-    },
++        'sha256': 'b5e30c8ab2343340f478c9c8ea94b9369649c74044cd42ea11b246dc84e11243'
++    }
+ }
+ # Embedded from KAGGLE_VLLM_MAX_NUM_SEQS at build time, which the launcher fills from
+ # server.max_num_seqs, the way the KV pin and the MTP tokens are filled.

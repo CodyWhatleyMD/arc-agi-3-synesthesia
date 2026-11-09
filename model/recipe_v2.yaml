@@ -1,0 +1,56 @@
+# v2 (2026-10-06): same layout as v1 with two changes -- in_proj_a/in_proj_b back to BF16, experts observer
+# nvfp4_expanded_mse -- and meant to be calibrated on calib_v2.jsonl (current-format, chat-templated, window-sampled).
+# Flash-Next NVFP4 recipe (09-25). Mirrors the compressed-tensors layout vLLM 0.29 already serves for
+# our unsloth 27B: group_0 FP8 channel (attention, linear-attention projections, lm_head), group_1
+# NVFP4 W4A4 tensor_group/16 (expert MLPs). Everything the serving layer must see in BF16 is ignored:
+# token embeddings, the 51B n-gram table (a lookup, not a matmul), norms, the vision tower, MTP.
+quant_stage:
+  quant_modifiers:
+    QuantizationModifier:
+      ignore:
+        - "re:.*embed_tokens.*"
+        - "re:.*ngram_embedding.*"
+        - "re:.*ple_embedding.*"
+        - "re:.*norm.*"
+        - "re:.*visual.*"
+        - "re:.*mtp.*"
+        - "re:.*mlp\\.gate$"          # routers stay BF16
+        - "re:.*hyper_connection.*"
+      config_groups:
+        group_0:
+          targets:
+            - "re:.*self_attn\\.(q|k|v|o)_proj$"
+            - "re:.*linear_attn\\.(in_proj_qkv|in_proj_z|out_proj)$"   # v2: in_proj_a/in_proj_b stay BF16 (every public build; tiny)
+            - "re:.*shared_expert\\.(gate|up|down)_proj$"
+            - "re:.*ple\\.key_proj$"
+            # - "re:.*lm_head$"   # 09-30: the dev vLLM loads lm_head unquantized (BF16); FP8 here fails weight loading (findings 122)
+          weights:
+            num_bits: 8
+            type: float
+            strategy: channel
+            symmetric: true
+            dynamic: false
+          input_activations:
+            num_bits: 8
+            type: float
+            strategy: token
+            symmetric: true
+            dynamic: true
+        group_1:
+          targets:
+            - "re:.*mlp\\.experts\\.\\d+\\.(gate|up|down)_proj$"
+          weights:
+            observer: nvfp4_expanded_mse    # v2: was the default minmax; LLMC 0.14 release notes: beats GPTQ for NVFP4 on their internal perplexity
+            num_bits: 4
+            type: float
+            strategy: tensor_group
+            group_size: 16
+            symmetric: true
+            dynamic: false
+          input_activations:
+            num_bits: 4
+            type: float
+            strategy: tensor_group
+            group_size: 16
+            symmetric: true
+            dynamic: local

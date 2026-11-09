@@ -1,0 +1,41 @@
+{
+ "RUNTIME_OWNER": "codywhatleymd",
+ "RUNTIME_SLUG": "vllm-v0310-arc3",
+ "FINE_PREFIX_CACHE_RUNTIME_IDENTITY": {
+  "image": "vllm/vllm-openai:v0.31.0",
+  "amd64_manifest_digest": "sha256:a4a4c0437bf7240089da5f08aa370c4aee17ae5290f7a3b468825ee26c4c3a6b",
+  "vllm_version": "0.31.0"
+ },
+ "FINE_PREFIX_CACHE_PATCH_IDENTITY": {
+  "artifact": "arc3_vllm_v0310_arc3_overlay.tar.blob",
+  "applier": "apply_vllm_v0310_arc3.py",
+  "overlay_sha256": "4848d1892a1fb6ad8bc8adc3475077735318d68ce97bd918d0ba6baee956218b",
+  "vllm_commit": "db9527a46873454610df6dbedf79a36d6bf1a7f6"
+ },
+ "FINE_PREFIX_CACHE_REQUIRED_OVERLAYS": {
+  "vllm/v1/core/kv_cache_coordinator.py": {
+   "stock_sha256": "6a1e00227b981a7bb6108a42db0e446c716f789274f40c63eb9a6ce4d699ddcb",
+   "sha256": "536b5d00dba5a21cc2d6c565fbb4d7abd2816422e66842bb51846188ca85b4ba"
+  },
+  "vllm/v1/core/kv_cache_utils.py": {
+   "stock_sha256": "1b20c836aece4982dd87f7e06e14f5ae07a1fc2636101074cfad11584b1a0dcf",
+   "sha256": "ec59a62aa78811f52d766503c44ecaa5c6dda3d875ec8fa1c3cd1ee424db0021"
+  },
+  "vllm/v1/core/single_type_kv_cache_manager.py": {
+   "stock_sha256": "3a3cb20bd6aa1e0ad46471fc9e5e01ee5797ab4bb759e00ef5fb309d2830db13",
+   "sha256": "9aa82d189fcd725a081b56c30080081c0ec50235cf275438a62b35e49a5ff9dd"
+  },
+  "vllm/v1/worker/gpu/model_states/mamba_hybrid.py": {
+   "stock_sha256": "1ddd7dc921d74789e77d3319dc167820ad7fc47ed51d8d9a35ba3938f5c6a079",
+   "sha256": "a52bd61fc6d7eb345213023779516a5c991b73f4dfc32d11deca0dc1cc86579d"
+  },
+  "vllm/v1/worker/gpu_model_runner.py": {
+   "stock_sha256": "bb903dffcb5a6e5b8a477daf0854b3812e135349d61fc20c6133f91cd3c9752a",
+   "sha256": "59eab61b5e838dfbdf98809c3ef286244e93b534b1578e984a7ed9d35b508718"
+  },
+  "vllm/v1/worker/mamba_utils.py": {
+   "stock_sha256": "28c8a9bb07a56e3612e245ccc48cd7f29d85181dbe5e4cf8940c6bcd086df856",
+   "sha256": "b5e30c8ab2343340f478c9c8ea94b9369649c74044cd42ea11b246dc84e11243"
+  }
+ }
+}

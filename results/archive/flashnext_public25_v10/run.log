@@ -1,0 +1,536 @@
+MISTRAL COMPAT installed: mistral=False reasoning_effort='high'
+SANDBOX TIMEOUT raised to 120s (source clamps at 30)
+DUCK FIXES -- label-block fix: installed; dead-game kill: installed on _HarnessGameSession (K=120); level cap: installed on _HarnessGameSession (C=200)
+DUCK FIXES -- ACTION7 described: installed
+DUCK FIXES (09-25) -- ACTION7 mapping: installed | unicode tool io: installed (json.dumps ensure_ascii=False inside tool_agent)
+NATIVES installed: objs/diff/grid/act_until; v2 (geometry/memory/contrast/plan/report): ON; persisted defs: ON; tool description updated
+CTX OVERFLOW SHIM INSTALLED  estimate_safety=1.15  (estimate patched: True)  log=runs/flashnext_public25_v10/ctx_overflow.jsonl
+INDEX POLICY: NOT INSTALLED (INDEX_POLICY=0). Self-test passed: fresh-slot index 0.915, 7/7 table rows reproduced. Set INDEX_POLICY=1 to enable early stopping.
+lownorm: colour vocabulary from /home/ignaz/github/arc-prize-2026/notes/qwen_colour_vocabulary_all16.json
+lownorm: legend in QWEN's words: white, light gray, medium gray, dark gray, charcoal, black, magenta, pink, red, blue, sky blue, yellow, orange, maroon, green, purple
+lownorm: tokenizer check PASSED on /home/ignaz/models/qwen38-nvfp4-baked-centred-a115/tokenizer.json -- 16/16 single-token, non-merging (lownorm_tokenizer_verified=True)
+ARM=lownorm_glyphs
+lownorm: map     WwgGcBMPRbSYOrNp -> 겪쏟눠됩멤굉촬훨꽤ങ탓뀌볍穌썼繽
+lownorm: legend  겪=white, 쏟=light gray, 눠=medium gray, 됩=dark gray, 멤=charcoal, 굉=black, 촬=magenta, 훨=pink, 꽤=red, ങ=blue, 탓=sky blue, 뀌=yellow, 볍=orange, 穌=maroon, 썼=green, 繽=purple
+lownorm: patched ['inference.agent.prompts.ARC_COLOR_LEGEND', 'inference.agent.prompts.GAME_OVERVIEW_ADDENDUM', 'inference.agent.prompts.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'inference.agent.tool_agent.GAME_OVERVIEW_ADDENDUM', 'inference.agent.tool_agent.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'ToolAgent._build_user_prompt (wrapped)']
+lownorm: probe frame:
+굉굉겪
+굉ങ겪
+썼썼썼
+ab: lownorm control window matched to visual arm: 32768
+BREAKER INSTALLED on ToolAgent._chat_completion (log: runs/flashnext_public25_v10/breaker.jsonl; open at 8 consecutive failures, backoff <= 30s)
+RECALL INSTALLED on ToolAgent._run_python_tool (ledger from /home/ignaz/github/arc-prize-2026/scripts/recall_scaffold.py; DUCK_RECALL_NOTES=0 disables)
+ab: bm.n_passes=1
+ab: ARM=lownorm ctx=32768 games=25 concurrency=28 max_actions=None per_game_s=7920.0 job_dir=runs/flashnext_public25_v10 model=flashnext
+ab: 400-storm watchdog armed on /home/ignaz/github/arc-prize-2026/runs/flashnext_public25_v10/run.log
+benchmark: regenerated diagnostics in runs/flashnext_public25_v10 in 2.42s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-29 18:05:50
+ended:     in progress
+mean score:    0.00
+median score:  0.00
+total actions: 131
+total tokens:  115248
+generated tokens/sec: 191.13 (job wallclock)
+total wallclock: 11431.4s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=8, tokens=5834
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=2, tokens=2830
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=2, tokens=3119
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=3, tokens=5060
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=12, tokens=5114
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=10, tokens=5497
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=5, tokens=2446
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=5, tokens=6609
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=3, tokens=3135
+  lp85-305b61c3: score=0.00, levels=0.0/8, actions=7, tokens=7393
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=1, tokens=708
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=7, tokens=3272
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=2, tokens=5669
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=5, tokens=7946
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=2, tokens=6120
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=7, tokens=2449
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=3, tokens=2754
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=5, tokens=2263
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=10, tokens=4074
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=10, tokens=4278
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=5, tokens=5350
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=1, tokens=7989
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=5, tokens=8040
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=5, tokens=3661
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=6, tokens=3638
+
+benchmark: regenerated diagnostics in runs/flashnext_public25_v10 in 2.19s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-29 18:05:50
+ended:     in progress
+mean score:    0.60
+median score:  0.00
+total actions: 352
+total tokens:  216213
+generated tokens/sec: 179.39 (job wallclock)
+total wallclock: 24992.1s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=21, tokens=7701
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=3, tokens=9236
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=6, tokens=3596
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=7, tokens=10912
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=15, tokens=10183
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=10, tokens=5497
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=7, tokens=5964
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=15, tokens=11884
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=10, tokens=4893
+  lp85-305b61c3: score=0.00, levels=0.0/8, actions=8, tokens=11570
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=8, tokens=7496
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=25, tokens=12230
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=3, tokens=9097
+  re86-8af5384d: score=2.78, levels=1.0/8, actions=21, tokens=10048
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=18, tokens=11321
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=16, tokens=6579
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=11, tokens=8902
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=29, tokens=5534
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=21, tokens=9139
+  su15-1944f8ab: score=2.03, levels=1.0/9, actions=23, tokens=8691
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=11, tokens=11819
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=18, tokens=11149
+  tu93-0768757b: score=1.82, levels=1.0/9, actions=21, tokens=10984
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=5, tokens=3661
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=20, tokens=8127
+
+benchmark: regenerated diagnostics in runs/flashnext_public25_v10 in 1.91s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-29 18:05:50
+ended:     in progress
+mean score:    0.71
+median score:  0.00
+total actions: 451
+total tokens:  294641
+generated tokens/sec: 163.03 (job wallclock)
+total wallclock: 35975.7s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=22, tokens=10762
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=11, tokens=13157
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=6, tokens=3596
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=17, tokens=13133
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=41, tokens=15819
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=17, tokens=21848
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=15, tokens=13170
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=20, tokens=15274
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=11, tokens=7442
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=12, tokens=11959
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=8, tokens=7496
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=35, tokens=16600
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=4, tokens=12339
+  re86-8af5384d: score=2.78, levels=1.0/8, actions=21, tokens=10048
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=18, tokens=11321
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=18, tokens=13317
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=15, tokens=10342
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=30, tokens=6981
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=22, tokens=13556
+  su15-1944f8ab: score=2.03, levels=1.0/9, actions=23, tokens=8691
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=11, tokens=11819
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=18, tokens=11149
+  tu93-0768757b: score=1.82, levels=1.0/9, actions=26, tokens=14189
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=6, tokens=10444
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=24, tokens=10189
+
+benchmark: regenerated diagnostics in runs/flashnext_public25_v10 in 1.74s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-29 18:05:50
+ended:     in progress
+mean score:    1.09
+median score:  0.00
+total actions: 535
+total tokens:  373030
+generated tokens/sec: 154.84 (job wallclock)
+total wallclock: 47892.1s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=27, tokens=12566
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=11, tokens=13157
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=8, tokens=7831
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=18, tokens=15153
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=45, tokens=16673
+  ft09-0d8bbf25: score=4.76, levels=1.0/6, actions=18, tokens=22875
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=18, tokens=20245
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=27, tokens=20295
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=13, tokens=8609
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=12, tokens=11959
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=15, tokens=11485
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=35, tokens=16600
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=5, tokens=14978
+  re86-8af5384d: score=2.78, levels=1.0/8, actions=24, tokens=20051
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=18, tokens=11321
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=32, tokens=14484
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=15, tokens=10342
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=31, tokens=10245
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=25, tokens=26933
+  su15-1944f8ab: score=2.03, levels=1.0/9, actions=23, tokens=8691
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=19, tokens=23307
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=18, tokens=11149
+  tu93-0768757b: score=1.82, levels=1.0/9, actions=26, tokens=14189
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=19, tokens=14041
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=33, tokens=15851
+
+benchmark: regenerated diagnostics in runs/flashnext_public25_v10 in 1.78s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-29 18:05:50
+ended:     in progress
+mean score:    1.24
+median score:  0.00
+total actions: 612
+total tokens:  453823
+generated tokens/sec: 150.72 (job wallclock)
+total wallclock: 62718.5s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=29, tokens=16131
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=14, tokens=19230
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=12, tokens=9305
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=29, tokens=20071
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=45, tokens=16673
+  ft09-0d8bbf25: score=4.76, levels=1.0/6, actions=19, tokens=26630
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=18, tokens=20245
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=36, tokens=25868
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=13, tokens=8609
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=13, tokens=25701
+  ls20-9607627b: score=3.57, levels=1.0/7, actions=17, tokens=12338
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=35, tokens=16600
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=6, tokens=23796
+  re86-8af5384d: score=2.78, levels=1.0/8, actions=46, tokens=22204
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=18, tokens=11321
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=33, tokens=17446
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=18, tokens=16492
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=32, tokens=11853
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=25, tokens=26933
+  su15-1944f8ab: score=2.03, levels=1.0/9, actions=25, tokens=13138
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=22, tokens=27158
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=18, tokens=11149
+  tu93-0768757b: score=1.82, levels=1.0/9, actions=31, tokens=23050
+  vc33-5430563c: score=0.28, levels=1.0/7, actions=25, tokens=16031
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=33, tokens=15851
+
+benchmark: regenerated diagnostics in runs/flashnext_public25_v10 in 1.89s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-29 18:05:50
+ended:     in progress
+mean score:    1.91
+median score:  0.00
+total actions: 710
+total tokens:  530113
+generated tokens/sec: 146.72 (job wallclock)
+total wallclock: 77313.4s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=29, tokens=16131
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=14, tokens=19230
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=16, tokens=13774
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=30, tokens=20844
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=46, tokens=21048
+  ft09-0d8bbf25: score=14.29, levels=2.0/6, actions=25, tokens=27287
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=18, tokens=20245
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=38, tokens=28793
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=17, tokens=13103
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=17, tokens=33657
+  ls20-9607627b: score=3.57, levels=1.0/7, actions=17, tokens=12338
+  m0r0-492f87ba: score=1.58, levels=1.0/6, actions=52, tokens=22705
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=15, tokens=27331
+  re86-8af5384d: score=8.33, levels=2.0/8, actions=59, tokens=23415
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=22, tokens=22387
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=35, tokens=21423
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=26, tokens=21715
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=35, tokens=15335
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=25, tokens=26933
+  su15-1944f8ab: score=2.03, levels=1.0/9, actions=27, tokens=18682
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=22, tokens=27158
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=18, tokens=11149
+  tu93-0768757b: score=1.82, levels=1.0/9, actions=42, tokens=28360
+  vc33-5430563c: score=0.28, levels=1.0/7, actions=25, tokens=16031
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=40, tokens=21039
+
+benchmark: regenerated diagnostics in runs/flashnext_public25_v10 in 1.84s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-29 18:05:50
+ended:     in progress
+mean score:    2.19
+median score:  0.28
+total actions: 848
+total tokens:  623049
+generated tokens/sec: 147.82 (job wallclock)
+total wallclock: 90714.6s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=36, tokens=22915
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=14, tokens=19230
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=18, tokens=15168
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=30, tokens=20844
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=52, tokens=23818
+  ft09-0d8bbf25: score=14.29, levels=2.0/6, actions=25, tokens=27287
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=22, tokens=34304
+  ka59-38d34dbb: score=1.51, levels=1.0/7, actions=43, tokens=29650
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=27, tokens=17134
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=25, tokens=36525
+  ls20-9607627b: score=3.57, levels=1.0/7, actions=34, tokens=14529
+  m0r0-492f87ba: score=1.58, levels=1.0/6, actions=52, tokens=22705
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=20, tokens=32182
+  re86-8af5384d: score=8.33, levels=2.0/8, actions=59, tokens=23415
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=22, tokens=22387
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=57, tokens=33618
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=37, tokens=24031
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=36, tokens=19755
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=31, tokens=43489
+  su15-1944f8ab: score=2.03, levels=1.0/9, actions=31, tokens=21187
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=35, tokens=35647
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=18, tokens=11149
+  tu93-0768757b: score=1.82, levels=1.0/9, actions=42, tokens=28360
+  vc33-5430563c: score=0.28, levels=1.0/7, actions=29, tokens=19142
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=53, tokens=24578
+
+benchmark: regenerated diagnostics in runs/flashnext_public25_v10 in 1.83s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-29 18:05:50
+ended:     in progress
+mean score:    2.52
+median score:  1.51
+total actions: 943
+total tokens:  713995
+generated tokens/sec: 148.23 (job wallclock)
+total wallclock: 105237.6s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=36, tokens=22915
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=19, tokens=29290
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=20, tokens=23325
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=36, tokens=27171
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=54, tokens=28354
+  ft09-0d8bbf25: score=14.29, levels=2.0/6, actions=33, tokens=38401
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=22, tokens=34304
+  ka59-38d34dbb: score=1.51, levels=1.0/7, actions=43, tokens=29650
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=31, tokens=20351
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=26, tokens=40359
+  ls20-9607627b: score=3.57, levels=1.0/7, actions=35, tokens=15814
+  m0r0-492f87ba: score=1.58, levels=1.0/6, actions=52, tokens=22705
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=20, tokens=32182
+  re86-8af5384d: score=8.33, levels=2.0/8, actions=59, tokens=23415
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=23, tokens=29251
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=58, tokens=33883
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=41, tokens=25328
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=40, tokens=21440
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=33, tokens=44530
+  su15-1944f8ab: score=2.03, levels=1.0/9, actions=40, tokens=26383
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=60, tokens=37917
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=18, tokens=11149
+  tu93-0768757b: score=1.82, levels=1.0/9, actions=49, tokens=41417
+  vc33-5430563c: score=8.49, levels=2.0/7, actions=36, tokens=25789
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=59, tokens=28672
+
+benchmark: regenerated diagnostics in runs/flashnext_public25_v10 in 1.56s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-29 18:05:50
+ended:     in progress
+mean score:    2.65
+median score:  1.58
+total actions: 1032
+total tokens:  791380
+generated tokens/sec: 146.05 (job wallclock)
+total wallclock: 115943.1s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=54, tokens=33588
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=20, tokens=30772
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=24, tokens=28419
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=41, tokens=29202
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=61, tokens=38114
+  ft09-0d8bbf25: score=14.29, levels=2.0/6, actions=45, tokens=41433
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=22, tokens=34304
+  ka59-38d34dbb: score=1.51, levels=1.0/7, actions=48, tokens=47022
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=34, tokens=21743
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=27, tokens=47124
+  ls20-9607627b: score=3.57, levels=1.0/7, actions=35, tokens=15814
+  m0r0-492f87ba: score=1.58, levels=1.0/6, actions=52, tokens=22705
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=20, tokens=32182
+  re86-8af5384d: score=8.33, levels=2.0/8, actions=59, tokens=23415
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=23, tokens=29251
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=58, tokens=33883
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=46, tokens=28959
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=46, tokens=27813
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=33, tokens=44530
+  su15-1944f8ab: score=2.03, levels=1.0/9, actions=42, tokens=27621
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=62, tokens=39687
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=18, tokens=11149
+  tu93-0768757b: score=3.00, levels=2.0/9, actions=52, tokens=42186
+  vc33-5430563c: score=8.49, levels=2.0/7, actions=36, tokens=25789
+  wa30-ee6fef47: score=2.05, levels=1.0/9, actions=74, tokens=34675
+
+DEAD-GAME KILL: 0 levels after 120 actions (K=120); releasing the slot
+[finished] tn36-ef4dde99 state=gave_up level=0/7 score=0.00 actions=120 tokens=48145 per-level=120/32,0/72,0/26,0/40,0/30,0/55,0/62 note="tokens=48145"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/flashnext_public25_v10/movies/gtn36-ef4dde99_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 21: 400 Client Error: Bad Request for url: http://127.0.0.1:5300/v1/chat/completions | response: {"error":{"message":"No user query found in messages.","type":"BadRequestError","param":null,"code":400}}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/flashnext_public25_v10/movies/gtn36-ef4dde99_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 59: 400 Client Error: Bad Request for url: http://127.0.0.1:5300/v1/chat/completions | response: {"error":{"message":"No user query found in messages.","type":"BadRequestError","param":null,"code":400}}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/flashnext_public25_v10/movies/gtn36-ef4dde99_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/flashnext_public25_v10/movies/gtn36-ef4dde99_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 90: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=26.435841684928164)
+[finished] ka59-38d34dbb state=gave_up level=1/7 score=1.51 actions=89 tokens=80919 per-level=43/28,46/109,0/51,0/51,0/33,0/132,0/326 note="tokens=80919"
+analyzer request failed at action 20: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=292.239755660994)
+[finished] tr87-cd924810 state=gave_up level=0/6 score=0.00 actions=19 tokens=45977 per-level=19/54,0/58,0/40,0/45,0/71,0/146 note="tokens=45977"
+analyzer request failed at action 65: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=273.70764293696266)
+[finished] su15-1944f8ab state=gave_up level=1/9 score=2.03 actions=64 tokens=52397 per-level=23/22,41/42,0/26,0/115,0/36,0/31,0/8,0/40,0/41 note="tokens=52397"
+analyzer request failed at action 32: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=309.73899287497625)
+[finished] s5i5-18d95033 state=gave_up level=1/8 score=2.78 actions=31 tokens=45842 per-level=18/20,13/89,0/106,0/54,0/162,0/38,0/86,0/83 note="tokens=45842"
+analyzer request failed at action 92: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=198.80249912594445)
+[finished] m0r0-492f87ba state=gave_up level=1/6 score=1.58 actions=91 tokens=41463 per-level=52/30,39/111,0/203,0/26,0/500,0/237 note="tokens=41463"
+analyzer request failed at action 58: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=295.93203025800176)
+[finished] lf52-271a04aa state=gave_up level=1/10 score=0.57 actions=57 tokens=38801 per-level=57/32,0/81,0/60,0/71,0/205,0/148,0/244,0/109,0/164,0/225 note="tokens=38801"
+analyzer request failed at action 65: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=352.3975281249732)
+[finished] ar25-0c556536 state=gave_up level=1/8 score=2.78 actions=64 tokens=57415 per-level=21/32,43/50,0/75,0/37,0/89,0/159,0/233,0/73 note="tokens=57415"
+analyzer request failed at action 115: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=225.21471536892932)
+[finished] sp80-589a99af state=gave_up level=0/6 score=0.00 actions=114 tokens=75342 per-level=114/39,0/58,0/25,0/148,0/96,0/152 note="tokens=75342"
+analyzer request failed at action 63: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=305.4445095650153)
+[finished] re86-8af5384d state=gave_up level=2/8 score=8.33 actions=62 tokens=40508 per-level=21/26,38/42,3/86,0/108,0/189,0/139,0/424,0/241 note="tokens=40508"
+analyzer request failed at action 83: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=249.14448792499024)
+[finished] sc25-635fd71a state=gave_up level=0/6 score=0.00 actions=82 tokens=38533 per-level=82/36,0/6,0/32,0/83,0/143,0/50 note="tokens=38533"
+[finished] bp35-0a0ad940 state=gave_up level=0/9 score=0.00 actions=25 tokens=45767 per-level=25/21,0/48,0/44,0/38,0/33,0/87,0/86,0/131,0/163 note="tokens=48018"
+[finished] sb26-7fbdac44 state=gave_up level=1/8 score=2.78 actions=58 tokens=33883 per-level=16/18,42/28,0/18,0/19,0/31,0/23,0/58,0/18 note="tokens=56144"
+[finished] cn04-2fe56bfb state=gave_up level=0/6 score=0.00 actions=63 tokens=35843 per-level=63/29,0/54,0/85,0/300,0/208,0/113 note="tokens=38520"
+[finished] ft09-0d8bbf25 state=gave_up level=2/6 score=14.29 actions=46 tokens=55997 per-level=18/43,7/12,21/23,0/28,0/65,0/37 note="tokens=69676"
+[finished] ls20-9607627b state=gave_up level=1/7 score=3.57 actions=42 tokens=21759 per-level=17/22,25/123,0/73,0/84,0/96,0/192,0/186 note="tokens=26711"
+[finished] vc33-5430563c state=gave_up level=2/7 score=8.49 actions=38 tokens=41449 per-level=25/7,11/18,2/44,0/61,0/131,0/34,0/152 note="tokens=41794"
+[finished] sk48-d8078629 state=gave_up level=0/8 score=0.00 actions=80 tokens=40232 per-level=80/61,0/177,0/101,0/103,0/230,0/181,0/125,0/92 note="tokens=44790"
+[finished] wa30-ee6fef47 state=gave_up level=1/9 score=2.05 actions=87 tokens=39306 per-level=74/71,13/119,0/183,0/98,0/368,0/68,0/79,0/442,0/415 note="tokens=48754"
+[finished] dc22-fdcac232 state=gave_up level=0/6 score=0.00 actions=92 tokens=54266 per-level=92/59,0/102,0/67,0/98,0/324,0/578 note="tokens=58720"
+[finished] r11l-495a7899 state=gave_up level=1/6 score=4.76 actions=20 tokens=32182 per-level=5/22,15/33,0/51,0/26,0/52,0/49 note="tokens=61464"
+[finished] lp85-305b61c3 state=gave_up level=3/8 score=16.67 actions=45 tokens=57757 per-level=12/17,13/38,19/31,1/16,0/41,0/60,0/26,0/159 note="tokens=62637"
+[finished] tu93-0768757b state=gave_up level=2/9 score=3.00 actions=66 tokens=62183 per-level=21/19,31/16,14/34,0/42,0/123,0/80,0/14,0/23,0/111 note="tokens=67751"
+[finished] cd82-fb555c5d state=gave_up level=1/6 score=4.76 actions=49 tokens=54523 per-level=39/55,10/8,0/41,0/21,0/23,0/23 note="tokens=66987"
+[finished] g50t-5849a774 state=gave_up level=0/7 score=0.00 actions=54 tokens=59247 per-level=54/78,0/175,0/179,0/230,0/96,0/54,0/67 note="tokens=60283"
+smoke: (ignoring movie-render OSError in teardown: Could not find a backend to open `runs/flashnext_public25_v10/movies/gsb26-7fbda)
+smoke: run finished in 8023s
+smoke: 26 request-log files under runs/flashnext_public25_v10
+smoke: 2046 requests; longest conversation 49 msgs; new legend=True old legend=False; new glyphs in tool results=394; old-letter node colours=0
+smoke: PASS -- legend swapped and node colours arrive in the new glyphs
+smoke: summary.txt: 'benchmark: 0-history-turns\nsolver:    inference\ngames:     25\npasses:    1\nruns:      25 (won: 0)\nstarted:   2026-09-29 18:05:50\nended:     in progress\nmean score:    2.65\nmedian score:  1.58\ntotal actions: 1032\ntotal tokens:  791380\ngenerated tokens/sec: 146.05 (job wallclock)\ntotal wallclock: 1159'

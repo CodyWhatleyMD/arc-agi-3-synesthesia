@@ -1,0 +1,44 @@
+lownorm: no tokenizer.json under /kaggle/input -- tokenizer check skipped
+ARM=lownorm_glyphs
+lownorm: map     WwgGcBMPRbSYOrNp -> 겪쏟눠됩멤굉촬훨꽤ങ탓뀌볍穌썼繽
+lownorm: legend  겪=white, 쏟=light gray, 눠=gray, 됩=dark gray, 멤=charcoal, 굉=black, 촬=magenta, 훨=pink, 꽤=red, ങ=blue, 탓=sky blue, 뀌=yellow, 볍=orange, 穌=dark red, 썼=light green, 繽=purple
+lownorm: patched ['inference.agent.prompts.ARC_COLOR_LEGEND', 'inference.agent.prompts.GAME_OVERVIEW_ADDENDUM', 'inference.agent.prompts.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'inference.agent.tool_agent.GAME_OVERVIEW_ADDENDUM', 'inference.agent.tool_agent.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'ToolAgent._build_user_prompt (wrapped)']
+lownorm: probe frame:
+굉굉겪
+굉ങ겪
+썼썼썼
+ARM=lownorm_visual
+VISUAL CHANNEL INSTALLED  alpha=1.15  K=0.408  hidden=5120  fused-rows-nearest-own-carrier=16/16  window=61376  ckpt=qwen38-nvfp4  log=/home/ignaz/github/arc-prize-2026/runs/proof_noimage2/visual_channel.jsonl
+smoke: bm.n_passes=1
+ab: ARM=visual ctx=65536 games=3 concurrency=3 max_actions=None per_game_s=900.0 job_dir=/home/ignaz/github/arc-prize-2026/runs/proof_noimage2 model=qwen38
+benchmark: regenerated diagnostics in /home/ignaz/github/arc-prize-2026/runs/proof_noimage2 in 0.47s
+benchmark: 0-history-turns
+solver:    inference
+games:     3
+passes:    1
+runs:      3 (won: 0)
+started:   2026-09-18 04:00:16
+ended:     in progress
+mean score:    0.00
+median score:  0.00
+total actions: 7
+total tokens:  23608
+generated tokens/sec: 39.31 (job wallclock)
+total wallclock: 265.5s
+
+per-game (mean across passes):
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=7, tokens=23608
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+
+analyzer request failed at action 1: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=297.517023)
+[finished] vc33-5430563c state=cancelled level=0/7 score=0.00 actions=0 tokens=0 per-level=0/7,0/18,0/44,0/61,0/131,0/34,0/152 note="tokens=60093"
+analyzer request failed at action 1: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=209.469024)
+[finished] ft09-0d8bbf25 state=cancelled level=0/6 score=0.00 actions=0 tokens=0 per-level=0/43,0/12,0/23,0/28,0/65,0/37 note="tokens=68486"
+analyzer request failed at action 9: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=241.847743)
+[finished] sb26-7fbdac44 state=cancelled level=0/8 score=0.00 actions=8 tokens=61878 per-level=8/18,0/28,0/18,0/19,0/31,0/23,0/58,0/18 note="tokens=63416"
+smoke: (ignoring movie-render OSError in teardown: Could not find a backend to open `/home/ignaz/github/arc-prize-2026/runs/proof_n)
+smoke: run finished in 923s
+smoke: 3 request-log files under /home/ignaz/github/arc-prize-2026/runs/proof_noimage2
+smoke: WARNING no request logs found -- cannot verify what the model saw
+smoke: summary.txt: 'benchmark: 0-history-turns\nsolver:    inference\ngames:     3\npasses:    1\nruns:      3 (won: 0)\nstarted:   2026-09-18 04:00:16\nended:     in progress\nmean score:    0.00\nmedian score:  0.00\ntotal actions: 7\ntotal tokens:  23608\ngenerated tokens/sec: 39.31 (job wallclock)\ntotal wallclock: 265.5s\n\nper'

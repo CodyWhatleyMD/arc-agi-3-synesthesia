@@ -1,0 +1,1733 @@
+benchmark.label : duck-harness-kaggle
+benchmark.solver: HarnessSolver(label='duck-harness', runtime_environment=None, job_dir=None, soft_end_time=None, minimal_diagnostics=False, model='local', analyzer_timeout=900.0, max_actions_per_game=None, max_runtime_s_per_game=3918.0, concurrency=14, save_request_logs=False, start_local_server=False, local_server_config='', local_server_api_key_file='', local_server_repo_dir='/app/ARC3-Inference', local_server_port=None, local_server_tensor_parallel_size=None, local_server_count=1, cancel_drain_timeout_s=120.0)
+benchmark.passes: 1
+benchmark.games : 25
+git status:
+  ARC3-Inference                   ca1bd02     clean  solution-improve-qwen38-flash-next  Let the agent act without full certainty
+  tufa-arc-agi-framework           ca1bd02     clean  solution-improve-qwen38-flash-next  Let the agent act without full certainty
+deploy.kaggle: working_dir             = /kaggle/working
+deploy.kaggle: run_as_submission       = False
+deploy.kaggle: competition_rerun       = False
+deploy.kaggle: soft_end_time           = 2026-11-01 16:37:57.749962
+---
+synesthesia: GEOMETRY px/cell=16 image_tokens_per_board=1024 source=student board tower (image_embeds)
+synesthesia: TOWER EXCLUDED - built under no_init_weights on meta device, weights never allocated
+synesthesia: n_games=25 n_passes=1 per_game_s=3918.0 concurrency=14 max_actions=None soft_end=2026-11-01 16:37:57.749962
+/tmp/ipykernel_57/1439548303.py:143: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "started_utc": datetime.utcnow().isoformat() + "Z",
+synesthesia: POOL CLOCK on: end in 8327 s, concurrency 14, 25 games x 1 passes (fixed per-game clock 3918.0 is now only the fallback)
+synesthesia: pool park=True stall=1500 soft_stall=750
+ARC3 AGENT CLOCK on: 25 games, concurrency 14; stall timers off, park on, reserve 600 s per unstarted game until 3 first clears
+ARM B: student tower live -- ckpt=/kaggle/input/datasets/codywhatleymd/arc3-board-tower-armb/ckpt_px16_dih/best.pt tag=5e4eb805a8 n_pos=1024 side=32 device=cpu grid_thw=[1, 64, 64] torch_threads=2 (cap, so the student cannot starve the co-resident server)
+ARC3 RESERVE recompute: first clear after 79 s of play; n=1, fallback 600 s kept (reserve per unstarted game was 600.0)
+ARC3 RESERVE recompute: first clear after 106 s of play; n=2, fallback 600 s kept (reserve per unstarted game was 600.0)
+ARC3 RESERVE recompute: first clear after 184 s of play; n=3, median 106 s (reserve per unstarted game was 600.0)
+ARC3 RESERVE recompute: first clear after 185 s of play; n=4, median 145 s (reserve per unstarted game was 105.7388291709999)
+ARC3 RESERVE recompute: first clear after 189 s of play; n=5, median 184 s (reserve per unstarted game was 144.7267028535)
+ARC3 RESERVE recompute: first clear after 191 s of play; n=6, median 184 s (reserve per unstarted game was 183.7145765360001)
+ARC3 RESERVE recompute: first clear after 200 s of play; n=7, median 185 s (reserve per unstarted game was 184.4089085695)
+ARC3 RESERVE recompute: first clear after 289 s of play; n=8, median 187 s (reserve per unstarted game was 185.1032406029999)
+ARC3 RESERVE recompute: first clear after 298 s of play; n=9, median 189 s (reserve per unstarted game was 187.19090958799995)
+ARC3 RESERVE recompute: first clear after 385 s of play; n=10, median 190 s (reserve per unstarted game was 189.278578573)
+ARC3 RESERVE recompute: first clear after 403 s of play; n=11, median 191 s (reserve per unstarted game was 190.0220867055)
+ARC3 RESERVE recompute: first clear after 496 s of play; n=12, median 196 s (reserve per unstarted game was 190.76559483799997)
+ARC3 RESERVE recompute: first clear after 542 s of play; n=13, median 200 s (reserve per unstarted game was 195.602052608)
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 3.50s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-11-01 14:19:11
+ended:     in progress
+mean score:    3.51
+median score:  1.82
+total actions: 621
+total tokens:  481277
+generated tokens/sec: 796.78 (job wallclock)
+total wallclock: 7357.0s
+
+per-game (mean across passes):
+  ar25-0c556536: score=16.67, levels=3.0/8, actions=93, tokens=38680
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=7, tokens=11056
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=30, tokens=40191
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=3.57, levels=1.0/7, actions=41, tokens=37799
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=38, tokens=35020
+  lp85-305b61c3: score=16.67, levels=3.0/8, actions=41, tokens=40931
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=3.94, levels=1.0/6, actions=34, tokens=36880
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=11, tokens=21145
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=13.63, levels=2.0/6, actions=53, tokens=37741
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=26, tokens=36174
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=3.57, levels=1.0/7, actions=37, tokens=34774
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=2.91, levels=2.0/9, actions=70, tokens=37914
+  vc33-5430563c: score=8.55, levels=2.0/7, actions=42, tokens=39406
+  wa30-ee6fef47: score=2.16, levels=1.0/9, actions=98, tokens=33566
+
+ARC3 RESERVE recompute: first clear after 737 s of play; n=14, median 245 s (reserve per unstarted game was 200.43851037800005)
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 1.57s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-11-01 14:19:11
+ended:     in progress
+mean score:    8.18
+median score:  2.16
+total actions: 1144
+total tokens:  981610
+generated tokens/sec: 814.20 (job wallclock)
+total wallclock: 15278.6s
+
+per-game (mean across passes):
+  ar25-0c556536: score=41.67, levels=5.0/8, actions=144, tokens=63997
+  bp35-0a0ad940: score=2.22, levels=1.0/9, actions=24, tokens=64042
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=36, tokens=54179
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=3.57, levels=1.0/7, actions=70, tokens=74348
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=70, tokens=72764
+  lp85-305b61c3: score=41.67, levels=5.0/8, actions=74, tokens=79821
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=14.29, levels=2.0/6, actions=124, tokens=74193
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=17, tokens=66164
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=16.89, levels=3.0/6, actions=160, tokens=73229
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=28.57, levels=3.0/6, actions=56, tokens=73836
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=10.71, levels=2.0/7, actions=54, tokens=68530
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=10.58, levels=3.0/9, actions=105, tokens=75444
+  vc33-5430563c: score=20.87, levels=3.0/7, actions=94, tokens=74641
+  wa30-ee6fef47: score=2.16, levels=1.0/9, actions=116, tokens=66422
+
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 1.71s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-11-01 14:19:11
+ended:     in progress
+mean score:    13.45
+median score:  2.16
+total actions: 1843
+total tokens:  1416827
+generated tokens/sec: 783.92 (job wallclock)
+total wallclock: 22302.8s
+
+per-game (mean across passes):
+  ar25-0c556536: score=41.67, levels=5.0/8, actions=194, tokens=112897
+  bp35-0a0ad940: score=2.22, levels=1.0/9, actions=31, tokens=84423
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=144, tokens=111532
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=21.43, levels=3.0/7, actions=125, tokens=93167
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=100, tokens=101816
+  lp85-305b61c3: score=77.78, levels=7.0/8, actions=116, tokens=116608
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=14.29, levels=2.0/6, actions=143, tokens=83454
+  r11l-495a7899: score=14.29, levels=2.0/6, actions=29, tokens=98620
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=28.14, levels=4.0/6, actions=268, tokens=108428
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=28.57, levels=3.0/6, actions=56, tokens=73836
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=21.43, levels=3.0/7, actions=82, tokens=110836
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=46.67, levels=6.0/9, actions=203, tokens=117742
+  vc33-5430563c: score=31.12, levels=4.0/7, actions=138, tokens=109417
+  wa30-ee6fef47: score=2.16, levels=1.0/9, actions=214, tokens=94051
+
+[finished] lp85-305b61c3 state=won level=8/8 score=100.00 actions=134 tokens=132523 per-level=5/17,11/38,22/31,19/16,11/41,39/60,5/26,22/159 note="tokens=132523"
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 3.47s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 1)
+started:   2026-11-01 14:19:11
+ended:     in progress
+mean score:    21.12
+median score:  2.16
+total actions: 2654
+total tokens:  2003442
+generated tokens/sec: 831.00 (job wallclock)
+total wallclock: 33895.4s
+
+per-game (mean across passes):
+  ar25-0c556536: score=58.33, levels=6.0/8, actions=258, tokens=128989
+  bp35-0a0ad940: score=6.20, levels=2.0/9, actions=73, tokens=150105
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=154, tokens=136811
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=21.43, levels=3.0/7, actions=156, tokens=126118
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=111, tokens=131145
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=134, tokens=132523
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=28.57, levels=3.0/6, actions=234, tokens=145850
+  r11l-495a7899: score=28.57, levels=3.0/6, actions=44, tokens=149989
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=55.52, levels=5.0/6, actions=346, tokens=144187
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=20, tokens=20347
+  sp80-589a99af: score=47.62, levels=4.0/6, actions=104, tokens=151290
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=35.71, levels=4.0/7, actions=139, tokens=147128
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=62.22, levels=7.0/9, actions=258, tokens=138643
+  vc33-5430563c: score=75.00, levels=6.0/7, actions=238, tokens=153044
+  wa30-ee6fef47: score=2.16, levels=1.0/9, actions=385, tokens=147273
+
+[finished] sc25-635fd71a state=won level=6/6 score=62.52 actions=429 tokens=160334 per-level=48/36,5/6,67/32,108/83,100/143,101/50 note="tokens=160334"
+[finished] vc33-5430563c state=won level=7/7 score=100.00 actions=290 tokens=170439 per-level=23/7,13/18,30/44,72/61,71/131,28/34,53/152 note="tokens=170439"
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 2.17s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 3)
+started:   2026-11-01 14:19:11
+ended:     in progress
+mean score:    25.04
+median score:  2.69
+total actions: 3537
+total tokens:  2574499
+generated tokens/sec: 854.44 (job wallclock)
+total wallclock: 48603.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=58.33, levels=6.0/8, actions=340, tokens=187273
+  bp35-0a0ad940: score=6.20, levels=2.0/9, actions=96, tokens=189220
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=32, tokens=17553
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=192, tokens=191466
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=9, tokens=14242
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=25.62, levels=4.0/7, actions=342, tokens=186693
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=160, tokens=177197
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=134, tokens=132523
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=66.00, levels=5.0/6, actions=306, tokens=183752
+  r11l-495a7899: score=47.62, levels=4.0/6, actions=62, tokens=183758
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=62.52, levels=6.0/6, actions=429, tokens=160334
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=35, tokens=50969
+  sp80-589a99af: score=47.62, levels=4.0/6, actions=157, tokens=187126
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=40.63, levels=5.0/7, actions=194, tokens=182065
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=62.22, levels=7.0/9, actions=284, tokens=182308
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=290, tokens=170439
+  wa30-ee6fef47: score=2.69, levels=2.0/9, actions=475, tokens=177581
+
+ARC3 RESERVE recompute: first clear after 435 s of play; n=15, median 289 s (reserve per unstarted game was 244.52931783999998)
+[finished] ar25-0c556536 state=won level=8/8 score=100.00 actions=432 tokens=197115 per-level=17/32,16/50,60/75,22/37,29/89,114/159,121/233,53/73 note="tokens=197115"
+ARC3 RESERVE recompute: first clear after 72 s of play; n=16, median 245 s (reserve per unstarted game was 288.6201253019999)
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=213 play_s=3418 reason=Level 2 stuck: peg goal (1 peg, as in L1) is provably unreachable - bottom 2x2 board's single peg can never move, and the top 3x7 board's only 1-peg end (1,4) leaves zero legal jumps, which instantly poofs all pegs (fail) and spawns a clickable gravestone that restarts. Tested: all jump orders, all 19 wire positions of the orange in every reachable peg state (start, poofed, state A), full wire traversal, clicks on pegs/orange/sign/wire/background, UNDO, arrows with a peg selected. Model + tests
+pool clock: park lf52-271a04aa at level 2 (action 213, 197 since last clear, yield: outlook=stuck)
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 2.04s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 4)
+started:   2026-11-01 14:19:11
+ended:     in progress
+mean score:    29.45
+median score:  8.69
+total actions: 4253
+total tokens:  3049208
+generated tokens/sec: 843.45 (job wallclock)
+total wallclock: 63029.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=432, tokens=197115
+  bp35-0a0ad940: score=8.69, levels=3.0/9, actions=158, tokens=224948
+  cd82-fb555c5d: score=14.29, levels=2.0/6, actions=60, tokens=52956
+  cn04-2fe56bfb: score=6.29, levels=2.0/6, actions=214, tokens=234644
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=58, tokens=55621
+  ft09-0d8bbf25: score=14.29, levels=2.0/6, actions=13, tokens=6397
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=4, tokens=9289
+  ka59-38d34dbb: score=33.40, levels=5.0/7, actions=409, tokens=219396
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=213, tokens=193127
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=134, tokens=132523
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=66.00, levels=5.0/6, actions=343, tokens=218440
+  r11l-495a7899: score=47.62, levels=4.0/6, actions=92, tokens=214769
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=62.52, levels=6.0/6, actions=429, tokens=160334
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=68, tokens=95754
+  sp80-589a99af: score=47.62, levels=4.0/6, actions=185, tokens=221008
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=65.27, levels=6.0/7, actions=269, tokens=218332
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=65.68, levels=8.0/9, actions=317, tokens=206088
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=290, tokens=170439
+  wa30-ee6fef47: score=2.69, levels=2.0/9, actions=565, tokens=218028
+
+[finished] tn36-ef4dde99 state=won level=7/7 score=78.57 actions=298 tokens=228424 per-level=22/32,25/72,28/26,24/40,78/30,36/55,85/62 note="tokens=228424"
+ARC3 RESERVE recompute: first clear after 352 s of play; n=17, median 289 s (reserve per unstarted game was 244.52931783999998)
+ARC3 RESERVE recompute: first clear after 676 s of play; n=18, median 293 s (reserve per unstarted game was 288.6201253019999)
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 2.63s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 5)
+started:   2026-11-01 14:19:11
+ended:     in progress
+mean score:    34.98
+median score:  22.60
+total actions: 4949
+total tokens:  3548630
+generated tokens/sec: 841.34 (job wallclock)
+total wallclock: 75020.4s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=432, tokens=197115
+  bp35-0a0ad940: score=8.69, levels=3.0/9, actions=191, tokens=255462
+  cd82-fb555c5d: score=70.33, levels=5.0/6, actions=130, tokens=74719
+  cn04-2fe56bfb: score=44.62, levels=4.0/6, actions=283, tokens=268322
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=90, tokens=92911
+  ft09-0d8bbf25: score=22.60, levels=3.0/6, actions=48, tokens=62552
+  g50t-5849a774: score=3.57, levels=1.0/7, actions=48, tokens=45961
+  ka59-38d34dbb: score=33.40, levels=5.0/7, actions=550, tokens=259031
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=213, tokens=193127
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=134, tokens=132523
+  ls20-9607627b: score=1.80, levels=1.0/7, actions=31, tokens=20878
+  m0r0-492f87ba: score=66.00, levels=5.0/6, actions=366, tokens=250688
+  r11l-495a7899: score=64.57, levels=5.0/6, actions=139, tokens=244368
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=62.52, levels=6.0/6, actions=429, tokens=160334
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=113, tokens=135085
+  sp80-589a99af: score=47.62, levels=4.0/6, actions=210, tokens=256736
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=78.57, levels=7.0/7, actions=298, tokens=228424
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=65.68, levels=8.0/9, actions=324, tokens=245172
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=290, tokens=170439
+  wa30-ee6fef47: score=2.69, levels=2.0/9, actions=630, tokens=254783
+
+[finished] cd82-fb555c5d state=won level=6/6 score=75.52 actions=184 tokens=107824 per-level=43/55,8/8,34/41,27/21,18/23,54/23 note="tokens=107824"
+[finished] r11l-495a7899 state=won level=6/6 score=97.43 actions=159 tokens=272188 per-level=8/22,21/33,15/51,14/26,81/52,20/49 note="tokens=272188"
+ARC3 RESERVE recompute: first clear after 95 s of play; n=19, median 289 s (reserve per unstarted game was 293.4191465655)
+ARC3 YIELD game=sp80-589a99af outlook=working level=5 action=241 play_s=4813 reason=Level 5: fluid rules known (rising 3-wide streams, spread [L-3,R+3] under bars, leak=fail, all 4 cups required). Blocked on left cup: its notch (rows38-40,cols8-10) can only be filled by a spread region from a bar with left edge col 11 at rows 35-37, but bars are forbidden to touch the cup there (verified twice). Need to test whether a blocked spread output extends the spread further sideways.
+pool clock: park sp80-589a99af at level 5 (action 241, 137 since last clear, yield: outlook=working)
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 5.56s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 7)
+started:   2026-11-01 14:19:11
+ended:     in progress
+mean score:    39.42
+median score:  40.71
+total actions: 6023
+total tokens:  4051530
+generated tokens/sec: 839.97 (job wallclock)
+total wallclock: 92610.1s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=432, tokens=197115
+  bp35-0a0ad940: score=8.69, levels=3.0/9, actions=227, tokens=294819
+  cd82-fb555c5d: score=75.52, levels=6.0/6, actions=184, tokens=107824
+  cn04-2fe56bfb: score=71.43, levels=5.0/6, actions=332, tokens=282901
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=129, tokens=122072
+  ft09-0d8bbf25: score=43.08, levels=4.0/6, actions=75, tokens=99255
+  g50t-5849a774: score=10.71, levels=2.0/7, actions=124, tokens=79255
+  ka59-38d34dbb: score=40.71, levels=6.0/7, actions=795, tokens=291414
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=213, tokens=193127
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=134, tokens=132523
+  ls20-9607627b: score=1.80, levels=1.0/7, actions=117, tokens=61381
+  m0r0-492f87ba: score=66.00, levels=5.0/6, actions=417, tokens=277026
+  r11l-495a7899: score=97.43, levels=6.0/6, actions=159, tokens=272188
+  re86-8af5384d: score=8.33, levels=2.0/8, actions=58, tokens=17050
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=24, tokens=14547
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=62.52, levels=6.0/6, actions=429, tokens=160334
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=204, tokens=167744
+  sp80-589a99af: score=47.62, levels=4.0/6, actions=241, tokens=293129
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=78.57, levels=7.0/7, actions=298, tokens=228424
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=65.68, levels=8.0/9, actions=350, tokens=301644
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=290, tokens=170439
+  wa30-ee6fef47: score=5.50, levels=3.0/9, actions=791, tokens=287319
+
+ARC3 RESERVE recompute: first clear after 268 s of play; n=20, median 278 s (reserve per unstarted game was 288.6201253019999)
+ARC3 YIELD game=m0r0-492f87ba outlook=working level=6 action=417 play_s=4866 reason=level 6 stuck: both-in-bottom proven unreachable under verified rules (gate/button/dot mechanics), win condition unknown; ~38 actions left on level bar
+pool clock: park m0r0-492f87ba at level 6 (action 417, 111 since last clear, yield: outlook=working)
+ARC3 RESERVE recompute: first clear after 72 s of play; n=21, median 268 s (reserve per unstarted game was 278.28123611399997)
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=1 action=150 play_s=2384 reason=Level1: all 36 states, all click targets, all press-at-position and arrival cases tested with no win; goal must be sequence/counter based with no feedback. Need fresh eyes / different hypothesis.
+pool clock: park dc22-fdcac232 at level 1 (action 150, 150 since last clear, yield: outlook=stuck)
+ARC3 RESERVE recompute: first clear after 171 s of play; n=22, median 234 s (reserve per unstarted game was 267.942346926)
+[finished] tu93-0768757b state=won level=9/9 score=88.68 actions=379 tokens=341927 per-level=49/19,21/16,19/34,33/42,29/123,52/80,14/14,88/23,74/111 note="tokens=341927"
+pool clock: resume m0r0-492f87ba at level 6 (action 417, resume 1, yielded 'working')
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 4.85s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 8)
+started:   2026-11-01 14:19:11
+ended:     in progress
+mean score:    42.53
+median score:  40.71
+total actions: 7007
+total tokens:  4585623
+generated tokens/sec: 844.68 (job wallclock)
+total wallclock: 116596.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=432, tokens=197115
+  bp35-0a0ad940: score=8.69, levels=3.0/9, actions=240, tokens=333722
+  cd82-fb555c5d: score=75.52, levels=6.0/6, actions=184, tokens=107824
+  cn04-2fe56bfb: score=71.43, levels=5.0/6, actions=351, tokens=342869
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=150, tokens=133453
+  ft09-0d8bbf25: score=70.46, levels=5.0/6, actions=98, tokens=137946
+  g50t-5849a774: score=10.71, levels=2.0/7, actions=172, tokens=108767
+  ka59-38d34dbb: score=40.71, levels=6.0/7, actions=814, tokens=318489
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=213, tokens=193127
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=134, tokens=132523
+  ls20-9607627b: score=3.63, levels=2.0/7, actions=310, tokens=102014
+  m0r0-492f87ba: score=66.00, levels=5.0/6, actions=426, tokens=298325
+  r11l-495a7899: score=97.43, levels=6.0/6, actions=159, tokens=272188
+  re86-8af5384d: score=27.78, levels=4.0/8, actions=185, tokens=55411
+  s5i5-18d95033: score=1.23, levels=1.0/8, actions=45, tokens=50884
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=43, tokens=34332
+  sc25-635fd71a: score=62.52, levels=6.0/6, actions=429, tokens=160334
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=294, tokens=205914
+  sp80-589a99af: score=47.62, levels=4.0/6, actions=241, tokens=293129
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=31, tokens=32270
+  tn36-ef4dde99: score=78.57, levels=7.0/7, actions=298, tokens=228424
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=18, tokens=8446
+  tu93-0768757b: score=88.68, levels=9.0/9, actions=379, tokens=341927
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=290, tokens=170439
+  wa30-ee6fef47: score=5.50, levels=3.0/9, actions=1071, tokens=325751
+
+[finished] ft09-0d8bbf25 state=won level=6/6 score=100.00 actions=111 tokens=146263 per-level=6/43,7/12,35/23,27/28,23/65,13/37 note="tokens=146263"
+pool clock: resume sp80-589a99af at level 5 (action 241, resume 1, yielded 'working')
+ARC3 RESERVE recompute: first clear after 811 s of play; n=23, median 268 s (reserve per unstarted game was 234.19042865200004)
+[finished] sb26-7fbdac44 state=won level=8/8 score=100.00 actions=152 tokens=64290 per-level=11/18,39/28,15/18,17/19,17/31,19/23,17/58,17/18 note="tokens=64290"
+pool clock: resume lf52-271a04aa at level 2 (action 213, resume 1, yielded 'stuck')
+ARC3 YIELD game=wa30-ee6fef47 outlook=stuck level=4 action=1144 play_s=5979 reason=level 4: 5 runs ended with only target (7,1) unfilled; every wall socket that can reach it is blocked once the outside box fills (6,1) first, and west/east pushes are refused so left-wall sockets are unreachable
+pool clock: park wa30-ee6fef47 at level 4 (action 1144, 445 since last clear, yield: outlook=stuck)
+pool clock: resume wa30-ee6fef47 at level 4 (action 1144, resume 1, yielded 'stuck')
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 4.09s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 10)
+started:   2026-11-01 14:19:11
+ended:     in progress
+mean score:    48.35
+median score:  47.62
+total actions: 7974
+total tokens:  5011881
+generated tokens/sec: 830.72 (job wallclock)
+total wallclock: 127192.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=432, tokens=197115
+  bp35-0a0ad940: score=8.69, levels=3.0/9, actions=301, tokens=370430
+  cd82-fb555c5d: score=75.52, levels=6.0/6, actions=184, tokens=107824
+  cn04-2fe56bfb: score=71.43, levels=5.0/6, actions=359, tokens=344510
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=150, tokens=133453
+  ft09-0d8bbf25: score=100.00, levels=6.0/6, actions=111, tokens=146263
+  g50t-5849a774: score=10.71, levels=2.0/7, actions=180, tokens=145926
+  ka59-38d34dbb: score=40.71, levels=6.0/7, actions=842, tokens=357167
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=248, tokens=205902
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=134, tokens=132523
+  ls20-9607627b: score=3.63, levels=2.0/7, actions=317, tokens=135137
+  m0r0-492f87ba: score=66.00, levels=5.0/6, actions=458, tokens=331114
+  r11l-495a7899: score=97.43, levels=6.0/6, actions=159, tokens=272188
+  re86-8af5384d: score=41.67, levels=5.0/8, actions=292, tokens=89035
+  s5i5-18d95033: score=1.23, levels=1.0/8, actions=49, tokens=64628
+  sb26-7fbdac44: score=100.00, levels=8.0/8, actions=152, tokens=64290
+  sc25-635fd71a: score=62.52, levels=6.0/6, actions=429, tokens=160334
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=649, tokens=237832
+  sp80-589a99af: score=47.62, levels=4.0/6, actions=265, tokens=302286
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=36, tokens=62170
+  tn36-ef4dde99: score=78.57, levels=7.0/7, actions=298, tokens=228424
+  tr87-cd924810: score=4.76, levels=1.0/6, actions=116, tokens=60949
+  tu93-0768757b: score=88.68, levels=9.0/9, actions=379, tokens=341927
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=290, tokens=170439
+  wa30-ee6fef47: score=5.50, levels=3.0/9, actions=1144, tokens=350015
+
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=263 play_s=3563 reason=Level 2 unwinnable so far. Verified model: wire = (1,7),(1,8),(2,8),(3,8),(4,8),(4,7)..(4,1),(5,1),(6,1),(7,1)..(7,5); orange is wire-locked (cannot enter either room, walls block both doorways even when empty). Pegs cannot use wire cells (no target ring toward (1,7)/(1,8)); bottom 2x2 board's lone peg at (7,6) can never move. Top 3x7 board's only 1-peg end is (1,4); reaching it leaves zero legal jumps, which instantly poofs ALL pegs (fail) and spawns the purple gravestone at (7,0); clicking it
+pool clock: park lf52-271a04aa at level 2 (action 263, 50 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 263, resume 2, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=842 play_s=6090 reason=Level 7: player cannot reach the top-left room (purple wall cols21-23 rows6-17, gray cols19-21 rows21-29, gray rows46-48 cols0-21) so the yellow plus cannot be pushed into its hole; green cannot be pushed UP into its hole because the player cannot stand on the purple band rows36-38. Growth-push launch (verified: throws player 9 cells through the band when standing above the lower red block) is the only band crossing found so far; need a throw that lands the player in a reachable pressing spot.
+pool clock: park ka59-38d34dbb at level 7 (action 842, 248 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 842, resume 1, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=291 play_s=3677 reason=Level 2 still unwinnable after exhaustive search. Confirmed: gravestone click = restart (319 px change, 5 pegs respawn); clicking other parts of it = no-op. Poof fires exactly when no legal jump exists anywhere (verified from state E with 2 pegs). Top 3x7 board's unique 1-peg end (1,4) is always reached with zero legal moves -> instant poof, so 'reduce to one peg' cannot be the goal here; orange is wire-locked (cannot enter either room, walls block both doorways even when empty) and pegs cannot
+pool clock: park lf52-271a04aa at level 2 (action 291, 28 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 291, resume 3, yielded 'stuck')
+ARC3 YIELD game=sk48-d8078629 outlook=stuck level=1 action=707 play_s=4212 reason=working
+pool clock: park sk48-d8078629 at level 1 (action 707, 707 since last clear, yield: outlook=stuck)
+pool clock: resume dc22-fdcac232 at level 1 (action 150, resume 1, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=846 play_s=6188 reason=Level7 stalled: normal pushes are max-slides (verified twice), so the horizontal green can only change rows via a growth-push from a red block, and the top-left room holding the plus is unreachable for the player. Need to test growth-push routing (stand above lower red block rows39-44 cols42-47, press sideways -> thrown up 9 through the band, verified).
+pool clock: park ka59-38d34dbb at level 7 (action 846, 4 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 846, resume 2, yielded 'stuck')
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=1 action=150 play_s=2455 reason=Level 1 goal is not any of the 36 reachable states, nor any click target, press-at-position, arrival, hold, or press-count condition (all verified by scanning all 130 frames and every transition). Remaining hypotheses need order/counter guessing with zero feedback; not worth more of the shared clock.
+pool clock: park dc22-fdcac232 at level 1 (action 150, 0 since last clear, yield: outlook=stuck)
+pool clock: resume dc22-fdcac232 at level 1 (action 150, resume 2, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=296 play_s=3781 reason=Level 2: every possible line ends in a poof (verified both opening jumps and all continuations; the last branch (1,2)->(1,0) also poofs). Poof fires exactly when no legal jump remains, i.e. a loss, and the gravestone click just restarts. The orange is wire-locked and cannot enter either room (walls block both doorways even when empty), and the bottom 2x2 board's single peg can never move, so no 'one peg' win is reachable. Level appears unsolvable as modelled; model+tests in module 'pegmodel'. Pa
+pool clock: park lf52-271a04aa at level 2 (action 296, 5 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 296, resume 4, yielded 'stuck')
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=1 action=181 play_s=2531 reason=No reachable state, click target, arrival, dwell, count, or random sequence completes the level; goal predicate is unidentifiable from observations. Budget nearly exhausted (bar 58/64).
+pool clock: park dc22-fdcac232 at level 1 (action 181, 31 since last clear, yield: outlook=stuck)
+pool clock: resume dc22-fdcac232 at level 1 (action 181, resume 3, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=870 play_s=6405 reason=Level 7 now unwinnable from current state: player is trapped above the purple band (only downward route is cols0-19 which is walled; growth-push throws go UP only). Goal needs pieces to travel vertically through the band (plus down 27, green up 9) which I could not reproduce. Will resume only if a new idea appears.
+pool clock: park ka59-38d34dbb at level 7 (action 870, 24 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 870, resume 3, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=331 play_s=3917 reason=Level 2 exhausted: all jump lines end in the 'no legal jump' poof (loss); gravestone click only restarts; arrows only move the wire-locked orange (122px per step, pegs never move); clicking a peg then a non-landing target just wiggles it; pegs cannot land on wire cells; the orange cannot enter either room (wall at col 47 continuous, and (7,6) blocked even when empty). No win condition reachable. Model+tests saved as module 'pegmodel'. Leaving this game paused; keeping 1 of N levels.
+pool clock: park lf52-271a04aa at level 2 (action 331, 35 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 331, resume 5, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=870 play_s=6478 reason=Confirmed level 7 unwinnable from here: purple walls cols21-23 and cols39-41 (rows6-17) plus gray rows3-5 cols21+ and gray rows18-26 cols36-50 leave the player no route to the top-left room, and no downward crossing of the band (rows36-38). Pieces need vertical transport through the band (plus down 27, green up 9); only upward growth-throws were observed. Leaving this game idle so other games get time.
+pool clock: park ka59-38d34dbb at level 7 (action 870, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 870, resume 4, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=349 play_s=3970 reason=Level 2 confirmed unwinnable with everything I can observe: UNDO is inert for jumps (10 UNDOs changed nothing), MOUSE on wire/hole/background does nothing, MOUSE on a peg then a non-landing target only wiggles it, arrows only move the wire-locked orange, and every jump line (both opening jumps and all continuations) ends in the 'no legal jump' poof = loss, with the gravestone click merely restarting. Model+tests in module 'pegmodel'. Pausing for good; 1 of N levels cleared.
+pool clock: park lf52-271a04aa at level 2 (action 349, 18 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 349, resume 6, yielded 'stuck')
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=1 action=205 play_s=2694 reason=Level 1 unsolvable by every observable hypothesis (all 36 states, all click targets, all press/arrival/dwell/count/Konami/start-code variants refuted; resets restore identical boards). Stopping action spend to protect shared clock for other games.
+pool clock: park dc22-fdcac232 at level 1 (action 205, 24 since last clear, yield: outlook=stuck)
+pool clock: resume dc22-fdcac232 at level 1 (action 205, resume 4, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=399 play_s=4040 reason=Final: level 2's win condition is unreachable by any action I can find. Poof-with-orange tested at 10 distinct wire cells ((4,4),(4,2),(4,6),(4,7),(4,8),(2,8),(1,7),(1,8),(7,1),(7,5)) - none wins; every jump line (both openings, all continuations) ends in the no-legal-jump poof = loss; gravestone click = restart; UNDO inert for jumps; only the orange moves under arrows. Model in module 'pegmodel'. Leaving paused for the rest of the run; 1 of N levels cleared.
+pool clock: park lf52-271a04aa at level 2 (action 399, 50 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 399, resume 7, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=400 play_s=4085 reason=Level 2: no win reachable (no game over ever recorded; poof is a soft peg-loss event; gravestone click restarts, level stays 2, score stays 1). All count-based and position-based win hypotheses are falsified by direct tests. I will stop spending shared time here and stay paused.
+pool clock: park lf52-271a04aa at level 2 (action 400, 1 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 400, resume 8, yielded 'stuck')
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 1.67s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 10)
+started:   2026-11-01 14:19:11
+ended:     in progress
+mean score:    48.37
+median score:  47.62
+total actions: 8832
+total tokens:  5498418
+generated tokens/sec: 828.68 (job wallclock)
+total wallclock: 136748.4s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=432, tokens=197115
+  bp35-0a0ad940: score=8.87, levels=4.0/9, actions=408, tokens=404984
+  cd82-fb555c5d: score=75.52, levels=6.0/6, actions=184, tokens=107824
+  cn04-2fe56bfb: score=71.43, levels=5.0/6, actions=394, tokens=412300
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=205, tokens=147823
+  ft09-0d8bbf25: score=100.00, levels=6.0/6, actions=111, tokens=146263
+  g50t-5849a774: score=10.71, levels=2.0/7, actions=220, tokens=185494
+  ka59-38d34dbb: score=40.71, levels=6.0/7, actions=928, tokens=400969
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=404, tokens=236975
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=134, tokens=132523
+  ls20-9607627b: score=3.63, levels=2.0/7, actions=351, tokens=156813
+  m0r0-492f87ba: score=66.00, levels=5.0/6, actions=477, tokens=356853
+  r11l-495a7899: score=97.43, levels=6.0/6, actions=159, tokens=272188
+  re86-8af5384d: score=41.67, levels=5.0/8, actions=336, tokens=125875
+  s5i5-18d95033: score=1.23, levels=1.0/8, actions=61, tokens=108237
+  sb26-7fbdac44: score=100.00, levels=8.0/8, actions=152, tokens=64290
+  sc25-635fd71a: score=62.52, levels=6.0/6, actions=429, tokens=160334
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=707, tokens=244586
+  sp80-589a99af: score=47.62, levels=4.0/6, actions=265, tokens=302286
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=49, tokens=102065
+  tn36-ef4dde99: score=78.57, levels=7.0/7, actions=298, tokens=228424
+  tr87-cd924810: score=4.76, levels=1.0/6, actions=174, tokens=97916
+  tu93-0768757b: score=88.68, levels=9.0/9, actions=379, tokens=341927
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=290, tokens=170439
+  wa30-ee6fef47: score=5.75, levels=4.0/9, actions=1285, tokens=393915
+
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=404 play_s=4162 reason=Level 2 remains unsolved: adjacent peg moves are illegal (tested), only jumps exist, every jump line ends in the poof (soft loss), gravestone restarts, orange is wire-locked and cannot enter either room, and poof-with-orange was tested at 10 different wire cells with no win. No game over ever fires, so there is no failure-driven hint either. Staying paused; 1 of N levels cleared.
+pool clock: park lf52-271a04aa at level 2 (action 404, 4 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 404, resume 9, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=404 play_s=4171 reason=Unchanged: level 2 has no reachable win (all jump lines poof; orange wire-locked; gravestone = restart). Declining to spend more shared clock; stay paused.
+pool clock: park lf52-271a04aa at level 2 (action 404, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 404, resume 10, yielded 'stuck')
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=1 action=236 play_s=2890 reason=Coverage-complete refutation: every state reached by every action type, every click target, every dwell/count/code variant tried; goal not identifiable. Willing to resume only with a new idea.
+pool clock: park dc22-fdcac232 at level 1 (action 236, 31 since last clear, yield: outlook=stuck)
+pool clock: resume dc22-fdcac232 at level 1 (action 236, resume 5, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=410 play_s=4191 reason=Poof animation inspected frame-by-frame: the final jump arcs the peg to (1,4), then all pegs simply vanish (no escape path, no new object except the gravestone growing at cols 3-10, rows 52-63). Nothing in the animation hints at the win condition. Level 2 stays unsolved; staying paused so other games get the remaining shared clock.
+pool clock: park lf52-271a04aa at level 2 (action 410, 6 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 410, resume 11, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=410 play_s=4199 reason=No new information; level 2 win condition still unidentified after exhaustive testing (all jump lines, all reachable peg states x orange positions on the wire, all click targets, UNDO, arrows, gravestone). Declining to act so the remaining shared clock goes elsewhere.
+pool clock: park lf52-271a04aa at level 2 (action 410, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 410, resume 12, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=410 play_s=4212 reason=Still blocked on level 2; every mechanic I can observe has been tested and no win condition is reachable. Keeping the slot free for other games.
+pool clock: park lf52-271a04aa at level 2 (action 410, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 410, resume 13, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=415 play_s=4244 reason=Post-poof actions (arrows, clicks on the dead-cell rings) produce nothing but wiggles; no win. Level 2's goal remains unidentified and appears unreachable; I'm stopping here so the remaining shared clock goes to other games. Score stays at 1 level cleared.
+pool clock: park lf52-271a04aa at level 2 (action 415, 5 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 415, resume 14, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4271 reason=Arrow keys move only the orange even when a peg is selected (149/121 px orange moves, pegs unchanged), so pegs are jump-only. Combined with all prior tests, no winning action exists in my model of level 2. Stopping here for the rest of the run.
+pool clock: park lf52-271a04aa at level 2 (action 421, 6 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 15, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4283 reason=Level 2 abandoned for this run: no reachable win after exhaustive, repeated testing (all jump lines poof; gravestone=restart; orange wire-locked; pegs jump-only; UNDO inert; 10 orange positions tested at poof). Keeping this game paused so the other 14 games can use the remaining shared clock.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 16, yielded 'stuck')
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=265 play_s=6066 reason=stuck
+pool clock: park sp80-589a99af at level 5 (action 265, 24 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 265, resume 2, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4302 reason=No progress possible on level 2 (win condition unreachable; all mechanics tested). Staying paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 17, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4314 reason=Still blocked on level 2; declining to act.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 18, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4324 reason=Level 2 unsolved; no new hypothesis left to test cheaply. Staying paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 19, yielded 'stuck')
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=265 play_s=6108 reason=stuck
+pool clock: park sp80-589a99af at level 5 (action 265, 0 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 265, resume 3, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4332 reason=No viable hypothesis remains for level 2; staying paused to preserve shared time.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 20, yielded 'stuck')
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=1 action=297 play_s=3048 reason=Third game over (holding the 'loaded' state to the timer end also failed). Every state, arrival, press-gated arrival, dwell, click target, timer-end state and short code hypothesis is refuted; no animation or per-action feedback exists. Level 1 goal cannot be inferred from observations; stopping further action spend.
+pool clock: park dc22-fdcac232 at level 1 (action 297, 61 since last clear, yield: outlook=stuck)
+pool clock: resume dc22-fdcac232 at level 1 (action 297, resume 6, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4350 reason=Level 2: still no reachable win; all mechanics (jumps, orange wire movement, gravestone restart, UNDO) are mapped and none lead to level_completed. Staying paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 21, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4357 reason=Level 2 remains unsolved; no further cheap tests available. Staying paused so other games can use the shared clock.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 22, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4364 reason=No change; level 2 win condition still unreachable by any action I can identify. Staying paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 23, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4370 reason=Level 2: unchanged, no reachable win; staying paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 24, yielded 'stuck')
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=265 play_s=6151 reason=stuck
+pool clock: park sp80-589a99af at level 5 (action 265, 0 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 265, resume 4, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4378 reason=Level 2: no progress; staying paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 25, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4386 reason=Level 2: still stuck, staying paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 26, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4393 reason=Level 2: stuck, staying paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 27, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4400 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 28, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4408 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 29, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4415 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 30, yielded 'stuck')
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=1 action=301 play_s=3123 reason=Level 1: goal predicate unidentifiable after exhaustive coverage (all 36 states by arrow and by press, all click targets incl. button outlines which are inert, dwell, timer-end state, 2-gram codes, Konami, resets identical). No further cheap hypothesis remains; deferring to other games.
+pool clock: park dc22-fdcac232 at level 1 (action 301, 4 since last clear, yield: outlook=stuck)
+pool clock: resume dc22-fdcac232 at level 1 (action 301, resume 7, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4432 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 31, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4440 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 32, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4447 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 33, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4454 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 34, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4463 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 35, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4471 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 36, yielded 'stuck')
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=1 action=301 play_s=3181 reason=Verified: all 36 reachable configurations win nothing (each reached by arrow arrival AND by press arrival); all 36 action pairs already executed; no animation/tick/outline feedback exists; resets byte-identical. Goal must be a hidden temporal code with zero feedback - not tractable. Halting action spend on this level.
+pool clock: park dc22-fdcac232 at level 1 (action 301, 0 since last clear, yield: outlook=stuck)
+pool clock: resume dc22-fdcac232 at level 1 (action 301, resume 8, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4479 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 37, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4487 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 38, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4499 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 39, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4507 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 40, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4515 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 41, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4524 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 42, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4535 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 43, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4553 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 44, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4560 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 45, yielded 'stuck')
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=266 play_s=6342 reason=stuck
+pool clock: park sp80-589a99af at level 5 (action 266, 1 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 266, resume 5, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4568 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 46, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4576 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 47, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4589 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 48, yielded 'stuck')
+ARC3 YIELD game=g50t-5849a774 outlook=working level=3 action=324 play_s=3687 reason=working
+pool clock: park g50t-5849a774 at level 3 (action 324, 247 since last clear, yield: outlook=working)
+pool clock: resume g50t-5849a774 at level 3 (action 324, resume 1, yielded 'working')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4602 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 49, yielded 'stuck')
+ARC3 YIELD game=g50t-5849a774 outlook=close level=3 action=324 play_s=3705 reason=working
+pool clock: park g50t-5849a774 at level 3 (action 324, 0 since last clear, yield: outlook=close)
+pool clock: resume g50t-5849a774 at level 3 (action 324, resume 2, yielded 'close')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4614 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 50, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4622 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 51, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1004 play_s=7139 reason=Level 7 proven unwinnable by analysis: green's reachable columns below the band are {3,18,33,36,21,6} under the observed 15-cell slide cap, never the hole's 24-29; and a piece resting on the band can only be pushed up by a player standing on the band (purple blocks player). Plus hole room is unreachable. Player-in-vertical-hole alone does not clear. 2 full 200-action runs spent; stopping to free time for other games.
+pool clock: park ka59-38d34dbb at level 7 (action 1004, 134 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1004, resume 5, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4630 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 52, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4639 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 53, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4647 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 54, yielded 'stuck')
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=1 action=423 play_s=3355 reason=Exhaustive refutation complete: all 36 states, all 36 action pairs, all 216 action triples, all click targets, dwell and timer-end tests fail; no feedback channel exists. Remaining hypotheses (4+ action hidden code) need ~1300 actions, not affordable. Leaving level unplayed.
+pool clock: park dc22-fdcac232 at level 1 (action 423, 122 since last clear, yield: outlook=stuck)
+pool clock: resume dc22-fdcac232 at level 1 (action 423, resume 9, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4654 reason=Stuck on level 2; paused.
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1004 play_s=7166 reason=Same conclusion as before (recorded in lvl7notes): upward player-pushes from below the purple band always rest the piece just above the band (clean observation: green cols33-38 fully under band moved 51->33), so the green can never reach rows24-26; the plus room is unreachable; the player alone in the vertical hole does not clear. Level 7 is not solvable by any mechanism I can find, so I am leaving this game idle rather than burning the shared clock.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 55, yielded 'stuck')
+pool clock: park ka59-38d34dbb at level 7 (action 1004, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1004, resume 6, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4665 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 56, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4674 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 57, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4683 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 58, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4691 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 59, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4701 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 60, yielded 'stuck')
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=1 action=472 play_s=3413 reason=Final: all states, all pairs, all 216 triples, all click targets, consecutive-press grinds (40 red, 8 blue), dwell and timer-end tests refuted; no feedback channel. Only 4+ action hidden codes remain, needing ~1300 actions - not affordable in 18 min of shared clock. Leaving this level unplayed; do not resume unless a new mechanic is discovered.
+pool clock: park dc22-fdcac232 at level 1 (action 472, 49 since last clear, yield: outlook=stuck)
+pool clock: resume dc22-fdcac232 at level 1 (action 472, resume 10, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4710 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 61, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4718 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 62, yielded 'stuck')
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 2.81s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 10)
+started:   2026-11-01 14:19:11
+ended:     in progress
+mean score:    48.70
+median score:  47.62
+total actions: 10021
+total tokens:  5990196
+generated tokens/sec: 827.60 (job wallclock)
+total wallclock: 145334.9s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=432, tokens=197115
+  bp35-0a0ad940: score=8.87, levels=4.0/9, actions=441, tokens=439878
+  cd82-fb555c5d: score=75.52, levels=6.0/6, actions=184, tokens=107824
+  cn04-2fe56bfb: score=71.43, levels=5.0/6, actions=403, tokens=420793
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=472, tokens=187189
+  ft09-0d8bbf25: score=100.00, levels=6.0/6, actions=111, tokens=146263
+  g50t-5849a774: score=10.71, levels=2.0/7, actions=394, tokens=218343
+  ka59-38d34dbb: score=40.71, levels=6.0/7, actions=1014, tokens=433200
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=421, tokens=244218
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=134, tokens=132523
+  ls20-9607627b: score=7.06, levels=3.0/7, actions=417, tokens=203254
+  m0r0-492f87ba: score=66.00, levels=5.0/6, actions=477, tokens=356853
+  r11l-495a7899: score=97.43, levels=6.0/6, actions=159, tokens=272188
+  re86-8af5384d: score=41.67, levels=5.0/8, actions=395, tokens=158435
+  s5i5-18d95033: score=1.23, levels=1.0/8, actions=81, tokens=164220
+  sb26-7fbdac44: score=100.00, levels=8.0/8, actions=152, tokens=64290
+  sc25-635fd71a: score=62.52, levels=6.0/6, actions=429, tokens=160334
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=707, tokens=244586
+  sp80-589a99af: score=47.62, levels=4.0/6, actions=267, tokens=401029
+  su15-1944f8ab: score=5.57, levels=2.0/9, actions=62, tokens=136069
+  tn36-ef4dde99: score=78.57, levels=7.0/7, actions=298, tokens=228424
+  tr87-cd924810: score=6.39, levels=2.0/6, actions=320, tokens=134531
+  tu93-0768757b: score=88.68, levels=9.0/9, actions=379, tokens=341927
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=290, tokens=170439
+  wa30-ee6fef47: score=5.75, levels=4.0/9, actions=1582, tokens=426271
+
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4727 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 63, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4741 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 64, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4750 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 65, yielded 'stuck')
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=1 action=472 play_s=3457 reason=Also refuted: any 4-window that is a permutation of the four directions (11 such windows occurred, incl. UP,DOWN,LEFT,RIGHT) and one 6-window containing all six action types - so order-free 'use every control' goals are dead too. No hypothesis with positive expected value remains; leaving level 1 unplayed.
+pool clock: park dc22-fdcac232 at level 1 (action 472, 0 since last clear, yield: outlook=stuck)
+pool clock: resume dc22-fdcac232 at level 1 (action 472, resume 11, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4759 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 66, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4767 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 67, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4789 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 68, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4796 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 69, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4803 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 70, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=444 play_s=7315 reason=stuck
+pool clock: park bp35-0a0ad940 at level 5 (action 444, 36 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 444, resume 1, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4814 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 71, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4821 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 72, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4834 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 73, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4843 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 74, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4852 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 75, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4863 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 76, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4872 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 77, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4879 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 78, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4888 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 79, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4903 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 80, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4913 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 81, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=465 play_s=7426 reason=stuck
+pool clock: park bp35-0a0ad940 at level 5 (action 465, 21 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 465, resume 2, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4922 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 82, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=close level=5 action=465 play_s=7443 reason=level 5 blocked after 4 game overs; 4 of 5 levels cleared; preserving score
+pool clock: park bp35-0a0ad940 at level 5 (action 465, 0 since last clear, yield: outlook=close)
+pool clock: resume bp35-0a0ad940 at level 5 (action 465, resume 3, yielded 'close')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4931 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 83, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4940 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 84, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4949 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 85, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4958 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 86, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4967 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 87, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4984 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 88, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=4995 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 89, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5008 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 90, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5022 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 91, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5031 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 92, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5041 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 93, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5050 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 94, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5057 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 95, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5066 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 96, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5074 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 97, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5082 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 98, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5091 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 99, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5102 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 100, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5113 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 101, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5122 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 102, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5130 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 103, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5144 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 104, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5153 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 105, yielded 'stuck')
+ARC3 YIELD game=g50t-5849a774 outlook=stuck level=3 action=601 play_s=4259 reason=stuck
+pool clock: park g50t-5849a774 at level 3 (action 601, 277 since last clear, yield: outlook=stuck)
+pool clock: resume g50t-5849a774 at level 3 (action 601, resume 3, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5165 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 106, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=483 play_s=7679 reason=level 5 unsolvable by me after 4 game overs and exhaustive valve exploration; keeping 4 cleared levels
+pool clock: park bp35-0a0ad940 at level 5 (action 483, 18 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 483, resume 4, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5176 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 107, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5184 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 108, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5199 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 109, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5207 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 110, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=485 play_s=7721 reason=level 5 dead state: all valves open, goal buried, no interactions left
+pool clock: park bp35-0a0ad940 at level 5 (action 485, 2 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 485, resume 5, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5216 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 111, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5226 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 112, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5236 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 113, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5249 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 114, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5256 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 115, yielded 'stuck')
+ARC3 YIELD game=g50t-5849a774 outlook=stuck level=3 action=732 play_s=4353 reason=stuck
+pool clock: park g50t-5849a774 at level 3 (action 732, 131 since last clear, yield: outlook=stuck)
+pool clock: resume g50t-5849a774 at level 3 (action 732, resume 4, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5265 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 116, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5274 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 117, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5282 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 118, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5289 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 119, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5300 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 120, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5315 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 121, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5324 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 122, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1083 play_s=7840 reason=Level 7: discovered mouse-select + push-slide + growth-push mechanics and filled both ring holes, but the level does not complete with both holes filled; the only remaining hole (plus outline) is fully sealed by gray and the plus is unreachable/unselectable, so the win condition cannot be satisfied. Player is now stranded above the one-way purple band. Stopping to preserve shared time for other games.
+pool clock: park ka59-38d34dbb at level 7 (action 1083, 79 since last clear, yield: outlook=stuck)
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 6.39s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 10)
+started:   2026-11-01 14:19:11
+ended:     in progress
+mean score:    49.24
+median score:  47.62
+total actions: 11415
+total tokens:  6484017
+generated tokens/sec: 826.56 (job wallclock)
+total wallclock: 154278.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=432, tokens=197115
+  bp35-0a0ad940: score=8.87, levels=4.0/9, actions=499, tokens=467994
+  cd82-fb555c5d: score=75.52, levels=6.0/6, actions=184, tokens=107824
+  cn04-2fe56bfb: score=71.43, levels=5.0/6, actions=465, tokens=478412
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=693, tokens=219808
+  ft09-0d8bbf25: score=100.00, levels=6.0/6, actions=111, tokens=146263
+  g50t-5849a774: score=10.71, levels=2.0/7, actions=763, tokens=245766
+  ka59-38d34dbb: score=40.71, levels=6.0/7, actions=1083, tokens=464701
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=421, tokens=244218
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=134, tokens=132523
+  ls20-9607627b: score=7.06, levels=3.0/7, actions=491, tokens=248686
+  m0r0-492f87ba: score=66.00, levels=5.0/6, actions=498, tokens=433243
+  r11l-495a7899: score=97.43, levels=6.0/6, actions=159, tokens=272188
+  re86-8af5384d: score=41.67, levels=5.0/8, actions=436, tokens=194004
+  s5i5-18d95033: score=7.05, levels=2.0/8, actions=126, tokens=201724
+  sb26-7fbdac44: score=100.00, levels=8.0/8, actions=152, tokens=64290
+  sc25-635fd71a: score=62.52, levels=6.0/6, actions=429, tokens=160334
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=707, tokens=244586
+  sp80-589a99af: score=47.62, levels=4.0/6, actions=349, tokens=428030
+  su15-1944f8ab: score=10.58, levels=3.0/9, actions=121, tokens=172448
+  tn36-ef4dde99: score=78.57, levels=7.0/7, actions=298, tokens=228424
+  tr87-cd924810: score=9.04, levels=3.0/6, actions=329, tokens=161286
+  tu93-0768757b: score=88.68, levels=9.0/9, actions=379, tokens=341927
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=290, tokens=170439
+  wa30-ee6fef47: score=5.75, levels=4.0/9, actions=1866, tokens=457784
+
+pool clock: resume ka59-38d34dbb at level 7 (action 1083, resume 7, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5337 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 123, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=499 play_s=7856 reason=level 5: all valve orderings explored across 6 runs; player cannot reach goal chamber
+pool clock: park bp35-0a0ad940 at level 5 (action 499, 14 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 499, resume 6, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5345 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 124, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1083 play_s=7863 reason=Level 7 is not winnable: the only unfilled target (plus-shaped hole at rows35-45 cols8-18) is sealed on all sides by gray/charcoal and unreachable by any piece, the plus itself cannot be selected or pushed (top-left room sealed by purple band, purple wall and gray band rows3-5), and filling both ring holes does not complete the level. Player is stranded above the one-way purple band after using the only band-crossing (growth push). Recording this and stopping.
+pool clock: park ka59-38d34dbb at level 7 (action 1083, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1083, resume 8, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5355 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 125, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5364 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 126, yielded 'stuck')
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=465 play_s=7881 reason=stuck
+pool clock: park cn04-2fe56bfb at level 6 (action 465, 143 since last clear, yield: outlook=stuck)
+pool clock: resume cn04-2fe56bfb at level 6 (action 465, resume 1, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1083 play_s=7880 reason=Confirmed closed region analysis: the top-left room plus the top strip (rows0-2) form an area whose only exits are the purple band (rows18-20) and the purple wall (cols21-23) plus gray band (rows3-5), so neither the player nor any green piece can ever reach the yellow plus, and the plus hole is sealed by gray. Filling both ring holes does not clear the level, so no reachable win state exists. Leaving this game idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1083, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1083, resume 9, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5375 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 127, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=501 play_s=7890 reason=mechanic identified too late: player sinks and only rises with inflow; max reachable level is far below the goal
+pool clock: park bp35-0a0ad940 at level 5 (action 501, 2 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 501, resume 7, yielded 'stuck')
+ARC3 YIELD game=g50t-5849a774 outlook=stuck level=3 action=795 play_s=4476 reason=stuck
+pool clock: park g50t-5849a774 at level 3 (action 795, 63 since last clear, yield: outlook=stuck)
+pool clock: resume g50t-5849a774 at level 3 (action 795, resume 5, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1083 play_s=7890 reason=No reachable win state on level 7 (third confirmation): only three hole targets exist; the two ring holes are fillable and were both filled without clearing, the third (plus hole) is sealed by gray and its piece is unreachable. Player is stranded above the one-way purple band. I will not spend further shared time on this game.
+pool clock: park ka59-38d34dbb at level 7 (action 1083, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1083, resume 10, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5383 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 128, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=501 play_s=7901 reason=no remaining hypothesis can raise the player to the goal; stopping level 5 attempts
+pool clock: park bp35-0a0ad940 at level 5 (action 501, 0 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 501, resume 8, yielded 'stuck')
+ARC3 YIELD game=g50t-5849a774 outlook=stuck level=3 action=795 play_s=4489 reason=stuck
+pool clock: park g50t-5849a774 at level 3 (action 795, 0 since last clear, yield: outlook=stuck)
+pool clock: resume g50t-5849a774 at level 3 (action 795, resume 6, yielded 'stuck')
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=349 play_s=7176 reason=stuck
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5394 reason=Stuck on level 2; paused.
+pool clock: park sp80-589a99af at level 5 (action 349, 83 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 349, resume 6, yielded 'stuck')
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 129, yielded 'stuck')
+ARC3 YIELD game=re86-8af5384d outlook=stuck level=6 action=436 play_s=3407 reason=stuck
+pool clock: park re86-8af5384d at level 6 (action 436, 144 since last clear, yield: outlook=stuck)
+pool clock: resume re86-8af5384d at level 6 (action 436, resume 1, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1083 play_s=7909 reason=Level 7 abandoned: no reachable win state (plus hole sealed, plus unreachable; both ring holes filled does not clear; a push-placement with the other piece already placed is geometrically impossible). Keeping this game idle so the remaining shared time goes to other games.
+pool clock: park ka59-38d34dbb at level 7 (action 1083, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1083, resume 11, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5404 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 130, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1083 play_s=7921 reason=Still no win state found on level 7; all mechanics (mouse piece-select, push-slide, growth push) are mapped and both fillable holes are filled without clearing. Leaving idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1083, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1083, resume 12, yielded 'stuck')
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=466 play_s=7925 reason=stuck
+pool clock: park cn04-2fe56bfb at level 6 (action 466, 1 since last clear, yield: outlook=stuck)
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=502 play_s=7924 reason=UNDO inert; all valves, orderings and the sink/rise mechanic tested; level 5 not winnable by me
+pool clock: resume cn04-2fe56bfb at level 6 (action 466, resume 2, yielded 'stuck')
+pool clock: park bp35-0a0ad940 at level 5 (action 502, 1 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 502, resume 9, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5414 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 131, yielded 'stuck')
+ARC3 YIELD game=g50t-5849a774 outlook=stuck level=3 action=795 play_s=4519 reason=stuck
+pool clock: park g50t-5849a774 at level 3 (action 795, 0 since last clear, yield: outlook=stuck)
+pool clock: resume g50t-5849a774 at level 3 (action 795, resume 7, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5425 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 132, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1083 play_s=7936 reason=Level 7: no reachable win state; keeping idle so other games can use the remaining shared clock.
+pool clock: park ka59-38d34dbb at level 7 (action 1083, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1083, resume 13, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=502 play_s=7939 reason=level 5 max water level is ~34 rows below the goal; no further water source exists
+pool clock: park bp35-0a0ad940 at level 5 (action 502, 0 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 502, resume 10, yielded 'stuck')
+ARC3 YIELD game=re86-8af5384d outlook=stuck level=6 action=436 play_s=3437 reason=stuck
+pool clock: park re86-8af5384d at level 6 (action 436, 0 since last clear, yield: outlook=stuck)
+pool clock: resume re86-8af5384d at level 6 (action 436, resume 2, yielded 'stuck')
+ARC3 YIELD game=g50t-5849a774 outlook=stuck level=3 action=795 play_s=4527 reason=stuck
+pool clock: park g50t-5849a774 at level 3 (action 795, 0 since last clear, yield: outlook=stuck)
+pool clock: resume g50t-5849a774 at level 3 (action 795, resume 8, yielded 'stuck')
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=349 play_s=7214 reason=stuck
+pool clock: park sp80-589a99af at level 5 (action 349, 0 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 349, resume 7, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5435 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=467 play_s=7949 reason=stuck
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 133, yielded 'stuck')
+pool clock: park cn04-2fe56bfb at level 6 (action 467, 1 since last clear, yield: outlook=stuck)
+pool clock: resume cn04-2fe56bfb at level 6 (action 467, resume 3, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=502 play_s=7952 reason=equilibrium after the deepest cork is world row 43, goal at row 7; unreachable
+pool clock: park bp35-0a0ad940 at level 5 (action 502, 0 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 502, resume 11, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=7952 reason=Final: clicking the plus at its corner also does nothing, so the third piece is unselectable and unreachable; level 7 has no reachable win state. Keeping this game idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 1 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 14, yielded 'stuck')
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=1 action=834 play_s=4152 reason=State-graph explorer covered 41 reachable states x 88 transitions (green tile can leave its box into the slot/middle band, riding over the blue tile) - no win, no score, no completion ever recorded. Remaining unexplored slice is large (needs ~250 actions for full edge coverage) and the clock allows ~1 more run. Stopping here.
+pool clock: park dc22-fdcac232 at level 1 (action 834, 362 since last clear, yield: outlook=stuck)
+pool clock: resume dc22-fdcac232 at level 1 (action 834, resume 12, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5445 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 134, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=7957 reason=Level 7 idle: no reachable win state (verified). Other games should get the remaining shared time.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 15, yielded 'stuck')
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=349 play_s=7229 reason=stuck
+pool clock: park sp80-589a99af at level 5 (action 349, 0 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 349, resume 8, yielded 'stuck')
+ARC3 YIELD game=g50t-5849a774 outlook=stuck level=3 action=796 play_s=4546 reason=stuck
+pool clock: park g50t-5849a774 at level 3 (action 796, 1 since last clear, yield: outlook=stuck)
+pool clock: resume g50t-5849a774 at level 3 (action 796, resume 9, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=7964 reason=Level 7 remains idle - no reachable win state.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 16, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=502 play_s=7969 reason=no route exists from the player region into the shaft/channel; level 5 unwinnable for me
+pool clock: park bp35-0a0ad940 at level 5 (action 502, 0 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 502, resume 12, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5458 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 135, yielded 'stuck')
+ARC3 YIELD game=re86-8af5384d outlook=stuck level=6 action=436 play_s=3470 reason=stuck
+pool clock: park re86-8af5384d at level 6 (action 436, 0 since last clear, yield: outlook=stuck)
+pool clock: resume re86-8af5384d at level 6 (action 436, resume 3, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=7972 reason=Level 7 idle; both fillable holes are filled and the level does not clear - no further moves are useful.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 17, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=7976 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 18, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=502 play_s=7980 reason=out of ideas on level 5; leaving it at 4 of 5 levels cleared
+pool clock: park bp35-0a0ad940 at level 5 (action 502, 0 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 502, resume 13, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5469 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 136, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=7980 reason=Level 7 idle - unwinnable as analyzed.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 19, yielded 'stuck')
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=353 play_s=7253 reason=stuck
+pool clock: park sp80-589a99af at level 5 (action 353, 4 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 353, resume 9, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=7999 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 20, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5496 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 137, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8009 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 21, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8012 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 22, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5504 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 138, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8016 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 23, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=504 play_s=8022 reason=third confirmation: post-cork equilibrium is world row 43, goal at row 7; level 5 not winnable
+pool clock: park bp35-0a0ad940 at level 5 (action 504, 2 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 504, resume 14, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8019 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 24, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5513 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 139, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8024 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 25, yielded 'stuck')
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=359 play_s=7299 reason=stuck
+pool clock: park sp80-589a99af at level 5 (action 359, 6 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 359, resume 10, yielded 'stuck')
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=1 action=836 play_s=4229 reason=Knowledge saved (module level1_final). No win condition found in ~840 actions; stopping.
+pool clock: park dc22-fdcac232 at level 1 (action 836, 2 since last clear, yield: outlook=stuck)
+pool clock: resume sk48-d8078629 at level 1 (action 707, resume 1, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8032 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 26, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5528 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 140, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=504 play_s=8041 reason=water inflow exhausted; player tops out at row 43 vs goal row 7
+pool clock: park bp35-0a0ad940 at level 5 (action 504, 0 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 504, resume 15, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8046 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 27, yielded 'stuck')
+ARC3 YIELD game=g50t-5849a774 outlook=stuck level=3 action=836 play_s=4634 reason=stuck
+pool clock: park g50t-5849a774 at level 3 (action 836, 40 since last clear, yield: outlook=stuck)
+pool clock: resume g50t-5849a774 at level 3 (action 836, resume 10, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=504 play_s=8056 reason=level 5 exhausted; game ends at 4 of 5 levels cleared
+pool clock: park bp35-0a0ad940 at level 5 (action 504, 0 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 504, resume 16, yielded 'stuck')
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=359 play_s=7327 reason=stuck
+pool clock: park sp80-589a99af at level 5 (action 359, 0 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 359, resume 11, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5545 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 141, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8056 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 28, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8060 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 29, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5553 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 142, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8067 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 30, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=504 play_s=8074 reason=total water in the level equilibrates at row 43; goal at row 7 is unreachable
+pool clock: park bp35-0a0ad940 at level 5 (action 504, 0 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 504, resume 17, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8072 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 31, yielded 'stuck')
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=476 play_s=8078 reason=stuck
+pool clock: park cn04-2fe56bfb at level 6 (action 476, 9 since last clear, yield: outlook=stuck)
+pool clock: resume cn04-2fe56bfb at level 6 (action 476, resume 4, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5564 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 143, yielded 'stuck')
+ARC3 YIELD game=g50t-5849a774 outlook=stuck level=3 action=846 play_s=4665 reason=stuck
+pool clock: park g50t-5849a774 at level 3 (action 846, 10 since last clear, yield: outlook=stuck)
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=504 play_s=8083 reason=no action available can raise the water further; leaving level 5
+pool clock: resume g50t-5849a774 at level 3 (action 846, resume 11, yielded 'stuck')
+pool clock: park bp35-0a0ad940 at level 5 (action 504, 0 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 504, resume 18, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8080 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 32, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8089 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 33, yielded 'stuck')
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=476 play_s=8097 reason=stuck
+pool clock: park cn04-2fe56bfb at level 6 (action 476, 0 since last clear, yield: outlook=stuck)
+pool clock: resume cn04-2fe56bfb at level 6 (action 476, resume 5, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5584 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 144, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8092 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 34, yielded 'stuck')
+ARC3 YIELD game=sk48-d8078629 outlook=stuck level=1 action=708 play_s=4281 reason=Level 1 stuck: goal config unknown; all tested configs LC-false; N phase-locked. 4 min shared clock left.
+pool clock: park sk48-d8078629 at level 1 (action 708, 1 since last clear, yield: outlook=stuck)
+pool clock: resume dc22-fdcac232 at level 1 (action 836, resume 13, yielded 'stuck')
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=476 play_s=8103 reason=stuck
+ARC3 YIELD game=m0r0-492f87ba outlook=working level=6 action=524 play_s=7735 reason=Level 6: mechanics decoded (mirrored squares, cursor carries dot, dot pins squares, buttons may be consumed). Current promising state: L=(3,3), R=(10,6) bottom-right, dot pins (3,6), O-button consumed (orange). Next planned tests: press RIGHT x2 to put R on N button (10,4) and check if it turns orange (consumed); if consumed buttons hold gates open, route R up through O gate to (3,10) to consume last N button. Out of shared time this window.
+pool clock: park cn04-2fe56bfb at level 6 (action 476, 0 since last clear, yield: outlook=stuck)
+pool clock: resume cn04-2fe56bfb at level 6 (action 476, resume 6, yielded 'stuck')
+pool clock: park m0r0-492f87ba at level 6 (action 524, 107 since last clear, yield: outlook=working)
+pool clock: resume m0r0-492f87ba at level 6 (action 524, resume 2, yielded 'working')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8098 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 35, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=508 play_s=8106 reason=level 5 stalled; clicks now hit nothing, no cork visible, water ceiling reached
+pool clock: park bp35-0a0ad940 at level 5 (action 508, 4 since last clear, yield: outlook=stuck)
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5593 reason=Stuck on level 2; paused.
+pool clock: resume bp35-0a0ad940 at level 5 (action 508, resume 19, yielded 'stuck')
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 145, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8113 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 36, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8119 reason=Level 7 idle.
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=508 play_s=8123 reason=level 5 has no untested interactions left
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: park bp35-0a0ad940 at level 5 (action 508, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 37, yielded 'stuck')
+pool clock: resume bp35-0a0ad940 at level 5 (action 508, resume 20, yielded 'stuck')
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=1 action=836 play_s=4253 reason=4 minutes of shared clock left; level 1 fully mapped with no discoverable win condition (documented in module level1_final). No further actions - let other games use the clock.
+pool clock: park dc22-fdcac232 at level 1 (action 836, 0 since last clear, yield: outlook=stuck)
+pool clock: resume dc22-fdcac232 at level 1 (action 836, resume 14, yielded 'stuck')
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=476 play_s=8127 reason=stuck
+pool clock: park cn04-2fe56bfb at level 6 (action 476, 0 since last clear, yield: outlook=stuck)
+pool clock: resume cn04-2fe56bfb at level 6 (action 476, resume 7, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5614 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 146, yielded 'stuck')
+ARC3 YIELD game=g50t-5849a774 outlook=stuck level=3 action=863 play_s=4710 reason=stuck
+pool clock: park g50t-5849a774 at level 3 (action 863, 17 since last clear, yield: outlook=stuck)
+pool clock: resume g50t-5849a774 at level 3 (action 863, resume 12, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8126 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 38, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=508 play_s=8132 reason=stopping: level 5 goal unreachable with available water; keeping 4 cleared levels
+pool clock: park bp35-0a0ad940 at level 5 (action 508, 0 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 508, resume 21, yielded 'stuck')
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=476 play_s=8138 reason=stuck
+pool clock: park cn04-2fe56bfb at level 6 (action 476, 0 since last clear, yield: outlook=stuck)
+pool clock: resume cn04-2fe56bfb at level 6 (action 476, resume 8, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8135 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+ARC3 YIELD game=g50t-5849a774 outlook=stuck level=3 action=863 play_s=4722 reason=stuck
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 39, yielded 'stuck')
+pool clock: park g50t-5849a774 at level 3 (action 863, 0 since last clear, yield: outlook=stuck)
+pool clock: resume g50t-5849a774 at level 3 (action 863, resume 13, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=508 play_s=8140 reason=no viable move remains on level 5
+pool clock: park bp35-0a0ad940 at level 5 (action 508, 0 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 508, resume 22, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5629 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 147, yielded 'stuck')
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=476 play_s=8144 reason=stuck
+pool clock: park cn04-2fe56bfb at level 6 (action 476, 0 since last clear, yield: outlook=stuck)
+pool clock: resume cn04-2fe56bfb at level 6 (action 476, resume 9, yielded 'stuck')
+ARC3 YIELD game=m0r0-492f87ba outlook=working level=6 action=526 play_s=7779 reason=L6: state L=(3,5),R=(10,4) pressing N button (N gate now open), dot pins (3,6), O button consumed. Next: L cannot descend N gate because R leaves button on first DOWN (needs dot pin at (11,4) which cursor cannot reach). Plan on resume: try pressing DOWN once (L->(4,5),R->(11,4)) then check if button consumed-press leaves gate open; else test whether goal is consuming all 3 buttons (O already orange). Out of shared time.
+pool clock: park m0r0-492f87ba at level 6 (action 526, 2 since last clear, yield: outlook=working)
+pool clock: resume m0r0-492f87ba at level 6 (action 526, resume 3, yielded 'working')
+ARC3 YIELD game=g50t-5849a774 outlook=stuck level=3 action=863 play_s=4730 reason=stuck
+pool clock: park g50t-5849a774 at level 3 (action 863, 0 since last clear, yield: outlook=stuck)
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=508 play_s=8149 reason=level 5 dead-ended; pausing this game
+pool clock: resume g50t-5849a774 at level 3 (action 863, resume 14, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8144 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: park bp35-0a0ad940 at level 5 (action 508, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 40, yielded 'stuck')
+pool clock: resume bp35-0a0ad940 at level 5 (action 508, resume 23, yielded 'stuck')
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=476 play_s=8151 reason=stuck
+pool clock: park cn04-2fe56bfb at level 6 (action 476, 0 since last clear, yield: outlook=stuck)
+pool clock: resume cn04-2fe56bfb at level 6 (action 476, resume 10, yielded 'stuck')
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=360 play_s=7423 reason=stuck
+pool clock: park sp80-589a99af at level 5 (action 360, 1 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 360, resume 12, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5644 reason=Stuck on level 2; paused.
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=1 action=838 play_s=4286 reason=Last observation: a swap can land the checkerboard tile on top of the green tile (stacking, green hidden) - still no win. ~2 min of shared clock left; this level's win condition was never discoverable in 838 actions. Releasing the slot.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 148, yielded 'stuck')
+pool clock: park dc22-fdcac232 at level 1 (action 838, 2 since last clear, yield: outlook=stuck)
+pool clock: resume sk48-d8078629 at level 1 (action 708, resume 2, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8155 reason=Level 7 idle.
+ARC3 YIELD game=g50t-5849a774 outlook=stuck level=3 action=863 play_s=4742 reason=stuck
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 41, yielded 'stuck')
+pool clock: park g50t-5849a774 at level 3 (action 863, 0 since last clear, yield: outlook=stuck)
+pool clock: resume g50t-5849a774 at level 3 (action 863, resume 15, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=508 play_s=8161 reason=no progress possible on level 5
+pool clock: park bp35-0a0ad940 at level 5 (action 508, 0 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 508, resume 24, yielded 'stuck')
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=476 play_s=8162 reason=stuck
+pool clock: park cn04-2fe56bfb at level 6 (action 476, 0 since last clear, yield: outlook=stuck)
+pool clock: resume cn04-2fe56bfb at level 6 (action 476, resume 11, yielded 'stuck')
+ARC3 YIELD game=re86-8af5384d outlook=stuck level=6 action=436 play_s=3665 reason=stuck
+pool clock: park re86-8af5384d at level 6 (action 436, 0 since last clear, yield: outlook=stuck)
+pool clock: resume re86-8af5384d at level 6 (action 436, resume 4, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8174 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 42, yielded 'stuck')
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=360 play_s=7448 reason=stuck
+pool clock: park sp80-589a99af at level 5 (action 360, 0 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 360, resume 13, yielded 'stuck')
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=476 play_s=8180 reason=stuck
+pool clock: park cn04-2fe56bfb at level 6 (action 476, 0 since last clear, yield: outlook=stuck)
+pool clock: resume cn04-2fe56bfb at level 6 (action 476, resume 12, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=508 play_s=8179 reason=level 5 unwinnable for me; game holds at 4 cleared levels
+pool clock: park bp35-0a0ad940 at level 5 (action 508, 0 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 508, resume 25, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5668 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 149, yielded 'stuck')
+ARC3 YIELD game=m0r0-492f87ba outlook=working level=6 action=527 play_s=7815 reason=L6: no gate latch (gate closes instantly when button released). State: L=(4,5),R=(11,4),dot=(3,6),O consumed. Remaining hypotheses: goal may be both squares on hole/merge (needs L in bottom-left: blocked by N gate needing sustained press) or consuming all buttons (O orange; N(10,4) pressed once but still green). On resume: test if pressing N(10,4) again turns it orange; if so, route R to (3,10) via O gate if consumed-O holds it open.
+pool clock: park m0r0-492f87ba at level 6 (action 527, 1 since last clear, yield: outlook=working)
+pool clock: resume m0r0-492f87ba at level 6 (action 527, resume 4, yielded 'working')
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=360 play_s=7454 reason=stuck
+pool clock: park sp80-589a99af at level 5 (action 360, 0 since last clear, yield: outlook=stuck)
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=476 play_s=8186 reason=stuck
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8180 reason=Level 7 idle.
+ARC3 YIELD game=sk48-d8078629 outlook=stuck level=1 action=708 play_s=4309 reason=stuck on level 1 goal; clock nearly out
+pool clock: resume sp80-589a99af at level 5 (action 360, resume 14, yielded 'stuck')
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: park cn04-2fe56bfb at level 6 (action 476, 0 since last clear, yield: outlook=stuck)
+pool clock: park sk48-d8078629 at level 1 (action 708, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 43, yielded 'stuck')
+pool clock: resume cn04-2fe56bfb at level 6 (action 476, resume 13, yielded 'stuck')
+pool clock: resume dc22-fdcac232 at level 1 (action 838, resume 15, yielded 'stuck')
+ARC3 YIELD game=re86-8af5384d outlook=stuck level=6 action=436 play_s=3685 reason=stuck
+ARC3 YIELD game=s5i5-18d95033 outlook=stuck level=3 action=145 play_s=3620 reason=Level 3 stuck: sky bar blocked by immovable red bar (red dot max col 25), pink bar blocked by gray wall (red dot max row 13), gray wall travel limited by orange min len 11 so it cannot reach col 48-50 to cover second target center. ~3 min shared clock left.
+pool clock: park re86-8af5384d at level 6 (action 436, 0 since last clear, yield: outlook=stuck)
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=508 play_s=8188 reason=done with level 5
+pool clock: park s5i5-18d95033 at level 3 (action 145, 28 since last clear, yield: outlook=stuck)
+pool clock: resume re86-8af5384d at level 6 (action 436, resume 5, yielded 'stuck')
+pool clock: resume s5i5-18d95033 at level 3 (action 145, resume 1, yielded 'stuck')
+pool clock: park bp35-0a0ad940 at level 5 (action 508, 0 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 508, resume 26, yielded 'stuck')
+ARC3 YIELD game=ls20-9607627b outlook=working level=5 action=683 play_s=4458 reason=Level 4 cleared (score 4). Level 5 just started with ~2 min of shared clock left: needs 3 rainbow covers (orange->blue->green->red) plus unknown press count to match box pattern 101/110/011; no time to probe. Pausing so other games can use the remaining clock.
+pool clock: park ls20-9607627b at level 5 (action 683, 0 since last clear, yield: outlook=working)
+pool clock: resume ls20-9607627b at level 5 (action 683, resume 1, yielded 'working')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5680 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=360 play_s=7462 reason=stuck
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 150, yielded 'stuck')
+pool clock: park sp80-589a99af at level 5 (action 360, 0 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 360, resume 15, yielded 'stuck')
+ARC3 YIELD game=tr87-cd924810 outlook=stuck level=4 action=451 play_s=3188 reason=level 4 rule still unresolved and this level's action budget is nearly spent (122/128); findings saved in module lvl4 for a fresh attempt after the next restart
+pool clock: park tr87-cd924810 at level 4 (action 451, 122 since last clear, yield: outlook=stuck)
+pool clock: resume tr87-cd924810 at level 4 (action 451, resume 1, yielded 'stuck')
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=476 play_s=8203 reason=stuck
+pool clock: park cn04-2fe56bfb at level 6 (action 476, 0 since last clear, yield: outlook=stuck)
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8197 reason=Level 7 idle.
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=1 action=838 play_s=4302 reason=2 minutes left; no viable path to clearing level 1 after 838 actions of exhaustive exploration (documented in module level1_final). Yielding permanently.
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=508 play_s=8202 reason=final: level 5 abandoned, 4 levels cleared
+pool clock: resume cn04-2fe56bfb at level 6 (action 476, resume 14, yielded 'stuck')
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: park bp35-0a0ad940 at level 5 (action 508, 0 since last clear, yield: outlook=stuck)
+pool clock: park dc22-fdcac232 at level 1 (action 838, 0 since last clear, yield: outlook=stuck)
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=360 play_s=7471 reason=stuck
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 44, yielded 'stuck')
+pool clock: resume dc22-fdcac232 at level 1 (action 838, resume 16, yielded 'stuck')
+pool clock: resume bp35-0a0ad940 at level 5 (action 508, resume 27, yielded 'stuck')
+pool clock: park sp80-589a99af at level 5 (action 360, 0 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 360, resume 16, yielded 'stuck')
+ARC3 YIELD game=ls20-9607627b outlook=stuck level=5 action=683 play_s=4468 reason=Only ~2 min of shared clock left in the run; level 5 unstarted (needs ~50 actions: 3 rainbow covers for orange->red, unknown press count for box pattern 101/110/011, plus bounce-model routing). Pausing so other games can use the remaining time.
+pool clock: park ls20-9607627b at level 5 (action 683, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ls20-9607627b at level 5 (action 683, resume 2, yielded 'stuck')
+ARC3 YIELD game=re86-8af5384d outlook=stuck level=6 action=436 play_s=3700 reason=stuck
+pool clock: park re86-8af5384d at level 6 (action 436, 0 since last clear, yield: outlook=stuck)
+pool clock: resume re86-8af5384d at level 6 (action 436, resume 6, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5695 reason=Stuck on level 2; paused.
+ARC3 YIELD game=s5i5-18d95033 outlook=stuck level=3 action=145 play_s=3641 reason=Only 2 min of shared clock left; level 3 still unsolved (both target centers uncoverable with current model). No single-action win available.
+pool clock: park s5i5-18d95033 at level 3 (action 145, 0 since last clear, yield: outlook=stuck)
+pool clock: resume s5i5-18d95033 at level 3 (action 145, resume 2, yielded 'stuck')
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 151, yielded 'stuck')
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=476 play_s=8210 reason=stuck
+pool clock: park cn04-2fe56bfb at level 6 (action 476, 0 since last clear, yield: outlook=stuck)
+pool clock: resume cn04-2fe56bfb at level 6 (action 476, resume 15, yielded 'stuck')
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=360 play_s=7479 reason=stuck
+pool clock: park sp80-589a99af at level 5 (action 360, 0 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 360, resume 17, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8208 reason=Level 7 idle.
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=508 play_s=8213 reason=level 5 abandoned
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: park bp35-0a0ad940 at level 5 (action 508, 0 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 508, resume 28, yielded 'stuck')
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 45, yielded 'stuck')
+ARC3 YIELD game=ls20-9607627b outlook=stuck level=5 action=683 play_s=4482 reason=~2 min of run clock left; level 5 requires a fresh bounce-model build plus ~50 actions (3 rainbow covers, unknown press count) - not completable in remaining time. Score is locked at 4 levels cleared; pausing to free clock for other games.
+pool clock: park ls20-9607627b at level 5 (action 683, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ls20-9607627b at level 5 (action 683, resume 3, yielded 'stuck')
+ARC3 YIELD game=re86-8af5384d outlook=stuck level=6 action=436 play_s=3714 reason=stuck
+pool clock: park re86-8af5384d at level 6 (action 436, 0 since last clear, yield: outlook=stuck)
+pool clock: resume re86-8af5384d at level 6 (action 436, resume 7, yielded 'stuck')
+ARC3 YIELD game=m0r0-492f87ba outlook=stuck level=6 action=528 play_s=7850 reason=L6: O button now permanently orange (consumed) while L off it; N(10,4) pressed twice still green; O gate closed despite consumed button. State: L=(3,5),R=(10,4),dot=(3,6). Remaining ideas: goal = consume all 3 buttons (need R to (3,10): blocked, O gate stuck); or merge at (10,7) (blocked: L cannot cross N gate without sustained press, R cannot pin). Out of shared time.
+pool clock: park m0r0-492f87ba at level 6 (action 528, 1 since last clear, yield: outlook=stuck)
+pool clock: resume m0r0-492f87ba at level 6 (action 528, resume 5, yielded 'stuck')
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=476 play_s=8219 reason=stuck
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=360 play_s=7488 reason=stuck
+pool clock: park sp80-589a99af at level 5 (action 360, 0 since last clear, yield: outlook=stuck)
+pool clock: park cn04-2fe56bfb at level 6 (action 476, 0 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 360, resume 18, yielded 'stuck')
+pool clock: resume cn04-2fe56bfb at level 6 (action 476, resume 16, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5708 reason=Stuck on level 2; paused.
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 152, yielded 'stuck')
+ARC3 YIELD game=s5i5-18d95033 outlook=stuck level=3 action=145 play_s=3660 reason=2 min left; level 3 needs a mechanic I have not cracked (pink bar blocked by gray wall, sky bar blocked by immovable red bar). Yielding so other games get the remaining clock.
+pool clock: park s5i5-18d95033 at level 3 (action 145, 0 since last clear, yield: outlook=stuck)
+pool clock: resume s5i5-18d95033 at level 3 (action 145, resume 3, yielded 'stuck')
+ARC3 YIELD game=ls20-9607627b outlook=stuck level=5 action=683 play_s=4495 reason=Run clock nearly exhausted (~2 min). Level 5 unstarted and needs a new bounce model build plus ~50 actions; not feasible. Holding paused so remaining time goes to other games.
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8223 reason=Level 7 idle.
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=1 action=844 play_s=4329 reason=Direct clicks on every object do nothing either. Level 1 win condition unreachable within budget; ~1 min of shared clock remains. Releasing slot for good.
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=508 play_s=8228 reason=no legal productive action on level 5
+ARC3 YIELD game=g50t-5849a774 outlook=stuck level=3 action=901 play_s=4812 reason=stuck
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: park ls20-9607627b at level 5 (action 683, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 46, yielded 'stuck')
+pool clock: park bp35-0a0ad940 at level 5 (action 508, 0 since last clear, yield: outlook=stuck)
+pool clock: park dc22-fdcac232 at level 1 (action 844, 6 since last clear, yield: outlook=stuck)
+pool clock: park g50t-5849a774 at level 3 (action 901, 38 since last clear, yield: outlook=stuck)
+pool clock: resume ls20-9607627b at level 5 (action 683, resume 4, yielded 'stuck')
+pool clock: resume g50t-5849a774 at level 3 (action 901, resume 16, yielded 'stuck')
+pool clock: resume sk48-d8078629 at level 1 (action 708, resume 3, yielded 'stuck')
+pool clock: resume bp35-0a0ad940 at level 5 (action 508, resume 29, yielded 'stuck')
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=360 play_s=7500 reason=stuck
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=476 play_s=8231 reason=stuck
+pool clock: park sp80-589a99af at level 5 (action 360, 0 since last clear, yield: outlook=stuck)
+pool clock: park cn04-2fe56bfb at level 6 (action 476, 0 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 360, resume 19, yielded 'stuck')
+pool clock: resume cn04-2fe56bfb at level 6 (action 476, resume 17, yielded 'stuck')
+ARC3 YIELD game=re86-8af5384d outlook=stuck level=6 action=436 play_s=3733 reason=stuck
+pool clock: park re86-8af5384d at level 6 (action 436, 0 since last clear, yield: outlook=stuck)
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5723 reason=Stuck on level 2; paused.
+pool clock: resume re86-8af5384d at level 6 (action 436, resume 8, yielded 'stuck')
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+ARC3 YIELD game=ls20-9607627b outlook=stuck level=5 action=683 play_s=4506 reason=Run clock nearly exhausted; level 5 not completable in remaining time (needs new model build + ~50 actions). Score locked at 4 levels cleared.
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 153, yielded 'stuck')
+pool clock: park ls20-9607627b at level 5 (action 683, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ls20-9607627b at level 5 (action 683, resume 5, yielded 'stuck')
+ARC3 YIELD game=g50t-5849a774 outlook=stuck level=3 action=901 play_s=4829 reason=stuck
+pool clock: park g50t-5849a774 at level 3 (action 901, 0 since last clear, yield: outlook=stuck)
+pool clock: resume g50t-5849a774 at level 3 (action 901, resume 17, yielded 'stuck')
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=360 play_s=7521 reason=stuck
+pool clock: park sp80-589a99af at level 5 (action 360, 0 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 360, resume 20, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8247 reason=Level 7 idle.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 47, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=508 play_s=8252 reason=abandon level 5
+pool clock: park bp35-0a0ad940 at level 5 (action 508, 0 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 508, resume 30, yielded 'stuck')
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=476 play_s=8258 reason=stuck
+pool clock: park cn04-2fe56bfb at level 6 (action 476, 0 since last clear, yield: outlook=stuck)
+pool clock: resume cn04-2fe56bfb at level 6 (action 476, resume 18, yielded 'stuck')
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=360 play_s=7528 reason=stuck
+ARC3 YIELD game=ls20-9607627b outlook=stuck level=5 action=683 play_s=4525 reason=1 min of run clock left; level 5 not completable. Final state: 4 levels cleared, level 5 untouched. Pausing permanently to free the clock.
+ARC3 YIELD game=re86-8af5384d outlook=stuck level=6 action=436 play_s=3754 reason=stuck
+ARC3 YIELD game=g50t-5849a774 outlook=stuck level=3 action=901 play_s=4841 reason=stuck
+pool clock: park re86-8af5384d at level 6 (action 436, 0 since last clear, yield: outlook=stuck)
+pool clock: park sp80-589a99af at level 5 (action 360, 0 since last clear, yield: outlook=stuck)
+pool clock: park ls20-9607627b at level 5 (action 683, 0 since last clear, yield: outlook=stuck)
+pool clock: park g50t-5849a774 at level 3 (action 901, 0 since last clear, yield: outlook=stuck)
+pool clock: resume re86-8af5384d at level 6 (action 436, resume 9, yielded 'stuck')
+pool clock: resume ls20-9607627b at level 5 (action 683, resume 6, yielded 'stuck')
+pool clock: resume sp80-589a99af at level 5 (action 360, resume 21, yielded 'stuck')
+pool clock: resume g50t-5849a774 at level 3 (action 901, resume 18, yielded 'stuck')
+ARC3 YIELD game=ka59-38d34dbb outlook=stuck level=7 action=1084 play_s=8254 reason=Level 7 idle.
+ARC3 YIELD game=s5i5-18d95033 outlook=stuck level=3 action=145 play_s=3692 reason=Final: level 3 unsolvable in remaining run time; verified both red-dot paths are hard-blocked. Keep 2 cleared levels of score.
+pool clock: park ka59-38d34dbb at level 7 (action 1084, 0 since last clear, yield: outlook=stuck)
+pool clock: park s5i5-18d95033 at level 3 (action 145, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 7 (action 1084, resume 48, yielded 'stuck')
+pool clock: resume s5i5-18d95033 at level 3 (action 145, resume 4, yielded 'stuck')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=5 action=508 play_s=8258 reason=run clock nearly out; level 5 left unsolved
+pool clock: park bp35-0a0ad940 at level 5 (action 508, 0 since last clear, yield: outlook=stuck)
+pool clock: resume bp35-0a0ad940 at level 5 (action 508, resume 31, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=2 action=421 play_s=5749 reason=Stuck on level 2; paused.
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=6 action=476 play_s=8264 reason=stuck
+ARC3 YIELD game=m0r0-492f87ba outlook=stuck level=6 action=529 play_s=7898 reason=L6: N(10,4) stays green after 3 presses (not consumed); O(3,4) orange since L left it (meaning unclear: pressed-history?). State L=(4,5),R=(11,4),dot=(3,6). Run out of ideas that fit all observations within shared time; next session should re-derive goal from scratch (e.g., try SPACE in various states, try L onto O button while R on N(10,4), try both squares entering hole column via passage with dot removed from (3,6)).
+pool clock: park lf52-271a04aa at level 2 (action 421, 0 since last clear, yield: outlook=stuck)
+pool clock: park cn04-2fe56bfb at level 6 (action 476, 0 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 2 (action 421, resume 154, yielded 'stuck')
+[finished] lf52-271a04aa state=gave_up level=1/10 score=1.82 actions=421 tokens=308261 per-level=16/32,405/81,0/60,0/71,0/205,0/148,0/244,0/109,0/164,0/225 note="tokens=308261"
+ARC3 YIELD game=su15-1944f8ab outlook=stuck level=5 action=150 play_s=3402 reason=Level 5 lost its blocks to the chasing ghosts (only two 2x2 blocks and one lone sky dot remain; a 4x4 needs four blocks). Needs a fresh restart of the level to retry with a tighter, faster route.
+pool clock: resume dc22-fdcac232 at level 1 (action 844, resume 17, yielded 'stuck')
+pool clock: resume cn04-2fe56bfb at level 6 (action 476, resume 19, yielded 'stuck')
+pool clock: park m0r0-492f87ba at level 6 (action 529, 1 since last clear, yield: outlook=stuck)
+[finished] dc22-fdcac232 state=gave_up level=0/6 score=0.00 actions=844 tokens=230827 per-level=844/59,0/102,0/67,0/98,0/324,0/578 note="tokens=230827"
+[finished] cn04-2fe56bfb state=gave_up level=5/6 score=71.43 actions=476 tokens=492211 per-level=18/29,185/54,23/85,33/300,63/208,154/113 note="tokens=492211"
+analyzer request failed at action 459: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=18.0)
+[finished] bp35-0a0ad940 state=gave_up level=4/9 score=8.87 actions=508 tokens=478485 per-level=19/21,53/48,72/44,264/38,100/33,0/87,0/86,0/131,0/163 note="tokens=478485"
+pool clock: resume m0r0-492f87ba at level 6 (action 529, resume 6, yielded 'stuck')
+[finished] m0r0-492f87ba state=gave_up level=5/6 score=66.00 actions=529 tokens=450396 per-level=33/30,43/111,132/203,42/26,56/500,223/237 note="tokens=450396"
+pool clock: park su15-1944f8ab at level 5 (action 150, 11 since last clear, yield: outlook=stuck)
+[finished] tr87-cd924810 state=gave_up level=3/6 score=9.04 actions=458 tokens=190503 per-level=49/54,187/58,93/40,129/45,0/71,0/146 note="tokens=190503"
+analyzer request failed at action 146: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=0.1)
+pool clock: resume su15-1944f8ab at level 5 (action 150, resume 1, yielded 'stuck')
+[finished] su15-1944f8ab state=gave_up level=4/9 score=20.80 actions=150 tokens=192137 per-level=11/22,51/42,30/26,47/115,11/36,0/31,0/8,0/40,0/41 note="tokens=192137"
+[finished] s5i5-18d95033 state=gave_up level=2/8 score=7.05 actions=145 tokens=223369 per-level=30/20,87/89,28/106,0/54,0/162,0/38,0/86,0/83 note="tokens=223369"
+ARC3 YIELD game=ls20-9607627b outlook=stuck level=5 action=683 play_s=4532 reason=Final minute of run clock. Level 5 cannot be completed; pausing. Game finished with 4 of 5+ levels cleared (levels 1-4 solved, level 4 required discovering the strip-bounce model, the icon color cycle green->red->orange->blue, and the plus-press pattern rotation).
+pool clock: park ls20-9607627b at level 5 (action 683, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ls20-9607627b at level 5 (action 683, resume 7, yielded 'stuck')
+[finished] ls20-9607627b state=gave_up level=4/7 score=8.35 actions=683 tokens=265858 per-level=31/22,243/123,129/73,280/84,0/96,0/192,0/186 note="tokens=265858"
+ARC3 YIELD game=re86-8af5384d outlook=stuck level=6 action=436 play_s=3762 reason=stuck
+pool clock: park re86-8af5384d at level 6 (action 436, 0 since last clear, yield: outlook=stuck)
+pool clock: resume re86-8af5384d at level 6 (action 436, resume 10, yielded 'stuck')
+[finished] re86-8af5384d state=gave_up level=5/8 score=41.67 actions=436 tokens=211776 per-level=21/26,37/42,47/86,80/108,107/189,144/139,0/424,0/241 note="tokens=211776"
+ARC3 YIELD game=g50t-5849a774 outlook=stuck level=3 action=901 play_s=4849 reason=stuck
+pool clock: park g50t-5849a774 at level 3 (action 901, 0 since last clear, yield: outlook=stuck)
+pool clock: resume g50t-5849a774 at level 3 (action 901, resume 19, yielded 'stuck')
+[finished] g50t-5849a774 state=gave_up level=2/7 score=10.71 actions=901 tokens=256836 per-level=46/78,31/175,824/179,0/230,0/96,0/54,0/67 note="tokens=256836"
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=5 action=360 play_s=7536 reason=stuck
+pool clock: park sp80-589a99af at level 5 (action 360, 0 since last clear, yield: outlook=stuck)
+pool clock: resume sp80-589a99af at level 5 (action 360, resume 22, yielded 'stuck')
+[finished] sp80-589a99af state=gave_up level=4/6 score=47.62 actions=360 tokens=454455 per-level=20/39,20/58,14/25,50/148,256/96,0/152 note="tokens=454455"
+[finished] wa30-ee6fef47 state=gave_up level=4/9 score=5.75 actions=2270 tokens=478466 per-level=72/71,345/119,282/183,586/98,985/368,0/68,0/79,0/442,0/415 note="tokens=478466"
+analyzer request failed at action 1085: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=0.1)
+[finished] ka59-38d34dbb state=gave_up level=6/7 score=40.71 actions=1084 tokens=473772 per-level=26/28,62/109,35/51,195/51,50/33,226/132,490/326 note="tokens=473772"
+[finished] sk48-d8078629 state=gave_up level=0/8 score=0.00 actions=708 tokens=251842 per-level=708/61,0/177,0/101,0/103,0/230,0/181,0/125,0/92 note="tokens=251842"
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 7.85s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 10)
+started:   2026-11-01 14:19:11
+ended:     2026-11-01 16:37:05
+duration:  2h 17m 54s
+mean score:    49.70
+median score:  47.62
+total actions: 12541
+total tokens:  6780521
+generated tokens/sec: 819.41 (job wallclock)
+total wallclock: 164000.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=100.00, levels=8.0/8, actions=432, tokens=197115
+  bp35-0a0ad940: score=8.87, levels=4.0/9, actions=508, tokens=478485
+  cd82-fb555c5d: score=75.52, levels=6.0/6, actions=184, tokens=107824
+  cn04-2fe56bfb: score=71.43, levels=5.0/6, actions=476, tokens=492211
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=844, tokens=230827
+  ft09-0d8bbf25: score=100.00, levels=6.0/6, actions=111, tokens=146263
+  g50t-5849a774: score=10.71, levels=2.0/7, actions=901, tokens=256836
+  ka59-38d34dbb: score=40.71, levels=6.0/7, actions=1084, tokens=473772
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=421, tokens=308261
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=134, tokens=132523
+  ls20-9607627b: score=8.35, levels=4.0/7, actions=683, tokens=265858
+  m0r0-492f87ba: score=66.00, levels=5.0/6, actions=529, tokens=450396
+  r11l-495a7899: score=97.43, levels=6.0/6, actions=159, tokens=272188
+  re86-8af5384d: score=41.67, levels=5.0/8, actions=436, tokens=211776
+  s5i5-18d95033: score=7.05, levels=2.0/8, actions=145, tokens=223369
+  sb26-7fbdac44: score=100.00, levels=8.0/8, actions=152, tokens=64290
+  sc25-635fd71a: score=62.52, levels=6.0/6, actions=429, tokens=160334
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=708, tokens=251842
+  sp80-589a99af: score=47.62, levels=4.0/6, actions=360, tokens=454455
+  su15-1944f8ab: score=20.80, levels=4.0/9, actions=150, tokens=192137
+  tn36-ef4dde99: score=78.57, levels=7.0/7, actions=298, tokens=228424
+  tr87-cd924810: score=9.04, levels=3.0/6, actions=458, tokens=190503
+  tu93-0768757b: score=88.68, levels=9.0/9, actions=379, tokens=341927
+  vc33-5430563c: score=100.00, levels=7.0/7, actions=290, tokens=170439
+  wa30-ee6fef47: score=5.75, levels=4.0/9, actions=2270, tokens=478466
+
+diagnostics: /kaggle/working/synesthesia/diagnostics.html
+synesthesia: evidence gate: 2234 student image_embeds parts at 1024 tokens
+taaf.kaggle: teardown command: "$PYTHON" - <<'PYTEARDOWN'
+import os
+import shutil
+import signal
+import time
+from pathlib import Path
+
+WORKING_DIR = Path(os.environ['TAAF_KAGGLE_WORKING_DIR'])
+
+
+def stop_process(pid_path: Path, name: str) -> None:
+    '''Terminate the process recorded in pid_path, escalating to SIGKILL after 30 seconds.'''
+    if not pid_path.exists():
+        return
+    try:
+        pid = int(pid_path.read_text(encoding='utf-8').strip())
+        print(f'Stopping {name}', flush=True)
+        os.kill(pid, signal.SIGTERM)
+        deadline = time.monotonic() + 30
+        while time.monotonic() < deadline:
+            try:
+                os.kill(pid, 0)
+            except OSError:
+                break
+            time.sleep(1)
+        else:
+            os.kill(pid, signal.SIGKILL)
+    except Exception as exc:
+        print(f'Could not stop {name} cleanly: {exc!r}', flush=True)
+    pid_path.unlink(missing_ok=True)
+
+
+stop_process(WORKING_DIR / 'vllm-watchdog.pid', 'vLLM watchdog')
+stop_process(WORKING_DIR / 'vllm-openai-server.pid', 'vLLM server')
+image_runtime_root = Path(os.environ.get('TAAF_IMAGE_RUNTIME_ROOT', '/tmp/vllm-image-runtime'))
+for runtime_path in (image_runtime_root, image_runtime_root.with_name(image_runtime_root.name + '-cache')):
+    if runtime_path.exists():
+        shutil.rmtree(runtime_path, ignore_errors=True)
+        print(f'Removed image runtime files at {runtime_path}', flush=True)
+
+PYTEARDOWN

@@ -1,0 +1,1583 @@
+MISTRAL COMPAT installed: mistral=False reasoning_effort='high'
+SANDBOX TIMEOUT raised to 120s (source clamps at 30)
+DUCK FIXES -- label-block fix: installed; dead-game kill: installed on _HarnessGameSession (K=120); level cap: installed on _HarnessGameSession (C=200)
+DUCK FIXES -- ACTION7 described: installed
+DUCK FIXES (09-25) -- ACTION7 mapping: installed | unicode tool io: installed (json.dumps ensure_ascii=False inside tool_agent)
+CTX OVERFLOW SHIM INSTALLED  estimate_safety=1.15  (estimate patched: True)  log=runs/local_queue/images_on/ctx_overflow.jsonl
+INDEX POLICY: NOT INSTALLED (INDEX_POLICY=0). Self-test passed: fresh-slot index 0.915, 7/7 table rows reproduced. Set INDEX_POLICY=1 to enable early stopping.
+lownorm: colour vocabulary from /home/ignaz/github/arc-prize-2026/notes/qwen_colour_vocabulary_all16.json
+lownorm: legend in QWEN's words: white, light gray, medium gray, dark gray, charcoal, black, magenta, pink, red, blue, sky blue, yellow, orange, maroon, green, purple
+lownorm: tokenizer check PASSED on /home/ignaz/models/qwen38-nvfp4/tokenizer.json -- 16/16 single-token, non-merging (lownorm_tokenizer_verified=True)
+ARM=lownorm_glyphs
+lownorm: map     WwgGcBMPRbSYOrNp -> 겪쏟눠됩멤굉촬훨꽤ങ탓뀌볍穌썼繽
+lownorm: legend  겪=white, 쏟=light gray, 눠=medium gray, 됩=dark gray, 멤=charcoal, 굉=black, 촬=magenta, 훨=pink, 꽤=red, ങ=blue, 탓=sky blue, 뀌=yellow, 볍=orange, 穌=maroon, 썼=green, 繽=purple
+lownorm: patched ['inference.agent.prompts.ARC_COLOR_LEGEND', 'inference.agent.prompts.GAME_OVERVIEW_ADDENDUM', 'inference.agent.prompts.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'inference.agent.tool_agent.GAME_OVERVIEW_ADDENDUM', 'inference.agent.tool_agent.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'ToolAgent._build_user_prompt (wrapped)']
+lownorm: probe frame:
+굉굉겪
+굉ങ겪
+썼썼썼
+ab: lownorm control window matched to visual arm: 65536
+BREAKER INSTALLED on ToolAgent._chat_completion (log: runs/local_queue/images_on/breaker.jsonl; open at 8 consecutive failures, backoff <= 30s)
+RECALL INSTALLED on ToolAgent._run_python_tool (ledger from /home/ignaz/github/arc-prize-2026/scripts/recall_scaffold.py; DUCK_RECALL_NOTES=0 disables)
+ab: bm.n_passes=4
+ab: ARM=lownorm ctx=65536 games=25 concurrency=28 max_actions=None per_game_s=7920.0 job_dir=runs/local_queue/images_on model=qwen38
+ab: 400-storm watchdog armed on /home/ignaz/github/arc-prize-2026/runs/local_queue/images_on/run.log
+benchmark: regenerated diagnostics in runs/local_queue/images_on in 2.63s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    4
+runs:      100 (won: 0)
+started:   2026-09-27 07:26:45
+ended:     in progress
+mean score:    0.20
+median score:  0.00
+total actions: 324
+total tokens:  276393
+generated tokens/sec: 458.07 (job wallclock)
+total wallclock: 12081.9s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.69, levels=0.2/8, actions=4, tokens=1974
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=0, tokens=2751
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=1, tokens=3338
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=4, tokens=2406
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=1, tokens=2329
+  ft09-0d8bbf25: score=1.19, levels=0.2/6, actions=1, tokens=2917
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=1, tokens=3149
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=2, tokens=2296
+  lp85-305b61c3: score=0.69, levels=0.2/8, actions=2, tokens=3325
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=3254
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=4, tokens=6027
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=0, tokens=1024
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=3, tokens=3309
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=2338
+  sb26-7fbdac44: score=1.39, levels=0.5/8, actions=14, tokens=4422
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=1, tokens=1669
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=3172
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=7, tokens=2320
+  su15-1944f8ab: score=1.11, levels=0.5/9, actions=5, tokens=6089
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=5, tokens=3129
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=1, tokens=1450
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=12, tokens=1300
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=1, tokens=2762
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=1, tokens=2336
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 3: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+benchmark: regenerated diagnostics in runs/local_queue/images_on in 2.07s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    4
+runs:      100 (won: 0)
+started:   2026-09-27 07:26:45
+ended:     in progress
+mean score:    0.33
+median score:  0.00
+total actions: 500
+total tokens:  461674
+generated tokens/sec: 382.96 (job wallclock)
+total wallclock: 23035.9s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.69, levels=0.2/8, actions=5, tokens=4838
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=2, tokens=4408
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=2, tokens=5312
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=4, tokens=2406
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=4, tokens=4760
+  ft09-0d8bbf25: score=3.57, levels=0.5/6, actions=3, tokens=4462
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=3, tokens=5122
+  lf52-271a04aa: score=0.45, levels=0.2/10, actions=6, tokens=5525
+  lp85-305b61c3: score=0.69, levels=0.2/8, actions=2, tokens=4581
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=3254
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=8, tokens=8309
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=0, tokens=1024
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=7, tokens=4876
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=1, tokens=5438
+  sb26-7fbdac44: score=1.39, levels=0.5/8, actions=23, tokens=8451
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=2, tokens=5391
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=2, tokens=4333
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=7, tokens=2320
+  su15-1944f8ab: score=1.11, levels=0.5/9, actions=9, tokens=10870
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=7, tokens=5230
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=3, tokens=5556
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=12, tokens=1300
+  vc33-5430563c: score=0.22, levels=0.2/7, actions=3, tokens=5306
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=1, tokens=2336
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 8: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 42: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+benchmark: regenerated diagnostics in runs/local_queue/images_on in 2.29s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    4
+runs:      100 (won: 0)
+started:   2026-09-27 07:26:45
+ended:     in progress
+mean score:    0.34
+median score:  0.00
+total actions: 719
+total tokens:  663302
+generated tokens/sec: 366.88 (job wallclock)
+total wallclock: 40484.0s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.69, levels=0.2/8, actions=6, tokens=7257
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=4, tokens=6431
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=5, tokens=7275
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=4, tokens=5637
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=4, tokens=5838
+  ft09-0d8bbf25: score=3.57, levels=0.5/6, actions=8, tokens=6968
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=4, tokens=6108
+  lf52-271a04aa: score=0.45, levels=0.2/10, actions=14, tokens=7091
+  lp85-305b61c3: score=0.69, levels=0.2/8, actions=2, tokens=4581
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=2, tokens=7046
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=12, tokens=14170
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=0, tokens=3246
+  re86-8af5384d: score=0.28, levels=0.2/8, actions=10, tokens=6358
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=1, tokens=5438
+  sb26-7fbdac44: score=1.39, levels=0.5/8, actions=34, tokens=10201
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=5, tokens=6843
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=2, tokens=5642
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=9, tokens=6888
+  su15-1944f8ab: score=1.11, levels=0.5/9, actions=10, tokens=13624
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=10, tokens=6933
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=3, tokens=5556
+  tu93-0768757b: score=0.04, levels=0.2/9, actions=17, tokens=6123
+  vc33-5430563c: score=0.22, levels=0.2/7, actions=3, tokens=6846
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=3, tokens=3717
+
+benchmark: regenerated diagnostics in runs/local_queue/images_on in 2.57s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    4
+runs:      100 (won: 0)
+started:   2026-09-27 07:26:45
+ended:     in progress
+mean score:    0.39
+median score:  0.00
+total actions: 884
+total tokens:  846100
+generated tokens/sec: 350.99 (job wallclock)
+total wallclock: 57988.5s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.08, levels=0.5/8, actions=8, tokens=8041
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=8, tokens=8878
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=9, tokens=8632
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=5, tokens=8522
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=5, tokens=8872
+  ft09-0d8bbf25: score=3.57, levels=0.5/6, actions=8, tokens=7573
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=3012
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=6, tokens=8912
+  lf52-271a04aa: score=0.45, levels=0.2/10, actions=16, tokens=8752
+  lp85-305b61c3: score=0.69, levels=0.2/8, actions=3, tokens=9052
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=2, tokens=8825
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=13, tokens=15179
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=1, tokens=4995
+  re86-8af5384d: score=0.28, levels=0.2/8, actions=10, tokens=7812
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=2, tokens=7961
+  sb26-7fbdac44: score=1.39, levels=0.5/8, actions=37, tokens=11282
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=7, tokens=7354
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=2, tokens=8560
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=10, tokens=7737
+  su15-1944f8ab: score=1.11, levels=0.5/9, actions=10, tokens=13624
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=16, tokens=8994
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=4, tokens=7432
+  tu93-0768757b: score=0.04, levels=0.2/9, actions=18, tokens=7435
+  vc33-5430563c: score=0.22, levels=0.2/7, actions=5, tokens=8960
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=5, tokens=5120
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+benchmark: regenerated diagnostics in runs/local_queue/images_on in 2.40s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    4
+runs:      100 (won: 0)
+started:   2026-09-27 07:26:45
+ended:     in progress
+mean score:    0.44
+median score:  0.00
+total actions: 1034
+total tokens:  1026386
+generated tokens/sec: 340.65 (job wallclock)
+total wallclock: 73413.5s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.08, levels=0.5/8, actions=9, tokens=10640
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=10, tokens=10241
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=12, tokens=10528
+  cn04-2fe56bfb: score=1.19, levels=0.2/6, actions=6, tokens=9131
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=7, tokens=9557
+  ft09-0d8bbf25: score=3.57, levels=0.5/6, actions=10, tokens=10261
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=5934
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=6, tokens=8912
+  lf52-271a04aa: score=0.45, levels=0.2/10, actions=17, tokens=10518
+  lp85-305b61c3: score=0.69, levels=0.2/8, actions=3, tokens=9052
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=4, tokens=10472
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=18, tokens=20099
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=2, tokens=5912
+  re86-8af5384d: score=0.28, levels=0.2/8, actions=14, tokens=10653
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=2, tokens=7961
+  sb26-7fbdac44: score=1.39, levels=0.5/8, actions=42, tokens=17778
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=10, tokens=9825
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=2, tokens=8560
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=10, tokens=7737
+  su15-1944f8ab: score=1.11, levels=0.5/9, actions=11, tokens=16456
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=20, tokens=10660
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=4, tokens=9639
+  tu93-0768757b: score=0.04, levels=0.2/9, actions=18, tokens=10022
+  vc33-5430563c: score=0.22, levels=0.2/7, actions=5, tokens=8960
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=6, tokens=7079
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 44: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 16: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+benchmark: regenerated diagnostics in runs/local_queue/images_on in 1.88s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    4
+runs:      100 (won: 0)
+started:   2026-09-27 07:26:45
+ended:     in progress
+mean score:    0.47
+median score:  0.00
+total actions: 1287
+total tokens:  1130708
+generated tokens/sec: 312.78 (job wallclock)
+total wallclock: 84107.7s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.08, levels=0.5/8, actions=9, tokens=10640
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=10, tokens=11747
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=16, tokens=12442
+  cn04-2fe56bfb: score=1.19, levels=0.2/6, actions=6, tokens=9131
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=17, tokens=12277
+  ft09-0d8bbf25: score=3.57, levels=0.5/6, actions=10, tokens=10261
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=5934
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=8, tokens=11984
+  lf52-271a04aa: score=0.45, levels=0.2/10, actions=25, tokens=12248
+  lp85-305b61c3: score=0.69, levels=0.2/8, actions=3, tokens=9052
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=10, tokens=11813
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=18, tokens=20099
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=2, tokens=5912
+  re86-8af5384d: score=0.28, levels=0.2/8, actions=14, tokens=10653
+  s5i5-18d95033: score=0.69, levels=0.2/8, actions=4, tokens=8214
+  sb26-7fbdac44: score=1.39, levels=0.5/8, actions=47, tokens=19285
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=11, tokens=12399
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=3, tokens=9559
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=10, tokens=7737
+  su15-1944f8ab: score=1.11, levels=0.5/9, actions=11, tokens=16456
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=26, tokens=11601
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=19, tokens=10863
+  tu93-0768757b: score=0.04, levels=0.2/9, actions=19, tokens=12210
+  vc33-5430563c: score=0.22, levels=0.2/7, actions=5, tokens=11209
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=10, tokens=8942
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 27: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 24: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+benchmark: regenerated diagnostics in runs/local_queue/images_on in 1.97s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    4
+runs:      100 (won: 0)
+started:   2026-09-27 07:26:45
+ended:     in progress
+mean score:    0.55
+median score:  0.00
+total actions: 1363
+total tokens:  1282903
+generated tokens/sec: 304.21 (job wallclock)
+total wallclock: 98282.5s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.08, levels=0.5/8, actions=9, tokens=13896
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=10, tokens=11747
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=18, tokens=13402
+  cn04-2fe56bfb: score=1.19, levels=0.2/6, actions=6, tokens=9131
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=17, tokens=12277
+  ft09-0d8bbf25: score=3.57, levels=0.5/6, actions=13, tokens=13312
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=1, tokens=9648
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=9, tokens=13035
+  lf52-271a04aa: score=0.45, levels=0.2/10, actions=27, tokens=13278
+  lp85-305b61c3: score=0.69, levels=0.2/8, actions=3, tokens=9052
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=11, tokens=14140
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=21, tokens=24746
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=2, tokens=6786
+  re86-8af5384d: score=0.28, levels=0.2/8, actions=15, tokens=14205
+  s5i5-18d95033: score=0.69, levels=0.2/8, actions=4, tokens=11019
+  sb26-7fbdac44: score=1.39, levels=0.5/8, actions=47, tokens=22560
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=11, tokens=12399
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=5, tokens=11337
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=10, tokens=7737
+  su15-1944f8ab: score=1.11, levels=0.5/9, actions=11, tokens=16456
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=26, tokens=12927
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=19, tokens=10863
+  tu93-0768757b: score=0.04, levels=0.2/9, actions=19, tokens=13941
+  vc33-5430563c: score=2.28, levels=0.5/7, actions=5, tokens=13882
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=10, tokens=8942
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 22: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 44: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+DEAD-GAME KILL: 0 levels after 120 actions (K=120); releasing the slot
+[finished] tn36-ef4dde99 state=gave_up level=0/7 score=0.00 actions=120 tokens=60259 per-level=120/32,0/72,0/26,0/40,0/30,0/55,0/62 note="tokens=60259"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gtn36-ef4dde99_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 27: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 80: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 7: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gtn36-ef4dde99_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 41: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 47: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gtn36-ef4dde99_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 34: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 40: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 83: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 7: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gtn36-ef4dde99_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 29: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+DEAD-GAME KILL: 0 levels after 120 actions (K=120); releasing the slot
+[finished] dc22-fdcac232 state=gave_up level=0/6 score=0.00 actions=120 tokens=85026 per-level=120/59,0/102,0/67,0/98,0/324,0/578 note="tokens=85026"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 52: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gdc22-fdcac232_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 86: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gdc22-fdcac232_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 63: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+DEAD-GAME KILL: 0 levels after 120 actions (K=120); releasing the slot
+[finished] tr87-cd924810 state=gave_up level=0/6 score=0.00 actions=120 tokens=37723 per-level=120/54,0/58,0/40,0/45,0/71,0/146 note="tokens=37723"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)BREAKER: server 500 (mm-cache bug); retry 1/3 with 3 image(s) stripped
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: server 500 (mm-cache bug); retry 1/3 with 5 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 69: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=11.237164106976707)
+[finished] ft09-0d8bbf25 state=gave_up level=2/6 score=14.29 actions=68 tokens=88187 per-level=7/43,7/12,54/23,0/28,0/65,0/37 note="tokens=88187"
+analyzer request failed at action 30: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=494.945588150993)
+[finished] lp85-305b61c3 state=gave_up level=2/8 score=8.33 actions=29 tokens=72382 per-level=8/17,19/38,2/31,0/16,0/41,0/60,0/26,0/159 note="tokens=72382"
+analyzer request failed at action 53: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=232.74471869302215)
+[finished] ka59-38d34dbb state=gave_up level=0/7 score=0.00 actions=52 tokens=85820 per-level=52/28,0/109,0/51,0/51,0/33,0/132,0/326 note="tokens=85820"
+analyzer request failed at action 45: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=118.3277406829875)
+[finished] sk48-d8078629 state=gave_up level=0/8 score=0.00 actions=44 tokens=87344 per-level=44/61,0/177,0/101,0/103,0/230,0/181,0/125,0/92 note="tokens=87344"
+analyzer request failed at action 69: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=895.6412068939535)
+[finished] sp80-589a99af state=gave_up level=0/6 score=0.00 actions=68 tokens=67603 per-level=68/39,0/58,0/25,0/148,0/96,0/152 note="tokens=67603"
+analyzer request failed at action 141: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=135.87615085899597)
+[finished] lf52-271a04aa state=gave_up level=1/10 score=1.82 actions=140 tokens=96499 per-level=17/32,123/81,0/60,0/71,0/205,0/148,0/244,0/109,0/164,0/225 note="tokens=96499"
+analyzer request failed at action 60: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=343.413120623969)
+[finished] ar25-0c556536 state=gave_up level=2/8 score=8.33 actions=59 tokens=95048 per-level=18/32,15/50,26/75,0/37,0/89,0/159,0/233,0/73 note="tokens=95048"
+analyzer request failed at action 86: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=144.35617770801764)
+[finished] tu93-0768757b state=gave_up level=1/9 score=0.17 actions=85 tokens=66611 per-level=69/19,16/16,0/34,0/42,0/123,0/80,0/14,0/23,0/111 note="tokens=66611"
+[finished] m0r0-492f87ba state=gave_up level=0/6 score=0.00 actions=67 tokens=74533 per-level=67/30,0/111,0/203,0/26,0/500,0/237 note="tokens=99535"
+[finished] vc33-5430563c state=gave_up level=2/7 score=9.11 actions=39 tokens=75509 per-level=14/7,9/18,16/44,0/61,0/131,0/34,0/152 note="tokens=89807"
+[finished] r11l-495a7899 state=gave_up level=0/6 score=0.00 actions=30 tokens=66700 per-level=30/22,0/33,0/51,0/26,0/52,0/49 note="tokens=74334"
+[finished] sb26-7fbdac44 state=gave_up level=1/8 score=2.78 actions=176 tokens=68679 per-level=13/18,163/28,0/18,0/19,0/31,0/23,0/58,0/18 note="tokens=88159"
+[finished] re86-8af5384d state=gave_up level=1/8 score=1.12 actions=64 tokens=78551 per-level=41/26,23/42,0/86,0/108,0/189,0/139,0/424,0/241 note="tokens=100804"
+[finished] su15-1944f8ab state=gave_up level=1/9 score=2.22 actions=31 tokens=73107 per-level=11/22,20/42,0/26,0/115,0/36,0/31,0/8,0/40,0/41 note="tokens=88333"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 46: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=314.6303684170125)
+[finished] su15-1944f8ab state=gave_up level=1/9 score=2.22 actions=45 tokens=71568 per-level=10/22,35/42,0/26,0/115,0/36,0/31,0/8,0/40,0/41 note="tokens=72633"
+[finished] bp35-0a0ad940 state=gave_up level=0/9 score=0.00 actions=41 tokens=46989 per-level=41/21,0/48,0/44,0/38,0/33,0/87,0/86,0/131,0/163 note="tokens=102431"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 39: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+[finished] m0r0-492f87ba state=gave_up level=0/6 score=0.00 actions=38 tokens=83043 per-level=38/30,0/111,0/203,0/26,0/500,0/237 note="tokens=90556"
+analyzer request failed at action 117: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=225.91682713699993)
+[finished] cd82-fb555c5d state=gave_up level=0/6 score=0.00 actions=116 tokens=96021 per-level=116/55,0/8,0/41,0/21,0/23,0/23 note="tokens=98488"
+[finished] sc25-635fd71a state=gave_up level=0/6 score=0.00 actions=58 tokens=83911 per-level=58/36,0/6,0/32,0/83,0/143,0/50 note="tokens=93918"
+[finished] ls20-9607627b state=gave_up level=1/7 score=0.39 actions=67 tokens=71006 per-level=67/22,0/123,0/73,0/84,0/96,0/192,0/186 note="tokens=104008"
+BREAKER: server 500 (mm-cache bug); retry 2/3 with 0 image(s) stripped
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 175: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=264.4953851500177)
+[finished] sb26-7fbdac44 state=gave_up level=1/8 score=2.78 actions=174 tokens=95119 per-level=14/18,160/28,0/18,0/19,0/31,0/23,0/58,0/18 note="tokens=95119"
+[finished] wa30-ee6fef47 state=gave_up level=0/9 score=0.00 actions=55 tokens=71523 per-level=55/71,0/119,0/183,0/98,0/368,0/68,0/79,0/442,0/415 note="tokens=77739"
+[finished] tr87-cd924810 state=gave_up level=0/6 score=0.00 actions=78 tokens=43454 per-level=78/54,0/58,0/40,0/45,0/71,0/146 note="tokens=105988"
+[finished] cn04-2fe56bfb state=gave_up level=1/6 score=4.76 actions=38 tokens=70723 per-level=26/29,12/54,0/85,0/300,0/208,0/113 note="tokens=86125"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 7: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+[finished] g50t-5849a774 state=gave_up level=0/7 score=0.00 actions=6 tokens=38592 per-level=6/78,0/175,0/179,0/230,0/96,0/54,0/67 note="tokens=55692"
+[finished] s5i5-18d95033 state=gave_up level=1/8 score=2.78 actions=23 tokens=77312 per-level=18/20,5/89,0/106,0/54,0/162,0/38,0/86,0/83 note="tokens=98873"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 14: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 17: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 13: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 6: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 26: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 8: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 17: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 33: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 18: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 25: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 17: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 25: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 25: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 26: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 44: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 17: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 18: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 18: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 24: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 17: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+analyzer request failed at action 25: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 74: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 28: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=845.5027444309671)
+[finished] lp85-305b61c3 state=gave_up level=1/8 score=1.82 actions=27 tokens=71418 per-level=21/17,6/38,0/31,0/16,0/41,0/60,0/26,0/159 note="tokens=71418"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 46: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 24: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 46: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 17: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 57: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 58: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 87: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=24.817882281029597)
+[finished] ka59-38d34dbb state=gave_up level=0/7 score=0.00 actions=86 tokens=102024 per-level=86/28,0/109,0/51,0/51,0/33,0/132,0/326 note="tokens=102024"
+analyzer request failed at action 124: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=83.42331821098924)
+[finished] bp35-0a0ad940 state=gave_up level=1/9 score=0.51 actions=123 tokens=100916 per-level=44/21,79/48,0/44,0/38,0/33,0/87,0/86,0/131,0/163 note="tokens=100916"
+analyzer request failed at action 57: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=175.57536816899665)
+[finished] sk48-d8078629 state=gave_up level=0/8 score=0.00 actions=56 tokens=80210 per-level=56/61,0/177,0/101,0/103,0/230,0/181,0/125,0/92 note="tokens=88914"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 49: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+[finished] cd82-fb555c5d state=gave_up level=0/6 score=0.00 actions=41 tokens=87122 per-level=41/55,0/8,0/41,0/21,0/23,0/23 note="tokens=91472"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 18: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=83.29258166998625)
+[finished] r11l-495a7899 state=gave_up level=1/6 score=4.76 actions=17 tokens=69154 per-level=4/22,13/33,0/51,0/26,0/52,0/49 note="tokens=69694"
+[finished] cn04-2fe56bfb state=gave_up level=1/6 score=2.07 actions=44 tokens=89156 per-level=44/29,0/54,0/85,0/300,0/208,0/113 note="tokens=92397"
+[finished] s5i5-18d95033 state=gave_up level=1/8 score=2.78 actions=25 tokens=66820 per-level=19/20,6/89,0/106,0/54,0/162,0/38,0/86,0/83 note="tokens=92531"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 98: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=60.351834996952675)
+[finished] ar25-0c556536 state=gave_up level=1/8 score=2.78 actions=97 tokens=89861 per-level=19/32,78/50,0/75,0/37,0/89,0/159,0/233,0/73 note="tokens=89861"
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 49: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=72.10729873494711)
+[finished] vc33-5430563c state=gave_up level=2/7 score=10.71 actions=48 tokens=89619 per-level=8/7,13/18,27/44,0/61,0/131,0/34,0/152 note="tokens=89619"
+[finished] lf52-271a04aa state=gave_up level=1/10 score=1.82 actions=57 tokens=76179 per-level=21/32,36/81,0/60,0/71,0/205,0/148,0/244,0/109,0/164,0/225 note="tokens=91361"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 53: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=70.67763821198605)
+[finished] dc22-fdcac232 state=gave_up level=0/6 score=0.00 actions=52 tokens=90082 per-level=52/59,0/102,0/67,0/98,0/324,0/578 note="tokens=90082"
+[finished] sp80-589a99af state=gave_up level=0/6 score=0.00 actions=16 tokens=29803 per-level=16/39,0/58,0/25,0/148,0/96,0/152 note="tokens=38784"
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 24: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+analyzer request failed at action 28: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=246.90552377601853)
+[finished] ls20-9607627b state=gave_up level=0/7 score=0.00 actions=27 tokens=78520 per-level=27/22,0/123,0/73,0/84,0/96,0/192,0/186 note="tokens=80219"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 90: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=53.28455634199781)
+[finished] sc25-635fd71a state=gave_up level=1/6 score=0.87 actions=89 tokens=100623 per-level=84/36,5/6,0/32,0/83,0/143,0/50 note="tokens=100623"
+analyzer request failed at action 90: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=104.39675896702101)
+[finished] re86-8af5384d state=gave_up level=1/8 score=0.82 actions=89 tokens=99738 per-level=48/26,41/42,0/86,0/108,0/189,0/139,0/424,0/241 note="tokens=99738"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 46: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=669.1535031970125)
+[finished] g50t-5849a774 state=gave_up level=0/7 score=0.00 actions=45 tokens=72538 per-level=45/78,0/175,0/179,0/230,0/96,0/54,0/67 note="tokens=75557"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 26: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+[finished] sb26-7fbdac44 state=gave_up level=1/8 score=2.78 actions=58 tokens=73831 per-level=16/18,42/28,0/18,0/19,0/31,0/23,0/58,0/18 note="tokens=80495"
+[finished] wa30-ee6fef47 state=gave_up level=0/9 score=0.00 actions=35 tokens=64104 per-level=35/71,0/119,0/183,0/98,0/368,0/68,0/79,0/442,0/415 note="tokens=101902"
+[finished] ft09-0d8bbf25 state=gave_up level=4/6 score=47.62 actions=52 tokens=82344 per-level=4/43,7/12,14/23,24/28,3/65,0/37 note="tokens=106645"
+[finished] tu93-0768757b state=gave_up level=0/9 score=0.00 actions=6 tokens=50900 per-level=6/19,0/16,0/34,0/42,0/123,0/80,0/14,0/23,0/111 note="tokens=96003"
+[finished] m0r0-492f87ba state=gave_up level=1/6 score=4.76 actions=173 tokens=83703 per-level=21/30,152/111,0/203,0/26,0/500,0/237 note="tokens=91223"
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 26: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=116.53283691999968)
+[finished] tr87-cd924810 state=gave_up level=0/6 score=0.00 actions=25 tokens=56018 per-level=25/54,0/58,0/40,0/45,0/71,0/146 note="tokens=59643"
+analyzer request failed at action 24: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=180.52220412902534)
+[finished] lp85-305b61c3 state=gave_up level=2/8 score=8.33 actions=23 tokens=62798 per-level=9/17,12/38,2/31,0/16,0/41,0/60,0/26,0/159 note="tokens=62798"
+[finished] su15-1944f8ab state=gave_up level=1/9 score=2.22 actions=103 tokens=96744 per-level=22/22,81/42,0/26,0/115,0/36,0/31,0/8,0/40,0/41 note="tokens=102989"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+[finished] g50t-5849a774 state=gave_up level=0/7 score=0.00 actions=86 tokens=92601 per-level=86/78,0/175,0/179,0/230,0/96,0/54,0/67 note="tokens=101376"
+[finished] tn36-ef4dde99 state=gave_up level=0/7 score=0.00 actions=44 tokens=77856 per-level=44/32,0/72,0/26,0/40,0/30,0/55,0/62 note="tokens=107517"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 93: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=688.9759280249709)
+[finished] ka59-38d34dbb state=gave_up level=1/7 score=0.46 actions=92 tokens=79818 per-level=78/28,14/109,0/51,0/51,0/33,0/132,0/326 note="tokens=79818"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 3: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 28: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 28: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 28: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 17: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 84: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 52: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 18: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 35: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 21: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 73: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 18: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 42: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 44: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 47: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 16: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=894.0124982650159)
+[finished] sk48-d8078629 state=gave_up level=0/8 score=0.00 actions=15 tokens=90258 per-level=15/61,0/177,0/101,0/103,0/230,0/181,0/125,0/92 note="tokens=90258"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 49: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 52: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 51: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 24: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 114: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 99: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 52: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+DEAD-GAME KILL: 0 levels after 120 actions (K=120); releasing the slot
+[finished] wa30-ee6fef47 state=gave_up level=0/9 score=0.00 actions=120 tokens=86866 per-level=120/71,0/119,0/183,0/98,0/368,0/68,0/79,0/442,0/415 note="tokens=86866"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 73: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=215.66291505203117)
+[finished] tu93-0768757b state=gave_up level=3/9 score=13.29 actions=72 tokens=88623 per-level=18/19,19/16,28/34,7/42,0/123,0/80,0/14,0/23,0/111 note="tokens=88623"
+[finished] ft09-0d8bbf25 state=gave_up level=2/6 score=14.29 actions=46 tokens=63023 per-level=22/43,7/12,17/23,0/28,0/65,0/37 note="tokens=90280"
+analyzer request failed at action 61: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+[finished] s5i5-18d95033 state=gave_up level=1/8 score=1.23 actions=60 tokens=82746 per-level=30/20,30/89,0/106,0/54,0/162,0/38,0/86,0/83 note="tokens=90247"
+[finished] sp80-589a99af state=gave_up level=0/6 score=0.00 actions=116 tokens=85246 per-level=116/39,0/58,0/25,0/148,0/96,0/152 note="tokens=88515"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 65: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=294.2559602020192)
+[finished] vc33-5430563c state=gave_up level=2/7 score=9.96 actions=64 tokens=96884 per-level=10/7,13/18,41/44,0/61,0/131,0/34,0/152 note="tokens=96884"
+[finished] lf52-271a04aa state=gave_up level=0/10 score=0.00 actions=46 tokens=92006 per-level=46/32,0/81,0/60,0/71,0/205,0/148,0/244,0/109,0/164,0/225 note="tokens=100919"
+[finished] cn04-2fe56bfb state=gave_up level=0/6 score=0.00 actions=23 tokens=59365 per-level=23/29,0/54,0/85,0/300,0/208,0/113 note="tokens=70765"
+[finished] dc22-fdcac232 state=gave_up level=1/6 score=4.76 actions=72 tokens=87976 per-level=33/59,39/102,0/67,0/98,0/324,0/578 note="tokens=89746"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+[finished] sc25-635fd71a state=gave_up level=0/6 score=0.00 actions=104 tokens=100043 per-level=104/36,0/6,0/32,0/83,0/143,0/50 note="tokens=100043"
+analyzer request failed at action 141: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=0.5654164340230636)
+[finished] tn36-ef4dde99 state=gave_up level=1/7 score=1.98 actions=140 tokens=99799 per-level=43/32,97/72,0/26,0/40,0/30,0/55,0/62 note="tokens=99799"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 87: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=77.51130895898677)
+[finished] re86-8af5384d state=gave_up level=1/8 score=0.60 actions=86 tokens=77638 per-level=56/26,30/42,0/86,0/108,0/189,0/139,0/424,0/241 note="tokens=77638"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+[finished] sb26-7fbdac44 state=gave_up level=1/8 score=2.49 actions=142 tokens=96140 per-level=19/18,123/28,0/18,0/19,0/31,0/23,0/58,0/18 note="tokens=100222"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 62: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=222.07998821797082)
+[finished] ar25-0c556536 state=gave_up level=2/8 score=8.33 actions=61 tokens=87509 per-level=16/32,13/50,32/75,0/37,0/89,0/159,0/233,0/73 note="tokens=89232"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 93: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=60.14154728199355)
+[finished] m0r0-492f87ba state=gave_up level=1/6 score=4.76 actions=92 tokens=98823 per-level=26/30,66/111,0/203,0/26,0/500,0/237 note="tokens=98823"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 68: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=252.96906350995414)
+[finished] tr87-cd924810 state=gave_up level=0/6 score=0.00 actions=67 tokens=81454 per-level=67/54,0/58,0/40,0/45,0/71,0/146 note="tokens=81454"
+[finished] bp35-0a0ad940 state=gave_up level=0/9 score=0.00 actions=20 tokens=57634 per-level=20/21,0/48,0/44,0/38,0/33,0/87,0/86,0/131,0/163 note="tokens=94824"
+[finished] g50t-5849a774 state=gave_up level=0/7 score=0.00 actions=50 tokens=72788 per-level=50/78,0/175,0/179,0/230,0/96,0/54,0/67 note="tokens=89422"
+[finished] r11l-495a7899 state=gave_up level=1/6 score=4.76 actions=23 tokens=95894 per-level=4/22,19/33,0/51,0/26,0/52,0/49 note="tokens=106289"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 57: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=102.2507012890419)
+[finished] ka59-38d34dbb state=gave_up level=1/7 score=3.57 actions=56 tokens=75692 per-level=22/28,34/109,0/51,0/51,0/33,0/132,0/326 note="tokens=75692"
+[finished] ls20-9607627b state=gave_up level=1/7 score=3.57 actions=98 tokens=64399 per-level=20/22,78/123,0/73,0/84,0/96,0/192,0/186 note="tokens=85054"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 72: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=104.4498401870369)
+[finished] s5i5-18d95033 state=gave_up level=1/8 score=1.64 actions=71 tokens=87301 per-level=26/20,45/89,0/106,0/54,0/162,0/38,0/86,0/83 note="tokens=87301"
+[finished] su15-1944f8ab state=gave_up level=1/9 score=2.22 actions=43 tokens=77853 per-level=15/22,28/42,0/26,0/115,0/36,0/31,0/8,0/40,0/41 note="tokens=105913"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 46: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=424.57137194101233)
+[finished] lp85-305b61c3 state=gave_up level=1/8 score=2.78 actions=45 tokens=94060 per-level=7/17,38/38,0/31,0/16,0/41,0/60,0/26,0/159 note="tokens=99796"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 44: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+[finished] cd82-fb555c5d state=gave_up level=0/6 score=0.00 actions=43 tokens=60156 per-level=43/55,0/8,0/41,0/21,0/23,0/23 note="tokens=78192"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 28: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+[finished] sk48-d8078629 state=gave_up level=0/8 score=0.00 actions=27 tokens=72799 per-level=27/61,0/177,0/101,0/103,0/230,0/181,0/125,0/92 note="tokens=83198"
+[finished] ls20-9607627b state=gave_up level=0/7 score=0.00 actions=55 tokens=78047 per-level=55/22,0/123,0/73,0/84,0/96,0/192,0/186 note="tokens=112804"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 8: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 39: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 25: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 74: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 22: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 40: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 38: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 82: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 44: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 38: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 104: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+[finished] bp35-0a0ad940 state=gave_up level=0/9 score=0.00 actions=32 tokens=94931 per-level=32/21,0/48,0/44,0/38,0/33,0/87,0/86,0/131,0/163 note="tokens=166179"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 16: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=132.86660718603525)
+[finished] r11l-495a7899 state=gave_up level=0/6 score=0.00 actions=15 tokens=155842 per-level=15/22,0/33,0/51,0/26,0/52,0/49 note="tokens=155842"
+[finished] cd82-fb555c5d state=gave_up level=1/6 score=4.76 actions=43 tokens=74594 per-level=5/55,38/8,0/41,0/21,0/23,0/23 note="tokens=118656"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+[finished] vc33-5430563c state=gave_up level=2/7 score=9.11 actions=90 tokens=106539 per-level=14/7,14/18,62/44,0/61,0/131,0/34,0/152 note="tokens=139360"
+[finished] ft09-0d8bbf25 state=gave_up level=0/6 score=0.00 actions=49 tokens=101734 per-level=49/43,0/12,0/23,0/28,0/65,0/37 note="tokens=119235"
+[finished] tu93-0768757b state=gave_up level=3/9 score=12.10 actions=93 tokens=151715 per-level=19/19,15/16,40/34,19/42,0/123,0/80,0/14,0/23,0/111 note="tokens=182439"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 102: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=210.6836073390441)
+[finished] dc22-fdcac232 state=gave_up level=0/6 score=0.00 actions=101 tokens=173758 per-level=101/59,0/102,0/67,0/98,0/324,0/578 note="tokens=175496"
+[finished] re86-8af5384d state=gave_up level=2/8 score=8.33 actions=61 tokens=108268 per-level=20/26,37/42,4/86,0/108,0/189,0/139,0/424,0/241 note="tokens=181447"
+[finished] tn36-ef4dde99 state=gave_up level=0/7 score=0.00 actions=76 tokens=138840 per-level=76/32,0/72,0/26,0/40,0/30,0/55,0/62 note="tokens=185088"
+[finished] lf52-271a04aa state=gave_up level=1/10 score=1.82 actions=103 tokens=105293 per-level=30/32,73/81,0/60,0/71,0/205,0/148,0/244,0/109,0/164,0/225 note="tokens=166518"
+[finished] sp80-589a99af state=gave_up level=0/6 score=0.00 actions=89 tokens=73488 per-level=89/39,0/58,0/25,0/148,0/96,0/152 note="tokens=168507"
+[finished] ar25-0c556536 state=gave_up level=2/8 score=8.33 actions=94 tokens=99143 per-level=22/32,37/50,35/75,0/37,0/89,0/159,0/233,0/73 note="tokens=188744"
+[finished] sc25-635fd71a state=gave_up level=2/6 score=6.33 actions=89 tokens=109446 per-level=20/36,20/6,49/32,0/83,0/143,0/50 note="tokens=167937"
+[finished] cn04-2fe56bfb state=gave_up level=0/6 score=0.00 actions=23 tokens=110209 per-level=23/29,0/54,0/85,0/300,0/208,0/113 note="tokens=180319"
+[finished] wa30-ee6fef47 state=gave_up level=0/9 score=0.00 actions=48 tokens=128164 per-level=48/71,0/119,0/183,0/98,0/368,0/68,0/79,0/442,0/415 note="tokens=202455"
+smoke: (ignoring movie-render OSError in teardown: Could not find a backend to open `runs/local_queue/images_on/movies/gsb26-7fbdac)
+smoke: run finished in 32377s
+smoke: 101 request-log files under runs/local_queue/images_on
+smoke: 8175 requests; longest conversation 62 msgs; new legend=True old legend=False; new glyphs in tool results=256; old-letter node colours=0
+smoke: PASS -- legend swapped and node colours arrive in the new glyphs
+smoke: summary.txt: 'benchmark: 0-history-turns\nsolver:    inference\ngames:     25\npasses:    4\nruns:      100 (won: 0)\nstarted:   2026-09-27 07:26:45\nended:     in progress\nmean score:    0.55\nmedian score:  0.00\ntotal actions: 1363\ntotal tokens:  1282903\ngenerated tokens/sec: 304.21 (job wallclock)\ntotal wallclock: 98'

@@ -1,0 +1,65 @@
+{
+  "forum_topic": {
+    "allow_attachments": true,
+    "author_id": 22037305,
+    "author_thumbnail_name": "default-thumb.png",
+    "author_user_display_name": "Leszek Góra",
+    "author_user_name": "leonixis",
+    "comment_sort": "COMMENT_LIST_SORT_BY_NEW",
+    "first_message": {
+      "id": 3547309,
+      "post_date": "2026-10-30T18:27:03.177Z",
+      "raw_markdown": "## PLE offload: the loader stalls on a single-threaded copy\n\n**Symptom.** With `--ple-offload-embedding`, loader throughput collapses to a\nfew tens of MB/s partway through the checkpoint and stays there, and nothing can\nplay until it finishes. The tell is the **per-shard** profile, not the total:\nshards without PLE tensors loaded in 8.4 s each, the ones carrying them in\n48.4 s each — a 5.7x gap inside the same checkpoint, so it is not the disk.\n\n**Cause.** `safetensors.get_tensor()` returns a lazy mmap, so the copy into the\nhost-side embedding table is not a memcpy — it is ~102 GB of page faults\n(128 tensors of 2,500,012 x 160 in bf16) issued from **one thread**, each\nwaiting on the last. The storage is fine; the single request queue is the\nbottleneck.\n\n**Fix.** Split each shard's row range across threads so the faults overlap.\nDrop-in replacement for the body of `copy_ple_rows_to_tp_embedding` in\n`qwen4_exp.py`:\n\n```python\n_dst = emb.weight.data[local_start : local_start + n_rows]\n_src = loaded_weight[src_start : src_start + n_rows]\nimport os as _os\n_nt = int(_os.environ.get(\"PLE_COPY_THREADS\", \"16\"))\nif (_nt \u003e 1\n        and _dst.device.type == \"cpu\" and _src.device.type == \"cpu\"\n        and _src.dtype == _dst.dtype\n        and n_rows \u003e= 65536):\n    from concurrent.futures import ThreadPoolExecutor as _Pool\n    _step = (n_rows + _nt - 1) // _nt\n    _spans = [(i, min(i + _step, n_rows)) for i in range(0, n_rows, _step)]\n\n    def _cp(ab, _d=_dst, _s=_src):\n        _d[ab[0]:ab[1]].copy_(_s[ab[0]:ab[1]])\n\n    with _Pool(max_workers=len(_spans)) as _ex:\n        list(_ex.map(_cp, _spans))\nelse:\n    _dst.copy_(_src.to(device=emb.weight.device, dtype=emb.weight.dtype))\n```\n\nThe guards matter: threads only help when both sides are already on CPU and the\ndtypes match, because then `copy_` is a plain memcpy over faulting pages with no\nconversion holding the GIL. Anything else falls through to the original path.\n\n**Result. After the fix the model starts playing about 10 minutes into the\nnotebook — everything included**: pip installs, model staging off the input\nmount, engine start. Two runs: ready at 9.1 and 10.1 min, against 23.1 min on\nthe same code without the patch. Underneath: `load_weight` 1134.66 s -\u003e\n**297.21 s**, `scheduler_e2e` 1312.55 s -\u003e **476.07 s**, PLE shards 48.4 s -\u003e\n**7.0 s** each. Side effect: bf16 now loads in 278 s against fp8's 600 s, so if\nyou moved the table to fp8 only to survive startup, re-measure.\n\nOne caveat: this only pays where single-stream read latency dominates — on\nlocal NVMe at ~6 GB/s single-threaded it changes nothing, because there is no\nrequest queue to fill. And it buys window, not accuracy; what the recovered time\nis worth depends on what your harness does with it.\n\nFrom there your agent is on its own. \n/slop off\ngood luck on final shots!",
+      "content": "\u003ch2\u003ePLE offload: the loader stalls on a single-threaded copy\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003eSymptom.\u003c/strong\u003e With \u003ccode\u003e--ple-offload-embedding\u003c/code\u003e, loader throughput collapses to a\nfew tens of MB/s partway through the checkpoint and stays there, and nothing can\nplay until it finishes. The tell is the \u003cstrong\u003eper-shard\u003c/strong\u003e profile, not the total:\nshards without PLE tensors loaded in 8.4 s each, the ones carrying them in\n48.4 s each — a 5.7x gap inside the same checkpoint, so it is not the disk.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eCause.\u003c/strong\u003e \u003ccode\u003esafetensors.get_tensor()\u003c/code\u003e returns a lazy mmap, so the copy into the\nhost-side embedding table is not a memcpy — it is ~102 GB of page faults\n(128 tensors of 2,500,012 x 160 in bf16) issued from \u003cstrong\u003eone thread\u003c/strong\u003e, each\nwaiting on the last. The storage is fine; the single request queue is the\nbottleneck.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eFix.\u003c/strong\u003e Split each shard's row range across threads so the faults overlap.\nDrop-in replacement for the body of \u003ccode\u003ecopy_ple_rows_to_tp_embedding\u003c/code\u003e in\n\u003ccode\u003eqwen4_exp.py\u003c/code\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e_dst = emb.weight.data[local_start : local_start + n_rows]\n_src = loaded_weight[src_start : src_start + n_rows]\nimport os as _os\n_nt = int(_os.environ.get(\"PLE_COPY_THREADS\", \"16\"))\nif (_nt &gt; 1\n        and _dst.device.type == \"cpu\" and _src.device.type == \"cpu\"\n        and _src.dtype == _dst.dtype\n        and n_rows &gt;= 65536):\n    from concurrent.futures import ThreadPoolExecutor as _Pool\n    _step = (n_rows + _nt - 1) // _nt\n    _spans = [(i, min(i + _step, n_rows)) for i in range(0, n_rows, _step)]\n\n    def _cp(ab, _d=_dst, _s=_src):\n        _d[ab[0]:ab[1]].copy_(_s[ab[0]:ab[1]])\n\n    with _Pool(max_workers=len(_spans)) as _ex:\n        list(_ex.map(_cp, _spans))\nelse:\n    _dst.copy_(_src.to(device=emb.weight.device, dtype=emb.weight.dtype))\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eThe guards matter: threads only help when both sides are already on CPU and the\ndtypes match, because then \u003ccode\u003ecopy_\u003c/code\u003e is a plain memcpy over faulting pages with no\nconversion holding the GIL. Anything else falls through to the original path.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eResult. After the fix the model starts playing about 10 minutes into the\nnotebook — everything included\u003c/strong\u003e: pip installs, model staging off the input\nmount, engine start. Two runs: ready at 9.1 and 10.1 min, against 23.1 min on\nthe same code without the patch. Underneath: \u003ccode\u003eload_weight\u003c/code\u003e 1134.66 s -&gt;\n\u003cstrong\u003e297.21 s\u003c/strong\u003e, \u003ccode\u003escheduler_e2e\u003c/code\u003e 1312.55 s -&gt; \u003cstrong\u003e476.07 s\u003c/strong\u003e, PLE shards 48.4 s -&gt;\n\u003cstrong\u003e7.0 s\u003c/strong\u003e each. Side effect: bf16 now loads in 278 s against fp8's 600 s, so if\nyou moved the table to fp8 only to survive startup, re-measure.\u003c/p\u003e\n\u003cp\u003eOne caveat: this only pays where single-stream read latency dominates — on\nlocal NVMe at ~6 GB/s single-threaded it changes nothing, because there is no\nrequest queue to fill. And it buys window, not accuracy; what the recovered time\nis worth depends on what your harness does with it.\u003c/p\u003e\n\u003cp\u003eFrom there your agent is on its own. \n/slop off\ngood luck on final shots!\u003c/p\u003e",
+      "parent": {},
+      "author": {
+        "display_name": "Leszek Góra",
+        "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png",
+        "url": "/leonixis",
+        "tier": "EXPERT",
+        "id": 22037305,
+        "progression_opt_out": false
+      },
+      "author_type": "TOPIC",
+      "votes": {
+        "total_votes": 5,
+        "can_upvote": true,
+        "can_downvote": true,
+        "total_upvotes": 5
+      },
+      "kernel_version": 0,
+      "competition_ranking": 63,
+      "feedback_tracking_data": {},
+      "is_thank_you": false,
+      "team_up_info": {
+        "team_leader": {
+          "display_name": "Leszek Góra",
+          "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png",
+          "url": "/leonixis",
+          "user_name": "leonixis",
+          "tier": "EXPERT",
+          "id": 22037305,
+          "profile_url": "/leonixis",
+          "performance_tier": "EXPERT",
+          "user_id": 22037305,
+          "progression_opt_out": false
+        },
+        "intro": ""
+      }
+    },
+    "first_message_id": 3547309,
+    "forum_id": 10403401,
+    "forum_name": "ARC Prize 2026 - ARC-AGI-3",
+    "id": 754206,
+    "name": "PLE offload: parallelise the row copy and start playing at 10 min instead of 23+// slop inside",
+    "parent_name": "arc-prize-2026-arc-agi-3",
+    "parent_url": "/competitions/arc-prize-2026-arc-agi-3",
+    "post_date": "2026-10-30T18:27:03.175203Z",
+    "total_votes": 5,
+    "url": "/competitions/arc-prize-2026-arc-agi-3/discussion/754206",
+    "author_performance_tier": "EXPERT",
+    "is_global_notifications_enabled": true,
+    "current_user_can_reply": true,
+    "author_progression_opt_out": false
+  }
+}

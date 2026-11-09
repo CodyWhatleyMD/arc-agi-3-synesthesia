@@ -1,0 +1,1337 @@
+{
+ "forum_topic": {
+  "allow_attachments": true,
+  "author_id": 12752459,
+  "author_thumbnail_name": "12752459-kg.jpeg?t=2026-10-01-17-04-29",
+  "author_user_display_name": "Yi-Chia Chen",
+  "author_user_name": "threerabbits",
+  "comments": [
+   {
+    "id": 3551152,
+    "post_date": "2026-11-06T17:31:11.173Z",
+    "raw_markdown": "I am still processing the fact that the models are extremely good (Qwen3.8-Flash-Next in this instance), and they do most of the heavy lifting. A ton of the work is just good engineering in harness+inference.\n\nI wonder what role RL training will have in the future, given this had a surprising low/modest importance in the final solution. At the beginning of the competition, I was assuming that a winning solution would look like heavy RL fine tuning of an open source LLM.",
+    "content": "<p>I am still processing the fact that the models are extremely good (Qwen3.8-Flash-Next in this instance), and they do most of the heavy lifting. A ton of the work is just good engineering in harness+inference.</p>\n<p>I wonder what role RL training will have in the future, given this had a surprising low/modest importance in the final solution. At the beginning of the competition, I was assuming that a winning solution would look like heavy RL fine tuning of an open source LLM.</p>",
+    "parent": {},
+    "author": {
+     "display_name": "Tufaben",
+     "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png",
+     "url": "/tufaben",
+     "tier": "CONTRIBUTOR",
+     "id": 34897783,
+     "progression_opt_out": false
+    },
+    "author_type": "COMMENT",
+    "votes": {
+     "can_upvote": true,
+     "can_downvote": true
+    },
+    "kernel_version": 0,
+    "feedback_tracking_data": {},
+    "is_thank_you": false
+   },
+   {
+    "id": 3551025,
+    "post_date": "2026-11-06T12:19:40.220Z",
+    "raw_markdown": "Hi Yi-Chia, congratulations on the strong result. I hope it will hold on private LB.\n\nYour writeup is dense, and easy to read. Exactly what I like to read!\n\nA question I'd have is the context length you used. What are your token limits per model requests? More generally, how do you make sure you keep kv cache prefix alive? We spent time on this, implementing various schemes. What worked best for us was to trim context when it reached 128k, keep last 30k or less.\n\nAnother question is about how you controlled the memory used for each game. \n\nLast, do you have a link to ARC-CODE? \n\n",
+    "content": "<p>Hi Yi-Chia, congratulations on the strong result. I hope it will hold on private LB.</p>\n<p>Your writeup is dense, and easy to read. Exactly what I like to read!</p>\n<p>A question I'd have is the context length you used. What are your token limits per model requests? More generally, how do you make sure you keep kv cache prefix alive? We spent time on this, implementing various schemes. What worked best for us was to trim context when it reached 128k, keep last 30k or less.</p>\n<p>Another question is about how you controlled the memory used for each game. </p>\n<p>Last, do you have a link to ARC-CODE? </p>",
+    "replies": [
+     {
+      "id": 3551085,
+      "post_date": "2026-11-06T15:13:38.780Z",
+      "raw_markdown": "Thanks, JF! Glad you enjoyed the writeup, and congratulations on your result too!\n\n**Context length and KV cache**\n\nI initially set the compaction threshold at **100k tokens**, then dynamically increased it up to **150k** as fewer games remained active. The threshold was calculated as `0.9 × KV pool size / active sessions`, clamped to 100k–150k.\n\nTo keep KV prefixes alive, I made a few changes:\n\n1. **Large KV pool:** I had a logical KV pool of **11.7M tokens**, theoretically enough to hold all 110 sessions at 100k each. In practice, sessions rarely reached their limits simultaneously, so there was plenty of headroom.\n\n2. **Session-aware KV management:** I modified Codex to attach a `session_id` to every request, and implemented session-based caching in SGLang. The cached prefix remains associated with its session across requests, including while the agent is executing tools. Codex explicitly sends `/close_session` after compaction or session termination to release the old cache. This greatly reduces the chance of different sessions evicting each other's prefixes.\n\n3. **Tokenization drift handling:** I found that decoding generated tokens into text and re-tokenizing them for the next request can produce different token IDs, even when the text is identical. This breaks exact prefix matching. My SGLang implementation compares the text against the previous session history and restores the original token IDs when they match, allowing the cached prefix to be reused.\n\n**Memory management**\n\nFor the agent's long-term memory, I used **Codex's native compaction**, where Qwen summarizes the conversation before starting a new context window. The workspace persists across compactions, so I also instructed Qwen to maintain a `notes.md` with discovered rules, failed hypotheses, and the current plan.\n\nAfter clearing each level, Qwen writes a `levels/Lxx.md` documenting the rules, successful actions, and important observations. The full game history and any scripts it wrote are also preserved on disk. After compaction, Qwen rereads these notes to recover the details that the summary might have lost.\n\nFor system RAM, each game ran in an isolated environment with a **6 GiB per-process limit** and an **8 GiB per-game watchdog**. I also monitored global memory headroom to prevent individual games from exhausting the shared resources.\n\nFinally, here's the original **ARC-CODE** repository I built on: https://github.com/jerber/arc-code\n\nThanks again for the thoughtful questions!",
+      "content": "<p>Thanks, JF! Glad you enjoyed the writeup, and congratulations on your result too!</p>\n<p><strong>Context length and KV cache</strong></p>\n<p>I initially set the compaction threshold at <strong>100k tokens</strong>, then dynamically increased it up to <strong>150k</strong> as fewer games remained active. The threshold was calculated as <code>0.9 × KV pool size / active sessions</code>, clamped to 100k–150k.</p>\n<p>To keep KV prefixes alive, I made a few changes:</p>\n<ol>\n<li><p><strong>Large KV pool:</strong> I had a logical KV pool of <strong>11.7M tokens</strong>, theoretically enough to hold all 110 sessions at 100k each. In practice, sessions rarely reached their limits simultaneously, so there was plenty of headroom.</p></li>\n<li><p><strong>Session-aware KV management:</strong> I modified Codex to attach a <code>session_id</code> to every request, and implemented session-based caching in SGLang. The cached prefix remains associated with its session across requests, including while the agent is executing tools. Codex explicitly sends <code>/close_session</code> after compaction or session termination to release the old cache. This greatly reduces the chance of different sessions evicting each other's prefixes.</p></li>\n<li><p><strong>Tokenization drift handling:</strong> I found that decoding generated tokens into text and re-tokenizing them for the next request can produce different token IDs, even when the text is identical. This breaks exact prefix matching. My SGLang implementation compares the text against the previous session history and restores the original token IDs when they match, allowing the cached prefix to be reused.</p></li>\n</ol>\n<p><strong>Memory management</strong></p>\n<p>For the agent's long-term memory, I used <strong>Codex's native compaction</strong>, where Qwen summarizes the conversation before starting a new context window. The workspace persists across compactions, so I also instructed Qwen to maintain a <code>notes.md</code> with discovered rules, failed hypotheses, and the current plan.</p>\n<p>After clearing each level, Qwen writes a <code>levels/Lxx.md</code> documenting the rules, successful actions, and important observations. The full game history and any scripts it wrote are also preserved on disk. After compaction, Qwen rereads these notes to recover the details that the summary might have lost.</p>\n<p>For system RAM, each game ran in an isolated environment with a <strong>6 GiB per-process limit</strong> and an <strong>8 GiB per-game watchdog</strong>. I also monitored global memory headroom to prevent individual games from exhausting the shared resources.</p>\n<p>Finally, here's the original <strong>ARC-CODE</strong> repository I built on: <a href=\"https://github.com/jerber/arc-code\" target=\"_blank\">https://github.com/jerber/arc-code</a></p>\n<p>Thanks again for the thoughtful questions!</p>",
+      "replies": [
+       {
+        "id": 3551234,
+        "post_date": "2026-11-06T20:27:13.243Z",
+        "raw_markdown": "How did you handle context compaction during RL?",
+        "content": "<p>How did you handle context compaction during RL?</p>",
+        "parent": {},
+        "author": {
+         "display_name": "ivan",
+         "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/502311-kg.png",
+         "url": "/sorokin",
+         "tier": "GRANDMASTER",
+         "id": 502311,
+         "progression_opt_out": false
+        },
+        "author_type": "COMMENT",
+        "votes": {
+         "can_upvote": true,
+         "can_downvote": true
+        },
+        "kernel_version": 0,
+        "competition_ranking": 3,
+        "feedback_tracking_data": {},
+        "is_thank_you": false,
+        "team_up_info": {
+         "team_leader": {
+          "display_name": "ivan",
+          "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/502311-kg.png",
+          "url": "/sorokin",
+          "user_name": "sorokin",
+          "tier": "GRANDMASTER",
+          "id": 502311,
+          "profile_url": "/sorokin",
+          "performance_tier": "GRANDMASTER",
+          "user_id": 502311,
+          "progression_opt_out": false
+         },
+         "intro": ""
+        }
+       }
+      ],
+      "parent": {},
+      "author": {
+       "display_name": "Yi-Chia Chen",
+       "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+       "url": "/threerabbits",
+       "tier": "MASTER",
+       "id": 12752459,
+       "progression_opt_out": false
+      },
+      "author_type": "TOPIC",
+      "votes": {
+       "total_votes": 2,
+       "can_upvote": true,
+       "can_downvote": true,
+       "total_upvotes": 2
+      },
+      "kernel_version": 0,
+      "competition_ranking": 1,
+      "feedback_tracking_data": {},
+      "is_thank_you": false,
+      "reactions": [
+       {
+        "emoji": "SURPRISE",
+        "featured_user_names": [
+         "sorokin"
+        ],
+        "user_count": 1
+       }
+      ],
+      "team_up_info": {
+       "team_leader": {
+        "display_name": "Yi-Chia Chen",
+        "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+        "url": "/threerabbits",
+        "user_name": "threerabbits",
+        "tier": "MASTER",
+        "id": 12752459,
+        "profile_url": "/threerabbits",
+        "performance_tier": "MASTER",
+        "user_id": 12752459,
+        "progression_opt_out": false
+       },
+       "intro": ""
+      }
+     }
+    ],
+    "parent": {},
+    "author": {
+     "display_name": "CPMP",
+     "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/75976-gr.jpg",
+     "url": "/cpmpml",
+     "tier": "GRANDMASTER",
+     "id": 75976,
+     "progression_opt_out": false
+    },
+    "author_type": "COMMENT",
+    "votes": {
+     "total_votes": 1,
+     "can_upvote": true,
+     "can_downvote": true,
+     "total_upvotes": 1
+    },
+    "kernel_version": 0,
+    "competition_ranking": 3,
+    "feedback_tracking_data": {},
+    "is_thank_you": false,
+    "team_up_info": {
+     "team_leader": {
+      "display_name": "ivan",
+      "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/502311-kg.png",
+      "url": "/sorokin",
+      "user_name": "sorokin",
+      "tier": "GRANDMASTER",
+      "id": 502311,
+      "profile_url": "/sorokin",
+      "performance_tier": "GRANDMASTER",
+      "user_id": 502311,
+      "progression_opt_out": false
+     },
+     "intro": ""
+    }
+   },
+   {
+    "id": 3550400,
+    "post_date": "2026-11-05T07:48:35.240Z",
+    "raw_markdown": "This is one of the most impressive pieces of work I've seen from a single person. Pure rabbit art.",
+    "content": "<p>This is one of the most impressive pieces of work I've seen from a single person. Pure rabbit art.</p>",
+    "parent": {},
+    "author": {
+     "display_name": "rıza temizel",
+     "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/9785820-kg.jpg?t=2024-07-17-00-54-55",
+     "url": "/rzatemizel",
+     "tier": "MASTER",
+     "id": 9785820,
+     "progression_opt_out": false
+    },
+    "author_type": "COMMENT",
+    "votes": {
+     "can_upvote": true,
+     "can_downvote": true
+    },
+    "kernel_version": 0,
+    "competition_ranking": 870,
+    "feedback_tracking_data": {},
+    "is_thank_you": false,
+    "team_up_info": {
+     "enabled": true,
+     "team_leader": {
+      "display_name": "rıza temizel",
+      "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/9785820-kg.jpg?t=2024-07-17-00-54-55",
+      "url": "/rzatemizel",
+      "user_name": "rzatemizel",
+      "tier": "MASTER",
+      "id": 9785820,
+      "profile_url": "/rzatemizel",
+      "performance_tier": "MASTER",
+      "user_id": 9785820,
+      "progression_opt_out": false
+     },
+     "intro": ""
+    }
+   },
+   {
+    "id": 3550359,
+    "post_date": "2026-11-05T06:04:33.150Z",
+    "raw_markdown": "Bravo for 1st Place @threerabbits ",
+    "content": "<p>Bravo for 1st Place <a href=\"/threerabbits\" target=\"_blank\">@threerabbits</a> </p>",
+    "parent": {},
+    "author": {
+     "display_name": "Navneet",
+     "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/15692441-kg.jpg?t=2025-05-18-07-58-06",
+     "url": "/navneetbende",
+     "tier": "CONTRIBUTOR",
+     "id": 15692441,
+     "progression_opt_out": false
+    },
+    "author_type": "COMMENT",
+    "votes": {
+     "can_upvote": true,
+     "can_downvote": true
+    },
+    "kernel_version": 0,
+    "feedback_tracking_data": {},
+    "is_thank_you": false
+   },
+   {
+    "id": 3550309,
+    "post_date": "2026-11-05T03:35:24.993Z",
+    "raw_markdown": "So rabbits are the power.... ",
+    "content": "<p>So rabbits are the power…. </p>",
+    "parent": {},
+    "author": {
+     "display_name": "Patrick Chan",
+     "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/58279-kg.jpeg",
+     "url": "/drpatrickchan",
+     "tier": "MASTER",
+     "id": 58279,
+     "progression_opt_out": false
+    },
+    "author_type": "COMMENT",
+    "votes": {
+     "can_upvote": true,
+     "can_downvote": true
+    },
+    "kernel_version": 0,
+    "competition_ranking": 206,
+    "feedback_tracking_data": {},
+    "is_thank_you": false,
+    "reactions": [
+     {
+      "emoji": "LOVE",
+      "featured_user_names": [
+       "threerabbits"
+      ],
+      "user_count": 1
+     }
+    ],
+    "team_up_info": {
+     "team_leader": {
+      "display_name": "Patrick Chan",
+      "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/58279-kg.jpeg",
+      "url": "/drpatrickchan",
+      "user_name": "drpatrickchan",
+      "tier": "MASTER",
+      "id": 58279,
+      "profile_url": "/drpatrickchan",
+      "performance_tier": "MASTER",
+      "user_id": 58279,
+      "progression_opt_out": false
+     },
+     "intro": ""
+    }
+   },
+   {
+    "id": 3550301,
+    "post_date": "2026-11-05T03:02:53.707Z",
+    "raw_markdown": "Very impressive technical work Yi-Chia! Congratulations on the well-deserved first place.\n\nYou really have optimized the throughput to the stratosphere, trained DFlash and figured out RL. You even wrote Rust to optimize the interaction with the code? This is truly as complete of a technical work as it gets!\n\nHow much was the gain that you measured from Rust? Do you find it vital in optimizing TPS for your solution?",
+    "content": "<p>Very impressive technical work Yi-Chia! Congratulations on the well-deserved first place.</p>\n<p>You really have optimized the throughput to the stratosphere, trained DFlash and figured out RL. You even wrote Rust to optimize the interaction with the code? This is truly as complete of a technical work as it gets!</p>\n<p>How much was the gain that you measured from Rust? Do you find it vital in optimizing TPS for your solution?</p>",
+    "replies": [
+     {
+      "id": 3550325,
+      "post_date": "2026-11-05T04:34:14.603Z",
+      "raw_markdown": "Thanks, Son! By Rust, I meant that Codex itself is written in Rust. Building on it let me run 110 coding agent harness instances concurrently with stable performance, low overhead, and low RAM usage, leaving more RAM for the PLE tables and offloaded KV cache!",
+      "content": "<p>Thanks, Son! By Rust, I meant that Codex itself is written in Rust. Building on it let me run 110 coding agent harness instances concurrently with stable performance, low overhead, and low RAM usage, leaving more RAM for the PLE tables and offloaded KV cache!</p>",
+      "parent": {},
+      "author": {
+       "display_name": "Yi-Chia Chen",
+       "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+       "url": "/threerabbits",
+       "tier": "MASTER",
+       "id": 12752459,
+       "progression_opt_out": false
+      },
+      "author_type": "TOPIC",
+      "votes": {
+       "total_votes": 2,
+       "can_upvote": true,
+       "can_downvote": true,
+       "total_upvotes": 2
+      },
+      "kernel_version": 0,
+      "competition_ranking": 1,
+      "feedback_tracking_data": {},
+      "is_thank_you": false,
+      "team_up_info": {
+       "team_leader": {
+        "display_name": "Yi-Chia Chen",
+        "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+        "url": "/threerabbits",
+        "user_name": "threerabbits",
+        "tier": "MASTER",
+        "id": 12752459,
+        "profile_url": "/threerabbits",
+        "performance_tier": "MASTER",
+        "user_id": 12752459,
+        "progression_opt_out": false
+       },
+       "intro": ""
+      }
+     }
+    ],
+    "parent": {},
+    "author": {
+     "display_name": "Son Pham",
+     "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/31999956-kg.jpeg?t=2026-09-30-17-20-14",
+     "url": "/sonphamorg",
+     "tier": "EXPERT",
+     "id": 31999956,
+     "progression_opt_out": false
+    },
+    "author_type": "COMMENT",
+    "votes": {
+     "total_votes": 2,
+     "can_upvote": true,
+     "can_downvote": true,
+     "total_upvotes": 2
+    },
+    "kernel_version": 0,
+    "competition_ranking": 5,
+    "feedback_tracking_data": {},
+    "is_thank_you": false,
+    "team_up_info": {
+     "team_leader": {
+      "display_name": "Son Pham",
+      "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/31999956-kg.jpeg?t=2026-09-30-17-20-14",
+      "url": "/sonphamorg",
+      "user_name": "sonphamorg",
+      "tier": "EXPERT",
+      "id": 31999956,
+      "profile_url": "/sonphamorg",
+      "performance_tier": "EXPERT",
+      "user_id": 31999956,
+      "progression_opt_out": false
+     },
+     "intro": ""
+    }
+   },
+   {
+    "id": 3550104,
+    "post_date": "2026-11-04T19:28:22.300Z",
+    "raw_markdown": "ggwp bro, ts insane i thought of using 3 bit precision but didn't expect it to work 😭 this is a good lesson tho, thanks for your overview! ",
+    "content": "<p>ggwp bro, ts insane i thought of using 3 bit precision but didn't expect it to work 😭 this is a good lesson tho, thanks for your overview! </p>",
+    "parent": {},
+    "author": {
+     "display_name": "@s3werst",
+     "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/16358599-kg.png?t=2026-06-06-18-53-08",
+     "url": "/mellamoa",
+     "tier": "CONTRIBUTOR",
+     "id": 16358599,
+     "progression_opt_out": false
+    },
+    "author_type": "COMMENT",
+    "votes": {
+     "can_upvote": true,
+     "can_downvote": true
+    },
+    "kernel_version": 0,
+    "feedback_tracking_data": {},
+    "is_thank_you": false,
+    "team_up_info": {
+     "team_leader": {
+      "display_name": "@s3werst",
+      "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/16358599-kg.png?t=2026-06-06-18-53-08",
+      "url": "/mellamoa",
+      "user_name": "mellamoa",
+      "tier": "CONTRIBUTOR",
+      "id": 16358599,
+      "profile_url": "/mellamoa",
+      "performance_tier": "CONTRIBUTOR",
+      "user_id": 16358599,
+      "progression_opt_out": false
+     },
+     "intro": "I kinda suck at this but only cuz I have NEVER done it before. If you're like me, let me know, i'd be down to do this comp together!"
+    }
+   },
+   {
+    "id": 3550100,
+    "post_date": "2026-11-04T19:23:31.210Z",
+    "raw_markdown": "Congratulations, Yi-Chia — and thank you\n\nCongratulations on a well-deserved 1st place, and thank you for such an open and clear overview. Writeups like this make the competition valuable to everyone who took part.\n\nWhat impressed us most is how the whole system fits together: no single trick, but a chain that only works as a whole. You pruned and quantized the model, recovered quality with QPAD from the full teacher, moved the KV history to host memory with HiSparse on QSA, and wrote your own kernels. That is what made 110 concurrent games possible. Treating serving as part of the solution, not just infrastructure, is something we clearly underestimated.\n\nWe also learned a lot from how you used RL. You aimed it at stages the base model could not solve at all, measured its side effect on action efficiency, and solved that by switching weights at runtime instead of picking one model. The reviewer agent for players stuck too long and the human-in-the-RSI loop with paired A/B testing and reverts are things we want to study carefully.\n\nWe still have a lot to learn here, and we are looking forward to the full technical report in the Paper Track. One question, if you have a moment: which part of the chain turned out to matter most, more than you expected?\n\nThank you again, and see you in ARC-AGI-4.",
+    "content": "<p>Congratulations, Yi-Chia — and thank you</p>\n<p>Congratulations on a well-deserved 1st place, and thank you for such an open and clear overview. Writeups like this make the competition valuable to everyone who took part.</p>\n<p>What impressed us most is how the whole system fits together: no single trick, but a chain that only works as a whole. You pruned and quantized the model, recovered quality with QPAD from the full teacher, moved the KV history to host memory with HiSparse on QSA, and wrote your own kernels. That is what made 110 concurrent games possible. Treating serving as part of the solution, not just infrastructure, is something we clearly underestimated.</p>\n<p>We also learned a lot from how you used RL. You aimed it at stages the base model could not solve at all, measured its side effect on action efficiency, and solved that by switching weights at runtime instead of picking one model. The reviewer agent for players stuck too long and the human-in-the-RSI loop with paired A/B testing and reverts are things we want to study carefully.</p>\n<p>We still have a lot to learn here, and we are looking forward to the full technical report in the Paper Track. One question, if you have a moment: which part of the chain turned out to matter most, more than you expected?</p>\n<p>Thank you again, and see you in ARC-AGI-4.</p>",
+    "replies": [
+     {
+      "id": 3550324,
+      "post_date": "2026-11-05T04:31:38.647Z",
+      "raw_markdown": "Thank you! One surprisingly helpful finding from the RSI loop was that agents often clicked the wrong coordinates when trying to interact with an object. When nothing happened, they assumed the object wasn’t clickable and could stay stuck for a long time. An LLM spotted this while analyzing traces and reported it to me, so I suggested including the pixel color at the clicked coordinates in the action result. That small change helped quite a bit in games that rely on clicking!",
+      "content": "<p>Thank you! One surprisingly helpful finding from the RSI loop was that agents often clicked the wrong coordinates when trying to interact with an object. When nothing happened, they assumed the object wasn’t clickable and could stay stuck for a long time. An LLM spotted this while analyzing traces and reported it to me, so I suggested including the pixel color at the clicked coordinates in the action result. That small change helped quite a bit in games that rely on clicking!</p>",
+      "parent": {},
+      "author": {
+       "display_name": "Yi-Chia Chen",
+       "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+       "url": "/threerabbits",
+       "tier": "MASTER",
+       "id": 12752459,
+       "progression_opt_out": false
+      },
+      "author_type": "TOPIC",
+      "votes": {
+       "total_votes": 1,
+       "can_upvote": true,
+       "can_downvote": true,
+       "total_upvotes": 1
+      },
+      "kernel_version": 0,
+      "competition_ranking": 1,
+      "feedback_tracking_data": {},
+      "is_thank_you": false,
+      "team_up_info": {
+       "team_leader": {
+        "display_name": "Yi-Chia Chen",
+        "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+        "url": "/threerabbits",
+        "user_name": "threerabbits",
+        "tier": "MASTER",
+        "id": 12752459,
+        "profile_url": "/threerabbits",
+        "performance_tier": "MASTER",
+        "user_id": 12752459,
+        "progression_opt_out": false
+       },
+       "intro": ""
+      }
+     }
+    ],
+    "parent": {},
+    "author": {
+     "display_name": "Sergei Makarov",
+     "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/29926124-kg.PNG?t=2026-09-26-05-27-07",
+     "url": "/sergueimakarov",
+     "tier": "CONTRIBUTOR",
+     "id": 29926124,
+     "progression_opt_out": false
+    },
+    "author_type": "COMMENT",
+    "votes": {
+     "total_votes": 1,
+     "can_upvote": true,
+     "can_downvote": true,
+     "total_upvotes": 1
+    },
+    "kernel_version": 0,
+    "competition_ranking": 671,
+    "feedback_tracking_data": {},
+    "is_thank_you": false,
+    "team_up_info": {
+     "team_leader": {
+      "display_name": "Sergei Makarov",
+      "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/29926124-kg.PNG?t=2026-09-26-05-27-07",
+      "url": "/sergueimakarov",
+      "user_name": "sergueimakarov",
+      "tier": "CONTRIBUTOR",
+      "id": 29926124,
+      "profile_url": "/sergueimakarov",
+      "performance_tier": "CONTRIBUTOR",
+      "user_id": 29926124,
+      "progression_opt_out": false
+     },
+     "intro": ""
+    }
+   },
+   {
+    "id": 3550096,
+    "post_date": "2026-11-04T19:18:03.300Z",
+    "raw_markdown": "Amazing work! Congratulations Yi-Chia 🎉\n\nOne question about your human in the RSI loop :\nWhich ideas actually came from the LLMs? Were they mostly harness fixes found in the traces, or did systems ideas like gEAN320, QPAD or HiSparse also come out of the loop?\n",
+    "content": "<p>Amazing work! Congratulations Yi-Chia 🎉</p>\n<p>One question about your human in the RSI loop :\nWhich ideas actually came from the LLMs? Were they mostly harness fixes found in the traces, or did systems ideas like gEAN320, QPAD or HiSparse also come out of the loop?</p>",
+    "replies": [
+     {
+      "id": 3550326,
+      "post_date": "2026-11-05T04:39:03.220Z",
+      "raw_markdown": "Thanks! Analyzing traces was indeed a big part of the LLMs’ work. For the different methods, I generally suggested the direction, and the LLMs helped work out the details. For example, while optimizing deployment, I wondered whether we could offload KV entries that weren’t currently needed to RAM. GPT Pro looked into it and basically told me, “Someone’s already done that!” That’s how I found HiSparse and ended up using it 😂",
+      "content": "<p>Thanks! Analyzing traces was indeed a big part of the LLMs’ work. For the different methods, I generally suggested the direction, and the LLMs helped work out the details. For example, while optimizing deployment, I wondered whether we could offload KV entries that weren’t currently needed to RAM. GPT Pro looked into it and basically told me, “Someone’s already done that!” That’s how I found HiSparse and ended up using it 😂</p>",
+      "replies": [
+       {
+        "id": 3550555,
+        "post_date": "2026-11-05T15:15:04.333Z",
+        "raw_markdown": "Thanks you so much\n\nIt's more impressive when you realize that even the best LLMs out there, on their own,  were nowhere near capable of that level of engineering😅\n\nLooking forward to reading your full write up so I can distill your brain into mine 🥀\n\n\n\n\n\n\n",
+        "content": "<p>Thanks you so much</p>\n<p>It's more impressive when you realize that even the best LLMs out there, on their own,  were nowhere near capable of that level of engineering😅</p>\n<p>Looking forward to reading your full write up so I can distill your brain into mine 🥀</p>",
+        "parent": {},
+        "author": {
+         "display_name": "Cakpo Vital",
+         "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/23328613-kg.jpg?t=2025-01-26-12-01-13",
+         "url": "/cakpovital",
+         "tier": "CONTRIBUTOR",
+         "id": 23328613,
+         "progression_opt_out": false
+        },
+        "author_type": "COMMENT",
+        "votes": {
+         "can_upvote": true,
+         "can_downvote": true
+        },
+        "kernel_version": 0,
+        "competition_ranking": 38,
+        "feedback_tracking_data": {},
+        "is_thank_you": false,
+        "reactions": [
+         {
+          "emoji": "THANK_YOU",
+          "featured_user_names": [
+           "threerabbits"
+          ],
+          "user_count": 1
+         }
+        ],
+        "team_up_info": {
+         "team_leader": {
+          "display_name": "Cakpo Vital",
+          "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/23328613-kg.jpg?t=2025-01-26-12-01-13",
+          "url": "/cakpovital",
+          "user_name": "cakpovital",
+          "tier": "CONTRIBUTOR",
+          "id": 23328613,
+          "profile_url": "/cakpovital",
+          "performance_tier": "CONTRIBUTOR",
+          "user_id": 23328613,
+          "progression_opt_out": false
+         },
+         "intro": ""
+        }
+       }
+      ],
+      "parent": {},
+      "author": {
+       "display_name": "Yi-Chia Chen",
+       "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+       "url": "/threerabbits",
+       "tier": "MASTER",
+       "id": 12752459,
+       "progression_opt_out": false
+      },
+      "author_type": "TOPIC",
+      "votes": {
+       "total_votes": 1,
+       "can_upvote": true,
+       "can_downvote": true,
+       "total_upvotes": 1
+      },
+      "kernel_version": 0,
+      "competition_ranking": 1,
+      "feedback_tracking_data": {},
+      "is_thank_you": false,
+      "reactions": [
+       {
+        "emoji": "THANK_YOU",
+        "featured_user_names": [
+         "cakpovital"
+        ],
+        "user_count": 1
+       }
+      ],
+      "team_up_info": {
+       "team_leader": {
+        "display_name": "Yi-Chia Chen",
+        "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+        "url": "/threerabbits",
+        "user_name": "threerabbits",
+        "tier": "MASTER",
+        "id": 12752459,
+        "profile_url": "/threerabbits",
+        "performance_tier": "MASTER",
+        "user_id": 12752459,
+        "progression_opt_out": false
+       },
+       "intro": ""
+      }
+     }
+    ],
+    "parent": {},
+    "author": {
+     "display_name": "Cakpo Vital",
+     "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/23328613-kg.jpg?t=2025-01-26-12-01-13",
+     "url": "/cakpovital",
+     "tier": "CONTRIBUTOR",
+     "id": 23328613,
+     "progression_opt_out": false
+    },
+    "author_type": "COMMENT",
+    "votes": {
+     "total_votes": 1,
+     "can_upvote": true,
+     "can_downvote": true,
+     "total_upvotes": 1
+    },
+    "kernel_version": 0,
+    "competition_ranking": 38,
+    "feedback_tracking_data": {},
+    "is_thank_you": false,
+    "team_up_info": {
+     "team_leader": {
+      "display_name": "Cakpo Vital",
+      "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/23328613-kg.jpg?t=2025-01-26-12-01-13",
+      "url": "/cakpovital",
+      "user_name": "cakpovital",
+      "tier": "CONTRIBUTOR",
+      "id": 23328613,
+      "profile_url": "/cakpovital",
+      "performance_tier": "CONTRIBUTOR",
+      "user_id": 23328613,
+      "progression_opt_out": false
+     },
+     "intro": ""
+    }
+   },
+   {
+    "id": 3550064,
+    "post_date": "2026-11-04T18:24:18.757Z",
+    "raw_markdown": "Congratulations Yi-Chia Chen! Impressive work at all levels, training, inference and harness engineering. True Cinderella story.",
+    "content": "<p>Congratulations Yi-Chia Chen! Impressive work at all levels, training, inference and harness engineering. True Cinderella story.</p>",
+    "parent": {},
+    "author": {
+     "display_name": "ivan",
+     "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/502311-kg.png",
+     "url": "/sorokin",
+     "tier": "GRANDMASTER",
+     "id": 502311,
+     "progression_opt_out": false
+    },
+    "author_type": "COMMENT",
+    "votes": {
+     "total_votes": 1,
+     "can_upvote": true,
+     "can_downvote": true,
+     "total_upvotes": 1
+    },
+    "kernel_version": 0,
+    "competition_ranking": 3,
+    "feedback_tracking_data": {},
+    "is_thank_you": false,
+    "reactions": [
+     {
+      "emoji": "YAY",
+      "featured_user_names": [
+       "chankhavu",
+       "sonphamorg"
+      ],
+      "user_count": 2
+     },
+     {
+      "emoji": "THANK_YOU",
+      "featured_user_names": [
+       "threerabbits"
+      ],
+      "user_count": 1
+     }
+    ],
+    "team_up_info": {
+     "team_leader": {
+      "display_name": "ivan",
+      "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/502311-kg.png",
+      "url": "/sorokin",
+      "user_name": "sorokin",
+      "tier": "GRANDMASTER",
+      "id": 502311,
+      "profile_url": "/sorokin",
+      "performance_tier": "GRANDMASTER",
+      "user_id": 502311,
+      "progression_opt_out": false
+     },
+     "intro": ""
+    }
+   },
+   {
+    "id": 3550061,
+    "post_date": "2026-11-04T18:16:52.140Z",
+    "raw_markdown": "That’s very pretty impressive level of engineering! I did not know you can recover aggressive pruning and quantization via self distillation. Btw, is there a reason you choose DFlash over finetuning the original MTP drafter?",
+    "content": "<p>That’s very pretty impressive level of engineering! I did not know you can recover aggressive pruning and quantization via self distillation. Btw, is there a reason you choose DFlash over finetuning the original MTP drafter?</p>",
+    "replies": [
+     {
+      "id": 3550074,
+      "post_date": "2026-11-04T18:43:04.137Z",
+      "raw_markdown": "I actually used DFlash back in AIMO3, and I really love that work! So I naturally went with DFlash again this time.",
+      "content": "<p>I actually used DFlash back in AIMO3, and I really love that work! So I naturally went with DFlash again this time.</p>",
+      "replies": [
+       {
+        "id": 3550134,
+        "post_date": "2026-11-04T20:13:50.373Z",
+        "raw_markdown": "I did read your previously writeups when you showed up on the LB. The tokenizer transplant idea is really clever.",
+        "content": "<p>I did read your previously writeups when you showed up on the LB. The tokenizer transplant idea is really clever.</p>",
+        "parent": {},
+        "author": {
+         "display_name": "xz",
+         "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/17460940-kg.png?t=2026-11-02-00-31-28",
+         "url": "/xiaoz259",
+         "tier": "MASTER",
+         "id": 17460940,
+         "progression_opt_out": false
+        },
+        "author_type": "COMMENT",
+        "votes": {
+         "total_votes": 1,
+         "can_upvote": true,
+         "can_downvote": true,
+         "total_upvotes": 1
+        },
+        "kernel_version": 0,
+        "competition_ranking": 4,
+        "feedback_tracking_data": {},
+        "is_thank_you": false,
+        "reactions": [
+         {
+          "emoji": "THANK_YOU",
+          "featured_user_names": [
+           "threerabbits"
+          ],
+          "user_count": 1
+         },
+         {
+          "emoji": "LOVE",
+          "featured_user_names": [
+           "threerabbits"
+          ],
+          "user_count": 1
+         }
+        ],
+        "team_up_info": {
+         "team_leader": {
+          "display_name": "xz",
+          "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/17460940-kg.png?t=2026-11-02-00-31-28",
+          "url": "/xiaoz259",
+          "user_name": "xiaoz259",
+          "tier": "MASTER",
+          "id": 17460940,
+          "profile_url": "/xiaoz259",
+          "performance_tier": "MASTER",
+          "user_id": 17460940,
+          "progression_opt_out": false
+         },
+         "intro": ""
+        }
+       }
+      ],
+      "parent": {},
+      "author": {
+       "display_name": "Yi-Chia Chen",
+       "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+       "url": "/threerabbits",
+       "tier": "MASTER",
+       "id": 12752459,
+       "progression_opt_out": false
+      },
+      "author_type": "TOPIC",
+      "votes": {
+       "total_votes": 1,
+       "can_upvote": true,
+       "can_downvote": true,
+       "total_upvotes": 1
+      },
+      "kernel_version": 0,
+      "competition_ranking": 1,
+      "feedback_tracking_data": {},
+      "is_thank_you": false,
+      "team_up_info": {
+       "team_leader": {
+        "display_name": "Yi-Chia Chen",
+        "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+        "url": "/threerabbits",
+        "user_name": "threerabbits",
+        "tier": "MASTER",
+        "id": 12752459,
+        "profile_url": "/threerabbits",
+        "performance_tier": "MASTER",
+        "user_id": 12752459,
+        "progression_opt_out": false
+       },
+       "intro": ""
+      }
+     },
+     {
+      "id": 3550258,
+      "post_date": "2026-11-05T01:21:48.687Z",
+      "raw_markdown": "DFlash is easier to train than MTP and can yield better results at longer context if you train it enough for a specific task. What still surprises me is that you can sustain DFlash effectiveness even over large  inference batches.\n\nAnd that initialization of DFlash with MTP weights... Honestly, how do you even come up with such ideas??????",
+      "content": "<p>DFlash is easier to train than MTP and can yield better results at longer context if you train it enough for a specific task. What still surprises me is that you can sustain DFlash effectiveness even over large  inference batches.</p>\n<p>And that initialization of DFlash with MTP weights… Honestly, how do you even come up with such ideas??????</p>",
+      "replies": [
+       {
+        "id": 3550327,
+        "post_date": "2026-11-05T04:45:12.537Z",
+        "raw_markdown": "Thanks! I think the batch sizes I’m running are still bandwidth-bound, so there’s still room for speculative decoding to help before hitting the compute limit. As for the initialization, if you think about the case where the number of draft tokens is 1, MTP and DFlash are almost the same, so MTP weights seemed like a natural starting point!",
+        "content": "<p>Thanks! I think the batch sizes I’m running are still bandwidth-bound, so there’s still room for speculative decoding to help before hitting the compute limit. As for the initialization, if you think about the case where the number of draft tokens is 1, MTP and DFlash are almost the same, so MTP weights seemed like a natural starting point!</p>",
+        "parent": {},
+        "author": {
+         "display_name": "Yi-Chia Chen",
+         "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+         "url": "/threerabbits",
+         "tier": "MASTER",
+         "id": 12752459,
+         "progression_opt_out": false
+        },
+        "author_type": "TOPIC",
+        "votes": {
+         "total_votes": 1,
+         "can_upvote": true,
+         "can_downvote": true,
+         "total_upvotes": 1
+        },
+        "kernel_version": 0,
+        "competition_ranking": 1,
+        "feedback_tracking_data": {},
+        "is_thank_you": false,
+        "team_up_info": {
+         "team_leader": {
+          "display_name": "Yi-Chia Chen",
+          "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+          "url": "/threerabbits",
+          "user_name": "threerabbits",
+          "tier": "MASTER",
+          "id": 12752459,
+          "profile_url": "/threerabbits",
+          "performance_tier": "MASTER",
+          "user_id": 12752459,
+          "progression_opt_out": false
+         },
+         "intro": ""
+        }
+       }
+      ],
+      "parent": {},
+      "author": {
+       "display_name": "Chan Kha Vu",
+       "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2270821-kg.jpg",
+       "url": "/chankhavu",
+       "tier": "MASTER",
+       "id": 2270821,
+       "progression_opt_out": false
+      },
+      "author_type": "COMMENT",
+      "votes": {
+       "total_votes": 1,
+       "can_upvote": true,
+       "can_downvote": true,
+       "total_upvotes": 1
+      },
+      "kernel_version": 0,
+      "feedback_tracking_data": {},
+      "is_thank_you": false,
+      "team_up_info": {
+       "team_leader": {
+        "display_name": "Chan Kha Vu",
+        "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2270821-kg.jpg",
+        "url": "/chankhavu",
+        "user_name": "chankhavu",
+        "tier": "MASTER",
+        "id": 2270821,
+        "profile_url": "/chankhavu",
+        "performance_tier": "MASTER",
+        "user_id": 2270821,
+        "progression_opt_out": false
+       },
+       "intro": ""
+      }
+     }
+    ],
+    "parent": {},
+    "author": {
+     "display_name": "xz",
+     "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/17460940-kg.png?t=2026-11-02-00-31-28",
+     "url": "/xiaoz259",
+     "tier": "MASTER",
+     "id": 17460940,
+     "progression_opt_out": false
+    },
+    "author_type": "COMMENT",
+    "votes": {
+     "total_votes": 2,
+     "can_upvote": true,
+     "can_downvote": true,
+     "total_upvotes": 2
+    },
+    "kernel_version": 0,
+    "competition_ranking": 4,
+    "feedback_tracking_data": {},
+    "is_thank_you": false,
+    "team_up_info": {
+     "team_leader": {
+      "display_name": "xz",
+      "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/17460940-kg.png?t=2026-11-02-00-31-28",
+      "url": "/xiaoz259",
+      "user_name": "xiaoz259",
+      "tier": "MASTER",
+      "id": 17460940,
+      "profile_url": "/xiaoz259",
+      "performance_tier": "MASTER",
+      "user_id": 17460940,
+      "progression_opt_out": false
+     },
+     "intro": ""
+    }
+   },
+   {
+    "id": 3550035,
+    "post_date": "2026-11-04T17:41:44.293Z",
+    "raw_markdown": "Congratulations on first place on the public leaderboard!\n\nDo you have any idea how much using the RL-trained model for the last 3 hours added to your score, compared to not using it at all? This seems to be the most fundamental difference between our approaches.",
+    "content": "<p>Congratulations on first place on the public leaderboard!</p>\n<p>Do you have any idea how much using the RL-trained model for the last 3 hours added to your score, compared to not using it at all? This seems to be the most fundamental difference between our approaches.</p>",
+    "replies": [
+     {
+      "id": 3550054,
+      "post_date": "2026-11-04T18:00:30.050Z",
+      "raw_markdown": "Thanks! Unfortunately, I don’t have enough A/B testing to quantify the actual score gain. I used all the public games for RL training, so they weren’t suitable for unbiased evaluation, and I changed quite a few things between Kaggle submissions, making it hard to isolate the effect of RL 😅",
+      "content": "<p>Thanks! Unfortunately, I don’t have enough A/B testing to quantify the actual score gain. I used all the public games for RL training, so they weren’t suitable for unbiased evaluation, and I changed quite a few things between Kaggle submissions, making it hard to isolate the effect of RL 😅</p>",
+      "parent": {},
+      "author": {
+       "display_name": "Yi-Chia Chen",
+       "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+       "url": "/threerabbits",
+       "tier": "MASTER",
+       "id": 12752459,
+       "progression_opt_out": false
+      },
+      "author_type": "TOPIC",
+      "votes": {
+       "total_votes": 1,
+       "can_upvote": true,
+       "can_downvote": true,
+       "total_upvotes": 1
+      },
+      "kernel_version": 0,
+      "competition_ranking": 1,
+      "feedback_tracking_data": {},
+      "is_thank_you": false,
+      "team_up_info": {
+       "team_leader": {
+        "display_name": "Yi-Chia Chen",
+        "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+        "url": "/threerabbits",
+        "user_name": "threerabbits",
+        "tier": "MASTER",
+        "id": 12752459,
+        "profile_url": "/threerabbits",
+        "performance_tier": "MASTER",
+        "user_id": 12752459,
+        "progression_opt_out": false
+       },
+       "intro": ""
+      }
+     }
+    ],
+    "parent": {},
+    "author": {
+     "display_name": "Jeroen Cottaar",
+     "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/14984949-kg.jpg?t=2024-09-29-14-54-24",
+     "url": "/jeroencottaar",
+     "tier": "GRANDMASTER",
+     "id": 14984949,
+     "progression_opt_out": false
+    },
+    "author_type": "COMMENT",
+    "votes": {
+     "total_votes": 2,
+     "can_upvote": true,
+     "can_downvote": true,
+     "total_upvotes": 2
+    },
+    "kernel_version": 0,
+    "competition_ranking": 2,
+    "feedback_tracking_data": {},
+    "is_thank_you": false,
+    "team_up_info": {
+     "team_leader": {
+      "display_name": "Jeroen Cottaar",
+      "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/14984949-kg.jpg?t=2024-09-29-14-54-24",
+      "url": "/jeroencottaar",
+      "user_name": "jeroencottaar",
+      "tier": "GRANDMASTER",
+      "id": 14984949,
+      "profile_url": "/jeroencottaar",
+      "performance_tier": "GRANDMASTER",
+      "user_id": 14984949,
+      "progression_opt_out": false
+     },
+     "intro": ""
+    }
+   },
+   {
+    "id": 3550027,
+    "post_date": "2026-11-04T17:36:21.430Z",
+    "raw_markdown": "@threerabbits Thank you for the great post - your work is an inspiration. \n\n> aiming to help the model overcome stages where it would otherwise remain stuck for extended periods\n\nI am wondering whether you look to get unstuck, or to solve hard game levels from the start. ie. whether a rollout starts fresh at the beginning of a hard stage, or from a stuck state: a long context full of failed attempts.",
+    "content": "<p><a href=\"/threerabbits\" target=\"_blank\">@threerabbits</a> Thank you for the great post - your work is an inspiration. </p>\n<blockquote>\n  <p>aiming to help the model overcome stages where it would otherwise remain stuck for extended periods</p>\n</blockquote>\n<p>I am wondering whether you look to get unstuck, or to solve hard game levels from the start. ie. whether a rollout starts fresh at the beginning of a hard stage, or from a stuck state: a long context full of failed attempts.</p>",
+    "replies": [
+     {
+      "id": 3550048,
+      "post_date": "2026-11-04T17:54:33.640Z",
+      "raw_markdown": "Both! I collected several gameplay snapshots at different points, including fresh starts and stuck states, and used them as rollout starting points. The goal was to train the model to clear the stage within a limited token budget.",
+      "content": "<p>Both! I collected several gameplay snapshots at different points, including fresh starts and stuck states, and used them as rollout starting points. The goal was to train the model to clear the stage within a limited token budget.</p>",
+      "parent": {},
+      "author": {
+       "display_name": "Yi-Chia Chen",
+       "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+       "url": "/threerabbits",
+       "tier": "MASTER",
+       "id": 12752459,
+       "progression_opt_out": false
+      },
+      "author_type": "TOPIC",
+      "votes": {
+       "can_upvote": true,
+       "can_downvote": true
+      },
+      "kernel_version": 0,
+      "competition_ranking": 1,
+      "feedback_tracking_data": {},
+      "is_thank_you": false,
+      "team_up_info": {
+       "team_leader": {
+        "display_name": "Yi-Chia Chen",
+        "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+        "url": "/threerabbits",
+        "user_name": "threerabbits",
+        "tier": "MASTER",
+        "id": 12752459,
+        "profile_url": "/threerabbits",
+        "performance_tier": "MASTER",
+        "user_id": 12752459,
+        "progression_opt_out": false
+       },
+       "intro": ""
+      }
+     }
+    ],
+    "parent": {},
+    "author": {
+     "display_name": "Darragh",
+     "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/213493-kg.jpeg",
+     "url": "/darraghdog",
+     "tier": "GRANDMASTER",
+     "id": 213493,
+     "progression_opt_out": false
+    },
+    "author_type": "COMMENT",
+    "votes": {
+     "total_votes": 1,
+     "can_upvote": true,
+     "can_downvote": true,
+     "total_upvotes": 1
+    },
+    "kernel_version": 0,
+    "competition_ranking": 3,
+    "feedback_tracking_data": {},
+    "is_thank_you": false,
+    "team_up_info": {
+     "team_leader": {
+      "display_name": "ivan",
+      "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/502311-kg.png",
+      "url": "/sorokin",
+      "user_name": "sorokin",
+      "tier": "GRANDMASTER",
+      "id": 502311,
+      "profile_url": "/sorokin",
+      "performance_tier": "GRANDMASTER",
+      "user_id": 502311,
+      "progression_opt_out": false
+     },
+     "intro": ""
+    }
+   },
+   {
+    "id": 3550016,
+    "post_date": "2026-11-04T17:25:00.610Z",
+    "raw_markdown": "Funny to see that we had exact same threshold: 6 hours for speed and 3 hrs for quality switch. \n\nWere you able to see any benefits from harness changes? Like \"incorporating view_video, game interaction tools, persistent gameplay history, and a reviewer system.\". I tried a lot that and a lots of similiar systems but without any noticible effect. \n\nSpecially interested about \n\"Reviewer System: I designed a read-only reviewer agent to assist players stuck for extended periods. If a player remained on the same stage for more than 45 minutes, the system would launch a reviewer to inspect the player’s workspace and gameplay history, then provide suggestions to help it progress.\"\n\nI tried a lot there... Lots of different approaches. Swarm of agnets. Readonly companions. Exploration of several trayectories from same point. But nothing helped.\n\nBtw \"110 concurrent game sessions, and an end-to-end decode throughput of around 3,800 tokens/s.\" - does that includes the prefill steps? Or its pure decode?  And how much lines/tokens per second you were able to get after the switch? \n\nAnd congrats!",
+    "content": "<p>Funny to see that we had exact same threshold: 6 hours for speed and 3 hrs for quality switch. </p>\n<p>Were you able to see any benefits from harness changes? Like \"incorporating view_video, game interaction tools, persistent gameplay history, and a reviewer system.\". I tried a lot that and a lots of similiar systems but without any noticible effect. </p>\n<p>Specially interested about \n\"Reviewer System: I designed a read-only reviewer agent to assist players stuck for extended periods. If a player remained on the same stage for more than 45 minutes, the system would launch a reviewer to inspect the player’s workspace and gameplay history, then provide suggestions to help it progress.\"</p>\n<p>I tried a lot there… Lots of different approaches. Swarm of agnets. Readonly companions. Exploration of several trayectories from same point. But nothing helped.</p>\n<p>Btw \"110 concurrent game sessions, and an end-to-end decode throughput of around 3,800 tokens/s.\" - does that includes the prefill steps? Or its pure decode?  And how much lines/tokens per second you were able to get after the switch? </p>\n<p>And congrats!</p>",
+    "replies": [
+     {
+      "id": 3550043,
+      "post_date": "2026-11-04T17:49:20.157Z",
+      "raw_markdown": "Haha, great minds think alike! 😂\n\nYes! My modified Codex harness performed noticeably better than Duck, especially when it came to clearing later stages.\n\nThe reviewer system was also helpful. From looking at the traces, I could see cases where the reviewer helped the player find a breakthrough after being stuck for a long time.\n\nThe 3,800 tokens/s was calculated as total generated tokens divided by 2 hours, measured over a 2-hour run on Kaggle. So it reflects the actual end-to-end generation throughput, including prefill overhead.\n\nAnd switching models didn’t affect throughput, so the TPS stayed roughly the same after the switch!\n\nThanks, and congrats to you too! 🎉",
+      "content": "<p>Haha, great minds think alike! 😂</p>\n<p>Yes! My modified Codex harness performed noticeably better than Duck, especially when it came to clearing later stages.</p>\n<p>The reviewer system was also helpful. From looking at the traces, I could see cases where the reviewer helped the player find a breakthrough after being stuck for a long time.</p>\n<p>The 3,800 tokens/s was calculated as total generated tokens divided by 2 hours, measured over a 2-hour run on Kaggle. So it reflects the actual end-to-end generation throughput, including prefill overhead.</p>\n<p>And switching models didn’t affect throughput, so the TPS stayed roughly the same after the switch!</p>\n<p>Thanks, and congrats to you too! 🎉</p>",
+      "parent": {},
+      "author": {
+       "display_name": "Yi-Chia Chen",
+       "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+       "url": "/threerabbits",
+       "tier": "MASTER",
+       "id": 12752459,
+       "progression_opt_out": false
+      },
+      "author_type": "TOPIC",
+      "votes": {
+       "total_votes": 3,
+       "can_upvote": true,
+       "can_downvote": true,
+       "total_upvotes": 3
+      },
+      "kernel_version": 0,
+      "competition_ranking": 1,
+      "feedback_tracking_data": {},
+      "is_thank_you": false,
+      "reactions": [
+       {
+        "emoji": "LOVE",
+        "featured_user_names": [
+         "grigoriyzatravkin",
+         "fishcat37"
+        ],
+        "user_count": 2
+       }
+      ],
+      "team_up_info": {
+       "team_leader": {
+        "display_name": "Yi-Chia Chen",
+        "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+        "url": "/threerabbits",
+        "user_name": "threerabbits",
+        "tier": "MASTER",
+        "id": 12752459,
+        "profile_url": "/threerabbits",
+        "performance_tier": "MASTER",
+        "user_id": 12752459,
+        "progression_opt_out": false
+       },
+       "intro": ""
+      }
+     }
+    ],
+    "parent": {},
+    "author": {
+     "display_name": "Grigoriy Zatravkin",
+     "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png",
+     "url": "/grigoriyzatravkin",
+     "tier": "CONTRIBUTOR",
+     "id": 6040016,
+     "progression_opt_out": false
+    },
+    "author_type": "COMMENT",
+    "votes": {
+     "total_votes": 1,
+     "can_upvote": true,
+     "can_downvote": true,
+     "total_upvotes": 1
+    },
+    "kernel_version": 0,
+    "competition_ranking": 6,
+    "feedback_tracking_data": {},
+    "is_thank_you": false,
+    "team_up_info": {
+     "team_leader": {
+      "display_name": "Grigoriy Zatravkin",
+      "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png",
+      "url": "/grigoriyzatravkin",
+      "user_name": "grigoriyzatravkin",
+      "tier": "CONTRIBUTOR",
+      "id": 6040016,
+      "profile_url": "/grigoriyzatravkin",
+      "performance_tier": "CONTRIBUTOR",
+      "user_id": 6040016,
+      "progression_opt_out": false
+     },
+     "intro": ""
+    }
+   },
+   {
+    "id": 3550307,
+    "post_date": "2026-11-05T03:23:23.087Z",
+    "raw_markdown": "congratulations!!!!",
+    "content": "<p>congratulations!!!!</p>",
+    "parent": {},
+    "author": {
+     "display_name": "Tanmay Sah",
+     "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2204048-gp.jpg",
+     "url": "/tanmaysah",
+     "tier": "CONTRIBUTOR",
+     "id": 2204048,
+     "progression_opt_out": false
+    },
+    "author_type": "COMMENT",
+    "votes": {
+     "can_upvote": true,
+     "can_downvote": true
+    },
+    "kernel_version": 0,
+    "competition_ranking": 543,
+    "feedback_tracking_data": {},
+    "is_thank_you": true,
+    "team_up_info": {
+     "team_leader": {
+      "display_name": "Tanmay Sah",
+      "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2204048-gp.jpg",
+      "url": "/tanmaysah",
+      "user_name": "tanmaysah",
+      "tier": "CONTRIBUTOR",
+      "id": 2204048,
+      "profile_url": "/tanmaysah",
+      "performance_tier": "CONTRIBUTOR",
+      "user_id": 2204048,
+      "progression_opt_out": false
+     },
+     "intro": ""
+    }
+   }
+  ],
+  "comment_sort": "COMMENT_LIST_SORT_BY_NEW",
+  "first_message": {
+   "id": 3550006,
+   "post_date": "2026-11-04T17:04:05.703Z",
+   "raw_markdown": "Hi everyone! ARC-AGI-3 has finally come to an end, and I’d like to share an overview of the methods and system architecture I used in this competition.\n\nIt has been a great experience seeing everyone explore ARC-AGI-3 from so many different directions over the past few months. This post provides an overview of my solution and the ideas behind it.\n\n## 1. Overview\n\nMy solution consists of four main components:\n\n1. **Model Compression:** Starting from Qwen3.8-Flash-Next, I applied gEAN320 expert pruning, INT3 W3A8 quantization, INT5 PLE compression, and Quantization & Pruning-Aware Distillation (QPAD). I also trained an efficient DFlash speculative decoding drafter.\n\n2. **Inference Infrastructure:** Based on SGLang, I developed various optimizations for the RTX PRO 6000, including QSA HiSparse, NVFP4 KV cache, Humming INT3 MoE, DFlash speculative decoding, and GPU/host memory management. The final system supports an effective KV pool of approximately 11.7M tokens, 110 concurrent game sessions, and an end-to-end decode throughput of around 3,800 tokens/s. I also implemented runtime weight switching, allowing model weights to be changed while games are running.\n\n3. **Agent Harness:** I built a Codex-based agent harness inspired by ARC-Code and VISTA, incorporating `view_video`, game interaction tools, persistent gameplay history, and a reviewer system. Codex’s Rust implementation allowed me to efficiently run 110 concurrent agent sessions. Throughout the competition, I continuously improved the harness through human-in-the-loop Recursive Self-Improvement (RSI), analyzing failure cases and iterating on the system.\n\n4. **Reinforcement Learning:** I found that the base model already had strong game understanding and interaction capabilities, with most of the remaining score loss coming from difficult stages it could not solve. I therefore focused on hard-stage reasoning using GRPO-based Agentic RL. While RL improved the model’s ability to overcome difficult stages, it also reduced action efficiency. My final submission used a two-stage strategy: running the base model for the first six hours, then switching to the RL model in place for the remaining three hours to focus on difficult stages.\n\nThe overall approach combines efficient long-context parallel inference, a continuously improved agent harness, and RL targeted at difficult stages.\n\n## 2. Infrastructure\n\n### 2.1 Model Compression\n\nLike many other participants, I used Qwen3.8-Flash-Next as the base model. To deploy it on the RTX PRO 6000, I applied the following compression techniques:\n\n- **gEAN320 Expert Pruning:** Pruned the original 512 MoE experts down to 320.\n- **INT3 W3A8 Quantization:** For the MoE experts, I used GPTQ with INT3 weight quantization (group size 128) and FP8 activations (W3A8). Attention and GDN projections were quantized using block-FP8.\n- **Quantization & Pruning-Aware Distillation (QPAD):** I used the original unpruned 512-expert FP8 model as the teacher and performed KL distillation over the top-32 logits to recover capabilities lost during pruning and quantization.\n- **INT5 PLE Compression:** The model contains approximately 51B parameters in its n-gram embeddings (PLE), stored in host pinned memory. I converted the PLE weights from FP8 to INT5 during loading.\n- **DFlash Drafter:** I trained my own DFlash speculative decoding drafter and developed an initialization method using the existing MTP weights. With MTP initialization, the held-out expected acceptance length reached 3.06 after 1,000 training steps, compared to only 2.17 with random initialization. The final deployment used an 8-layer FP8 drafter with K=4, achieving an average acceptance length of approximately 3.1 on Kaggle.\n\n### 2.2 Unified SGLang Serving Stack\n\nI integrated all serving modifications into a single private SGLang fork. This serving stack supports Kaggle L4×4, RTX PRO 6000, and B200 GPUs used for RL training. Hardware-specific optimizations are controlled through opt-in flags, allowing all modifications to be developed and tested continuously on the same main branch.\n\n### 2.3 RTX PRO 6000 Serving Optimization\n\nThe main optimizations include:\n\n- **QSA HiSparse:** I integrated HiSparse into Qwen Sparse Attention. The complete KV history is stored in host memory, while the GPU retains only the hot regions currently needed for attention.\n- **NVFP4 KV Cache:** Implemented NVFP4 KV kernels for the RTX PRO 6000’s SM120 architecture.\n- **Humming INT3 W3A8 MoE:** Used Humming kernels to execute INT3 MoE experts.\n- **Dense Layer Optimization:** Used CUTLASS block-FP8 kernels for non-MoE dense layers.\n- **DFlash Speculative Decoding:** Used K=4 and reduced the drafter vocabulary to 16k.\n- **Host Memory Management:** Used private memory pages to address repeated Linux `kcompactd` page compaction during long-running serving sessions.\n\nI also made a series of GPU memory optimizations to support 110 concurrent game sessions reliably. Finally, I implemented runtime weight switching to update model weights during execution. The RL checkpoint required updating only 516 changed tensors, and the actual switching process paused gameplay for just 0.33 seconds.\n\n**Final Serving Performance:**\n\n- **Effective KV Pool:** 11.7M tokens\n- **Concurrent Game Sessions:** 110\n- **Peak Decode Throughput:** ~5,000 tokens/s\n- **End-to-End Decode Throughput:** ~3,800 tokens/s\n\n## 3. Agent Harness\n\n### 3.1 Codex-based Harness\n\nMy harness was inspired by ARC-Code and built on top of Codex as the agent infrastructure. Two important components were:\n\n- **Persistent Game History:** Inspired by VISTA, I preserved the game screens, animations, and action records from every step, allowing the agent to revisit previous observations at any time.\n- **Reviewer System:** I designed a read-only reviewer agent to assist players stuck for extended periods. If a player remained on the same stage for more than 45 minutes, the system would launch a reviewer to inspect the player’s workspace and gameplay history, then provide suggestions to help it progress.\n\n### 3.2 Human-in-the-RSI-Loop\n\nThroughout the competition, I continuously optimized the harness through human-in-the-loop Recursive Self-Improvement (RSI). LLMs were responsible for analyzing agent trajectories, identifying issues, proposing improvements, and helping implement changes. My role was to review modifications, plan experiments, and decide whether to accept them.\n\nThe basic workflow was:\n\n**Run → Collect Traces → Analyze → Propose Changes → Human Review → Paired A/B Testing → Accept / Revert**\n\nOver the past few months, I repeatedly worked with LLMs to analyze failures, modify the system, run tests, and revert unsuccessful changes. Looking back, the entire development process was itself one big human-in-the-RSI-loop experiment 😂\n\n## 4. Model Training: RL for Hard-Stage Reasoning\n\n### 4.1 Why RL for Hard Stages?\n\nThrough extensive game testing, I found that the base model already had strong game understanding and interaction capabilities. In local tests on public games, the base model was approximately 20–23 points short of a perfect score, with 18–20 points of that gap coming from stages it could not solve at all.\n\nI therefore focused RL training on improving hard-stage solving capability, aiming to help the model overcome stages where it would otherwise remain stuck for extended periods. I used GRPO-based Agentic RL to train the model to explore and reason through difficult game states.\n\n### 4.2 RL Training\n\nTraining started from the QAD checkpoint and used 8×B200 GPUs, with 4 GPUs dedicated to rollouts and 4 to training. Each training step consisted of 16 groups × 16 rollouts. I trained for a total of 20 steps, taking approximately 9 hours.\n\nRL improved the model’s ability to solve difficult stages, but the main issue was a decrease in action efficiency. Among successful runs, the proportion whose action count exceeded the human baseline increased from 16% (base model) to 26% (RL model). Based on these results, I decided to use the two models at different stages of the final submission.\n\n### 4.3 Runtime Model Switching\n\nThe final submission used a two-stage configuration:\n\n- **Stage 1 — Base Model (First 6 Hours):** Run games using the QAD model, taking advantage of its better action efficiency to complete easy and medium-difficulty stages.\n- **Stage 2 — RL Model (Final 3 Hours):** At the six-hour mark, switch to the RL model through SGLang runtime weight switching, allowing the remaining time to focus on difficult stages.\n\n## 5. Acknowledgements\n\nFirst, special thanks to Simon Frieder and the Fields Model Initiative’s support throughout this competition! Fields Model Initiative is a nonprofit research initiative founded by Simon, dedicated to advancing fully open mathematical AI research, including models, training data, evaluation methods, and tools.\n\nI’m also very grateful to Kawahara Lab at Waseda University and Prof. Daisuke Kawahara for their guidance during my time at Waseda, as well as NTU AI² Lab and Prof. Chu-Song Chen for their continued support. I’d also like to thank Bruno Bowden and Lambda for their generous support!\n\nOf course, I also have to thank my two rabbits, Sanbei and Pochi, for keeping me company through these busy months of competition 🐰. Thank you to everyone who reached out, encouraged me, and followed my progress. Your messages and support really meant a lot to me!\n\nAnd finally, thanks to ARC Prize, Kaggle, all the organizers, and fellow participants for making this such a memorable experience.\n\n## 6. Closing\n\nThis post was written in collaboration with LLMs. I’ve reviewed and edited it, but I can’t guarantee that every detail is complete or accurate. I’ll share a more detailed technical report, including implementation details and experimental analysis, in the Paper Track.\n\nWriting is so hard 🫠",
+   "content": "<p>Hi everyone! ARC-AGI-3 has finally come to an end, and I’d like to share an overview of the methods and system architecture I used in this competition.</p>\n<p>It has been a great experience seeing everyone explore ARC-AGI-3 from so many different directions over the past few months. This post provides an overview of my solution and the ideas behind it.</p>\n<h2>1. Overview</h2>\n<p>My solution consists of four main components:</p>\n<ol>\n<li><p><strong>Model Compression:</strong> Starting from Qwen3.8-Flash-Next, I applied gEAN320 expert pruning, INT3 W3A8 quantization, INT5 PLE compression, and Quantization &amp; Pruning-Aware Distillation (QPAD). I also trained an efficient DFlash speculative decoding drafter.</p></li>\n<li><p><strong>Inference Infrastructure:</strong> Based on SGLang, I developed various optimizations for the RTX PRO 6000, including QSA HiSparse, NVFP4 KV cache, Humming INT3 MoE, DFlash speculative decoding, and GPU/host memory management. The final system supports an effective KV pool of approximately 11.7M tokens, 110 concurrent game sessions, and an end-to-end decode throughput of around 3,800 tokens/s. I also implemented runtime weight switching, allowing model weights to be changed while games are running.</p></li>\n<li><p><strong>Agent Harness:</strong> I built a Codex-based agent harness inspired by ARC-Code and VISTA, incorporating <code>view_video</code>, game interaction tools, persistent gameplay history, and a reviewer system. Codex’s Rust implementation allowed me to efficiently run 110 concurrent agent sessions. Throughout the competition, I continuously improved the harness through human-in-the-loop Recursive Self-Improvement (RSI), analyzing failure cases and iterating on the system.</p></li>\n<li><p><strong>Reinforcement Learning:</strong> I found that the base model already had strong game understanding and interaction capabilities, with most of the remaining score loss coming from difficult stages it could not solve. I therefore focused on hard-stage reasoning using GRPO-based Agentic RL. While RL improved the model’s ability to overcome difficult stages, it also reduced action efficiency. My final submission used a two-stage strategy: running the base model for the first six hours, then switching to the RL model in place for the remaining three hours to focus on difficult stages.</p></li>\n</ol>\n<p>The overall approach combines efficient long-context parallel inference, a continuously improved agent harness, and RL targeted at difficult stages.</p>\n<h2>2. Infrastructure</h2>\n<h3>2.1 Model Compression</h3>\n<p>Like many other participants, I used Qwen3.8-Flash-Next as the base model. To deploy it on the RTX PRO 6000, I applied the following compression techniques:</p>\n<ul>\n<li><strong>gEAN320 Expert Pruning:</strong> Pruned the original 512 MoE experts down to 320.</li>\n<li><strong>INT3 W3A8 Quantization:</strong> For the MoE experts, I used GPTQ with INT3 weight quantization (group size 128) and FP8 activations (W3A8). Attention and GDN projections were quantized using block-FP8.</li>\n<li><strong>Quantization &amp; Pruning-Aware Distillation (QPAD):</strong> I used the original unpruned 512-expert FP8 model as the teacher and performed KL distillation over the top-32 logits to recover capabilities lost during pruning and quantization.</li>\n<li><strong>INT5 PLE Compression:</strong> The model contains approximately 51B parameters in its n-gram embeddings (PLE), stored in host pinned memory. I converted the PLE weights from FP8 to INT5 during loading.</li>\n<li><strong>DFlash Drafter:</strong> I trained my own DFlash speculative decoding drafter and developed an initialization method using the existing MTP weights. With MTP initialization, the held-out expected acceptance length reached 3.06 after 1,000 training steps, compared to only 2.17 with random initialization. The final deployment used an 8-layer FP8 drafter with K=4, achieving an average acceptance length of approximately 3.1 on Kaggle.</li>\n</ul>\n<h3>2.2 Unified SGLang Serving Stack</h3>\n<p>I integrated all serving modifications into a single private SGLang fork. This serving stack supports Kaggle L4×4, RTX PRO 6000, and B200 GPUs used for RL training. Hardware-specific optimizations are controlled through opt-in flags, allowing all modifications to be developed and tested continuously on the same main branch.</p>\n<h3>2.3 RTX PRO 6000 Serving Optimization</h3>\n<p>The main optimizations include:</p>\n<ul>\n<li><strong>QSA HiSparse:</strong> I integrated HiSparse into Qwen Sparse Attention. The complete KV history is stored in host memory, while the GPU retains only the hot regions currently needed for attention.</li>\n<li><strong>NVFP4 KV Cache:</strong> Implemented NVFP4 KV kernels for the RTX PRO 6000’s SM120 architecture.</li>\n<li><strong>Humming INT3 W3A8 MoE:</strong> Used Humming kernels to execute INT3 MoE experts.</li>\n<li><strong>Dense Layer Optimization:</strong> Used CUTLASS block-FP8 kernels for non-MoE dense layers.</li>\n<li><strong>DFlash Speculative Decoding:</strong> Used K=4 and reduced the drafter vocabulary to 16k.</li>\n<li><strong>Host Memory Management:</strong> Used private memory pages to address repeated Linux <code>kcompactd</code> page compaction during long-running serving sessions.</li>\n</ul>\n<p>I also made a series of GPU memory optimizations to support 110 concurrent game sessions reliably. Finally, I implemented runtime weight switching to update model weights during execution. The RL checkpoint required updating only 516 changed tensors, and the actual switching process paused gameplay for just 0.33 seconds.</p>\n<p><strong>Final Serving Performance:</strong></p>\n<ul>\n<li><strong>Effective KV Pool:</strong> 11.7M tokens</li>\n<li><strong>Concurrent Game Sessions:</strong> 110</li>\n<li><strong>Peak Decode Throughput:</strong> ~5,000 tokens/s</li>\n<li><strong>End-to-End Decode Throughput:</strong> ~3,800 tokens/s</li>\n</ul>\n<h2>3. Agent Harness</h2>\n<h3>3.1 Codex-based Harness</h3>\n<p>My harness was inspired by ARC-Code and built on top of Codex as the agent infrastructure. Two important components were:</p>\n<ul>\n<li><strong>Persistent Game History:</strong> Inspired by VISTA, I preserved the game screens, animations, and action records from every step, allowing the agent to revisit previous observations at any time.</li>\n<li><strong>Reviewer System:</strong> I designed a read-only reviewer agent to assist players stuck for extended periods. If a player remained on the same stage for more than 45 minutes, the system would launch a reviewer to inspect the player’s workspace and gameplay history, then provide suggestions to help it progress.</li>\n</ul>\n<h3>3.2 Human-in-the-RSI-Loop</h3>\n<p>Throughout the competition, I continuously optimized the harness through human-in-the-loop Recursive Self-Improvement (RSI). LLMs were responsible for analyzing agent trajectories, identifying issues, proposing improvements, and helping implement changes. My role was to review modifications, plan experiments, and decide whether to accept them.</p>\n<p>The basic workflow was:</p>\n<p><strong>Run → Collect Traces → Analyze → Propose Changes → Human Review → Paired A/B Testing → Accept / Revert</strong></p>\n<p>Over the past few months, I repeatedly worked with LLMs to analyze failures, modify the system, run tests, and revert unsuccessful changes. Looking back, the entire development process was itself one big human-in-the-RSI-loop experiment 😂</p>\n<h2>4. Model Training: RL for Hard-Stage Reasoning</h2>\n<h3>4.1 Why RL for Hard Stages?</h3>\n<p>Through extensive game testing, I found that the base model already had strong game understanding and interaction capabilities. In local tests on public games, the base model was approximately 20–23 points short of a perfect score, with 18–20 points of that gap coming from stages it could not solve at all.</p>\n<p>I therefore focused RL training on improving hard-stage solving capability, aiming to help the model overcome stages where it would otherwise remain stuck for extended periods. I used GRPO-based Agentic RL to train the model to explore and reason through difficult game states.</p>\n<h3>4.2 RL Training</h3>\n<p>Training started from the QAD checkpoint and used 8×B200 GPUs, with 4 GPUs dedicated to rollouts and 4 to training. Each training step consisted of 16 groups × 16 rollouts. I trained for a total of 20 steps, taking approximately 9 hours.</p>\n<p>RL improved the model’s ability to solve difficult stages, but the main issue was a decrease in action efficiency. Among successful runs, the proportion whose action count exceeded the human baseline increased from 16% (base model) to 26% (RL model). Based on these results, I decided to use the two models at different stages of the final submission.</p>\n<h3>4.3 Runtime Model Switching</h3>\n<p>The final submission used a two-stage configuration:</p>\n<ul>\n<li><strong>Stage 1 — Base Model (First 6 Hours):</strong> Run games using the QAD model, taking advantage of its better action efficiency to complete easy and medium-difficulty stages.</li>\n<li><strong>Stage 2 — RL Model (Final 3 Hours):</strong> At the six-hour mark, switch to the RL model through SGLang runtime weight switching, allowing the remaining time to focus on difficult stages.</li>\n</ul>\n<h2>5. Acknowledgements</h2>\n<p>First, special thanks to Simon Frieder and the Fields Model Initiative’s support throughout this competition! Fields Model Initiative is a nonprofit research initiative founded by Simon, dedicated to advancing fully open mathematical AI research, including models, training data, evaluation methods, and tools.</p>\n<p>I’m also very grateful to Kawahara Lab at Waseda University and Prof. Daisuke Kawahara for their guidance during my time at Waseda, as well as NTU AI² Lab and Prof. Chu-Song Chen for their continued support. I’d also like to thank Bruno Bowden and Lambda for their generous support!</p>\n<p>Of course, I also have to thank my two rabbits, Sanbei and Pochi, for keeping me company through these busy months of competition 🐰. Thank you to everyone who reached out, encouraged me, and followed my progress. Your messages and support really meant a lot to me!</p>\n<p>And finally, thanks to ARC Prize, Kaggle, all the organizers, and fellow participants for making this such a memorable experience.</p>\n<h2>6. Closing</h2>\n<p>This post was written in collaboration with LLMs. I’ve reviewed and edited it, but I can’t guarantee that every detail is complete or accurate. I’ll share a more detailed technical report, including implementation details and experimental analysis, in the Paper Track.</p>\n<p>Writing is so hard 🫠</p>",
+   "parent": {},
+   "author": {
+    "display_name": "Yi-Chia Chen",
+    "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+    "url": "/threerabbits",
+    "tier": "MASTER",
+    "id": 12752459,
+    "progression_opt_out": false
+   },
+   "author_type": "TOPIC",
+   "votes": {
+    "total_votes": 82,
+    "can_upvote": true,
+    "can_downvote": true,
+    "total_upvotes": 82
+   },
+   "kernel_version": 0,
+   "competition_ranking": 1,
+   "feedback_tracking_data": {},
+   "is_thank_you": false,
+   "reactions": [
+    {
+     "emoji": "YAY",
+     "featured_user_names": [
+      "yassinealouini",
+      "darraghdog",
+      "corochann",
+      "deepdreamer",
+      "leoprovorov",
+      "lordhansolo",
+      "grigoriyzatravkin",
+      "hashimrazi",
+      "w1326627677",
+      "natnitarach",
+      "antonandreychuk",
+      "natgurlain",
+      "ahoirg",
+      "xiaoz259",
+      "heminator",
+      "lukasaichberger",
+      "nguyennguyen599",
+      "truthminer",
+      "kerta27",
+      "yifuandonlyyifu",
+      "gordeevmax",
+      "tk256ailab",
+      "efekarameseis",
+      "sonphamorg",
+      "kittyhawkarc",
+      "benzousilvia",
+      "yuritosci"
+     ],
+     "user_count": 27
+    },
+    {
+     "emoji": "THANK_YOU",
+     "featured_user_names": [
+      "aimind",
+      "corochann",
+      "kingkong153",
+      "mpwolke",
+      "leoprovorov",
+      "natnitarach",
+      "aixihe",
+      "natgurlain",
+      "kittyhawkarc",
+      "yuritosci"
+     ],
+     "user_count": 10
+    },
+    {
+     "emoji": "LOVE",
+     "featured_user_names": [
+      "thisray",
+      "driessmit1",
+      "mitubant",
+      "leoprovorov",
+      "natnitarach",
+      "h0zier",
+      "leosuntory",
+      "cakpovital",
+      "zihanhu88",
+      "kerolosromans",
+      "erenagi",
+      "yuritosci"
+     ],
+     "user_count": 12
+    }
+   ],
+   "team_up_info": {
+    "team_leader": {
+     "display_name": "Yi-Chia Chen",
+     "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+     "url": "/threerabbits",
+     "user_name": "threerabbits",
+     "tier": "MASTER",
+     "id": 12752459,
+     "profile_url": "/threerabbits",
+     "performance_tier": "MASTER",
+     "user_id": 12752459,
+     "progression_opt_out": false
+    },
+    "intro": ""
+   }
+  },
+  "first_message_id": 3550006,
+  "forum_id": 10403401,
+  "forum_name": "ARC Prize 2026 - ARC-AGI-3",
+  "id": 755795,
+  "name": "[ARC-AGI-3] Public 1st Place Solution: Quick Overview",
+  "parent_name": "arc-prize-2026-arc-agi-3",
+  "parent_url": "/competitions/arc-prize-2026-arc-agi-3",
+  "post_date": "2026-11-04T17:04:05.703740Z",
+  "total_votes": 82,
+  "url": "/competitions/arc-prize-2026-arc-agi-3/discussion/755795",
+  "total_messages": 28,
+  "author_performance_tier": "MASTER",
+  "is_global_notifications_enabled": true,
+  "current_user_can_reply": true,
+  "author_progression_opt_out": false
+ }
+}

@@ -1,0 +1,100 @@
+MISTRAL COMPAT installed: mistral=True reasoning_effort='high'
+ARM=duck_baseline (LOWNORM_GLYPHS_ENABLED=False -- exact 6.295 configuration)
+smoke: bm.n_passes=1
+ab: ARM=baseline ctx=1048576 games=1 concurrency=1 max_actions=None per_game_s=3600.0 job_dir=runs/duck_mistral_1m_ft09 model=mistral-small-4
+benchmark: regenerated diagnostics in runs/duck_mistral_1m_ft09 in 2.82s
+benchmark: 0-history-turns
+solver:    inference
+games:     1
+passes:    1
+runs:      1 (won: 0)
+started:   2026-09-19 22:03:05
+ended:     in progress
+mean score:    0.00
+median score:  0.00
+total actions: 929
+total tokens:  23785
+generated tokens/sec: 39.44 (job wallclock)
+total wallclock: 602.4s
+
+per-game (mean across passes):
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=929, tokens=23785
+
+benchmark: regenerated diagnostics in runs/duck_mistral_1m_ft09 in 2.06s
+benchmark: 0-history-turns
+solver:    inference
+games:     1
+passes:    1
+runs:      1 (won: 0)
+started:   2026-09-19 22:03:05
+ended:     in progress
+mean score:    0.00
+median score:  0.00
+total actions: 1254
+total tokens:  41068
+generated tokens/sec: 34.07 (job wallclock)
+total wallclock: 1201.4s
+
+per-game (mean across passes):
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=1254, tokens=41068
+
+benchmark: regenerated diagnostics in runs/duck_mistral_1m_ft09 in 0.34s
+benchmark: 0-history-turns
+solver:    inference
+games:     1
+passes:    1
+runs:      1 (won: 0)
+started:   2026-09-19 22:03:05
+ended:     in progress
+mean score:    0.00
+median score:  0.00
+total actions: 1486
+total tokens:  59005
+generated tokens/sec: 32.68 (job wallclock)
+total wallclock: 1799.3s
+
+per-game (mean across passes):
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=1486, tokens=59005
+
+benchmark: regenerated diagnostics in runs/duck_mistral_1m_ft09 in 2.26s
+benchmark: 0-history-turns
+solver:    inference
+games:     1
+passes:    1
+runs:      1 (won: 0)
+started:   2026-09-19 22:03:05
+ended:     in progress
+mean score:    0.00
+median score:  0.00
+total actions: 1599
+total tokens:  84927
+generated tokens/sec: 35.27 (job wallclock)
+total wallclock: 2402.9s
+
+per-game (mean across passes):
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=1599, tokens=84927
+
+benchmark: regenerated diagnostics in runs/duck_mistral_1m_ft09 in 2.38s
+benchmark: 0-history-turns
+solver:    inference
+games:     1
+passes:    1
+runs:      1 (won: 0)
+started:   2026-09-19 22:03:05
+ended:     in progress
+mean score:    0.00
+median score:  0.00
+total actions: 1650
+total tokens:  118004
+generated tokens/sec: 39.19 (job wallclock)
+total wallclock: 3007.6s
+
+per-game (mean across passes):
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=1650, tokens=118004
+
+[finished] ft09-0d8bbf25 state=gave_up level=0/6 score=0.00 actions=1652 tokens=119150 per-level=1652/43,0/12,0/23,0/28,0/65,0/37 note="tokens=158185"
+smoke: (ignoring movie-render OSError in teardown: Could not find a backend to open `runs/duck_mistral_1m_ft09/movies/gft09-0d8bbf2)
+smoke: run finished in 3601s
+smoke: 1 request-log files under runs/duck_mistral_1m_ft09
+smoke: WARNING no request logs found -- cannot verify what the model saw
+smoke: summary.txt: 'benchmark: 0-history-turns\nsolver:    inference\ngames:     1\npasses:    1\nruns:      1 (won: 0)\nstarted:   2026-09-19 22:03:05\nended:     in progress\nmean score:    0.00\nmedian score:  0.00\ntotal actions: 1650\ntotal tokens:  118004\ngenerated tokens/sec: 39.19 (job wallclock)\ntotal wallclock: 3007.6s'

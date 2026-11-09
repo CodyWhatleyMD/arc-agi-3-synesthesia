@@ -1,0 +1,105 @@
+lownorm: no tokenizer.json under /kaggle/input -- tokenizer check skipped
+ARM=lownorm_glyphs
+lownorm: map     WwgGcBMPRbSYOrNp -> 겪쏟눠됩멤굉촬훨꽤ങ탓뀌볍穌썼繽
+lownorm: legend  겪=white, 쏟=light gray, 눠=gray, 됩=dark gray, 멤=charcoal, 굉=black, 촬=magenta, 훨=pink, 꽤=red, ങ=blue, 탓=sky blue, 뀌=yellow, 볍=orange, 穌=dark red, 썼=light green, 繽=purple
+lownorm: patched ['inference.agent.prompts.ARC_COLOR_LEGEND', 'inference.agent.prompts.GAME_OVERVIEW_ADDENDUM', 'inference.agent.prompts.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'inference.agent.tool_agent.GAME_OVERVIEW_ADDENDUM', 'inference.agent.tool_agent.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'ToolAgent._build_user_prompt (wrapped)']
+lownorm: probe frame:
+굉굉겪
+굉ങ겪
+썼썼썼
+ARM=lownorm_visual
+VISUAL CHANNEL INSTALLED  alpha=1.15  K=0.408  hidden=5120  fused-rows-nearest-own-carrier=16/16  window=61376  ckpt=qwen38-nvfp4  log=/home/ignaz/github/arc-prize-2026/runs/proof_nomtp/visual_channel.jsonl
+smoke: bm.n_passes=1
+ab: ARM=visual ctx=65536 games=25 concurrency=25 max_actions=None per_game_s=900.0 job_dir=/home/ignaz/github/arc-prize-2026/runs/proof_nomtp model=qwen38
+benchmark: regenerated diagnostics in /home/ignaz/github/arc-prize-2026/runs/proof_nomtp in 2.39s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-18 04:33:30
+ended:     in progress
+mean score:    0.00
+median score:  0.00
+total actions: 76
+total tokens:  190550
+generated tokens/sec: 316.05 (job wallclock)
+total wallclock: 7570.0s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=4, tokens=13851
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=0, tokens=0
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=1, tokens=10106
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=1, tokens=7902
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=2, tokens=11849
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=2, tokens=7517
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=8, tokens=11032
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=3, tokens=13466
+  lp85-305b61c3: score=0.00, levels=0.0/8, actions=1, tokens=7989
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=1, tokens=11308
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=0, tokens=0
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=1, tokens=14594
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=20, tokens=6610
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=2, tokens=6486
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=6, tokens=8672
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=2, tokens=12250
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=7, tokens=13102
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=7, tokens=13841
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=2, tokens=8164
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=6, tokens=11811
+
+analyzer request failed at action 9: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=62.95222)
+analyzer request failed at action 3: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=23.313068)
+analyzer request failed at action 5: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=9.066945)
+[finished] wa30-ee6fef47 state=cancelled level=0/9 score=0.00 actions=8 tokens=19948 per-level=8/71,0/119,0/183,0/98,0/368,0/68,0/79,0/442,0/415 note="tokens=19948"
+[finished] ls20-9607627b state=cancelled level=0/7 score=0.00 actions=2 tokens=20961 per-level=2/22,0/123,0/73,0/84,0/96,0/192,0/186 note="tokens=20961"[finished] s5i5-18d95033 state=cancelled level=0/8 score=0.00 actions=4 tokens=21146 per-level=4/20,0/89,0/106,0/54,0/162,0/38,0/86,0/83 note="tokens=21146"
+
+analyzer request failed at action 10: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=71.267843)
+[finished] sp80-589a99af state=cancelled level=0/6 score=0.00 actions=9 tokens=19803 per-level=9/39,0/58,0/25,0/148,0/96,0/152 note="tokens=19803"
+analyzer request failed at action 2: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=164.267182)
+analyzer request failed at action 7: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=555.801392)
+analyzer request failed at action 2: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=594.021391)
+analyzer request failed at action 3: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=576.871056)
+analyzer request failed at action 21: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=644.282123)
+[finished] tr87-cd924810 state=cancelled level=0/6 score=0.00 actions=1 tokens=17872 per-level=1/54,0/58,0/40,0/45,0/71,0/146 note="tokens=17872"
+analyzer request failed at action 5: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=345.112929)
+analyzer request failed at action 3: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=411.390025)
+[finished] cn04-2fe56bfb state=cancelled level=0/6 score=0.00 actions=1 tokens=7902 per-level=1/29,0/54,0/85,0/300,0/208,0/113 note="tokens=7902"
+analyzer request failed at action 3: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=159.135382)
+[finished] sb26-7fbdac44 state=cancelled level=0/8 score=0.00 actions=6 tokens=8672 per-level=6/18,0/28,0/18,0/19,0/31,0/23,0/58,0/18 note="tokens=8672"[finished] re86-8af5384d state=cancelled level=0/8 score=0.00 actions=20 tokens=6610 per-level=20/26,0/42,0/86,0/108,0/189,0/139,0/424,0/241 note="tokens=6610"
+
+[finished] sc25-635fd71a state=cancelled level=0/6 score=0.00 actions=2 tokens=12250 per-level=2/36,0/6,0/32,0/83,0/143,0/50 note="tokens=12250"
+[finished] ar25-0c556536 state=cancelled level=0/8 score=0.00 actions=4 tokens=13851 per-level=4/32,0/50,0/75,0/37,0/89,0/159,0/233,0/73 note="tokens=13851"
+[finished] vc33-5430563c state=cancelled level=0/7 score=0.00 actions=2 tokens=8164 per-level=2/7,0/18,0/44,0/61,0/131,0/34,0/152 note="tokens=8164"
+[finished] r11l-495a7899 state=cancelled level=0/6 score=0.00 actions=2 tokens=17923 per-level=2/22,0/33,0/51,0/26,0/52,0/49 note="tokens=17923"
+analyzer request failed at action 1: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=899.4615)
+[finished] sk48-d8078629 state=cancelled level=0/8 score=0.00 actions=0 tokens=0 per-level=0/61,0/177,0/101,0/103,0/230,0/181,0/125,0/92 note="tokens=0"
+[finished] lf52-271a04aa state=cancelled level=0/10 score=0.00 actions=3 tokens=13466 per-level=3/32,0/81,0/60,0/71,0/205,0/148,0/244,0/109,0/164,0/225 note="tokens=21965"
+analyzer request failed at action 1: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=899.197642)
+[finished] dc22-fdcac232 state=cancelled level=0/6 score=0.00 actions=0 tokens=0 per-level=0/59,0/102,0/67,0/98,0/324,0/578 note="tokens=180"
+[finished] g50t-5849a774 state=cancelled level=0/7 score=0.00 actions=8 tokens=16014 per-level=8/78,0/175,0/179,0/230,0/96,0/54,0/67 note="tokens=22276"
+analyzer request failed at action 1: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=899.474415)
+[finished] bp35-0a0ad940 state=cancelled level=0/9 score=0.00 actions=0 tokens=0 per-level=0/21,0/48,0/44,0/38,0/33,0/87,0/86,0/131,0/163 note="tokens=404"
+analyzer request failed at action 1: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=899.54397)
+[finished] su15-1944f8ab state=cancelled level=0/9 score=0.00 actions=0 tokens=0 per-level=0/22,0/42,0/26,0/115,0/36,0/31,0/8,0/40,0/41 note="tokens=1130"
+[finished] ft09-0d8bbf25 state=cancelled level=0/6 score=0.00 actions=8 tokens=18053 per-level=8/43,0/12,0/23,0/28,0/65,0/37 note="tokens=23736"
+analyzer request failed at action 4: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=109.28171)
+[finished] cd82-fb555c5d state=cancelled level=0/6 score=0.00 actions=3 tokens=18974 per-level=3/55,0/8,0/41,0/21,0/23,0/23 note="tokens=20289"
+[finished] ka59-38d34dbb state=cancelled level=0/7 score=0.00 actions=8 tokens=11032 per-level=8/28,0/109,0/51,0/51,0/33,0/132,0/326 note="tokens=23971"
+[finished] m0r0-492f87ba state=cancelled level=0/6 score=0.00 actions=0 tokens=0 per-level=0/30,0/111,0/203,0/26,0/500,0/237
+[finished] lp85-305b61c3 state=cancelled level=0/8 score=0.00 actions=2 tokens=16405 per-level=2/17,0/38,0/31,0/16,0/41,0/60,0/26,0/159
+[finished] tu93-0768757b state=cancelled level=0/9 score=0.00 actions=7 tokens=13841 per-level=7/19,0/16,0/34,0/42,0/123,0/80,0/14,0/23,0/111
+[finished] tn36-ef4dde99 state=cancelled level=0/7 score=0.00 actions=0 tokens=0 per-level=0/32,0/72,0/26,0/40,0/30,0/55,0/62
+smoke: (ignoring movie-render OSError in teardown: Could not find a backend to open `/home/ignaz/github/arc-prize-2026/runs/proof_n)
+smoke: run finished in 1020s
+smoke: 25 request-log files under /home/ignaz/github/arc-prize-2026/runs/proof_nomtp
+smoke: WARNING no request logs found -- cannot verify what the model saw
+smoke: summary.txt: 'benchmark: 0-history-turns\nsolver:    inference\ngames:     25\npasses:    1\nruns:      25 (won: 0)\nstarted:   2026-09-18 04:33:30\nended:     in progress\nmean score:    0.00\nmedian score:  0.00\ntotal actions: 76\ntotal tokens:  190550\ngenerated tokens/sec: 316.05 (job wallclock)\ntotal wallclock: 7570.0'
+analyzer request failed at action 3: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=232.037008)
+analyzer request failed at action 1: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=899.312411)
+analyzer request failed at action 1: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=899.496394)

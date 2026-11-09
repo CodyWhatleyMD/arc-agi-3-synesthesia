@@ -1,0 +1,737 @@
+{
+  "forum_topic": {
+    "allow_attachments": true,
+    "author_id": 2106526,
+    "author_thumbnail_name": "2106526-kg.jpg?t=2025-01-11-10-15-51",
+    "author_user_display_name": "Van-Phuc Huynh",
+    "author_user_name": "hvanphucs112",
+    "comments": [
+      {
+        "id": 3546722,
+        "post_date": "2026-10-29T16:06:56.380Z",
+        "raw_markdown": "My scores have also been fluctuating quite a lot. I’m not sure whether this is related to the infrastructure issues or simply high run-to-run variance, so I can’t confidently say whether things are back to normal on my side either.",
+        "content": "\u003cp\u003eMy scores have also been fluctuating quite a lot. I’m not sure whether this is related to the infrastructure issues or simply high run-to-run variance, so I can’t confidently say whether things are back to normal on my side either.\u003c/p\u003e",
+        "parent": {},
+        "author": {
+          "display_name": "Yi-Chia Chen",
+          "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+          "url": "/threerabbits",
+          "tier": "MASTER",
+          "id": 12752459,
+          "progression_opt_out": false
+        },
+        "author_type": "COMMENT",
+        "votes": {
+          "total_votes": 8,
+          "can_upvote": true,
+          "can_downvote": true,
+          "total_upvotes": 8
+        },
+        "kernel_version": 0,
+        "competition_ranking": 1,
+        "feedback_tracking_data": {},
+        "is_thank_you": false,
+        "reactions": [
+          {
+            "emoji": "THANK_YOU",
+            "featured_user_names": [
+              "zyczyc",
+              "keithtyser",
+              "pompom555",
+              "markbarney",
+              "handawang"
+            ],
+            "user_count": 5
+          },
+          {
+            "emoji": "YAY",
+            "featured_user_names": [
+              "cakpovital"
+            ],
+            "user_count": 1
+          }
+        ],
+        "team_up_info": {
+          "team_leader": {
+            "display_name": "Yi-Chia Chen",
+            "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/12752459-kg.jpeg?t=2026-10-01-17-04-29",
+            "url": "/threerabbits",
+            "user_name": "threerabbits",
+            "tier": "MASTER",
+            "id": 12752459,
+            "profile_url": "/threerabbits",
+            "performance_tier": "MASTER",
+            "user_id": 12752459,
+            "progression_opt_out": false
+          },
+          "intro": ""
+        }
+      },
+      {
+        "id": 3546721,
+        "post_date": "2026-10-29T16:04:25.990Z",
+        "raw_markdown": "Based on some probing, we're quite convinced things are not back to normal, and more specifically all our submission are losing ~40 minutes.\n\nMore details:\n- The model comes up at normal speed counted from notebook start (since switching the checkpoints to models rather than datasets). We know this, because we error out the submission if it doesn't, and our submissions don't error out based on this (anymore).\n- However, the notebook itself starts only ~40 minutes after the container starts. We know this, because if we add an additional error that stops if /proc/uptime is over 20 minutes on start, the notebook errors out consistently (~40 minutes after submitting it). This could be attching datasets, but we don't know.\n- These 40 minutes count against submission. We know this, because our successful submissions (without the /proc/uptime killswitch) run for 9 hours, not 9 hours and 40 minutes.",
+        "content": "\u003cp\u003eBased on some probing, we're quite convinced things are not back to normal, and more specifically all our submission are losing ~40 minutes.\u003c/p\u003e\n\u003cp\u003eMore details:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eThe model comes up at normal speed counted from notebook start (since switching the checkpoints to models rather than datasets). We know this, because we error out the submission if it doesn't, and our submissions don't error out based on this (anymore).\u003c/li\u003e\n\u003cli\u003eHowever, the notebook itself starts only ~40 minutes after the container starts. We know this, because if we add an additional error that stops if /proc/uptime is over 20 minutes on start, the notebook errors out consistently (~40 minutes after submitting it). This could be attching datasets, but we don't know.\u003c/li\u003e\n\u003cli\u003eThese 40 minutes count against submission. We know this, because our successful submissions (without the /proc/uptime killswitch) run for 9 hours, not 9 hours and 40 minutes.\u003c/li\u003e\n\u003c/ul\u003e",
+        "replies": [
+          {
+            "id": 3546730,
+            "post_date": "2026-10-29T16:26:28.573Z",
+            "raw_markdown": "Thank you for sharing this valuable information. It must have taken several probing runs to identify the issue, but now I have a better idea of what to adjust. If the results genuinely improve, I'll be happy to share my findings with everyone.\n",
+            "content": "\u003cp\u003eThank you for sharing this valuable information. It must have taken several probing runs to identify the issue, but now I have a better idea of what to adjust. If the results genuinely improve, I'll be happy to share my findings with everyone.\u003c/p\u003e",
+            "parent": {},
+            "author": {
+              "display_name": "Van-Phuc Huynh",
+              "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2106526-kg.jpg?t=2025-01-11-10-15-51",
+              "url": "/hvanphucs112",
+              "tier": "EXPERT",
+              "id": 2106526,
+              "progression_opt_out": false
+            },
+            "author_type": "TOPIC",
+            "votes": {
+              "total_votes": 1,
+              "can_upvote": true,
+              "can_downvote": true,
+              "total_upvotes": 1
+            },
+            "kernel_version": 0,
+            "competition_ranking": 8,
+            "feedback_tracking_data": {},
+            "is_thank_you": false,
+            "team_up_info": {
+              "team_leader": {
+                "display_name": "Van-Phuc Huynh",
+                "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2106526-kg.jpg?t=2025-01-11-10-15-51",
+                "url": "/hvanphucs112",
+                "user_name": "hvanphucs112",
+                "tier": "EXPERT",
+                "id": 2106526,
+                "profile_url": "/hvanphucs112",
+                "performance_tier": "EXPERT",
+                "user_id": 2106526,
+                "progression_opt_out": false
+              },
+              "intro": ""
+            }
+          },
+          {
+            "id": 3546743,
+            "post_date": "2026-10-29T16:50:14.843Z",
+            "raw_markdown": "These probe runs doesnt sacrify the submission, right? So you can still resend next one at same day? That is potential a huge leak of information from private set.. I mean you can do \"if there are no game that looks like Mario, exit on min 40\".  Anyways, thanks for the information. The variance from infra on top of variance of the game itself makes it very hard to understand if what you are doing have positive impact or not. ",
+            "content": "\u003cp\u003eThese probe runs doesnt sacrify the submission, right? So you can still resend next one at same day? That is potential a huge leak of information from private set.. I mean you can do \"if there are no game that looks like Mario, exit on min 40\".  Anyways, thanks for the information. The variance from infra on top of variance of the game itself makes it very hard to understand if what you are doing have positive impact or not. \u003c/p\u003e",
+            "replies": [
+              {
+                "id": 3546752,
+                "post_date": "2026-10-29T17:04:30.350Z",
+                "raw_markdown": "It does cost submissions. They simply don’t  need evals under suboptimal conditions.",
+                "content": "\u003cp\u003eIt does cost submissions. They simply don’t  need evals under suboptimal conditions.\u003c/p\u003e",
+                "parent": {},
+                "author": {
+                  "display_name": "xz",
+                  "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/17460940-kg.png?t=2026-11-02-00-31-28",
+                  "url": "/xiaoz259",
+                  "tier": "MASTER",
+                  "id": 17460940,
+                  "progression_opt_out": false
+                },
+                "author_type": "COMMENT",
+                "votes": {
+                  "can_upvote": true,
+                  "can_downvote": true
+                },
+                "kernel_version": 0,
+                "competition_ranking": 3,
+                "feedback_tracking_data": {},
+                "is_thank_you": false,
+                "team_up_info": {
+                  "team_leader": {
+                    "display_name": "xz",
+                    "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/17460940-kg.png?t=2026-11-02-00-31-28",
+                    "url": "/xiaoz259",
+                    "user_name": "xiaoz259",
+                    "tier": "MASTER",
+                    "id": 17460940,
+                    "profile_url": "/xiaoz259",
+                    "performance_tier": "MASTER",
+                    "user_id": 17460940,
+                    "progression_opt_out": false
+                  },
+                  "intro": ""
+                }
+              },
+              {
+                "id": 3546758,
+                "post_date": "2026-10-29T17:15:34.627Z",
+                "raw_markdown": "At least for me in several cases when I got an error in submission, I still was able to send second attempt instead after. Maybe it depends on when exactly it fails. ",
+                "content": "\u003cp\u003eAt least for me in several cases when I got an error in submission, I still was able to send second attempt instead after. Maybe it depends on when exactly it fails. \u003c/p\u003e",
+                "parent": {},
+                "author": {
+                  "display_name": "Grigoriy Zatravkin",
+                  "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png",
+                  "url": "/grigoriyzatravkin",
+                  "tier": "CONTRIBUTOR",
+                  "id": 6040016,
+                  "progression_opt_out": false
+                },
+                "author_type": "COMMENT",
+                "votes": {
+                  "can_upvote": true,
+                  "can_downvote": true
+                },
+                "kernel_version": 0,
+                "competition_ranking": 6,
+                "feedback_tracking_data": {},
+                "is_thank_you": false,
+                "is_collapsed": true,
+                "team_up_info": {
+                  "team_leader": {
+                    "display_name": "Grigoriy Zatravkin",
+                    "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png",
+                    "url": "/grigoriyzatravkin",
+                    "user_name": "grigoriyzatravkin",
+                    "tier": "CONTRIBUTOR",
+                    "id": 6040016,
+                    "profile_url": "/grigoriyzatravkin",
+                    "performance_tier": "CONTRIBUTOR",
+                    "user_id": 6040016,
+                    "progression_opt_out": false
+                  },
+                  "intro": ""
+                }
+              },
+              {
+                "id": 3546814,
+                "post_date": "2026-10-29T19:27:20.153Z",
+                "raw_markdown": "I reckon you got a submission when you get a Kaggle Error. Other errors (e.g. timeout, notebook throwing exception, etc) do not yield you a new sub.",
+                "content": "\u003cp\u003eI reckon you got a submission when you get a Kaggle Error. Other errors (e.g. timeout, notebook throwing exception, etc) do not yield you a new sub.\u003c/p\u003e",
+                "parent": {},
+                "author": {
+                  "display_name": "CPMP",
+                  "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/75976-gr.jpg",
+                  "url": "/cpmpml",
+                  "tier": "GRANDMASTER",
+                  "id": 75976,
+                  "progression_opt_out": false
+                },
+                "author_type": "COMMENT",
+                "votes": {
+                  "can_upvote": true,
+                  "can_downvote": true
+                },
+                "kernel_version": 0,
+                "competition_ranking": 4,
+                "feedback_tracking_data": {},
+                "is_thank_you": false,
+                "is_collapsed": true,
+                "team_up_info": {
+                  "team_leader": {
+                    "display_name": "ivan",
+                    "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/502311-kg.png",
+                    "url": "/sorokin",
+                    "user_name": "sorokin",
+                    "tier": "GRANDMASTER",
+                    "id": 502311,
+                    "profile_url": "/sorokin",
+                    "performance_tier": "GRANDMASTER",
+                    "user_id": 502311,
+                    "progression_opt_out": false
+                  },
+                  "intro": ""
+                }
+              },
+              {
+                "id": 3546855,
+                "post_date": "2026-10-29T20:47:41.727Z",
+                "raw_markdown": "We get the submission back yes. But this only works if you error out in the notebook before starting any game, so you can't probe the games with this.",
+                "content": "\u003cp\u003eWe get the submission back yes. But this only works if you error out in the notebook before starting any game, so you can't probe the games with this.\u003c/p\u003e",
+                "parent": {},
+                "author": {
+                  "display_name": "Jeroen Cottaar",
+                  "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/14984949-kg.jpg?t=2024-09-29-14-54-24",
+                  "url": "/jeroencottaar",
+                  "tier": "GRANDMASTER",
+                  "id": 14984949,
+                  "progression_opt_out": false
+                },
+                "author_type": "COMMENT",
+                "votes": {
+                  "total_votes": 1,
+                  "can_upvote": true,
+                  "can_downvote": true,
+                  "total_upvotes": 1
+                },
+                "kernel_version": 0,
+                "competition_ranking": 2,
+                "feedback_tracking_data": {},
+                "is_thank_you": false,
+                "is_collapsed": true,
+                "team_up_info": {
+                  "team_leader": {
+                    "display_name": "Dries Smit",
+                    "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/1897919-kg.jpg?t=2025-06-02-14-00-54",
+                    "url": "/driessmit1",
+                    "user_name": "driessmit1",
+                    "tier": "EXPERT",
+                    "id": 1897919,
+                    "profile_url": "/driessmit1",
+                    "performance_tier": "EXPERT",
+                    "user_id": 1897919,
+                    "progression_opt_out": false
+                  },
+                  "intro": ""
+                }
+              },
+              {
+                "id": 3547148,
+                "post_date": "2026-10-30T10:34:26.180Z",
+                "raw_markdown": "How do you get your submission back when submissions that error (except kaggle error) also count towards the team’s daily submission limit? At least that is what the rules say, isn't it?",
+                "content": "\u003cp\u003eHow do you get your submission back when submissions that error (except kaggle error) also count towards the team’s daily submission limit? At least that is what the rules say, isn't it?\u003c/p\u003e",
+                "parent": {},
+                "author": {
+                  "display_name": "Sebastian Brodehl",
+                  "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/667711-kg.png?t=2026-10-26-20-36-47",
+                  "url": "/sbrodehl",
+                  "tier": "CONTRIBUTOR",
+                  "id": 667711,
+                  "progression_opt_out": true
+                },
+                "author_type": "COMMENT",
+                "votes": {
+                  "can_upvote": true,
+                  "can_downvote": true
+                },
+                "kernel_version": 0,
+                "competition_ranking": 12,
+                "feedback_tracking_data": {},
+                "is_thank_you": false,
+                "is_collapsed": true,
+                "team_up_info": {
+                  "team_leader": {
+                    "display_name": "Daniel Franzen",
+                    "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/1739702-kg.png?t=2025-07-14-08-19-48",
+                    "url": "/dfranzen",
+                    "user_name": "dfranzen",
+                    "tier": "EXPERT",
+                    "id": 1739702,
+                    "profile_url": "/dfranzen",
+                    "performance_tier": "EXPERT",
+                    "user_id": 1739702,
+                    "progression_opt_out": false
+                  },
+                  "intro": ""
+                }
+              }
+            ],
+            "parent": {},
+            "author": {
+              "display_name": "Grigoriy Zatravkin",
+              "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png",
+              "url": "/grigoriyzatravkin",
+              "tier": "CONTRIBUTOR",
+              "id": 6040016,
+              "progression_opt_out": false
+            },
+            "author_type": "COMMENT",
+            "votes": {
+              "total_votes": 1,
+              "can_upvote": true,
+              "can_downvote": true,
+              "total_upvotes": 1
+            },
+            "kernel_version": 0,
+            "competition_ranking": 6,
+            "feedback_tracking_data": {},
+            "is_thank_you": false,
+            "team_up_info": {
+              "team_leader": {
+                "display_name": "Grigoriy Zatravkin",
+                "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png",
+                "url": "/grigoriyzatravkin",
+                "user_name": "grigoriyzatravkin",
+                "tier": "CONTRIBUTOR",
+                "id": 6040016,
+                "profile_url": "/grigoriyzatravkin",
+                "performance_tier": "CONTRIBUTOR",
+                "user_id": 6040016,
+                "progression_opt_out": false
+              },
+              "intro": ""
+            }
+          },
+          {
+            "id": 3547123,
+            "post_date": "2026-10-30T08:45:57.653Z",
+            "raw_markdown": "Some more things we tested:\n\n- The delay also happens for an empty notebook with no datasets attached.\n- It happens both on the June container image and the latest.\n- It happens when submitting from US and from Europe.",
+            "content": "\u003cp\u003eSome more things we tested:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eThe delay also happens for an empty notebook with no datasets attached.\u003c/li\u003e\n\u003cli\u003eIt happens both on the June container image and the latest.\u003c/li\u003e\n\u003cli\u003eIt happens when submitting from US and from Europe.\u003c/li\u003e\n\u003c/ul\u003e",
+            "replies": [
+              {
+                "id": 3547179,
+                "post_date": "2026-10-30T12:39:09.780Z",
+                "raw_markdown": "delay before notebook runs is not uncommon is not an issue. Are you discussing something else?",
+                "content": "\u003cp\u003edelay before notebook runs is not uncommon is not an issue. Are you discussing something else?\u003c/p\u003e",
+                "parent": {},
+                "author": {
+                  "display_name": "CPMP",
+                  "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/75976-gr.jpg",
+                  "url": "/cpmpml",
+                  "tier": "GRANDMASTER",
+                  "id": 75976,
+                  "progression_opt_out": false
+                },
+                "author_type": "COMMENT",
+                "votes": {
+                  "can_upvote": true,
+                  "can_downvote": true
+                },
+                "kernel_version": 0,
+                "competition_ranking": 4,
+                "feedback_tracking_data": {},
+                "is_thank_you": false,
+                "team_up_info": {
+                  "team_leader": {
+                    "display_name": "ivan",
+                    "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/502311-kg.png",
+                    "url": "/sorokin",
+                    "user_name": "sorokin",
+                    "tier": "GRANDMASTER",
+                    "id": 502311,
+                    "profile_url": "/sorokin",
+                    "performance_tier": "GRANDMASTER",
+                    "user_id": 502311,
+                    "progression_opt_out": false
+                  },
+                  "intro": ""
+                }
+              },
+              {
+                "id": 3547184,
+                "post_date": "2026-10-30T12:46:39.923Z",
+                "raw_markdown": "Submit an empty notebook with only the competition dataset attached, using RTX 6000. In the past, this would have given a Kaggle error in a few minutes. Now, it takes 50 (at least for us).\n\nHowever, successful submissions still take 9 hours.\n\nThis seems to point strongly towards notebooks taking 50 minutes to actually kick off, but this time being included in the 9 hour budget. An alternative explanation is that the returning of the error is delayed while returning of true scores is not, but this seems less likely.",
+                "content": "\u003cp\u003eSubmit an empty notebook with only the competition dataset attached, using RTX 6000. In the past, this would have given a Kaggle error in a few minutes. Now, it takes 50 (at least for us).\u003c/p\u003e\n\u003cp\u003eHowever, successful submissions still take 9 hours.\u003c/p\u003e\n\u003cp\u003eThis seems to point strongly towards notebooks taking 50 minutes to actually kick off, but this time being included in the 9 hour budget. An alternative explanation is that the returning of the error is delayed while returning of true scores is not, but this seems less likely.\u003c/p\u003e",
+                "parent": {},
+                "author": {
+                  "display_name": "Jeroen Cottaar",
+                  "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/14984949-kg.jpg?t=2024-09-29-14-54-24",
+                  "url": "/jeroencottaar",
+                  "tier": "GRANDMASTER",
+                  "id": 14984949,
+                  "progression_opt_out": false
+                },
+                "author_type": "COMMENT",
+                "votes": {
+                  "can_upvote": true,
+                  "can_downvote": true
+                },
+                "kernel_version": 0,
+                "competition_ranking": 2,
+                "feedback_tracking_data": {},
+                "is_thank_you": false,
+                "team_up_info": {
+                  "team_leader": {
+                    "display_name": "Dries Smit",
+                    "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/1897919-kg.jpg?t=2025-06-02-14-00-54",
+                    "url": "/driessmit1",
+                    "user_name": "driessmit1",
+                    "tier": "EXPERT",
+                    "id": 1897919,
+                    "profile_url": "/driessmit1",
+                    "performance_tier": "EXPERT",
+                    "user_id": 1897919,
+                    "progression_opt_out": false
+                  },
+                  "intro": ""
+                }
+              }
+            ],
+            "parent": {},
+            "author": {
+              "display_name": "Jeroen Cottaar",
+              "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/14984949-kg.jpg?t=2024-09-29-14-54-24",
+              "url": "/jeroencottaar",
+              "tier": "GRANDMASTER",
+              "id": 14984949,
+              "progression_opt_out": false
+            },
+            "author_type": "COMMENT",
+            "votes": {
+              "total_votes": 2,
+              "can_upvote": true,
+              "can_downvote": true,
+              "total_upvotes": 2
+            },
+            "kernel_version": 0,
+            "competition_ranking": 2,
+            "feedback_tracking_data": {},
+            "is_thank_you": false,
+            "team_up_info": {
+              "team_leader": {
+                "display_name": "Dries Smit",
+                "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/1897919-kg.jpg?t=2025-06-02-14-00-54",
+                "url": "/driessmit1",
+                "user_name": "driessmit1",
+                "tier": "EXPERT",
+                "id": 1897919,
+                "profile_url": "/driessmit1",
+                "performance_tier": "EXPERT",
+                "user_id": 1897919,
+                "progression_opt_out": false
+              },
+              "intro": ""
+            }
+          }
+        ],
+        "parent": {},
+        "author": {
+          "display_name": "Jeroen Cottaar",
+          "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/14984949-kg.jpg?t=2024-09-29-14-54-24",
+          "url": "/jeroencottaar",
+          "tier": "GRANDMASTER",
+          "id": 14984949,
+          "progression_opt_out": false
+        },
+        "author_type": "COMMENT",
+        "votes": {
+          "total_votes": 14,
+          "can_upvote": true,
+          "can_downvote": true,
+          "total_upvotes": 14
+        },
+        "kernel_version": 0,
+        "competition_ranking": 2,
+        "feedback_tracking_data": {},
+        "is_thank_you": false,
+        "reactions": [
+          {
+            "emoji": "THANK_YOU",
+            "featured_user_names": [
+              "keithtyser",
+              "rusg77",
+              "muurur",
+              "nick2187",
+              "cakpovital",
+              "mathemortician",
+              "markbarney"
+            ],
+            "user_count": 7
+          }
+        ],
+        "team_up_info": {
+          "team_leader": {
+            "display_name": "Dries Smit",
+            "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/1897919-kg.jpg?t=2025-06-02-14-00-54",
+            "url": "/driessmit1",
+            "user_name": "driessmit1",
+            "tier": "EXPERT",
+            "id": 1897919,
+            "profile_url": "/driessmit1",
+            "performance_tier": "EXPERT",
+            "user_id": 1897919,
+            "progression_opt_out": false
+          },
+          "intro": ""
+        }
+      },
+      {
+        "id": 3546683,
+        "post_date": "2026-10-29T15:25:07.033Z",
+        "raw_markdown": "I can't tell since I have no previous submission to compare with.",
+        "content": "\u003cp\u003eI can't tell since I have no previous submission to compare with.\u003c/p\u003e",
+        "replies": [
+          {
+            "id": 3546712,
+            "post_date": "2026-10-29T15:57:50.653Z",
+            "raw_markdown": "I'm not asking you to reveal your pipeline or any competitive secrets. I'm just wondering whether the current infrastructure issues have affected your pipeline, or whether you've found a way to work around them. \n@xiaoz259 Would you be willing to share a little about it?\n\n\nOn my side, I've had to trade off solving time to avoid a score of 0.00 by increasing the waiting time and using more `RESET` actions to keep the game alive.\n\nBut now, I can't tell whether my score dropped because I have too little time left to solve the actual tasks, or because my recent improvements to cache management, RAM usage, and the agent itself have introduced regressions.\n\nEverything feels increasingly difficult to control.\n",
+            "content": "\u003cp\u003eI'm not asking you to reveal your pipeline or any competitive secrets. I'm just wondering whether the current infrastructure issues have affected your pipeline, or whether you've found a way to work around them. \n\u003ca href=\"/xiaoz259\" target=\"_blank\"\u003e@xiaoz259\u003c/a\u003e Would you be willing to share a little about it?\u003c/p\u003e\n\u003cp\u003eOn my side, I've had to trade off solving time to avoid a score of 0.00 by increasing the waiting time and using more \u003ccode\u003eRESET\u003c/code\u003e actions to keep the game alive.\u003c/p\u003e\n\u003cp\u003eBut now, I can't tell whether my score dropped because I have too little time left to solve the actual tasks, or because my recent improvements to cache management, RAM usage, and the agent itself have introduced regressions.\u003c/p\u003e\n\u003cp\u003eEverything feels increasingly difficult to control.\u003c/p\u003e",
+            "replies": [
+              {
+                "id": 3546725,
+                "post_date": "2026-10-29T16:13:32.410Z",
+                "raw_markdown": "I just start the games at 10min mark regardless of whether server is started and use RESET every 7min. There isn't anything I can do about the data loading time.",
+                "content": "\u003cp\u003eI just start the games at 10min mark regardless of whether server is started and use RESET every 7min. There isn't anything I can do about the data loading time.\u003c/p\u003e",
+                "parent": {},
+                "author": {
+                  "display_name": "xz",
+                  "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/17460940-kg.png?t=2026-11-02-00-31-28",
+                  "url": "/xiaoz259",
+                  "tier": "MASTER",
+                  "id": 17460940,
+                  "progression_opt_out": false
+                },
+                "author_type": "COMMENT",
+                "votes": {
+                  "can_upvote": true,
+                  "can_downvote": true
+                },
+                "kernel_version": 0,
+                "competition_ranking": 3,
+                "feedback_tracking_data": {},
+                "is_thank_you": false,
+                "team_up_info": {
+                  "team_leader": {
+                    "display_name": "xz",
+                    "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/17460940-kg.png?t=2026-11-02-00-31-28",
+                    "url": "/xiaoz259",
+                    "user_name": "xiaoz259",
+                    "tier": "MASTER",
+                    "id": 17460940,
+                    "profile_url": "/xiaoz259",
+                    "performance_tier": "MASTER",
+                    "user_id": 17460940,
+                    "progression_opt_out": false
+                  },
+                  "intro": ""
+                }
+              },
+              {
+                "id": 3547250,
+                "post_date": "2026-10-30T16:13:46.177Z",
+                "raw_markdown": "Great idea!!!",
+                "content": "\u003cp\u003eGreat idea!!!\u003c/p\u003e",
+                "parent": {},
+                "author": {
+                  "display_name": "lvnr",
+                  "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/37597373-kg.jpg?t=2026-10-29-03-28-11",
+                  "url": "/lavinkhandelwal",
+                  "tier": "CONTRIBUTOR",
+                  "id": 37597373,
+                  "progression_opt_out": false
+                },
+                "author_type": "COMMENT",
+                "votes": {
+                  "can_upvote": true,
+                  "can_downvote": true
+                },
+                "kernel_version": 0,
+                "feedback_tracking_data": {},
+                "is_thank_you": false
+              }
+            ],
+            "parent": {},
+            "author": {
+              "display_name": "Van-Phuc Huynh",
+              "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2106526-kg.jpg?t=2025-01-11-10-15-51",
+              "url": "/hvanphucs112",
+              "tier": "EXPERT",
+              "id": 2106526,
+              "progression_opt_out": false
+            },
+            "author_type": "TOPIC",
+            "votes": {
+              "can_upvote": true,
+              "can_downvote": true
+            },
+            "kernel_version": 0,
+            "competition_ranking": 8,
+            "feedback_tracking_data": {},
+            "is_thank_you": false,
+            "team_up_info": {
+              "team_leader": {
+                "display_name": "Van-Phuc Huynh",
+                "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2106526-kg.jpg?t=2025-01-11-10-15-51",
+                "url": "/hvanphucs112",
+                "user_name": "hvanphucs112",
+                "tier": "EXPERT",
+                "id": 2106526,
+                "profile_url": "/hvanphucs112",
+                "performance_tier": "EXPERT",
+                "user_id": 2106526,
+                "progression_opt_out": false
+              },
+              "intro": ""
+            }
+          }
+        ],
+        "parent": {},
+        "author": {
+          "display_name": "xz",
+          "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/17460940-kg.png?t=2026-11-02-00-31-28",
+          "url": "/xiaoz259",
+          "tier": "MASTER",
+          "id": 17460940,
+          "progression_opt_out": false
+        },
+        "author_type": "COMMENT",
+        "votes": {
+          "can_upvote": true,
+          "can_downvote": true
+        },
+        "kernel_version": 0,
+        "competition_ranking": 3,
+        "feedback_tracking_data": {},
+        "is_thank_you": false,
+        "team_up_info": {
+          "team_leader": {
+            "display_name": "xz",
+            "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/17460940-kg.png?t=2026-11-02-00-31-28",
+            "url": "/xiaoz259",
+            "user_name": "xiaoz259",
+            "tier": "MASTER",
+            "id": 17460940,
+            "profile_url": "/xiaoz259",
+            "performance_tier": "MASTER",
+            "user_id": 17460940,
+            "progression_opt_out": false
+          },
+          "intro": ""
+        }
+      }
+    ],
+    "comment_sort": "COMMENT_LIST_SORT_BY_NEW",
+    "first_message": {
+      "id": 3546678,
+      "post_date": "2026-10-29T15:20:15.673Z",
+      "raw_markdown": "![](https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F2106526%2F2c349a63c1f1978843836f329d9e09c9%2FScreenshot%202026-10-29%20at%2022.14.35.png?generation=1793286893275844&alt=media)\n\nI really want to answer this question, but unfortunately, my latest submissions, still using my previous baseline, continue to score 0.00 or below 15.00.\n\nCould teams whose submissions are working normally share a little about the current situation?\n\n -  Has the infrastructure returned to normal?\n\n - Have you adopted new strategies to handle the infrastructure issues?\n\n - Or are you simply lucky enough to be running in regions that aren't affected?\n\nAn honest answer would help many teams still struggling to understand why their scores have dropped. Sharing these insights wouldn't create any unfair advantage; it would simply help everyone understand what's actually happening.",
+      "content": "\u003cp\u003e\u003cimg src=\"https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F2106526%2F2c349a63c1f1978843836f329d9e09c9%2FScreenshot%202026-10-29%20at%2022.14.35.png?generation=1793286893275844&amp;alt=media\" alt=\"\"\u003e\u003c/p\u003e\n\u003cp\u003eI really want to answer this question, but unfortunately, my latest submissions, still using my previous baseline, continue to score 0.00 or below 15.00.\u003c/p\u003e\n\u003cp\u003eCould teams whose submissions are working normally share a little about the current situation?\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003eHas the infrastructure returned to normal?\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eHave you adopted new strategies to handle the infrastructure issues?\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eOr are you simply lucky enough to be running in regions that aren't affected?\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eAn honest answer would help many teams still struggling to understand why their scores have dropped. Sharing these insights wouldn't create any unfair advantage; it would simply help everyone understand what's actually happening.\u003c/p\u003e",
+      "parent": {},
+      "author": {
+        "display_name": "Van-Phuc Huynh",
+        "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2106526-kg.jpg?t=2025-01-11-10-15-51",
+        "url": "/hvanphucs112",
+        "tier": "EXPERT",
+        "id": 2106526,
+        "progression_opt_out": false
+      },
+      "author_type": "TOPIC",
+      "votes": {
+        "total_votes": 5,
+        "can_upvote": true,
+        "can_downvote": true,
+        "total_upvotes": 5
+      },
+      "kernel_version": 0,
+      "competition_ranking": 8,
+      "feedback_tracking_data": {},
+      "is_thank_you": false,
+      "team_up_info": {
+        "team_leader": {
+          "display_name": "Van-Phuc Huynh",
+          "thumbnail_url": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2106526-kg.jpg?t=2025-01-11-10-15-51",
+          "url": "/hvanphucs112",
+          "user_name": "hvanphucs112",
+          "tier": "EXPERT",
+          "id": 2106526,
+          "profile_url": "/hvanphucs112",
+          "performance_tier": "EXPERT",
+          "user_id": 2106526,
+          "progression_opt_out": false
+        },
+        "intro": ""
+      }
+    },
+    "first_message_id": 3546678,
+    "forum_id": 10403401,
+    "forum_name": "ARC Prize 2026 - ARC-AGI-3",
+    "id": 753843,
+    "name": "Is everything back to normal, or is something else going on behind the scenes?",
+    "parent_name": "arc-prize-2026-arc-agi-3",
+    "parent_url": "/competitions/arc-prize-2026-arc-agi-3",
+    "post_date": "2026-10-29T15:20:15.674889100Z",
+    "total_votes": 5,
+    "url": "/competitions/arc-prize-2026-arc-agi-3/discussion/753843",
+    "total_messages": 16,
+    "author_performance_tier": "EXPERT",
+    "is_global_notifications_enabled": true,
+    "current_user_can_reply": true,
+    "author_progression_opt_out": false
+  }
+}

@@ -1,0 +1,109 @@
+# Pre-statement: the agent manages its own time (2026-11-01 06:45 CST, written before any code or run)
+
+Owner: CL1 (the investigator 06:36: "Worth a shot"). Arm name: agent clock. Base: the candidate with the pinned fix and the boot
+clock (harness 848f336 = fa326e3 + ARM_PINNED_ROUND_MB; builder --pool-clock --boot-clock). Kept off main and off every
+existing harness dataset.
+
+## Why
+Every pool-clock cutoff so far (1,500 / 750 actions; 1,500 s stall; 600 s reserve; equal "fair share") is a rule from
+outside the game guessing when a game is stuck, and the values are arbitrary in the sense that matters: the simulation
+that picked them is flat from 900 to 2,400 s and was built from public-game timings (notes/pool_timestop_sim_
+2026-10-31.md). The agent is the only part of the system that reads its own progress. This arm hands it that decision.
+
+## Design (one switch, `ARM_AGENT_CLOCK=1`; unset = the base exactly)
+1. **The agent sees the shared clock every turn**, one status line in the turn message: time left in the run, games
+   not yet started (each scores 0 until it starts), games paused, games playing; for this game: minutes used, levels
+   cleared, minutes since its last clear.
+2. **`yield_slot(reason, outlook)` in the Python sandbox** (beside `action()`): pauses this game at the end of the
+   current tool call so another game can play. `outlook` is one of "close" (near a level clear), "working" (making
+   progress), "stuck" (no working idea); `reason` is free text, logged. Paused games resume once every game has
+   started, ordered by outlook (close, working, stuck), then deeper level first, then less time used.
+3. **No stall timers and no fair share:** pool_stall_seconds, pool_stall_actions and pool_soft_stall_actions are off.
+4. **One hard rule, from the constraint itself, that every game gets started** (unstarted games score 0): the existing
+   reserve, with its time per unstarted game taken from THIS run, as the median time from slot start to first level
+   clear among the run's games that have cleared one. Until three games have, the fallback is 600 s, the base's value,
+   a stated choice, not a derived one. The reserve stops a game only while unstarted games remain.
+5. Everything else is the base: model, board channel, prompts (apart from the status line and the yield_slot entry
+   in the tool description), pinned rounding, start retry, boot clock, pool end margin 600 s.
+
+## What is read, in order (commit run on the 25 public games first; a hidden run only if the gates pass)
+- **Gates for a submission:** 0 tracebacks; 25/25 games played, each with > 0 actions; the status line present in
+  turn messages; at least one yield_slot call and one resume happened, or the log shows why none did; the run ends by
+  its soft end.
+- **Behaviour, reported in full (no direction predicted):** yields per game, outlook distribution, the stated
+  reasons, what resumed games did next (clears after resuming, by outlook), how many games never yielded.
+- **Score:** one commit run against the control pool (n=7, mean 39.06, sd 5.07) and the candidate (38.58). Any
+  difference inside the pool's spread is NOT RESOLVED. The informative test is a hidden run, where three identical
+  v36 runs spanned 1.41 points (20.44-21.85); a hidden score outside 19-24 would be a real difference.
+- **Failure modes named in advance:** (a) the agent never yields: then the reserve does all the scheduling and the arm
+  is the candidate with no stall timer; (b) it yields too eagerly: many short slots, resume overhead (one long
+  prefill each, 10-40 s, unmeasured); (c) the status line changes play in other ways: prompt text moved the hidden
+  score by ~6 points before (room G-c 15.28 vs v36 ~21). Each shows in the logs; none is excluded in advance.
+
+## Not claimed
+The arm does not test whether removing the fixed clock helps (the candidate does that); it tests whether the agent's
+own reading of its progress schedules better than arbitrary cutoffs. One hidden run is n=1.
+
+## Amendment 1 (2026-11-01 07:05 CST; after the build ece6730, before any run with a model)
+- A yield takes effect at once, not at the end of the tool call: the harness polls should_stop before every action, so
+  no action after `yield_slot` in that call runs. The model-facing text says so ("no further action in the call runs").
+- The reserve's median has no floor (as specified): if first clears come fast, late-starting games get little
+  guaranteed time. Left as specified, reported.
+- Added gate, from my review of the code: if the agent seldom yields, waiting games start only when the reserve forces
+  them, late in the run (hidden run: 96 games waiting behind 14 slots, reserve binding at ~68 min before the end at
+  600 s per game). So the commit run also reports every game's first-start time; if the last game started in the final
+  15% of the run, or fewer than a quarter of games ever yielded, the arm does NOT go to a hidden slot.
+- Built and tested (all CPU): sandbox 6/6, units 18/18, end-to-end 11/11, switch-off identical on 5 scenarios;
+  existing pool and start-guard suites pass with the switch off (park_resume 9/9, time_stop 43/43, end_of_play 14/14,
+  start_retry ALL PASS, scorecard_hold ALL PASS, off_unchanged pass); re-run by me on a clean checkout of ece6730.
+
+## Amendment 2 (2026-11-01 10:40 CST, before any fix is written): the alone ping-pong, seen in ac1
+
+Observed in ac1 (the GCP server, harness ece6730, log /data/run_synesthesia_ac_srv.log): once every other game had
+finished, lf52 yielded 'stuck' ("no viable hypothesis for level 2"), the resume worker gave it the free slot at
+once (nothing else was parked or unstarted), the agent yielded 'stuck' again, and so on: 84 park/resume cycles on
+lf52 in ~50 min, 0 actions between them, each cycle one model turn with a full prefill. dc22 showed the same shape
+(11 cycles) while it was the only waiting game. This is failure mode 3 of the original pre-statement (yielding too
+eagerly), in the form "a yield when no other game can use the slot is resumed into the same yield".
+
+Why: the status line and the yield reply tell the agent how many games are unstarted, not whether any game is
+waiting for the slot at all, and the harness resumes the best parked game whenever a slot is free, however many
+times it has just yielded.
+
+Fix (one switch, ARM_AGENT_CLOCK unchanged in name; the fixed commit replaces ece6730 in later runs):
+1. The status line adds the waiting count (unstarted + paused games). When it is zero it says so and states the new
+   rule: pausing now gives the time to no one; `yield_slot(reason, 'stuck')` with no game waiting ENDS this game with
+   its score so far, instead of pausing it. 'close' and 'working' yields are unchanged (they park and resume).
+2. The yield handler applies that rule at yield time: outlook 'stuck' and no game unstarted or parked -> the game
+   finishes (not parked), logged as "ARC3 YIELD_FINAL", counted in metrics as agent_yield with final=true.
+3. No other change: resume order, reserve, stall timers off, park on, all as in ece6730.
+
+Expectation, written before the fix runs: the number of park/resume cycles with 0 actions between them drops from
+95 (ac1: 84 lf52 + 11 dc22) to 0; yields and resumes with play between them continue as before; score unchanged
+within the replicate spread (the cycles happened in idle slot time). Risk named: an agent that would have found a
+hypothesis on a later resume loses the chance; accepted, the agent is told the rule in the same line.
+
+Replicate series (prestate_server_replicates_2026-11-01.md): ac1 stays as run (ece6730, with the ping-pong, which
+affected only the tail of the run); ac2 onward and the second Kaggle commit run use the fixed commit. ac1 is
+reported with that note, not pooled silently with the fixed runs.
+
+## Amendment 3 (2026-11-01 13:20 CST, before any code): the mutual ping-pong, seen in Kaggle v3
+
+Observed in Kaggle agent-clock v3 (746434e, COMPLETE, 39.03, 8,467 actions, 0 tracebacks): the amendment-2 rule
+fired once (1 YIELD_FINAL); 115 zero-action park/resume cycles remained (cn04 58, tu93 30, sp80 22, dc22 21). The
+amendment-2 expectation ("0-action cycles drop to 0") is refuted as written. Mechanism: the rule tests "no game
+waiting"; late in the run two or more 'stuck' games are parked at once, each counts as waiting for the other, and
+the resume worker hands the free slot back and forth between games that take no action in it.
+
+Rule 3 (added to rules 1-2, which stay): a 'stuck' yield made with ZERO actions since the game's last resume
+finishes the game (YIELD_FINAL, reason "resumed and took no action"). The game asked for a pause, was given the
+slot back, and declined to use it; a second pause would only be resumed into itself or into another such game.
+Not affected: a 'stuck' yield after >= 1 action in the slot (parks as before: the agent tried something); 'close'
+and 'working' yields (park as before); the first yield of a game (no resume yet). The status line says, after a
+resume, "This slot was resumed for you: yielding 'stuck' again before taking an action ends this game."
+
+Expectation, before the fix runs: zero-action park/resume cycles 115 -> 0 on a 25-game run (a game can still
+be resumed once into a zero-action stuck yield, so cycles with 0 actions are bounded by the number of games, not
+by the clock); yields with play between them unchanged; score within the replicate spread. Risk: a game that
+would have acted on its second resume loses the chance; it is told the rule in the status line before it decides.
+Applies to the server series from ac3 (ac2b included), not to Kaggle today.

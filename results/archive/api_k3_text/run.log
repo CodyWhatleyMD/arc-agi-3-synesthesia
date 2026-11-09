@@ -1,0 +1,1614 @@
+MISTRAL COMPAT installed: mistral=False reasoning_effort='high'
+SANDBOX TIMEOUT raised to 120s (source clamps at 30)
+DUCK FIXES -- label-block fix: installed; dead-game kill: installed on _HarnessGameSession (K=120)
+DUCK FIXES -- ACTION7 described: installed
+RATE LIMIT installed: 34 rpm, burst 6, in-flight<=4, gap>=1.76s, shared across threads
+CTX OVERFLOW SHIM INSTALLED  estimate_safety=1.15  (estimate patched: True)  log=runs/api_k3_text/ctx_overflow.jsonl
+INDEX POLICY: NOT INSTALLED (INDEX_POLICY=0). Self-test passed: fresh-slot index 0.915, 7/7 table rows reproduced. Set INDEX_POLICY=1 to enable early stopping.
+lownorm: legend in QWEN's words: white, light gray, medium gray, dark gray, charcoal, black, magenta, pink, red, blue, sky blue, yellow, orange, maroon, green, purple
+lownorm: tokenizer check PASSED on /home/ignaz/models/qwen38-nvfp4-baked-centred-a115/tokenizer.json -- 16/16 single-token, non-merging (lownorm_tokenizer_verified=True)
+ARM=lownorm_glyphs
+lownorm: map     WwgGcBMPRbSYOrNp -> 겪쏟눠됩멤굉촬훨꽤ങ탓뀌볍穌썼繽
+lownorm: legend  겪=white, 쏟=light gray, 눠=medium gray, 됩=dark gray, 멤=charcoal, 굉=black, 촬=magenta, 훨=pink, 꽤=red, ങ=blue, 탓=sky blue, 뀌=yellow, 볍=orange, 穌=maroon, 썼=green, 繽=purple
+lownorm: patched ['inference.agent.prompts.ARC_COLOR_LEGEND', 'inference.agent.prompts.GAME_OVERVIEW_ADDENDUM', 'inference.agent.prompts.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'inference.agent.tool_agent.GAME_OVERVIEW_ADDENDUM', 'inference.agent.tool_agent.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'ToolAgent._build_user_prompt (wrapped)']
+lownorm: probe frame:
+굉굉겪
+굉ങ겪
+썼썼썼
+ab: lownorm control window matched to visual arm: 61376
+BREAKER INSTALLED on ToolAgent._chat_completion (log: runs/api_k3_text/breaker.jsonl; open at 8 consecutive failures, backoff <= 30s)
+RECALL INSTALLED on ToolAgent._run_python_tool (ledger from /home/ignaz/github/arc-prize-2026/scripts/recall_scaffold.py; DUCK_RECALL_NOTES=0 disables)
+ab: bm.n_passes=1
+ab: ARM=lownorm ctx=65536 games=25 concurrency=8 max_actions=None per_game_s=7920.0 job_dir=runs/api_k3_text model=moonshotai/kimi-k3
+ab: 400-storm watchdog armed on /home/ignaz/github/arc-prize-2026/runs/api_k3_text/run.log
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 2: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 2: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 2: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 2: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 2: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 2: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 2: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+benchmark: regenerated diagnostics in runs/api_k3_text in 2.28s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-23 14:06:49
+ended:     in progress
+mean score:    0.00
+median score:  0.00
+total actions: 7
+total tokens:  5247
+generated tokens/sec: 8.70 (job wallclock)
+total wallclock: 2360.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=0, tokens=0
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=1, tokens=862
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=0.00, levels=0.0/8, actions=2, tokens=1323
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=2, tokens=1694
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=0, tokens=0
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=1, tokens=709
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=1, tokens=659
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 2: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 3: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 3: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+benchmark: regenerated diagnostics in runs/api_k3_text in 0.94s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-23 14:06:49
+ended:     in progress
+mean score:    0.09
+median score:  0.00
+total actions: 44
+total tokens:  16135
+generated tokens/sec: 13.40 (job wallclock)
+total wallclock: 7170.7s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=0, tokens=0
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=4, tokens=2026
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=5, tokens=2176
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=0.00, levels=0.0/8, actions=5, tokens=2737
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=5, tokens=2359
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=0, tokens=0
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=4, tokens=2531
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=19, tokens=2994
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=2, tokens=1312
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 20: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+benchmark: regenerated diagnostics in runs/api_k3_text in 0.82s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-23 14:06:49
+ended:     in progress
+mean score:    0.31
+median score:  0.00
+total actions: 84
+total tokens:  23799
+generated tokens/sec: 13.19 (job wallclock)
+total wallclock: 9720.9s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=0, tokens=0
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=6, tokens=3745
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=20, tokens=4452
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=6, tokens=2989
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=20, tokens=5115
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=0, tokens=0
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=11, tokens=3192
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=19, tokens=2994
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=2, tokens=1312
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 21: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: 504 Server Error: Gateway Timeout for url: https://integrate.api.nvidia.com/v1/chat/completions
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 86: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+benchmark: regenerated diagnostics in runs/api_k3_text in 0.88s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-23 14:06:49
+ended:     in progress
+mean score:    0.50
+median score:  0.00
+total actions: 179
+total tokens:  34354
+generated tokens/sec: 14.28 (job wallclock)
+total wallclock: 14390.1s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=0, tokens=0
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=9, tokens=4474
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=24, tokens=6940
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=8, tokens=4306
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=4.76, levels=1.0/6, actions=21, tokens=6408
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=0, tokens=0
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=11, tokens=3192
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=21, tokens=5147
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=85, tokens=3887
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 25: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 87: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 23: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 10: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 10: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 2: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 10: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 2: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 10: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+benchmark: regenerated diagnostics in runs/api_k3_text in 0.84s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-23 14:06:49
+ended:     in progress
+mean score:    0.50
+median score:  0.00
+total actions: 225
+total tokens:  50607
+generated tokens/sec: 16.83 (job wallclock)
+total wallclock: 20638.5s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=0, tokens=0
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=0, tokens=0
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=0, tokens=0
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=9, tokens=4474
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=46, tokens=8843
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=0, tokens=0
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=10, tokens=6080
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=4.76, levels=1.0/6, actions=22, tokens=7215
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=0, tokens=0
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=11, tokens=3192
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=3, tokens=5442
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=0, tokens=0
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=24, tokens=8064
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=0, tokens=0
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=100, tokens=7297
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=0, tokens=0
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=0, tokens=0
+
+DEAD-GAME KILL: 0 levels after 120 actions (K=120); releasing the slot
+[finished] tr87-cd924810 state=gave_up level=0/6 score=0.00 actions=120 tokens=10449 per-level=120/54,0/58,0/40,0/45,0/71,0/146 note="tokens=10449"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gtr87-cd924810_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gtr87-cd924810_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 30: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 42: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 58: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gtr87-cd924810_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 43: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 58: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 60: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 44: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 53: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 15: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gtr87-cd924810_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+DEAD-GAME KILL: 0 levels after 120 actions (K=120); releasing the slot
+[finished] sk48-d8078629 state=gave_up level=0/8 score=0.00 actions=120 tokens=14064 per-level=120/61,0/177,0/101,0/103,0/230,0/181,0/125,0/92 note="tokens=14064"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 107: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 19: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gtr87-cd924810_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 102: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 69: 504 Server Error: Gateway Timeout for url: https://integrate.api.nvidia.com/v1/chat/completions
+analyzer request failed at action 126: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gtr87-cd924810_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 21: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 21: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 129: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 42: 504 Server Error: Gateway Timeout for url: https://integrate.api.nvidia.com/v1/chat/completions
+analyzer request failed at action 129: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 109: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 70: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gtr87-cd924810_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 129: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 44: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 153: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 75: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gtr87-cd924810_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+[finished] sb26-7fbdac44 state=gave_up level=3/8 score=7.23 actions=152 tokens=21285 per-level=11/18,114/28,27/18,0/19,0/31,0/23,0/58,0/18 note="tokens=21502"
+[finished] m0r0-492f87ba state=gave_up level=1/6 score=4.76 actions=128 tokens=19976 per-level=21/30,107/111,0/203,0/26,0/500,0/237 note="tokens=22211"
+[finished] lp85-305b61c3 state=gave_up level=1/8 score=2.78 actions=70 tokens=21648 per-level=6/17,64/38,0/31,0/16,0/41,0/60,0/26,0/159 note="tokens=22726"
+[finished] su15-1944f8ab state=gave_up level=1/9 score=2.22 actions=74 tokens=26774 per-level=19/22,55/42,0/26,0/115,0/36,0/31,0/8,0/40,0/41 note="tokens=33453"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 113: HTTPSConnectionPool(host='integrate.api.nvidia.com', port=443): Read timed out. (read timeout=82.11433165899871)
+[finished] ka59-38d34dbb state=gave_up level=0/7 score=0.00 actions=112 tokens=29899 per-level=112/28,0/109,0/51,0/51,0/33,0/132,0/326 note="tokens=29899"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 54: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+[finished] g50t-5849a774 state=gave_up level=0/7 score=0.00 actions=25 tokens=22316 per-level=25/78,0/175,0/179,0/230,0/96,0/54,0/67 note="tokens=25311"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 54: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 54: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 54: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 67: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 4: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 67: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 3: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 4: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 2: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 4: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 69: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 2: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 55: 504 Server Error: Gateway Timeout for url: https://integrate.api.nvidia.com/v1/chat/completions
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 4: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 8: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 94: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 8: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 4: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 7: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 23: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 34: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 23: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 34: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 7: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 23: 504 Server Error: Gateway Timeout for url: https://integrate.api.nvidia.com/v1/chat/completions
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 7: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 23: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 23: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+DEAD-GAME KILL: 0 levels after 120 actions (K=120); releasing the slot
+[finished] ls20-9607627b state=gave_up level=0/7 score=0.00 actions=120 tokens=17619 per-level=120/22,0/123,0/73,0/84,0/96,0/192,0/186 note="tokens=17619"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 7: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 129: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 3: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 7: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 22: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 2: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 26: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 26: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 158: HTTPSConnectionPool(host='integrate.api.nvidia.com', port=443): Read timed out. (read timeout=47.246602524999616)
+[finished] s5i5-18d95033 state=gave_up level=1/8 score=2.78 actions=157 tokens=38302 per-level=18/20,139/89,0/106,0/54,0/162,0/38,0/86,0/83 note="tokens=38302"
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 26: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 26: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 26: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 80: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 26: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 20: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 6: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 6: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 20: 504 Server Error: Gateway Timeout for url: https://integrate.api.nvidia.com/v1/chat/completions
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 23: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 92: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 8: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 23: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 92: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 38: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 23: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 32: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 38: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 23: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 32: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 100: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 38: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 23: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 38: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 16: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 45: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 10: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 38: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 2: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 25: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 23: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 38: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 2: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 25: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 10: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 38: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 5/8; sleeping 30.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 10: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 111: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 19: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 38: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 111: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 10: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 111: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 4/8; sleeping 16.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 51: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 111: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 51: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 25: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 52: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 23: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 21: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 52: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 23: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 52: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 42: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 160: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 23: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 18: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 53: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 23: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 46: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 18: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 28: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 194: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 47: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 18: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 23: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 24: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 56: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 18: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 24: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 31: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 56: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 24: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 203: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 56: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 203: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 53: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 23: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 35: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 35: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 67: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+[finished] ft09-0d8bbf25 state=gave_up level=3/6 score=23.81 actions=54 tokens=25524 per-level=15/43,7/12,32/23,0/28,0/65,0/37 note="tokens=27546"
+[finished] bp35-0a0ad940 state=gave_up level=1/9 score=0.41 actions=211 tokens=29993 per-level=49/21,162/48,0/44,0/38,0/33,0/87,0/86,0/131,0/163 note="tokens=31574"
+[finished] r11l-495a7899 state=gave_up level=1/6 score=4.76 actions=23 tokens=16757 per-level=8/22,15/33,0/51,0/26,0/52,0/49 note="tokens=21362"
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 67: HTTPSConnectionPool(host='integrate.api.nvidia.com', port=443): Read timed out. (read timeout=27.86102614200354)
+[finished] cd82-fb555c5d state=gave_up level=0/6 score=0.00 actions=66 tokens=23260 per-level=66/55,0/8,0/41,0/21,0/23,0/23 note="tokens=23260"
+[finished] tu93-0768757b state=gave_up level=1/9 score=2.22 actions=34 tokens=21672 per-level=19/19,15/16,0/34,0/42,0/123,0/80,0/14,0/23,0/111 note="tokens=24821"
+[finished] cn04-2fe56bfb state=gave_up level=0/6 score=0.00 actions=64 tokens=31954 per-level=64/29,0/54,0/85,0/300,0/208,0/113 note="tokens=34407"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 1: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 2: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 3: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 3: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 35: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 62: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 19: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 5: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 50: HTTPSConnectionPool(host='integrate.api.nvidia.com', port=443): Read timed out. (read timeout=189.16866590699647)
+[finished] lf52-271a04aa state=gave_up level=1/10 score=1.82 actions=49 tokens=22903 per-level=11/32,38/81,0/60,0/71,0/205,0/148,0/244,0/109,0/164,0/225 note="tokens=22903"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 25: 504 Server Error: Gateway Timeout for url: https://integrate.api.nvidia.com/v1/chat/completions
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 8: 504 Server Error: Gateway Timeout for url: https://integrate.api.nvidia.com/v1/chat/completions
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 8: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 100: HTTPSConnectionPool(host='integrate.api.nvidia.com', port=443): Read timed out. (read timeout=52.05196016899936)
+[finished] ar25-0c556536 state=gave_up level=1/8 score=1.78 actions=99 tokens=17979 per-level=40/32,59/50,0/75,0/37,0/89,0/159,0/233,0/73 note="tokens=17979"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 49: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 6: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 30: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 32: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 30: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 20: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 14: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 43: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 32: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 16: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 17: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 57: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 18: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 57: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 43: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 58: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 57: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 58: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 43: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 19: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 19: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 19: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 12: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 19: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 19: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 40: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 58: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 40: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 63: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 30: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 63: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 64: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 43: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 63: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 56: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 51: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 43: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 71: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 63: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 71: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 58: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 63: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 43: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 32: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 62: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 34: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 57: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 142: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 38: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+DEAD-GAME KILL: 0 levels after 120 actions (K=120); releasing the slot
+[finished] sp80-589a99af state=gave_up level=0/6 score=0.00 actions=120 tokens=15530 per-level=120/39,0/58,0/25,0/148,0/96,0/152 note="tokens=15530"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 57: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 78: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 78: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+DEAD-GAME KILL: 0 levels after 120 actions (K=120); releasing the slot
+[finished] dc22-fdcac232 state=gave_up level=0/6 score=0.00 actions=120 tokens=28036 per-level=120/59,0/102,0/67,0/98,0/324,0/578 note="tokens=28036"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 76: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 79: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 86: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+analyzer request failed at action 79: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 48: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+[finished] vc33-5430563c state=gave_up level=2/7 score=5.11 actions=47 tokens=21991 per-level=9/7,28/18,10/44,0/61,0/131,0/34,0/152 note="tokens=21991"
+analyzer request failed at action 172: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 78: HTTPSConnectionPool(host='integrate.api.nvidia.com', port=443): Read timed out. (read timeout=19.005720898996515)
+[finished] tn36-ef4dde99 state=gave_up level=0/7 score=0.00 actions=77 tokens=24154 per-level=77/32,0/72,0/26,0/40,0/30,0/55,0/62 note="tokens=24154"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 94: 429 Client Error: Too Many Requests for url: https://integrate.api.nvidia.com/v1/chat/completions | response: {"status":429,"title":"Too Many Requests"}
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 94: HTTPSConnectionPool(host='integrate.api.nvidia.com', port=443): Read timed out. (read timeout=30.452655501001573)
+[finished] sc25-635fd71a state=gave_up level=0/6 score=0.00 actions=93 tokens=19394 per-level=93/36,0/6,0/32,0/83,0/143,0/50 note="tokens=19394"
+[finished] re86-8af5384d state=gave_up level=2/8 score=7.45 actions=78 tokens=21437 per-level=42/26,36/42,0/86,0/108,0/189,0/139,0/424,0/241 note="tokens=23740"
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 172: 504 Server Error: Gateway Timeout for url: https://integrate.api.nvidia.com/v1/chat/completions
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 172: 504 Server Error: Gateway Timeout for url: https://integrate.api.nvidia.com/v1/chat/completions
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 259: HTTPSConnectionPool(host='integrate.api.nvidia.com', port=443): Read timed out. (read timeout=110.02095284799725)
+[finished] wa30-ee6fef47 state=gave_up level=2/9 score=5.64 actions=258 tokens=44013 per-level=70/71,137/119,51/183,0/98,0/368,0/68,0/79,0/442,0/415 note="tokens=44013"
+smoke: (ignoring movie-render OSError in teardown: Could not find a backend to open `runs/api_k3_text/movies/gsb26-7fbdac44_p0.mp4`)
+smoke: run finished in 26772s
+smoke: 26 request-log files under runs/api_k3_text
+smoke: 2390 requests; longest conversation 80 msgs; new legend=True old legend=False; new glyphs in tool results=3202; old-letter node colours=0
+smoke: PASS -- legend swapped and node colours arrive in the new glyphs
+smoke: summary.txt: 'benchmark: 0-history-turns\nsolver:    inference\ngames:     25\npasses:    1\nruns:      25 (won: 0)\nstarted:   2026-09-23 14:06:49\nended:     in progress\nmean score:    0.50\nmedian score:  0.00\ntotal actions: 225\ntotal tokens:  50607\ngenerated tokens/sec: 16.83 (job wallclock)\ntotal wallclock: 20638.5'

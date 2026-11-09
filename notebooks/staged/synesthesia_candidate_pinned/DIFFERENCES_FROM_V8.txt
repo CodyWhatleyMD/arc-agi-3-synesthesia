@@ -1,0 +1,25 @@
+Differences from v8 (kernel version 8, notebooks_duck/kaggle_staged/kaggle_armB_dih_v22_fix_0310/armB.ipynb):
+- v8 cells 0-1 (markdown) -> one markdown cell in our terms.
+- new first code cell: BOOT (scripts/notebook_boot.py), printed before any input is touched.
+- v8 cell 2 (copy the frozen bundle, run seven patch scripts and three inline setup edits on the copy, structural and
+  marker checks, token-estimate check, environment) -> copy OUR harness dataset (built from one git commit, which the
+  cell checks) to /tmp/synesthesia_harness with nothing patched; same tower checkpoint sha256 check; the model is the
+  Kaggle Model v22/3 mounted in place (v8 symlink-merged two datasets and set ARM_MODEL_DIR; the setup script now
+  resolves v22/3 itself); same embedding-channel marker check and token-estimate check, run on the copy; the same
+  environment values except TAAF_KAGGLE_BUNDLE_DIR (our copy), ARM_LABEL ('synesthesia', the output folder name) and
+  no ARM_MODEL_DIR. Inputs are found at their two explicit mount paths, never by searching /kaggle/input.
+- v8 cell 5: DATASET_SOURCES names our harness and runtime datasets (v8: the frozen bundle and a runtime it no longer
+  used); the harness's runtime lookup then gets the runtime's real mount path from TAAF_KAGGLE_INPUT_PATHS.
+- v8 cells 10-11: same logic; printed labels and comments in our terms; the serving-line comparison against a twin
+  machine's command line is dropped (the three defining embedding flags are still verified and the launched command
+  is written to SERVER_CMD.json); ARM_CONFIG.json -> RUN_CONFIG.json.
+- metadata: our five inputs (v8: two model datasets, the frozen bundle, the Python 3.12 runtime, the tower); no image
+  pin (v8 pinned the 10-06 image; our runtime is built for the current image's Python 3.13).
+- v8 cells 3, 4, 6, 7, 8, 9 and the harness's code in 10-11: unchanged.
+
+This folder is an ARM, not the anchor notebook (codywhatleymd/arc-agi-3-synesthesia); it differs from the anchor only in:
+- kernel id codywhatleymd/arc-agi-3-synesthesia-candidate-pinned, title 'ARC-AGI-3 Synesthesia candidate pinned' (kernel-metadata.json; the About heading names the arm).
+- the first line of the log: 'ARM: ARC-AGI-3 Synesthesia candidate pinned env: ARC3_START_ATTEMPTS=4 ARC3_START_SKIP=1 ARM_PINNED_ROUND_MB=1024' (BOOT cell).
+- harness dataset codywhatleymd/arc3-syn-harness-candpin-k1 (anchor: codywhatleymd/arc3-synesthesia-harness): attached, checked by BOOT, read by cell 2, first in cell 5's DATASET_SOURCES.
+- cell 2: ARM_NAME / ARM_KERNEL / ARM_HARNESS_DATASET / ARM_SWITCHES (ARC3_START_ATTEMPTS=4 ARC3_START_SKIP=1 ARM_PINNED_ROUND_MB=1024) added to the environment, which prints each as 'synesthesia: env K=V'.
+- cell 11: RUN_CONFIG.json gains "arm": title, kernel id, harness dataset and each switch's value as the run's environment has it.

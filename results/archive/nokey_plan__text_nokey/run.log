@@ -1,0 +1,646 @@
+MISTRAL COMPAT installed: mistral=False reasoning_effort='high'
+SANDBOX TIMEOUT raised to 120s (source clamps at 30)
+DUCK FIXES -- label-block fix: installed; dead-game kill: installed on _HarnessGameSession (K=120)
+DUCK FIXES -- ACTION7 described: installed
+CTX OVERFLOW SHIM INSTALLED  estimate_safety=1.15  (estimate patched: True)  log=runs/nokey_plan/text_nokey/ctx_overflow.jsonl
+INDEX POLICY: NOT INSTALLED (INDEX_POLICY=0). Self-test passed: fresh-slot index 0.915, 7/7 table rows reproduced. Set INDEX_POLICY=1 to enable early stopping.
+lownorm: NO COLOUR KEY -- legend bullet removed from every prompt string
+lownorm: tokenizer check PASSED on /home/ignaz/models/qwen38-nvfp4/tokenizer.json -- 16/16 single-token, non-merging (lownorm_tokenizer_verified=True)
+ARM=lownorm_glyphs
+lownorm: map     WwgGcBMPRbSYOrNp -> 겪쏟눠됩멤굉촬훨꽤ങ탓뀌볍穌썼繽
+lownorm: legend  겪=white, 쏟=light gray, 눠=gray, 됩=dark gray, 멤=charcoal, 굉=black, 촬=magenta, 훨=pink, 꽤=red, ങ=blue, 탓=sky blue, 뀌=yellow, 볍=orange, 穌=dark red, 썼=light green, 繽=purple
+lownorm: patched ['inference.agent.prompts.ARC_COLOR_LEGEND', 'inference.agent.prompts.GAME_OVERVIEW_ADDENDUM', 'inference.agent.prompts.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'inference.agent.tool_agent.GAME_OVERVIEW_ADDENDUM', 'inference.agent.tool_agent.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'ToolAgent._build_user_prompt (wrapped)', 'inference.agent.prompts.VISUAL_GAME_ADDENDUM (bg sentence)', 'inference.agent.tool_agent.VISUAL_GAME_ADDENDUM (bg sentence)']
+lownorm: probe frame:
+굉굉겪
+굉ങ겪
+썼썼썼
+ab: lownorm control window matched to visual arm: 61376
+BREAKER INSTALLED on ToolAgent._chat_completion (log: runs/nokey_plan/text_nokey/breaker.jsonl; open at 8 consecutive failures, backoff <= 30s)
+RECALL INSTALLED on ToolAgent._run_python_tool (ledger from /home/ignaz/github/arc-prize-2026/scripts/recall_scaffold.py; DUCK_RECALL_NOTES=0 disables)
+ab: bm.n_passes=1
+ab: ARM=lownorm ctx=65536 games=25 concurrency=28 max_actions=None per_game_s=7920.0 job_dir=runs/nokey_plan/text_nokey model=qwen38
+ab: 400-storm watchdog armed on /home/ignaz/github/arc-prize-2026/runs/nokey_plan/text_nokey/run.log
+benchmark: regenerated diagnostics in runs/nokey_plan/text_nokey in 2.36s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-24 01:32:47
+ended:     in progress
+mean score:    0.11
+median score:  0.00
+total actions: 135
+total tokens:  318762
+generated tokens/sec: 528.70 (job wallclock)
+total wallclock: 12176.6s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=4, tokens=15058
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=2, tokens=14972
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=8, tokens=14776
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=4, tokens=14034
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=5, tokens=14376
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=3, tokens=14697
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=5, tokens=9626
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=3, tokens=11316
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=5, tokens=14619
+  lp85-305b61c3: score=0.00, levels=0.0/8, actions=1, tokens=11245
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=3, tokens=14606
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=2, tokens=10236
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=2, tokens=13297
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=16, tokens=14761
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=5, tokens=12499
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=12, tokens=11989
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=6, tokens=15031
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=4, tokens=10629
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=15, tokens=10924
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=3, tokens=11477
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=6, tokens=13033
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=2, tokens=8941
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=2, tokens=13008
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=6, tokens=12786
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=11, tokens=10826
+
+benchmark: regenerated diagnostics in runs/nokey_plan/text_nokey in 2.07s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-24 01:32:47
+ended:     in progress
+mean score:    0.28
+median score:  0.00
+total actions: 257
+total tokens:  564958
+generated tokens/sec: 468.81 (job wallclock)
+total wallclock: 24524.4s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=9, tokens=25936
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=2, tokens=14972
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=15, tokens=24514
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=6, tokens=24977
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=9, tokens=23072
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=10, tokens=19635
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=9, tokens=23340
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=6, tokens=19814
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=14, tokens=25720
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=5, tokens=21761
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=3, tokens=14606
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=3, tokens=26389
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=7, tokens=24398
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=19, tokens=24079
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=5, tokens=12499
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=26, tokens=18848
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=11, tokens=25991
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=11, tokens=24688
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=25, tokens=25904
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=11, tokens=26368
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=10, tokens=21078
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=5, tokens=23428
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=7, tokens=23922
+  vc33-5430563c: score=1.45, levels=1.0/7, actions=11, tokens=22850
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=18, tokens=26169
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 6: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 27: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+benchmark: regenerated diagnostics in runs/nokey_plan/text_nokey in 1.95s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-24 01:32:47
+ended:     in progress
+mean score:    0.41
+median score:  0.00
+total actions: 379
+total tokens:  729690
+generated tokens/sec: 403.78 (job wallclock)
+total wallclock: 35251.9s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=10, tokens=32934
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=3, tokens=27323
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=20, tokens=28941
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=6, tokens=24977
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=11, tokens=31331
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=30, tokens=27786
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=13, tokens=30152
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=10, tokens=32891
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=22, tokens=34585
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=6, tokens=31866
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=20, tokens=33457
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=3, tokens=26389
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=9, tokens=29869
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=20, tokens=30747
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=5, tokens=12499
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=26, tokens=18848
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=17, tokens=31716
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=23, tokens=32321
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=31, tokens=32328
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=12, tokens=32435
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=10, tokens=21078
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=5, tokens=23428
+  tu93-0768757b: score=1.52, levels=1.0/9, actions=23, tokens=34367
+  vc33-5430563c: score=1.45, levels=1.0/7, actions=13, tokens=34125
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=31, tokens=33297
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 7: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+benchmark: regenerated diagnostics in runs/nokey_plan/text_nokey in 2.08s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-24 01:32:47
+ended:     in progress
+mean score:    0.60
+median score:  0.00
+total actions: 457
+total tokens:  874245
+generated tokens/sec: 362.86 (job wallclock)
+total wallclock: 48867.4s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=24, tokens=36406
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=3, tokens=27323
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=26, tokens=37130
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=6, tokens=24977
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=11, tokens=31331
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=30, tokens=27786
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=14, tokens=36128
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=11, tokens=36666
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=24, tokens=41516
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=6, tokens=31866
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=26, tokens=40628
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=9, tokens=39678
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=10, tokens=35662
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=21, tokens=37014
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=9, tokens=24521
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=27, tokens=24985
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=19, tokens=40001
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=26, tokens=38912
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=36, tokens=41502
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=16, tokens=40391
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=19, tokens=36042
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=5, tokens=23428
+  tu93-0768757b: score=1.52, levels=1.0/9, actions=29, tokens=40071
+  vc33-5430563c: score=1.45, levels=1.0/7, actions=14, tokens=40270
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=36, tokens=40011
+
+benchmark: regenerated diagnostics in runs/nokey_plan/text_nokey in 1.75s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-24 01:32:47
+ended:     in progress
+mean score:    1.43
+median score:  0.00
+total actions: 542
+total tokens:  1003794
+generated tokens/sec: 333.36 (job wallclock)
+total wallclock: 60810.9s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=26, tokens=42065
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=3, tokens=27323
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=26, tokens=37130
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=6, tokens=24977
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=14, tokens=45247
+  ft09-0d8bbf25: score=4.76, levels=1.0/6, actions=33, tokens=41956
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=14, tokens=36128
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=13, tokens=45149
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=30, tokens=43039
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=8, tokens=47358
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=26, tokens=40628
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=10, tokens=41722
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=13, tokens=44292
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=31, tokens=42964
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=20, tokens=26805
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=37, tokens=33241
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=24, tokens=44106
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=26, tokens=38912
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=44, tokens=45328
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=22, tokens=45132
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=19, tokens=36042
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=8, tokens=43129
+  tu93-0768757b: score=1.52, levels=1.0/9, actions=29, tokens=40071
+  vc33-5430563c: score=9.66, levels=2.0/7, actions=21, tokens=45070
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=39, tokens=45980
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 20: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 27: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 27: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+benchmark: regenerated diagnostics in runs/nokey_plan/text_nokey in 1.73s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-24 01:32:47
+ended:     in progress
+mean score:    1.43
+median score:  0.00
+total actions: 595
+total tokens:  1135430
+generated tokens/sec: 314.26 (job wallclock)
+total wallclock: 73782.9s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=27, tokens=49836
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=3, tokens=27323
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=26, tokens=37130
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=7, tokens=39902
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=16, tokens=50297
+  ft09-0d8bbf25: score=4.76, levels=1.0/6, actions=35, tokens=51374
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=19, tokens=52962
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=14, tokens=48464
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=36, tokens=53592
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=8, tokens=47358
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=26, tokens=40628
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=23, tokens=51911
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=14, tokens=47775
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=39, tokens=52790
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=21, tokens=35015
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=40, tokens=37359
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=24, tokens=44106
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=26, tokens=38912
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=45, tokens=49721
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=24, tokens=51767
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=19, tokens=36042
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=9, tokens=52616
+  tu93-0768757b: score=1.52, levels=1.0/9, actions=29, tokens=40071
+  vc33-5430563c: score=9.66, levels=2.0/7, actions=21, tokens=45070
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=44, tokens=53409
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 25: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 46: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 4: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+benchmark: regenerated diagnostics in runs/nokey_plan/text_nokey in 1.82s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-24 01:32:47
+ended:     in progress
+mean score:    1.99
+median score:  0.00
+total actions: 711
+total tokens:  1285256
+generated tokens/sec: 304.93 (job wallclock)
+total wallclock: 89085.8s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=29, tokens=56325
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=3, tokens=27323
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=26, tokens=37130
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=7, tokens=39902
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=26, tokens=55026
+  ft09-0d8bbf25: score=14.29, levels=2.0/6, actions=43, tokens=60007
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=21, tokens=55777
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=20, tokens=61224
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=36, tokens=53592
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=8, tokens=47358
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=35, tokens=49104
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=46, tokens=59008
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=17, tokens=55287
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=40, tokens=56190
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=22, tokens=42047
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=40, tokens=37359
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=24, tokens=44106
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=43, tokens=61156
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=45, tokens=49721
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=28, tokens=59885
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=23, tokens=47333
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=21, tokens=56325
+  tu93-0768757b: score=5.96, levels=2.0/9, actions=39, tokens=57716
+  vc33-5430563c: score=9.66, levels=2.0/7, actions=22, tokens=56831
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=47, tokens=59524
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 22: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 30: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 24: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 9: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+benchmark: regenerated diagnostics in runs/nokey_plan/text_nokey in 1.57s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-24 01:32:47
+ended:     in progress
+mean score:    1.99
+median score:  0.00
+total actions: 807
+total tokens:  1413974
+generated tokens/sec: 293.56 (job wallclock)
+total wallclock: 102909.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=29, tokens=56325
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=4, tokens=55239
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=26, tokens=37130
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=7, tokens=39902
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=49, tokens=67112
+  ft09-0d8bbf25: score=14.29, levels=2.0/6, actions=43, tokens=60007
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=21, tokens=55777
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=20, tokens=61224
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=40, tokens=64635
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=8, tokens=47358
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=43, tokens=56611
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=46, tokens=59008
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=21, tokens=66458
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=52, tokens=65818
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=28, tokens=47189
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=53, tokens=50930
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=24, tokens=44106
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=52, tokens=63937
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=46, tokens=52260
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=28, tokens=59885
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=23, tokens=47333
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=25, tokens=64344
+  tu93-0768757b: score=5.96, levels=2.0/9, actions=44, tokens=64862
+  vc33-5430563c: score=9.66, levels=2.0/7, actions=23, tokens=61305
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=52, tokens=65219
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 44: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+benchmark: regenerated diagnostics in runs/nokey_plan/text_nokey in 1.66s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-24 01:32:47
+ended:     in progress
+mean score:    2.08
+median score:  0.00
+total actions: 907
+total tokens:  1542155
+generated tokens/sec: 284.62 (job wallclock)
+total wallclock: 120639.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=30, tokens=60496
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=4, tokens=55239
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=28, tokens=59013
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=7, tokens=39902
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=49, tokens=67112
+  ft09-0d8bbf25: score=14.29, levels=2.0/6, actions=46, tokens=62107
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=34, tokens=63087
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=22, tokens=73309
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=51, tokens=69164
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=8, tokens=47358
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=44, tokens=61174
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=46, tokens=59008
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=22, tokens=71418
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=69, tokens=73285
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=28, tokens=47189
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=53, tokens=50930
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=32, tokens=61286
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=62, tokens=72864
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=49, tokens=58396
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=28, tokens=59885
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=25, tokens=51431
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=40, tokens=72675
+  tu93-0768757b: score=5.96, levels=2.0/9, actions=44, tokens=64862
+  vc33-5430563c: score=9.66, levels=2.0/7, actions=25, tokens=70455
+  wa30-ee6fef47: score=2.22, levels=1.0/9, actions=61, tokens=70510
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 45: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 31: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+benchmark: regenerated diagnostics in runs/nokey_plan/text_nokey in 1.82s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-24 01:32:47
+ended:     in progress
+mean score:    2.30
+median score:  0.00
+total actions: 1071
+total tokens:  1697356
+generated tokens/sec: 281.94 (job wallclock)
+total wallclock: 136177.6s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=30, tokens=60496
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=10, tokens=63829
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=30, tokens=67013
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=15, tokens=63920
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=49, tokens=67112
+  ft09-0d8bbf25: score=14.29, levels=2.0/6, actions=46, tokens=62107
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=43, tokens=67655
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=24, tokens=79271
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=67, tokens=77246
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=16, tokens=58746
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=44, tokens=61174
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=46, tokens=59008
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=28, tokens=77328
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=91, tokens=80235
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=28, tokens=47189
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=62, tokens=65181
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=57, tokens=64069
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=81, tokens=78409
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=49, tokens=58396
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=30, tokens=77872
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=40, tokens=60498
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=46, tokens=76276
+  tu93-0768757b: score=5.96, levels=2.0/9, actions=44, tokens=64862
+  vc33-5430563c: score=9.66, levels=2.0/7, actions=29, tokens=79967
+  wa30-ee6fef47: score=2.22, levels=1.0/9, actions=66, tokens=79497
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 47: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 50: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+benchmark: regenerated diagnostics in runs/nokey_plan/text_nokey in 1.68s
+benchmark: 0-history-turns
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-09-24 01:32:47
+ended:     in progress
+mean score:    2.30
+median score:  0.00
+total actions: 1136
+total tokens:  1801399
+generated tokens/sec: 272.03 (job wallclock)
+total wallclock: 146372.1s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=32, tokens=65232
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=10, tokens=63829
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=32, tokens=76381
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=17, tokens=71358
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=49, tokens=67112
+  ft09-0d8bbf25: score=14.29, levels=2.0/6, actions=46, tokens=62107
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=47, tokens=72150
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=26, tokens=81177
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=75, tokens=84762
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=17, tokens=64571
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=58, tokens=76061
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=46, tokens=59008
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=29, tokens=85651
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=101, tokens=85252
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=28, tokens=47189
+  sb26-7fbdac44: score=2.78, levels=1.0/8, actions=62, tokens=65181
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=59, tokens=74740
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=88, tokens=86999
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=49, tokens=58396
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=31, tokens=82450
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=46, tokens=63143
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=46, tokens=76276
+  tu93-0768757b: score=5.96, levels=2.0/9, actions=44, tokens=64862
+  vc33-5430563c: score=9.66, levels=2.0/7, actions=29, tokens=79967
+  wa30-ee6fef47: score=2.22, levels=1.0/9, actions=69, tokens=87545
+
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 63: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 45: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 48: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 47: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 47: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 32: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 50: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 11: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+DEAD-GAME KILL: 0 levels after 120 actions (K=120); releasing the slot
+[finished] re86-8af5384d state=gave_up level=0/8 score=0.00 actions=120 tokens=94704 per-level=120/26,0/42,0/86,0/108,0/189,0/139,0/424,0/241 note="tokens=94704"
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/nokey_plan/text_nokey/movies/gre86-8af5384d_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 47: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 60: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 20: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 93: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+Traceback (most recent call last):
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 285, in _periodic_save_loop
+    self._generate_diagnostics()
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/benchmark.py", line 404, in _generate_diagnostics
+    diagnostics.generate_run_html(self, self.job_dir / "diagnostics.html")
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 2078, in generate_run_html
+    if not _render_run_mp4(run, mp4_path):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ignaz/duck-harness/tufa-arc-agi-framework/src/taaf/diagnostics.py", line 1218, in _render_run_mp4
+    iio.imwrite(
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/v3.py", line 139, in imwrite
+    with imopen(
+         ^^^^^^^
+  File "/home/ignaz/github/arc-prize-2026/.mlvenv/lib/python3.12/site-packages/imageio/core/imopen.py", line 281, in imopen
+    raise err_type(err_msg)
+OSError: Could not find a backend to open `runs/nokey_plan/text_nokey/movies/gre86-8af5384d_p0.mp4`` with iomode `w`.
+Based on the extension, the following plugins might add capable backends:
+  FFMPEG:  pip install imageio[ffmpeg]
+  pyav:  pip install imageio[pyav]
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 45: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=900.0)
+DEAD-GAME KILL: 0 levels after 120 actions (K=120); releasing the slot
+[finished] sk48-d8078629 state=gave_up level=0/8 score=0.00 actions=120 tokens=103440 per-level=120/61,0/177,0/101,0/103,0/230,0/181,0/125,0/92 note="tokens=103440"
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 3/8; sleeping 8.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+BREAKER: request failure 2/8; sleeping 4.0s before re-raising (solver retries at 1.0s, which would spin)
+analyzer request failed at action 110: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=69.49293084399687)
+analyzer request failed at action 57: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=314.7944035229957)
+analyzer request failed at action 44: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=164.31277530999796)
+[finished] lf52-271a04aa state=gave_up level=1/10 score=1.82 actions=109 tokens=102842 per-level=22/32,87/81,0/60,0/71,0/205,0/148,0/244,0/109,0/164,0/225 note="tokens=102842"
+analyzer request failed at action 34: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=249.84294121900166)
+[finished] tr87-cd924810 state=gave_up level=0/6 score=0.00 actions=56 tokens=100753 per-level=56/54,0/58,0/40,0/45,0/71,0/146 note="tokens=100753"
+[finished] r11l-495a7899 state=gave_up level=1/6 score=4.76 actions=43 tokens=102239 per-level=10/22,33/33,0/51,0/26,0/52,0/49 note="tokens=102239"
+[finished] su15-1944f8ab state=gave_up level=1/9 score=2.22 actions=33 tokens=89903 per-level=22/22,11/42,0/26,0/115,0/36,0/31,0/8,0/40,0/41 note="tokens=89903"
+analyzer request failed at action 37: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=97.28384992799693)
+[finished] ka59-38d34dbb state=gave_up level=0/7 score=0.00 actions=36 tokens=103140 per-level=36/28,0/109,0/51,0/51,0/33,0/132,0/326 note="tokens=103140"
+analyzer request failed at action 90: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=85.30645902600372)
+[finished] wa30-ee6fef47 state=gave_up level=1/9 score=2.22 actions=89 tokens=102888 per-level=61/71,28/119,0/183,0/98,0/368,0/68,0/79,0/442,0/415 note="tokens=102888"
+analyzer request failed at action 44: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=524.6892660940066)
+[finished] cd82-fb555c5d state=gave_up level=0/6 score=0.00 actions=43 tokens=87513 per-level=43/55,0/8,0/41,0/21,0/23,0/23 note="tokens=87513"
+analyzer request failed at action 48: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=274.6818011169962)
+[finished] ft09-0d8bbf25 state=gave_up level=2/6 score=14.29 actions=47 tokens=70071 per-level=33/43,9/12,5/23,0/28,0/65,0/37 note="tokens=70071"
+analyzer request failed at action 47: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=533.8100417560054)
+[finished] vc33-5430563c state=gave_up level=2/7 score=9.66 actions=46 tokens=97643 per-level=11/7,10/18,25/44,0/61,0/131,0/34,0/152 note="tokens=97643"
+analyzer request failed at action 20: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=241.78702902200166)
+[finished] lp85-305b61c3 state=gave_up level=2/8 score=8.33 actions=19 tokens=70400 per-level=5/17,11/38,3/31,0/16,0/41,0/60,0/26,0/159 note="tokens=70400"
+analyzer request failed at action 60: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=314.8062365530059)
+[finished] sc25-635fd71a state=gave_up level=0/6 score=0.00 actions=59 tokens=74740 per-level=59/36,0/6,0/32,0/83,0/143,0/50 note="tokens=78931"
+[finished] tu93-0768757b state=gave_up level=2/9 score=5.96 actions=44 tokens=64862 per-level=23/19,16/16,5/34,0/42,0/123,0/80,0/14,0/23,0/111 note="tokens=71269"
+analyzer request failed at action 50: HTTPConnectionPool(host='127.0.0.1', port=5300): Read timed out. (read timeout=752.4736681520008)
+[finished] sp80-589a99af state=gave_up level=0/6 score=0.00 actions=49 tokens=58396 per-level=49/39,0/58,0/25,0/148,0/96,0/152 note="tokens=63017"
+[finished] dc22-fdcac232 state=gave_up level=0/6 score=0.00 actions=92 tokens=89854 per-level=92/59,0/102,0/67,0/98,0/324,0/578 note="tokens=92898"
+[finished] ls20-9607627b state=gave_up level=1/7 score=0.50 actions=59 tokens=79181 per-level=59/22,0/123,0/73,0/84,0/96,0/192,0/186 note="tokens=94997"
+[finished] cn04-2fe56bfb state=gave_up level=0/6 score=0.00 actions=19 tokens=78790 per-level=19/29,0/54,0/85,0/300,0/208,0/113 note="tokens=92524"
+[finished] tn36-ef4dde99 state=gave_up level=0/7 score=0.00 actions=62 tokens=72127 per-level=62/32,0/72,0/26,0/40,0/30,0/55,0/62 note="tokens=74877"
+[finished] m0r0-492f87ba state=gave_up level=0/6 score=0.00 actions=46 tokens=59008 per-level=46/30,0/111,0/203,0/26,0/500,0/237 note="tokens=93536"
+[finished] sb26-7fbdac44 state=gave_up level=1/8 score=2.78 actions=64 tokens=69350 per-level=12/18,52/28,0/18,0/19,0/31,0/23,0/58,0/18 note="tokens=82575"
+[finished] ar25-0c556536 state=gave_up level=1/8 score=2.78 actions=37 tokens=71734 per-level=26/32,11/50,0/75,0/37,0/89,0/159,0/233,0/73 note="tokens=90864"
+[finished] s5i5-18d95033 state=gave_up level=1/8 score=2.78 actions=49 tokens=85975 per-level=20/20,29/89,0/106,0/54,0/162,0/38,0/86,0/83 note="tokens=95016"
+[finished] bp35-0a0ad940 state=gave_up level=0/9 score=0.00 actions=10 tokens=63829 per-level=10/21,0/48,0/44,0/38,0/33,0/87,0/86,0/131,0/163 note="tokens=91840"
+[finished] g50t-5849a774 state=gave_up level=0/7 score=0.00 actions=47 tokens=72150 per-level=47/78,0/175,0/179,0/230,0/96,0/54,0/67 note="tokens=94177"
+smoke: (ignoring movie-render OSError in teardown: Could not find a backend to open `runs/nokey_plan/text_nokey/movies/gsb26-7fbdac)
+smoke: run finished in 8152s
+smoke: 26 request-log files under runs/nokey_plan/text_nokey
+smoke: 1940 requests; longest conversation 57 msgs; new legend=False old legend=False; new glyphs in tool results=1733; old-letter node colours=0
+Traceback (most recent call last):
+  File "/home/ignaz/github/arc-prize-2026/notebooks_duck/ab_local.py", line 256, in <module>
+    assert new_leg and not old_leg and node_glyphs > 20 and old_node == 0, "MODEL DID NOT RECEIVE THE NEW MAP -- do not push"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: MODEL DID NOT RECEIVE THE NEW MAP -- do not push

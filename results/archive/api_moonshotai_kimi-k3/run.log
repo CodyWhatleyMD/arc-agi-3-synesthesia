@@ -1,0 +1,50 @@
+MISTRAL COMPAT installed: mistral=False reasoning_effort='high'
+SANDBOX TIMEOUT raised to 120s (source clamps at 30)
+DUCK FIXES -- label-block fix: installed; dead-game kill: installed on _HarnessGameSession (K=120)
+DUCK FIXES -- ACTION7 described: installed
+RATE LIMIT installed: 34 rpm, burst 6, shared across threads
+CTX OVERFLOW SHIM INSTALLED  estimate_safety=1.15  (estimate patched: True)  log=runs/api_moonshotai_kimi-k3/ctx_overflow.jsonl
+INDEX POLICY: NOT INSTALLED (INDEX_POLICY=0). Self-test passed: fresh-slot index 0.915, 7/7 table rows reproduced. Set INDEX_POLICY=1 to enable early stopping.
+lownorm: legend in QWEN's words: white, light gray, medium gray, dark gray, charcoal, black, magenta, pink, red, blue, sky blue, yellow, orange, maroon, green, purple
+lownorm: tokenizer check PASSED on /home/ignaz/models/qwen38-nvfp4-baked-centred-a115/tokenizer.json -- 16/16 single-token, non-merging (lownorm_tokenizer_verified=True)
+ARM=lownorm_glyphs
+lownorm: map     WwgGcBMPRbSYOrNp -> 겪쏟눠됩멤굉촬훨꽤ങ탓뀌볍穌썼繽
+lownorm: legend  겪=white, 쏟=light gray, 눠=medium gray, 됩=dark gray, 멤=charcoal, 굉=black, 촬=magenta, 훨=pink, 꽤=red, ങ=blue, 탓=sky blue, 뀌=yellow, 볍=orange, 穌=maroon, 썼=green, 繽=purple
+lownorm: patched ['inference.agent.prompts.ARC_COLOR_LEGEND', 'inference.agent.prompts.GAME_OVERVIEW_ADDENDUM', 'inference.agent.prompts.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'inference.agent.tool_agent.GAME_OVERVIEW_ADDENDUM', 'inference.agent.tool_agent.STRUCTURED_RUNTIME_STATE_ADDENDUM', 'ToolAgent._build_user_prompt (wrapped)']
+lownorm: probe frame:
+굉굉겪
+굉ങ겪
+썼썼썼
+ab: lownorm control window matched to visual arm: 61376
+BREAKER INSTALLED on ToolAgent._chat_completion (log: runs/api_moonshotai_kimi-k3/breaker.jsonl; open at 8 consecutive failures, backoff <= 30s)
+RECALL INSTALLED on ToolAgent._run_python_tool (ledger from /home/ignaz/github/arc-prize-2026/scripts/recall_scaffold.py; DUCK_RECALL_NOTES=0 disables)
+ab: bm.n_passes=1
+ab: ARM=lownorm ctx=65536 games=1 concurrency=1 max_actions=None per_game_s=600.0 job_dir=runs/api_moonshotai_kimi-k3 model=moonshotai/kimi-k3
+ab: 400-storm watchdog armed on /home/ignaz/github/arc-prize-2026/runs/api_moonshotai_kimi-k3/run.log
+BREAKER: request failure 1/8; sleeping 2.0s before re-raising (solver retries at 1.0s, which would spin)
+benchmark: regenerated diagnostics in runs/api_moonshotai_kimi-k3 in 0.36s
+benchmark: 0-history-turns
+solver:    inference
+games:     1
+passes:    1
+runs:      1 (won: 0)
+started:   2026-09-23 13:48:00
+ended:     in progress
+mean score:    14.29
+median score:  14.29
+total actions: 11
+total tokens:  3392
+generated tokens/sec: 5.65 (job wallclock)
+total wallclock: 572.4s
+
+per-game (mean across passes):
+  ft09-0d8bbf25: score=14.29, levels=2.0/6, actions=11, tokens=3392
+
+analyzer request failed at action 12: HTTPSConnectionPool(host='integrate.api.nvidia.com', port=443): Read timed out. (read timeout=27.606311822997668)
+[finished] ft09-0d8bbf25 state=gave_up level=2/6 score=14.29 actions=11 tokens=3392 per-level=4/43,7/12,0/23,0/28,0/65,0/37 note="tokens=3392"
+smoke: (ignoring movie-render OSError in teardown: Could not find a backend to open `runs/api_moonshotai_kimi-k3/movies/gft09-0d8bb)
+smoke: run finished in 602s
+smoke: 1 request-log files under runs/api_moonshotai_kimi-k3
+smoke: 15 requests; longest conversation 18 msgs; new legend=True old legend=False; new glyphs in tool results=3525; old-letter node colours=0
+smoke: PASS -- legend swapped and node colours arrive in the new glyphs
+smoke: summary.txt: 'benchmark: 0-history-turns\nsolver:    inference\ngames:     1\npasses:    1\nruns:      1 (won: 0)\nstarted:   2026-09-23 13:48:00\nended:     in progress\nmean score:    14.29\nmedian score:  14.29\ntotal actions: 11\ntotal tokens:  3392\ngenerated tokens/sec: 5.65 (job wallclock)\ntotal wallclock: 572.4s\n\npe'

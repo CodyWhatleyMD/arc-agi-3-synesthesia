@@ -1,0 +1,894 @@
+benchmark.label : duck-harness-kaggle
+benchmark.solver: HarnessSolver(label='duck-harness', runtime_environment=None, job_dir=None, soft_end_time=None, minimal_diagnostics=False, model='local', analyzer_timeout=900.0, max_actions_per_game=None, max_runtime_s_per_game=3918.0, concurrency=14, save_request_logs=False, start_local_server=False, local_server_config='', local_server_api_key_file='', local_server_repo_dir='/app/ARC3-Inference', local_server_port=None, local_server_tensor_parallel_size=None, local_server_count=1, cancel_drain_timeout_s=120.0)
+benchmark.passes: 1
+benchmark.games : 25
+git status:
+  ARC3-Inference                   ca1bd02     clean  solution-improve-qwen38-flash-next  Let the agent act without full certainty
+  tufa-arc-agi-framework           ca1bd02     clean  solution-improve-qwen38-flash-next  Let the agent act without full certainty
+deploy.kaggle: working_dir             = /kaggle/working
+deploy.kaggle: run_as_submission       = False
+deploy.kaggle: competition_rerun       = False
+deploy.kaggle: soft_end_time           = 2026-11-02 04:43:59.061107
+---
+synesthesia: GEOMETRY px/cell=16 image_tokens_per_board=1024 source=student board tower (image_embeds)
+synesthesia: TOWER EXCLUDED - built under no_init_weights on meta device, weights never allocated
+synesthesia: n_games=25 n_passes=1 per_game_s=3918.0 concurrency=14 max_actions=None soft_end=2026-11-02 04:43:59.061107
+/tmp/ipykernel_57/1439548303.py:143: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "started_utc": datetime.utcnow().isoformat() + "Z",
+synesthesia: POOL CLOCK on: end in 8336 s, concurrency 14, 25 games x 1 passes (fixed per-game clock 3918.0 is now only the fallback)
+synesthesia: pool park=True stall=1500 soft_stall=750
+ARC3 AGENT CLOCK on: 25 games, concurrency 14; stall timers off, park on, reserve 600 s per unstarted game until 3 first clears
+ARM B: student tower live -- ckpt=/kaggle/input/datasets/codywhatleymd/arc3-board-tower-armb/ckpt_px16_dih/best.pt tag=5e4eb805a8 n_pos=1024 side=32 device=cpu grid_thw=[1, 64, 64] torch_threads=2 (cap, so the student cannot starve the co-resident server)
+ARC3 RESERVE recompute: first clear after 70 s of play; n=1, fallback 600 s kept (reserve per unstarted game was 600.0)
+ARC3 RESERVE recompute: first clear after 80 s of play; n=2, fallback 600 s kept (reserve per unstarted game was 600.0)
+ARC3 RESERVE recompute: first clear after 108 s of play; n=3, median 80 s (reserve per unstarted game was 600.0)
+ARC3 RESERVE recompute: first clear after 192 s of play; n=4, median 94 s (reserve per unstarted game was 79.565575058994)
+ARC3 RESERVE recompute: first clear after 217 s of play; n=5, median 108 s (reserve per unstarted game was 93.9803620759958)
+ARC3 RESERVE recompute: first clear after 231 s of play; n=6, median 150 s (reserve per unstarted game was 108.3951490929976)
+ARC3 RESERVE recompute: first clear after 246 s of play; n=7, median 192 s (reserve per unstarted game was 150.02701622349923)
+ARC3 RESERVE recompute: first clear after 462 s of play; n=8, median 204 s (reserve per unstarted game was 191.65888335400086)
+ARC3 RESERVE recompute: first clear after 472 s of play; n=9, median 217 s (reserve per unstarted game was 204.31890616500095)
+ARC3 RESERVE recompute: first clear after 559 s of play; n=10, median 224 s (reserve per unstarted game was 216.97892897600104)
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 2.79s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-11-02 02:25:02
+ended:     in progress
+mean score:    3.22
+median score:  0.00
+total actions: 607
+total tokens:  503957
+generated tokens/sec: 835.40 (job wallclock)
+total wallclock: 7693.7s
+
+per-game (mean across passes):
+  ar25-0c556536: score=27.78, levels=4.0/8, actions=105, tokens=28904
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=16, tokens=38033
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=14.29, levels=2.0/6, actions=73, tokens=32591
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=2.57, levels=1.0/7, actions=50, tokens=38774
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=26, tokens=35705
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=20, tokens=34111
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=4.76, levels=1.0/6, actions=23, tokens=36042
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=13, tokens=35545
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=43, tokens=36872
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=19, tokens=40538
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=34, tokens=39281
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=5.38, levels=2.0/9, actions=70, tokens=36362
+  vc33-5430563c: score=8.52, levels=2.0/7, actions=68, tokens=37377
+  wa30-ee6fef47: score=2.22, levels=1.0/9, actions=47, tokens=33822
+
+ARC3 RESERVE recompute: first clear after 712 s of play; n=11, median 231 s (reserve per unstarted game was 223.74426445299832)
+ARC3 RESERVE recompute: first clear after 894 s of play; n=12, median 238 s (reserve per unstarted game was 230.5095999299956)
+ARC3 RESERVE recompute: first clear after 1023 s of play; n=13, median 246 s (reserve per unstarted game was 238.36369632849528)
+ARC3 YIELD game=ar25-0c556536 outlook=working level=6 action=148 play_s=1155 reason=working
+pool clock: park ar25-0c556536 at level 6 (action 148, 0 since last clear, yield: outlook=working)
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 2.44s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-11-02 02:25:02
+ended:     in progress
+mean score:    6.62
+median score:  1.41
+total actions: 1054
+total tokens:  991262
+generated tokens/sec: 822.15 (job wallclock)
+total wallclock: 16705.9s
+
+per-game (mean across passes):
+  ar25-0c556536: score=41.67, levels=5.0/8, actions=148, tokens=59908
+  bp35-0a0ad940: score=2.22, levels=1.0/9, actions=30, tokens=73741
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=14.29, levels=2.0/6, actions=130, tokens=74172
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=2.57, levels=1.0/7, actions=64, tokens=68504
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=57, tokens=66862
+  lp85-305b61c3: score=41.67, levels=5.0/8, actions=65, tokens=80966
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=14.29, levels=2.0/6, actions=84, tokens=71879
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=26, tokens=73392
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=76, tokens=71899
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=2, tokens=2648
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=44, tokens=71482
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=1.41, levels=1.0/7, actions=66, tokens=76253
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=13.04, levels=3.0/9, actions=114, tokens=73048
+  vc33-5430563c: score=20.84, levels=3.0/7, actions=89, tokens=70156
+  wa30-ee6fef47: score=2.22, levels=1.0/9, actions=59, tokens=56352
+
+ARC3 YIELD game=cn04-2fe56bfb outlook=working level=3 action=153 play_s=1410 reason=stuck
+pool clock: park cn04-2fe56bfb at level 3 (action 153, 84 since last clear, yield: outlook=working)
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 2.09s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-11-02 02:25:02
+ended:     in progress
+mean score:    8.78
+median score:  2.22
+total actions: 1581
+total tokens:  1482599
+generated tokens/sec: 820.11 (job wallclock)
+total wallclock: 26076.4s
+
+per-game (mean across passes):
+  ar25-0c556536: score=41.67, levels=5.0/8, actions=148, tokens=59908
+  bp35-0a0ad940: score=2.22, levels=1.0/9, actions=35, tokens=103229
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=14.29, levels=2.0/6, actions=153, tokens=85293
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=39, tokens=21454
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=10.71, levels=2.0/7, actions=130, tokens=117462
+  lf52-271a04aa: score=3.38, levels=2.0/10, actions=152, tokens=109825
+  lp85-305b61c3: score=77.78, levels=7.0/8, actions=109, tokens=118913
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=14.29, levels=2.0/6, actions=134, tokens=107287
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=36, tokens=106124
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=130, tokens=104678
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=36, tokens=33450
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=60, tokens=112278
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=9.62, levels=2.0/7, actions=105, tokens=111152
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=13.04, levels=3.0/9, actions=114, tokens=73048
+  vc33-5430563c: score=20.84, levels=3.0/7, actions=107, tokens=108287
+  wa30-ee6fef47: score=2.22, levels=1.0/9, actions=93, tokens=110211
+
+[finished] lp85-305b61c3 state=won level=8/8 score=100.00 actions=115 tokens=127008 per-level=7/17,9/38,22/31,14/16,10/41,28/60,12/26,13/159 note="tokens=127008"
+ARC3 RESERVE recompute: first clear after 2245 s of play; n=14, median 354 s (reserve per unstarted game was 246.21779272699496)
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 1.87s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 1)
+started:   2026-11-02 02:25:02
+ended:     in progress
+mean score:    12.26
+median score:  2.22
+total actions: 2311
+total tokens:  2031956
+generated tokens/sec: 843.24 (job wallclock)
+total wallclock: 36716.3s
+
+per-game (mean across passes):
+  ar25-0c556536: score=41.67, levels=5.0/8, actions=148, tokens=59908
+  bp35-0a0ad940: score=2.22, levels=1.0/9, actions=55, tokens=153757
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=17, tokens=19646
+  cn04-2fe56bfb: score=14.29, levels=2.0/6, actions=153, tokens=85293
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=81, tokens=50525
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=15.25, levels=3.0/7, actions=219, tokens=154770
+  lf52-271a04aa: score=3.38, levels=2.0/10, actions=258, tokens=144337
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=115, tokens=127008
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=44.00, levels=4.0/6, actions=236, tokens=147726
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=62, tokens=151318
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=4.35, levels=2.0/6, actions=258, tokens=141632
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=43, tokens=54267
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=76, tokens=155733
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=35.71, levels=4.0/7, actions=179, tokens=148237
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=13.04, levels=3.0/9, actions=127, tokens=138562
+  vc33-5430563c: score=20.84, levels=3.0/7, actions=143, tokens=150051
+  wa30-ee6fef47: score=2.22, levels=1.0/9, actions=141, tokens=149186
+
+ARC3 RESERVE recompute: first clear after 682 s of play; n=15, median 462 s (reserve per unstarted game was 354.20227740899645)
+ARC3 RESERVE recompute: first clear after 1572 s of play; n=16, median 467 s (reserve per unstarted game was 462.18676209099795)
+ARC3 YIELD game=sc25-635fd71a outlook=working level=4 action=363 play_s=2754 reason=working
+pool clock: park sc25-635fd71a at level 4 (action 363, 81 since last clear, yield: outlook=working)
+ARC3 RESERVE recompute: first clear after 84 s of play; n=17, median 462 s (reserve per unstarted game was 466.85406169749695)
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 1.68s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 1)
+started:   2026-11-02 02:25:02
+ended:     in progress
+mean score:    14.82
+median score:  4.76
+total actions: 3053
+total tokens:  2519226
+generated tokens/sec: 836.56 (job wallclock)
+total wallclock: 47501.5s
+
+per-game (mean across passes):
+  ar25-0c556536: score=41.67, levels=5.0/8, actions=148, tokens=59908
+  bp35-0a0ad940: score=4.65, levels=2.0/9, actions=94, tokens=186831
+  cd82-fb555c5d: score=4.76, levels=1.0/6, actions=20, tokens=40157
+  cn04-2fe56bfb: score=14.29, levels=2.0/6, actions=153, tokens=85293
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=164, tokens=86313
+  ft09-0d8bbf25: score=14.29, levels=2.0/6, actions=12, tokens=16142
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=15.25, levels=3.0/7, actions=252, tokens=180689
+  lf52-271a04aa: score=4.37, levels=3.0/10, actions=335, tokens=180562
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=115, tokens=127008
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=71.38, levels=5.0/6, actions=317, tokens=179052
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=83, tokens=172784
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=11.91, levels=3.0/6, actions=363, tokens=158219
+  sk48-d8078629: score=2.78, levels=1.0/8, actions=80, tokens=108055
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=123, tokens=193380
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=35.71, levels=4.0/7, actions=230, tokens=179929
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=16.99, levels=4.0/9, actions=154, tokens=189488
+  vc33-5430563c: score=20.84, levels=3.0/7, actions=174, tokens=188957
+  wa30-ee6fef47: score=2.22, levels=1.0/9, actions=236, tokens=186459
+
+ARC3 YIELD game=lf52-271a04aa outlook=working level=4 action=338 play_s=3054 reason=level4 at start state; untested line: tile to room mouth then rider jump
+pool clock: park lf52-271a04aa at level 4 (action 338, 49 since last clear, yield: outlook=working)
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 1.71s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 1)
+started:   2026-11-02 02:25:02
+ended:     in progress
+mean score:    17.21
+median score:  4.76
+total actions: 3856
+total tokens:  3013128
+generated tokens/sec: 833.94 (job wallclock)
+total wallclock: 58539.5s
+
+per-game (mean across passes):
+  ar25-0c556536: score=41.67, levels=5.0/8, actions=148, tokens=59908
+  bp35-0a0ad940: score=12.31, levels=3.0/9, actions=129, tokens=229228
+  cd82-fb555c5d: score=7.86, levels=2.0/6, actions=36, tokens=86805
+  cn04-2fe56bfb: score=14.29, levels=2.0/6, actions=153, tokens=85293
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=368, tokens=120687
+  ft09-0d8bbf25: score=47.62, levels=4.0/6, actions=56, tokens=51801
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=25, tokens=29176
+  ka59-38d34dbb: score=15.25, levels=3.0/7, actions=262, tokens=198857
+  lf52-271a04aa: score=4.37, levels=3.0/10, actions=338, tokens=182430
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=115, tokens=127008
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=71.38, levels=5.0/6, actions=380, tokens=219086
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=85, tokens=225582
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=11.91, levels=3.0/6, actions=363, tokens=158219
+  sk48-d8078629: score=2.78, levels=1.0/8, actions=115, tokens=134135
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=124, tokens=208997
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=35.71, levels=4.0/7, actions=287, tokens=218641
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=29.77, levels=5.0/9, actions=220, tokens=234573
+  vc33-5430563c: score=23.59, levels=4.0/7, actions=254, tokens=226917
+  wa30-ee6fef47: score=2.22, levels=1.0/9, actions=398, tokens=215785
+
+[finished] m0r0-492f87ba state=won level=6/6 score=100.00 actions=408 tokens=225346 per-level=23/30,61/111,111/203,34/26,64/500,115/237 note="tokens=225346"
+ARC3 RESERVE recompute: first clear after 328 s of play; n=18, median 395 s (reserve per unstarted game was 462.18676209099795)
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 1.78s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 2)
+started:   2026-11-02 02:25:02
+ended:     in progress
+mean score:    18.50
+median score:  4.76
+total actions: 4608
+total tokens:  3454986
+generated tokens/sec: 819.70 (job wallclock)
+total wallclock: 69420.7s
+
+per-game (mean across passes):
+  ar25-0c556536: score=41.67, levels=5.0/8, actions=148, tokens=59908
+  bp35-0a0ad940: score=12.31, levels=3.0/9, actions=144, tokens=246433
+  cd82-fb555c5d: score=7.86, levels=2.0/6, actions=54, tokens=139788
+  cn04-2fe56bfb: score=14.29, levels=2.0/6, actions=153, tokens=85293
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=388, tokens=151404
+  ft09-0d8bbf25: score=47.62, levels=4.0/6, actions=104, tokens=89383
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=36, tokens=57938
+  ka59-38d34dbb: score=15.25, levels=3.0/7, actions=262, tokens=198857
+  lf52-271a04aa: score=4.37, levels=3.0/10, actions=338, tokens=182430
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=115, tokens=127008
+  ls20-9607627b: score=3.57, levels=1.0/7, actions=39, tokens=26751
+  m0r0-492f87ba: score=100.00, levels=6.0/6, actions=408, tokens=225346
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=85, tokens=225582
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=11.91, levels=3.0/6, actions=363, tokens=158219
+  sk48-d8078629: score=2.78, levels=1.0/8, actions=214, tokens=184853
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=144, tokens=273310
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=35.71, levels=4.0/7, actions=358, tokens=255243
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=29.77, levels=5.0/9, actions=236, tokens=261297
+  vc33-5430563c: score=23.59, levels=4.0/7, actions=266, tokens=247803
+  wa30-ee6fef47: score=2.22, levels=1.0/9, actions=753, tokens=258140
+
+ARC3 RESERVE recompute: first clear after 2861 s of play; n=19, median 462 s (reserve per unstarted game was 395.19621270599964)
+ARC3 YIELD game=ka59-38d34dbb outlook=working level=4 action=262 play_s=4409 reason=stuck
+pool clock: park ka59-38d34dbb at level 4 (action 262, 72 since last clear, yield: outlook=working)
+ARC3 RESERVE recompute: first clear after 72 s of play; n=20, median 395 s (reserve per unstarted game was 462.18676209099795)
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 2.31s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 2)
+started:   2026-11-02 02:25:02
+ended:     in progress
+mean score:    20.35
+median score:  11.05
+total actions: 5519
+total tokens:  4003502
+generated tokens/sec: 831.07 (job wallclock)
+total wallclock: 82451.7s
+
+per-game (mean across passes):
+  ar25-0c556536: score=41.67, levels=5.0/8, actions=148, tokens=59908
+  bp35-0a0ad940: score=12.31, levels=3.0/9, actions=155, tokens=296900
+  cd82-fb555c5d: score=24.29, levels=3.0/6, actions=86, tokens=178142
+  cn04-2fe56bfb: score=14.29, levels=2.0/6, actions=153, tokens=85293
+  dc22-fdcac232: score=11.05, levels=2.0/6, actions=473, tokens=195893
+  ft09-0d8bbf25: score=47.62, levels=4.0/6, actions=144, tokens=129321
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=140, tokens=106923
+  ka59-38d34dbb: score=15.25, levels=3.0/7, actions=262, tokens=198857
+  lf52-271a04aa: score=4.37, levels=3.0/10, actions=338, tokens=182430
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=115, tokens=127008
+  ls20-9607627b: score=3.57, levels=1.0/7, actions=167, tokens=61889
+  m0r0-492f87ba: score=100.00, levels=6.0/6, actions=408, tokens=225346
+  r11l-495a7899: score=6.89, levels=2.0/6, actions=100, tokens=273398
+  re86-8af5384d: score=2.78, levels=1.0/8, actions=24, tokens=21267
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=11.91, levels=3.0/6, actions=363, tokens=158219
+  sk48-d8078629: score=2.78, levels=1.0/8, actions=224, tokens=190456
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=154, tokens=312119
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=35.71, levels=4.0/7, actions=474, tokens=294633
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=43.80, levels=6.0/9, actions=288, tokens=312135
+  vc33-5430563c: score=23.59, levels=4.0/7, actions=420, tokens=298049
+  wa30-ee6fef47: score=2.22, levels=1.0/9, actions=883, tokens=295316
+
+ARC3 RESERVE recompute: first clear after 1764 s of play; n=21, median 462 s (reserve per unstarted game was 395.19621270599964)
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 1.62s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 2)
+started:   2026-11-02 02:25:02
+ended:     in progress
+mean score:    24.86
+median score:  14.29
+total actions: 6483
+total tokens:  4569266
+generated tokens/sec: 843.20 (job wallclock)
+total wallclock: 91735.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=41.67, levels=5.0/8, actions=148, tokens=59908
+  bp35-0a0ad940: score=12.31, levels=3.0/9, actions=159, tokens=341457
+  cd82-fb555c5d: score=56.21, levels=5.0/6, actions=150, tokens=210112
+  cn04-2fe56bfb: score=14.29, levels=2.0/6, actions=153, tokens=85293
+  dc22-fdcac232: score=21.33, levels=3.0/6, actions=572, tokens=231229
+  ft09-0d8bbf25: score=56.93, levels=5.0/6, actions=172, tokens=162418
+  g50t-5849a774: score=9.15, levels=2.0/7, actions=276, tokens=142593
+  ka59-38d34dbb: score=15.25, levels=3.0/7, actions=262, tokens=198857
+  lf52-271a04aa: score=4.37, levels=3.0/10, actions=338, tokens=182430
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=115, tokens=127008
+  ls20-9607627b: score=3.57, levels=1.0/7, actions=282, tokens=96688
+  m0r0-492f87ba: score=100.00, levels=6.0/6, actions=408, tokens=225346
+  r11l-495a7899: score=23.32, levels=3.0/6, actions=130, tokens=334289
+  re86-8af5384d: score=27.78, levels=4.0/8, actions=188, tokens=58845
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=11.91, levels=3.0/6, actions=363, tokens=158219
+  sk48-d8078629: score=2.78, levels=1.0/8, actions=238, tokens=261501
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=180, tokens=352413
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=35.71, levels=4.0/7, actions=550, tokens=319163
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=49.56, levels=7.0/9, actions=331, tokens=349304
+  vc33-5430563c: score=28.27, levels=5.0/7, actions=504, tokens=341905
+  wa30-ee6fef47: score=2.22, levels=1.0/9, actions=964, tokens=330288
+
+[finished] cd82-fb555c5d state=won level=6/6 score=67.25 actions=167 tokens=218077 per-level=20/55,16/8,31/41,43/21,20/23,37/23 note="tokens=218077"
+[finished] ft09-0d8bbf25 state=won level=6/6 score=89.78 actions=191 tokens=175451 per-level=4/43,7/12,15/23,30/28,116/65,19/37 note="tokens=175451"
+ARC3 RESERVE recompute: first clear after 38 s of play; n=22, median 395 s (reserve per unstarted game was 462.18676209099795)
+ARC3 YIELD game=sk48-d8078629 outlook=stuck level=2 action=238 play_s=4438 reason=stuck
+pool clock: park sk48-d8078629 at level 2 (action 238, 178 since last clear, yield: outlook=stuck)
+ARC3 RESERVE recompute: first clear after 163 s of play; n=23, median 328 s (reserve per unstarted game was 395.19621270599964)
+ARC3 RESERVE recompute: first clear after 195 s of play; n=24, median 287 s (reserve per unstarted game was 328.20566332100134)
+ARC3 YIELD game=sp80-589a99af outlook=stuck level=2 action=201 play_s=5831 reason=Level 2 blocked: win condition unresolved. Verified: all-3-cups-with-spill no win; single clean cup no win; only clean 3-shaft config needs a 12w red splitter at cols20-31 which is unreachable (red2 12w can only land rows16-19 where it merges with red1). Pausing to let other games run.
+pool clock: park sp80-589a99af at level 2 (action 201, 192 since last clear, yield: outlook=stuck)
+ARC3 YIELD game=tn36-ef4dde99 outlook=stuck level=5 action=643 play_s=5991 reason=level 5 unsolved after ~1h: mark-program actions mapped (L,R,U,D,R2,GROW,SHRINK,ROT,blue,red) and ~22 candidate programs all fail; goal condition still unknown; notes saved in l5notes
+pool clock: park tn36-ef4dde99 at level 5 (action 643, 490 since last clear, yield: outlook=stuck)
+pool clock: resume ar25-0c556536 at level 6 (action 148, resume 1, yielded 'working')
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 3.72s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 4)
+started:   2026-11-02 02:25:02
+ended:     in progress
+mean score:    29.25
+median score:  14.75
+total actions: 7618
+total tokens:  5064546
+generated tokens/sec: 840.89 (job wallclock)
+total wallclock: 122424.8s
+
+per-game (mean across passes):
+  ar25-0c556536: score=41.67, levels=5.0/8, actions=148, tokens=59908
+  bp35-0a0ad940: score=12.31, levels=3.0/9, actions=175, tokens=383536
+  cd82-fb555c5d: score=67.25, levels=6.0/6, actions=167, tokens=218077
+  cn04-2fe56bfb: score=14.29, levels=2.0/6, actions=153, tokens=85293
+  dc22-fdcac232: score=21.33, levels=3.0/6, actions=661, tokens=268383
+  ft09-0d8bbf25: score=89.78, levels=6.0/6, actions=191, tokens=175451
+  g50t-5849a774: score=9.15, levels=2.0/7, actions=455, tokens=172159
+  ka59-38d34dbb: score=15.25, levels=3.0/7, actions=262, tokens=198857
+  lf52-271a04aa: score=4.37, levels=3.0/10, actions=338, tokens=182430
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=115, tokens=127008
+  ls20-9607627b: score=4.18, levels=2.0/7, actions=488, tokens=128896
+  m0r0-492f87ba: score=100.00, levels=6.0/6, actions=408, tokens=225346
+  r11l-495a7899: score=42.36, levels=4.0/6, actions=159, tokens=372483
+  re86-8af5384d: score=41.67, levels=5.0/8, actions=281, tokens=97096
+  s5i5-18d95033: score=2.78, levels=1.0/8, actions=48, tokens=33837
+  sb26-7fbdac44: score=14.75, levels=3.0/8, actions=73, tokens=26880
+  sc25-635fd71a: score=11.91, levels=3.0/6, actions=363, tokens=158219
+  sk48-d8078629: score=2.78, levels=1.0/8, actions=238, tokens=261501
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=201, tokens=374102
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=19, tokens=24129
+  tn36-ef4dde99: score=35.71, levels=4.0/7, actions=643, tokens=360886
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=17, tokens=7801
+  tu93-0768757b: score=49.56, levels=7.0/9, actions=351, tokens=379454
+  vc33-5430563c: score=41.06, levels=6.0/7, actions=580, tokens=375011
+  wa30-ee6fef47: score=2.22, levels=1.0/9, actions=1084, tokens=367803
+
+[finished] vc33-5430563c state=won level=7/7 score=67.43 actions=659 tokens=384811 per-level=24/7,14/18,34/44,139/61,256/131,44/34,148/152 note="tokens=384811"
+pool clock: resume sc25-635fd71a at level 4 (action 363, resume 1, yielded 'working')
+ARC3 YIELD game=sc25-635fd71a outlook=working level=4 action=461 play_s=2977 reason=working
+pool clock: park sc25-635fd71a at level 4 (action 461, 98 since last clear, yield: outlook=working)
+pool clock: resume sc25-635fd71a at level 4 (action 461, resume 2, yielded 'working')
+ARC3 YIELD game=tu93-0768757b outlook=stuck level=8 action=351 play_s=6447 reason=working
+pool clock: park tu93-0768757b at level 8 (action 351, 40 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 4 (action 338, resume 1, yielded 'working')
+ARC3 YIELD game=sc25-635fd71a outlook=stuck level=4 action=503 play_s=3064 reason=stuck
+pool clock: park sc25-635fd71a at level 4 (action 503, 42 since last clear, yield: outlook=stuck)
+pool clock: resume ka59-38d34dbb at level 4 (action 262, resume 1, yielded 'working')
+ARC3 YIELD game=r11l-495a7899 outlook=working level=5 action=200 play_s=6527 reason=level5 mechanics unclear (pushable hints?); will resume with fresh analysis
+pool clock: park r11l-495a7899 at level 5 (action 200, 48 since last clear, yield: outlook=working)
+pool clock: resume r11l-495a7899 at level 5 (action 200, resume 1, yielded 'working')
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 2.06s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 5)
+started:   2026-11-02 02:25:02
+ended:     in progress
+mean score:    31.50
+median score:  15.25
+total actions: 8745
+total tokens:  5478727
+generated tokens/sec: 826.96 (job wallclock)
+total wallclock: 141207.6s
+
+per-game (mean across passes):
+  ar25-0c556536: score=41.67, levels=5.0/8, actions=335, tokens=104462
+  bp35-0a0ad940: score=12.31, levels=3.0/9, actions=193, tokens=418309
+  cd82-fb555c5d: score=67.25, levels=6.0/6, actions=167, tokens=218077
+  cn04-2fe56bfb: score=14.29, levels=2.0/6, actions=153, tokens=85293
+  dc22-fdcac232: score=29.24, levels=4.0/6, actions=746, tokens=301042
+  ft09-0d8bbf25: score=89.78, levels=6.0/6, actions=191, tokens=175451
+  g50t-5849a774: score=12.38, levels=3.0/7, actions=562, tokens=211969
+  ka59-38d34dbb: score=15.25, levels=3.0/7, actions=262, tokens=198857
+  lf52-271a04aa: score=4.37, levels=3.0/10, actions=378, tokens=193025
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=115, tokens=127008
+  ls20-9607627b: score=4.18, levels=2.0/7, actions=586, tokens=158425
+  m0r0-492f87ba: score=100.00, levels=6.0/6, actions=408, tokens=225346
+  r11l-495a7899: score=42.36, levels=4.0/6, actions=201, tokens=405257
+  re86-8af5384d: score=41.67, levels=5.0/8, actions=370, tokens=122286
+  s5i5-18d95033: score=8.33, levels=2.0/8, actions=91, tokens=64659
+  sb26-7fbdac44: score=27.53, levels=4.0/8, actions=101, tokens=57890
+  sc25-635fd71a: score=11.91, levels=3.0/6, actions=503, tokens=176991
+  sk48-d8078629: score=2.78, levels=1.0/8, actions=238, tokens=261501
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=201, tokens=374102
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=39, tokens=56161
+  tn36-ef4dde99: score=35.71, levels=4.0/7, actions=643, tokens=360886
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=25, tokens=15504
+  tu93-0768757b: score=49.56, levels=7.0/9, actions=351, tokens=379454
+  vc33-5430563c: score=67.43, levels=7.0/7, actions=659, tokens=384811
+  wa30-ee6fef47: score=2.60, levels=2.0/9, actions=1227, tokens=401961
+
+ARC3 YIELD game=wa30-ee6fef47 outlook=working level=3 action=1227 play_s=6648 reason=Cleared level 2 at step 1227 (2 of 3 levels). Level 3 just started: player left of a gray wall (cols 32-35 with gaps), bar/slots on right at rows 24-39 cols 52-59, drone already on right at (12,48), 5 boxes on left. Needs fresh exploration; yielding so unstarted games get slots. Level-2 winning pattern and level3_info() saved in module lvl2plan.
+pool clock: park wa30-ee6fef47 at level 3 (action 1227, 0 since last clear, yield: outlook=working)
+pool clock: resume cn04-2fe56bfb at level 3 (action 153, resume 1, yielded 'working')
+ARC3 YIELD game=r11l-495a7899 outlook=working level=5 action=201 play_s=6649 reason=level5: hints may be ghost targets; beam failed; needs fresh approach later
+pool clock: park r11l-495a7899 at level 5 (action 201, 1 since last clear, yield: outlook=working)
+pool clock: resume r11l-495a7899 at level 5 (action 201, resume 2, yielded 'working')
+ARC3 YIELD game=r11l-495a7899 outlook=working level=5 action=202 play_s=6683 reason=level5 goal condition still unknown after many probes; other games need slots
+pool clock: park r11l-495a7899 at level 5 (action 202, 1 since last clear, yield: outlook=working)
+pool clock: resume r11l-495a7899 at level 5 (action 202, resume 3, yielded 'working')
+ARC3 YIELD game=lf52-271a04aa outlook=working level=4 action=388 play_s=3329 reason=deadlock at 3 immobile pegs; need to retry level 4 with a different line
+pool clock: park lf52-271a04aa at level 4 (action 388, 50 since last clear, yield: outlook=working)
+pool clock: resume lf52-271a04aa at level 4 (action 388, resume 2, yielded 'working')
+ARC3 YIELD game=r11l-495a7899 outlook=working level=5 action=203 play_s=6736 reason=level5: dynamic midpoint-hint discovered but goal unclear; resume with fresh eyes
+pool clock: park r11l-495a7899 at level 5 (action 203, 1 since last clear, yield: outlook=working)
+pool clock: resume r11l-495a7899 at level 5 (action 203, resume 4, yielded 'working')
+ARC3 YIELD game=lf52-271a04aa outlook=stuck level=4 action=399 play_s=3432 reason=level 4 deadlocked at 3 immobile pegs; restart needed with different line; 3 levels banked
+pool clock: park lf52-271a04aa at level 4 (action 399, 11 since last clear, yield: outlook=stuck)
+pool clock: resume wa30-ee6fef47 at level 3 (action 1227, resume 1, yielded 'working')
+ARC3 YIELD game=cn04-2fe56bfb outlook=stuck level=3 action=159 play_s=1685 reason=working
+pool clock: park cn04-2fe56bfb at level 3 (action 159, 6 since last clear, yield: outlook=stuck)
+pool clock: resume tu93-0768757b at level 8 (action 351, resume 1, yielded 'stuck')
+ARC3 YIELD game=r11l-495a7899 outlook=working level=5 action=223 play_s=6996 reason=level5: blobs-on-hints and blobs-on-rings both fail; goal still unknown
+pool clock: park r11l-495a7899 at level 5 (action 223, 20 since last clear, yield: outlook=working)
+pool clock: resume r11l-495a7899 at level 5 (action 223, resume 5, yielded 'working')
+ARC3 YIELD game=wa30-ee6fef47 outlook=stuck level=3 action=1245 play_s=6841 reason=Level 3 budget math kills it: 52 of 70 actions left, drone alone needs ~4 deliveries x22 = 88, and a player delivery through the wall gaps costs ~28-35 actions each (box must be carried with left/right offset so both fit the 4-row gaps at rows 12-15/32-35; bar at cols 52-59). No sequence fits the remaining budget. Level 2 was cleared this session (2/3 levels). Hand the slot to another game.
+pool clock: park wa30-ee6fef47 at level 3 (action 1245, 18 since last clear, yield: outlook=stuck)
+pool clock: resume tn36-ef4dde99 at level 5 (action 643, resume 1, yielded 'stuck')
+ARC3 YIELD game=ar25-0c556536 outlook=stuck level=7 action=394 play_s=2255 reason=level 7 mechanics unidentified after extensive solver attempts; time budget nearly exhausted
+pool clock: park ar25-0c556536 at level 7 (action 394, 0 since last clear, yield: outlook=stuck)
+pool clock: resume ar25-0c556536 at level 7 (action 394, resume 2, yielded 'stuck')
+ARC3 YIELD game=r11l-495a7899 outlook=working level=5 action=243 play_s=7158 reason=level5: 20 probes, goal condition unidentified; other games need slots now
+pool clock: park r11l-495a7899 at level 5 (action 243, 20 since last clear, yield: outlook=working)
+pool clock: resume r11l-495a7899 at level 5 (action 243, resume 6, yielded 'working')
+ARC3 YIELD game=r11l-495a7899 outlook=working level=5 action=255 play_s=7214 reason=level5 unsolved after ~25 distinct goal hypotheses tested; yielding remaining shared time to other games
+pool clock: park r11l-495a7899 at level 5 (action 255, 12 since last clear, yield: outlook=working)
+pool clock: resume r11l-495a7899 at level 5 (action 255, resume 7, yielded 'working')
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 2.59s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 5)
+started:   2026-11-02 02:25:02
+ended:     in progress
+mean score:    32.92
+median score:  16.67
+total actions: 9594
+total tokens:  6129490
+generated tokens/sec: 848.05 (job wallclock)
+total wallclock: 161101.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=54.88, levels=6.0/8, actions=417, tokens=135154
+  bp35-0a0ad940: score=12.31, levels=3.0/9, actions=198, tokens=455316
+  cd82-fb555c5d: score=67.25, levels=6.0/6, actions=167, tokens=218077
+  cn04-2fe56bfb: score=14.29, levels=2.0/6, actions=159, tokens=98861
+  dc22-fdcac232: score=29.24, levels=4.0/6, actions=804, tokens=333725
+  ft09-0d8bbf25: score=89.78, levels=6.0/6, actions=191, tokens=175451
+  g50t-5849a774: score=12.38, levels=3.0/7, actions=702, tokens=246689
+  ka59-38d34dbb: score=15.25, levels=3.0/7, actions=308, tokens=330958
+  lf52-271a04aa: score=4.37, levels=3.0/10, actions=399, tokens=202795
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=115, tokens=127008
+  ls20-9607627b: score=4.18, levels=2.0/7, actions=740, tokens=191708
+  m0r0-492f87ba: score=100.00, levels=6.0/6, actions=408, tokens=225346
+  r11l-495a7899: score=42.36, levels=4.0/6, actions=255, tokens=440629
+  re86-8af5384d: score=41.67, levels=5.0/8, actions=401, tokens=152905
+  s5i5-18d95033: score=16.67, levels=3.0/8, actions=152, tokens=110599
+  sb26-7fbdac44: score=41.27, levels=6.0/8, actions=196, tokens=95693
+  sc25-635fd71a: score=11.91, levels=3.0/6, actions=503, tokens=176991
+  sk48-d8078629: score=2.78, levels=1.0/8, actions=238, tokens=261501
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=201, tokens=374102
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=67, tokens=90895
+  tn36-ef4dde99: score=35.71, levels=4.0/7, actions=677, tokens=374546
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=32, tokens=73286
+  tu93-0768757b: score=49.56, levels=7.0/9, actions=360, tokens=443833
+  vc33-5430563c: score=67.43, levels=7.0/7, actions=659, tokens=384811
+  wa30-ee6fef47: score=2.60, levels=2.0/9, actions=1245, tokens=408611
+
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=5 action=804 play_s=5866 reason=level 5: knob start room verified closed by charcoal on all sides (crop-verified twice); all 8 panel controls mapped and none opens the knob cluster, and the yellow-dot cluster is also closed, so the escape mechanic is still unknown
+pool clock: park dc22-fdcac232 at level 5 (action 804, 120 since last clear, yield: outlook=stuck)
+pool clock: resume dc22-fdcac232 at level 5 (action 804, resume 1, yielded 'stuck')
+ARC3 YIELD game=r11l-495a7899 outlook=working level=5 action=258 play_s=7287 reason=level5: matched-color blobs on rings does not clear; goal unknown; conserve shared time
+pool clock: park r11l-495a7899 at level 5 (action 258, 3 since last clear, yield: outlook=working)
+pool clock: resume r11l-495a7899 at level 5 (action 258, resume 8, yielded 'working')
+ARC3 YIELD game=ar25-0c556536 outlook=stuck level=7 action=447 play_s=2456 reason=level 7: pieces never fit target subsets under any mirror family tried; time nearly out; pausing to let waiting games play
+pool clock: park ar25-0c556536 at level 7 (action 447, 53 since last clear, yield: outlook=stuck)
+pool clock: resume ar25-0c556536 at level 7 (action 447, resume 3, yielded 'stuck')
+ARC3 YIELD_FINAL game=r11l-495a7899 outlook=stuck level=5 action=258 play_s=7337 reason=level5 goal unidentified after 30+ probes across 6 resumes; locking 4/5 and freeing slot for other games
+pool clock: stop r11l-495a7899 at level 5 (action 258, 0 since last clear, yield: outlook=stuck, final: resumed and took no action)
+[finished] r11l-495a7899 state=gave_up level=4/6 score=42.36 actions=258 tokens=447985 per-level=21/22,79/33,26/51,26/26,106/52,0/49 note="tokens=447985"
+pool clock: resume sc25-635fd71a at level 4 (action 503, resume 3, yielded 'stuck')
+ARC3 YIELD game=tu93-0768757b outlook=stuck level=8 action=374 play_s=6876 reason=stuck
+pool clock: park tu93-0768757b at level 8 (action 374, 23 since last clear, yield: outlook=stuck)
+pool clock: resume tu93-0768757b at level 8 (action 374, resume 2, yielded 'stuck')
+ARC3 YIELD game=sc25-635fd71a outlook=stuck level=4 action=506 play_s=3098 reason=stuck
+pool clock: park sc25-635fd71a at level 4 (action 506, 3 since last clear, yield: outlook=stuck)
+pool clock: resume sc25-635fd71a at level 4 (action 506, resume 4, yielded 'stuck')
+ARC3 YIELD game=sc25-635fd71a outlook=stuck level=4 action=508 play_s=3116 reason=stuck
+pool clock: park sc25-635fd71a at level 4 (action 508, 2 since last clear, yield: outlook=stuck)
+pool clock: resume sc25-635fd71a at level 4 (action 508, resume 5, yielded 'stuck')
+ARC3 YIELD game=sc25-635fd71a outlook=stuck level=4 action=510 play_s=3129 reason=stuck
+pool clock: park sc25-635fd71a at level 4 (action 510, 2 since last clear, yield: outlook=stuck)
+pool clock: resume sc25-635fd71a at level 4 (action 510, resume 6, yielded 'stuck')
+ARC3 RESERVE recompute: first clear after 1615 s of play; n=25, median 328 s (reserve per unstarted game was 287.21172802399815)
+ARC3 YIELD game=sc25-635fd71a outlook=working level=4 action=542 play_s=3179 reason=working
+pool clock: park sc25-635fd71a at level 4 (action 542, 32 since last clear, yield: outlook=working)
+pool clock: resume sc25-635fd71a at level 4 (action 542, resume 7, yielded 'working')
+ARC3 YIELD game=sc25-635fd71a outlook=working level=4 action=584 play_s=3290 reason=working
+pool clock: park sc25-635fd71a at level 4 (action 584, 42 since last clear, yield: outlook=working)
+pool clock: resume sc25-635fd71a at level 4 (action 584, resume 8, yielded 'working')
+ARC3 YIELD game=ar25-0c556536 outlook=working level=7 action=473 play_s=2739 reason=level 7: coverage mechanics confirmed (pieces+mirrors must cover yellow target); placement search ongoing, no full solution yet
+pool clock: park ar25-0c556536 at level 7 (action 473, 26 since last clear, yield: outlook=working)
+pool clock: resume ar25-0c556536 at level 7 (action 473, resume 4, yielded 'working')
+ARC3 YIELD game=bp35-0a0ad940 outlook=stuck level=4 action=199 play_s=7603 reason=stuck
+pool clock: park bp35-0a0ad940 at level 4 (action 199, 70 since last clear, yield: outlook=stuck)
+pool clock: resume lf52-271a04aa at level 4 (action 399, resume 3, yielded 'stuck')
+ARC3 YIELD game=ar25-0c556536 outlook=working level=7 action=474 play_s=2780 reason=level 7 coverage search inconclusive; mirrors not block-aligned; pausing for other games
+pool clock: park ar25-0c556536 at level 7 (action 474, 1 since last clear, yield: outlook=working)
+pool clock: resume ar25-0c556536 at level 7 (action 474, resume 5, yielded 'working')
+ARC3 YIELD game=sc25-635fd71a outlook=working level=4 action=618 play_s=3344 reason=working
+pool clock: park sc25-635fd71a at level 4 (action 618, 34 since last clear, yield: outlook=working)
+pool clock: resume sc25-635fd71a at level 4 (action 618, resume 9, yielded 'working')
+ARC3 YIELD game=lf52-271a04aa outlook=working level=4 action=400 play_s=3453 reason=level 4 position is deadlocked at 3 immobile pegs; only 12 min left in run and 5 games queued; 3 levels already banked
+pool clock: park lf52-271a04aa at level 4 (action 400, 1 since last clear, yield: outlook=working)
+pool clock: resume lf52-271a04aa at level 4 (action 400, resume 4, yielded 'working')
+ARC3 YIELD game=lf52-271a04aa outlook=close level=4 action=400 play_s=3460 reason=level 4 deadlocked (3 immobile pegs, disjoint road networks); 3 levels banked; only 12 min left with 5 games queued, so slot is worth more elsewhere
+pool clock: park lf52-271a04aa at level 4 (action 400, 0 since last clear, yield: outlook=close)
+pool clock: resume lf52-271a04aa at level 4 (action 400, resume 5, yielded 'close')
+ARC3 YIELD game=sc25-635fd71a outlook=working level=4 action=627 play_s=3361 reason=working
+pool clock: park sc25-635fd71a at level 4 (action 627, 9 since last clear, yield: outlook=working)
+pool clock: resume sc25-635fd71a at level 4 (action 627, resume 10, yielded 'working')
+ARC3 YIELD game=lf52-271a04aa outlook=working level=4 action=401 play_s=3472 reason=level 4 deadlocked at 3 immobile pegs; roads to the last two pegs are disjoint; keeping 3 banked levels rather than forcing a loss
+pool clock: park lf52-271a04aa at level 4 (action 401, 1 since last clear, yield: outlook=working)
+pool clock: resume lf52-271a04aa at level 4 (action 401, resume 6, yielded 'working')
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=5 action=845 play_s=6235 reason=level 5 verified unsolvable-by-knob: knob cluster (12 positions) closed on all sides by charcoal (all 4 boundary moves tested and blocked); every panel control mapped (slab, bar, red piece 4-dir, blue swap, dot swap) and red-bar icon always blocked; target-room cluster and slab cluster are each closed too, so no toggle combination can open a knob path. Win condition unknown.
+pool clock: park dc22-fdcac232 at level 5 (action 845, 41 since last clear, yield: outlook=stuck)
+pool clock: resume dc22-fdcac232 at level 5 (action 845, resume 2, yielded 'stuck')
+ARC3 YIELD game=lf52-271a04aa outlook=working level=4 action=404 play_s=3489 reason=level 4 deadlocked: 3 immobile pegs, rider on a road disjoint from the roads serving the last two pegs; 3 levels banked; ~11 min left in run
+pool clock: park lf52-271a04aa at level 4 (action 404, 3 since last clear, yield: outlook=working)
+pool clock: resume lf52-271a04aa at level 4 (action 404, resume 7, yielded 'working')
+ARC3 YIELD_FINAL game=lf52-271a04aa outlook=stuck level=4 action=404 play_s=3501 reason=level 4 unwinnable from this position (3 immobile pegs, rider road disjoint from their roads); locking in the 3 cleared levels
+pool clock: stop lf52-271a04aa at level 4 (action 404, 0 since last clear, yield: outlook=stuck, final: resumed and took no action)
+[finished] lf52-271a04aa state=gave_up level=3/10 score=4.37 actions=404 tokens=206334 per-level=12/32,136/81,141/60,115/71,0/205,0/148,0/244,0/109,0/164,0/225 note="tokens=206334"
+pool clock: resume bp35-0a0ad940 at level 4 (action 199, resume 1, yielded 'stuck')
+ARC3 YIELD game=dc22-fdcac232 outlook=stuck level=5 action=846 play_s=6300 reason=level 5: knob cluster closed on all sides (verified by move tests from every boundary position), all six working panel controls mapped, red-bar icon always blocked, target/slab clusters also closed - no toggle combination can create a knob path, so the win condition is not understood. Pausing rather than burning shared clock.
+pool clock: park dc22-fdcac232 at level 5 (action 846, 1 since last clear, yield: outlook=stuck)
+pool clock: resume dc22-fdcac232 at level 5 (action 846, resume 3, yielded 'stuck')
+ARC3 YIELD game=sc25-635fd71a outlook=stuck level=4 action=686 play_s=3442 reason=stuck
+pool clock: park sc25-635fd71a at level 4 (action 686, 59 since last clear, yield: outlook=stuck)
+pool clock: resume sc25-635fd71a at level 4 (action 686, resume 11, yielded 'stuck')
+ARC3 YIELD game=ar25-0c556536 outlook=working level=7 action=475 play_s=2895 reason=level 7 cover-search minimum miss=15; no full cover exists under tested models; stopping work on this level
+pool clock: park ar25-0c556536 at level 7 (action 475, 1 since last clear, yield: outlook=working)
+pool clock: resume ar25-0c556536 at level 7 (action 475, resume 6, yielded 'working')
+ARC3 YIELD_FINAL game=ar25-0c556536 outlook=stuck level=7 action=475 play_s=2910 reason=level 7 unsolvable under all tested coverage models (min miss 15 of 42); time exhausted; ending this game
+pool clock: stop ar25-0c556536 at level 7 (action 475, 0 since last clear, yield: outlook=stuck, final: resumed and took no action)
+[finished] ar25-0c556536 state=gave_up level=6/8 score=54.88 actions=475 tokens=163273 per-level=17/32,22/50,44/75,22/37,43/89,246/159,81/233,0/73 note="tokens=163273"
+pool clock: resume cn04-2fe56bfb at level 3 (action 159, resume 2, yielded 'stuck')
+ARC3 YIELD game=tu93-0768757b outlook=working level=8 action=375 play_s=7292 reason=working
+pool clock: park tu93-0768757b at level 8 (action 375, 1 since last clear, yield: outlook=working)
+pool clock: resume tu93-0768757b at level 8 (action 375, resume 3, yielded 'working')
+ARC3 YIELD game=sc25-635fd71a outlook=working level=4 action=725 play_s=3497 reason=working
+pool clock: park sc25-635fd71a at level 4 (action 725, 39 since last clear, yield: outlook=working)
+pool clock: resume sc25-635fd71a at level 4 (action 725, resume 12, yielded 'working')
+ARC3 YIELD_FINAL game=cn04-2fe56bfb outlook=stuck level=3 action=159 play_s=1736 reason=stuck
+pool clock: stop cn04-2fe56bfb at level 3 (action 159, 0 since last clear, yield: outlook=stuck, final: resumed and took no action)
+[finished] cn04-2fe56bfb state=gave_up level=2/6 score=14.29 actions=159 tokens=103521 per-level=16/29,53/54,90/85,0/300,0/208,0/113 note="tokens=103521"
+pool clock: resume wa30-ee6fef47 at level 3 (action 1245, resume 2, yielded 'stuck')
+ARC3 YIELD game=sc25-635fd71a outlook=stuck level=4 action=731 play_s=3528 reason=stuck
+pool clock: park sc25-635fd71a at level 4 (action 731, 6 since last clear, yield: outlook=stuck)
+pool clock: resume sc25-635fd71a at level 4 (action 731, resume 13, yielded 'stuck')
+ARC3 YIELD game=re86-8af5384d outlook=working level=7 action=649 play_s=3396 reason=Just cleared level 6 after a full restart-and-solve; level 7 just started (0 actions used, fresh 200 budget) and needs many exploratory turns. Shared clock is low and games are queued.
+pool clock: park re86-8af5384d at level 7 (action 649, 0 since last clear, yield: outlook=working)
+pool clock: resume re86-8af5384d at level 7 (action 649, resume 1, yielded 'working')
+ARC3 YIELD_FINAL game=wa30-ee6fef47 outlook=stuck level=3 action=1245 play_s=6855 reason=Only 9 min of shared clock left. Level 3 needs 4 more box deliveries at ~22-30 actions each versus 52 actions of budget - arithmetically impossible, and no cheaper mechanic has been found. Ending/parking this game so the last minutes go to games that can still gain; this game keeps 2 of 3 levels cleared.
+pool clock: stop wa30-ee6fef47 at level 3 (action 1245, 0 since last clear, yield: outlook=stuck, final: resumed and took no action)
+[finished] wa30-ee6fef47 state=gave_up level=2/9 score=2.60 actions=1245 tokens=415367 per-level=43/71,1184/119,18/183,0/98,0/368,0/68,0/79,0/442,0/415 note="tokens=415367"
+pool clock: resume sk48-d8078629 at level 2 (action 238, resume 1, yielded 'stuck')
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 5.18s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 5)
+started:   2026-11-02 02:25:02
+ended:     in progress
+mean score:    34.77
+median score:  27.78
+total actions: 11017
+total tokens:  6624514
+generated tokens/sec: 845.70 (job wallclock)
+total wallclock: 173410.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=54.88, levels=6.0/8, actions=475, tokens=163273
+  bp35-0a0ad940: score=12.31, levels=3.0/9, actions=201, tokens=485249
+  cd82-fb555c5d: score=67.25, levels=6.0/6, actions=167, tokens=218077
+  cn04-2fe56bfb: score=14.29, levels=2.0/6, actions=159, tokens=103521
+  dc22-fdcac232: score=29.24, levels=4.0/6, actions=918, tokens=368272
+  ft09-0d8bbf25: score=89.78, levels=6.0/6, actions=191, tokens=175451
+  g50t-5849a774: score=12.38, levels=3.0/7, actions=822, tokens=279840
+  ka59-38d34dbb: score=15.25, levels=3.0/7, actions=355, tokens=368216
+  lf52-271a04aa: score=4.37, levels=3.0/10, actions=404, tokens=206334
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=115, tokens=127008
+  ls20-9607627b: score=4.18, levels=2.0/7, actions=998, tokens=222729
+  m0r0-492f87ba: score=100.00, levels=6.0/6, actions=408, tokens=225346
+  r11l-495a7899: score=42.36, levels=4.0/6, actions=258, tokens=447985
+  re86-8af5384d: score=49.97, levels=6.0/8, actions=649, tokens=201078
+  s5i5-18d95033: score=27.78, levels=4.0/8, actions=163, tokens=141932
+  sb26-7fbdac44: score=41.27, levels=6.0/8, actions=277, tokens=127454
+  sc25-635fd71a: score=11.91, levels=3.0/6, actions=737, tokens=197560
+  sk48-d8078629: score=2.78, levels=1.0/8, actions=238, tokens=261501
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=201, tokens=374102
+  su15-1944f8ab: score=2.22, levels=1.0/9, actions=119, tokens=128660
+  tn36-ef4dde99: score=60.10, levels=6.0/7, actions=765, tokens=407876
+  tr87-cd924810: score=2.54, levels=1.0/6, actions=118, tokens=116127
+  tu93-0768757b: score=49.56, levels=7.0/9, actions=375, tokens=476745
+  vc33-5430563c: score=67.43, levels=7.0/7, actions=659, tokens=384811
+  wa30-ee6fef47: score=2.60, levels=2.0/9, actions=1245, tokens=415367
+
+ARC3 YIELD_FINAL game=tu93-0768757b outlook=stuck level=8 action=375 play_s=7357 reason=stuck
+pool clock: stop tu93-0768757b at level 8 (action 375, 0 since last clear, yield: outlook=stuck, final: resumed and took no action)
+[finished] tu93-0768757b state=gave_up level=7/9 score=49.56 actions=375 tokens=481120 per-level=50/19,15/16,24/34,63/42,58/123,78/80,23/14,64/23,0/111 note="tokens=481120"
+pool clock: resume sp80-589a99af at level 2 (action 201, resume 1, yielded 'stuck')
+ARC3 YIELD game=re86-8af5384d outlook=working level=7 action=649 play_s=3448 reason=Level 7 just started with a fresh 200-action budget but a 3-shape/9-dot/legend puzzle needing exploration; shared clock low, 2 games queued to start.
+pool clock: park re86-8af5384d at level 7 (action 649, 0 since last clear, yield: outlook=working)
+pool clock: resume re86-8af5384d at level 7 (action 649, resume 2, yielded 'working')
+ARC3 YIELD_FINAL game=dc22-fdcac232 outlook=stuck level=5 action=918 play_s=6462 reason=level 5 exhausted: knob cluster provably closed (all boundary moves blocked), red-piece track is a U of 10 positions, slab walkable only at x=24 where it touches nothing, purple lattice never changes, no play-area click does anything, red-bar icon always blocked, 34-click random toggle walk produced nothing. Full notes saved in l5model. Pausing so the remaining shared clock goes to other games.
+pool clock: stop dc22-fdcac232 at level 5 (action 918, 72 since last clear, yield: outlook=stuck, final: no game waiting)
+[finished] dc22-fdcac232 state=gave_up level=4/6 score=29.24 actions=918 tokens=371631 per-level=409/59,44/102,79/67,152/98,234/324,0/578 note="tokens=371631"
+ARC3 YIELD_FINAL game=sc25-635fd71a outlook=stuck level=4 action=765 play_s=3619 reason=stuck
+pool clock: stop sc25-635fd71a at level 4 (action 765, 34 since last clear, yield: outlook=stuck, final: no game waiting)
+[finished] sc25-635fd71a state=gave_up level=3/6 score=11.91 actions=765 tokens=200038 per-level=229/36,9/6,44/32,483/83,0/143,0/50 note="tokens=200038"
+ARC3 YIELD_FINAL game=sb26-7fbdac44 outlook=stuck level=7 action=284 play_s=2460 reason=stuck
+pool clock: stop sb26-7fbdac44 at level 7 (action 284, 113 since last clear, yield: outlook=stuck, final: no game waiting)
+[finished] sb26-7fbdac44 state=gave_up level=6/8 score=41.27 actions=284 tokens=135310 per-level=11/18,47/28,15/18,15/19,51/31,32/23,113/58,0/18 note="tokens=135310"
+ARC3 YIELD_FINAL game=tn36-ef4dde99 outlook=stuck level=7 action=826 play_s=6983 reason=Level 7 wall: row 3 is uniformly lethal (tested all reachable columns, with color change, rotation, phase shift, and grown 2x2 ball), and the only goal socket at (1,2) sits behind it, enclosed by magenta walls, reachable only by crossing row 3. Six distinct hypotheses falsified; no remaining working idea within the 6-mark budget.
+pool clock: stop tn36-ef4dde99 at level 7 (action 826, 82 since last clear, yield: outlook=stuck, final: no game waiting)
+[finished] tn36-ef4dde99 state=gave_up level=6/7 score=60.10 actions=826 tokens=417756 per-level=51/32,45/72,18/26,39/40,538/30,53/55,82/62 note="tokens=417756"
+ARC3 YIELD_FINAL game=re86-8af5384d outlook=stuck level=7 action=665 play_s=3604 reason=Level 7 win condition undetermined after probing: covering hides sockets temporarily; R-dot pair (15,3)/(15,36) uncoverable by any shape under observed arm-sum invariants; legend squares unexplained. Shared clock nearly exhausted; ending game to lock 6-level score.
+pool clock: stop re86-8af5384d at level 7 (action 665, 16 since last clear, yield: outlook=stuck, final: no game waiting)
+[finished] re86-8af5384d state=gave_up level=6/8 score=49.97 actions=665 tokens=213174 per-level=21/26,39/42,47/86,81/108,65/189,396/139,16/424,0/241 note="tokens=213174"
+ARC3 YIELD_FINAL game=sp80-589a99af outlook=stuck level=2 action=210 play_s=6030 reason=Level 2: mechanics fully mapped (beam splits at first obstacle into edge-bands; bar/red swap on firing with bar above red; merge fails on flush edges; fluid transient, cups recolor only during animation). All tested win hypotheses failed: all-3-cups-with-spill no win, single clean cup no win; the unique spill-free 3-shaft config requires a 12w red splitter at cols20-31, provably unreachable (red2 12w can only land rows16-19 where it fuses with red1). Ending game with level 1 cleared.
+pool clock: stop sp80-589a99af at level 2 (action 210, 9 since last clear, yield: outlook=stuck, final: no game waiting)
+[finished] sp80-589a99af state=gave_up level=1/6 score=4.76 actions=210 tokens=397055 per-level=9/39,201/58,0/25,0/148,0/96,0/152 note="tokens=397055"
+ARC3 YIELD_FINAL game=g50t-5849a774 outlook=stuck level=4 action=882 play_s=4983 reason=stuck
+pool clock: stop g50t-5849a774 at level 4 (action 882, 335 since last clear, yield: outlook=stuck, final: no game waiting)
+[finished] g50t-5849a774 state=gave_up level=3/7 score=12.38 actions=882 tokens=294929 per-level=152/78,69/175,326/179,335/230,0/96,0/54,0/67 note="tokens=294929"
+ARC3 YIELD_FINAL game=sk48-d8078629 outlook=stuck level=2 action=248 play_s=4664 reason=stuck
+pool clock: stop sk48-d8078629 at level 2 (action 248, 10 since last clear, yield: outlook=stuck, final: no game waiting)
+[finished] sk48-d8078629 state=gave_up level=1/8 score=2.78 actions=248 tokens=283898 per-level=60/61,188/177,0/101,0/103,0/230,0/181,0/125,0/92 note="tokens=283898"
+ARC3 YIELD_FINAL game=ls20-9607627b outlook=stuck level=3 action=1250 play_s=4343 reason=working
+pool clock: stop ls20-9607627b at level 3 (action 1250, 806 since last clear, yield: outlook=stuck, final: no game waiting)
+[finished] ls20-9607627b state=gave_up level=2/7 score=4.18 actions=1250 tokens=235093 per-level=22/22,422/123,806/73,0/84,0/96,0/192,0/186 note="tokens=235093"
+ARC3 YIELD_FINAL game=s5i5-18d95033 outlook=stuck level=6 action=203 play_s=2719 reason=Level 6 unwinnable under verified model: dot's column is fixed by Y-length to 41+Ly, and the purple top bar (rows 27-29, cols 18-59) blocks the b segment from descending into the pocket holding the plus at (34,52); only cols 6-17 or >=60 are passable, neither reachable. All probes (b-grow bounce, N-shrink bounce) confirm.
+pool clock: stop s5i5-18d95033 at level 6 (action 203, 7 since last clear, yield: outlook=stuck, final: no game waiting)
+[finished] s5i5-18d95033 state=gave_up level=5/8 score=41.67 actions=203 tokens=176778 per-level=20/20,68/89,40/106,30/54,38/162,7/38,0/86,0/83 note="tokens=176778"
+ARC3 YIELD_FINAL game=bp35-0a0ad940 outlook=stuck level=4 action=224 play_s=8126 reason=level 4 descent blocked by gem-guarded holes; goal never visible; ending game with 3 levels cleared
+pool clock: stop bp35-0a0ad940 at level 4 (action 224, 25 since last clear, yield: outlook=stuck, final: no game waiting)
+[finished] bp35-0a0ad940 state=gave_up level=3/9 score=12.31 actions=224 tokens=513991 per-level=18/21,70/48,41/44,95/38,0/33,0/87,0/86,0/131,0/163 note="tokens=513991"
+ARC3 YIELD_FINAL game=su15-1944f8ab outlook=stuck level=3 action=170 play_s=2609 reason=stuck
+pool clock: stop su15-1944f8ab at level 3 (action 170, 25 since last clear, yield: outlook=stuck, final: no game waiting)
+[finished] su15-1944f8ab state=gave_up level=2/9 score=3.01 actions=170 tokens=158870 per-level=13/22,132/42,25/26,0/115,0/36,0/31,0/8,0/40,0/41 note="tokens=158870"
+analyzer request failed at action 402: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=5.0)
+analyzer request failed at action 447: HTTPConnectionPool(host='127.0.0.1', port=1234): Read timed out. (read timeout=1.0)
+[finished] ka59-38d34dbb state=gave_up level=3/7 score=15.25 actions=446 tokens=420029 per-level=33/28,78/109,79/51,256/51,0/33,0/132,0/326 note="tokens=420029"
+[finished] tr87-cd924810 state=gave_up level=3/6 score=4.61 actions=401 tokens=157636 per-level=74/54,159/58,168/40,0/45,0/71,0/146 note="tokens=157636"
+benchmark: regenerated diagnostics in /kaggle/working/synesthesia in 7.23s
+benchmark: duck-harness-kaggle
+solver:    duck-harness
+games:     25
+passes:    1
+runs:      25 (won: 5)
+started:   2026-11-02 02:25:02
+ended:     2026-11-02 04:43:04
+duration:  2h 18m 2s
+mean score:    35.44
+median score:  29.24
+total actions: 11948
+total tokens:  6924481
+generated tokens/sec: 836.08 (job wallclock)
+total wallclock: 182021.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=54.88, levels=6.0/8, actions=475, tokens=163273
+  bp35-0a0ad940: score=12.31, levels=3.0/9, actions=224, tokens=513991
+  cd82-fb555c5d: score=67.25, levels=6.0/6, actions=167, tokens=218077
+  cn04-2fe56bfb: score=14.29, levels=2.0/6, actions=159, tokens=103521
+  dc22-fdcac232: score=29.24, levels=4.0/6, actions=918, tokens=371631
+  ft09-0d8bbf25: score=89.78, levels=6.0/6, actions=191, tokens=175451
+  g50t-5849a774: score=12.38, levels=3.0/7, actions=882, tokens=294929
+  ka59-38d34dbb: score=15.25, levels=3.0/7, actions=446, tokens=420029
+  lf52-271a04aa: score=4.37, levels=3.0/10, actions=404, tokens=206334
+  lp85-305b61c3: score=100.00, levels=8.0/8, actions=115, tokens=127008
+  ls20-9607627b: score=4.18, levels=2.0/7, actions=1250, tokens=235093
+  m0r0-492f87ba: score=100.00, levels=6.0/6, actions=408, tokens=225346
+  r11l-495a7899: score=42.36, levels=4.0/6, actions=258, tokens=447985
+  re86-8af5384d: score=49.97, levels=6.0/8, actions=665, tokens=213174
+  s5i5-18d95033: score=41.67, levels=5.0/8, actions=203, tokens=176778
+  sb26-7fbdac44: score=41.27, levels=6.0/8, actions=284, tokens=135310
+  sc25-635fd71a: score=11.91, levels=3.0/6, actions=765, tokens=200038
+  sk48-d8078629: score=2.78, levels=1.0/8, actions=248, tokens=283898
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=210, tokens=397055
+  su15-1944f8ab: score=3.01, levels=2.0/9, actions=170, tokens=158870
+  tn36-ef4dde99: score=60.10, levels=6.0/7, actions=826, tokens=417756
+  tr87-cd924810: score=4.61, levels=3.0/6, actions=401, tokens=157636
+  tu93-0768757b: score=49.56, levels=7.0/9, actions=375, tokens=481120
+  vc33-5430563c: score=67.43, levels=7.0/7, actions=659, tokens=384811
+  wa30-ee6fef47: score=2.60, levels=2.0/9, actions=1245, tokens=415367
+
+diagnostics: /kaggle/working/synesthesia/diagnostics.html
+synesthesia: evidence gate: 1897 student image_embeds parts at 1024 tokens
+taaf.kaggle: teardown command: "$PYTHON" - <<'PYTEARDOWN'
+import os
+import shutil
+import signal
+import time
+from pathlib import Path
+
+WORKING_DIR = Path(os.environ['TAAF_KAGGLE_WORKING_DIR'])
+
+
+def stop_process(pid_path: Path, name: str) -> None:
+    '''Terminate the process recorded in pid_path, escalating to SIGKILL after 30 seconds.'''
+    if not pid_path.exists():
+        return
+    try:
+        pid = int(pid_path.read_text(encoding='utf-8').strip())
+        print(f'Stopping {name}', flush=True)
+        os.kill(pid, signal.SIGTERM)
+        deadline = time.monotonic() + 30
+        while time.monotonic() < deadline:
+            try:
+                os.kill(pid, 0)
+            except OSError:
+                break
+            time.sleep(1)
+        else:
+            os.kill(pid, signal.SIGKILL)
+    except Exception as exc:
+        print(f'Could not stop {name} cleanly: {exc!r}', flush=True)
+    pid_path.unlink(missing_ok=True)
+
+
+stop_process(WORKING_DIR / 'vllm-watchdog.pid', 'vLLM watchdog')
+stop_process(WORKING_DIR / 'vllm-openai-server.pid', 'vLLM server')
+image_runtime_root = Path(os.environ.get('TAAF_IMAGE_RUNTIME_ROOT', '/tmp/vllm-image-runtime'))
+for runtime_path in (image_runtime_root, image_runtime_root.with_name(image_runtime_root.name + '-cache')):
+    if runtime_path.exists():
+        shutil.rmtree(runtime_path, ignore_errors=True)
+        print(f'Removed image runtime files at {runtime_path}', flush=True)
+
+PYTEARDOWN

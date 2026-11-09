@@ -1,0 +1,667 @@
+benchmark.label : inference
+benchmark.solver: HarnessSolver(label='inference', runtime_environment=None, job_dir=None, soft_end_time=None, minimal_diagnostics=False, model='flashnext', analyzer_timeout=900.0, max_actions_per_game=None, max_runtime_s_per_game=9000.0, max_generated_tokens_per_game=None, concurrency=25, save_request_logs=True, start_local_server=False, local_server_config='', local_server_api_key_file='', local_server_repo_dir='/home/ignaz/franzen-harness/ARC3-Inference', local_server_port=None, local_server_tensor_parallel_size=None, local_server_count=1, cancel_drain_timeout_s=120.0)
+benchmark.passes: 1
+benchmark.games : 25
+git status:
+  tufa-arc-agi-framework           10882e3     clean  main                      fix framework readme
+  ARC3-Inference                   10882e3     clean  main                      fix framework readme
+deploy.inline: job_dir       = /home/ignaz/github/arc-prize-2026/runs/route_a/franzen_verbatim
+deploy.inline: soft_end_time = 2026-10-01T12:07:28.622383
+---
+benchmark: regenerated diagnostics in /home/ignaz/github/arc-prize-2026/runs/route_a/franzen_verbatim in 2.13s
+benchmark: inference
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-01 09:27:28
+ended:     in progress
+mean score:    0.00
+median score:  0.00
+total actions: 24
+total tokens:  35937
+generated tokens/sec: 59.63 (job wallclock)
+total wallclock: 4657.1s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=2, tokens=3808
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=2, tokens=4591
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=0.00, levels=0.0/6, actions=2, tokens=1967
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=1, tokens=3008
+  lp85-305b61c3: score=0.00, levels=0.0/8, actions=1, tokens=1723
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=0, tokens=0
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=2, tokens=4605
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=3, tokens=4234
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=5, tokens=4664
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=0.00, levels=0.0/9, actions=1, tokens=2808
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=5, tokens=4529
+
+benchmark: regenerated diagnostics in /home/ignaz/github/arc-prize-2026/runs/route_a/franzen_verbatim in 1.07s
+benchmark: inference
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-01 09:27:28
+ended:     in progress
+mean score:    0.39
+median score:  0.00
+total actions: 98
+total tokens:  85751
+generated tokens/sec: 71.23 (job wallclock)
+total wallclock: 10134.7s
+
+per-game (mean across passes):
+  ar25-0c556536: score=0.00, levels=0.0/8, actions=4, tokens=9535
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=11, tokens=7876
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=16, tokens=8762
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=3, tokens=10101
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=8, tokens=9220
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=0, tokens=0
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=3, tokens=5677
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=0.00, levels=0.0/6, actions=5, tokens=5012
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=14, tokens=9788
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=2.22, levels=1.0/9, actions=23, tokens=9841
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=11, tokens=9939
+
+benchmark: regenerated diagnostics in /home/ignaz/github/arc-prize-2026/runs/route_a/franzen_verbatim in 1.11s
+benchmark: inference
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-01 09:27:28
+ended:     in progress
+mean score:    0.69
+median score:  0.00
+total actions: 140
+total tokens:  142775
+generated tokens/sec: 79.10 (job wallclock)
+total wallclock: 16187.9s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=20, tokens=14234
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=13, tokens=16075
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=17, tokens=15074
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=0.00, levels=0.0/10, actions=5, tokens=15616
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=10, tokens=13381
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=0, tokens=0
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=4, tokens=10772
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=7, tokens=14522
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=21, tokens=13712
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=2.22, levels=1.0/9, actions=27, tokens=15363
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=16, tokens=14026
+
+benchmark: regenerated diagnostics in /home/ignaz/github/arc-prize-2026/runs/route_a/franzen_verbatim in 1.03s
+benchmark: inference
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-01 09:27:28
+ended:     in progress
+mean score:    0.76
+median score:  0.00
+total actions: 159
+total tokens:  176989
+generated tokens/sec: 73.56 (job wallclock)
+total wallclock: 20410.7s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=23, tokens=19728
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=14, tokens=17342
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=17, tokens=15074
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=11, tokens=18269
+  lp85-305b61c3: score=2.78, levels=1.0/8, actions=10, tokens=13381
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=0, tokens=0
+  r11l-495a7899: score=0.00, levels=0.0/6, actions=5, tokens=19105
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=7, tokens=14522
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=22, tokens=20377
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=2.22, levels=1.0/9, actions=30, tokens=18669
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=20, tokens=20522
+
+benchmark: regenerated diagnostics in /home/ignaz/github/arc-prize-2026/runs/route_a/franzen_verbatim in 0.76s
+benchmark: inference
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-01 09:27:28
+ended:     in progress
+mean score:    1.18
+median score:  0.00
+total actions: 173
+total tokens:  192840
+generated tokens/sec: 64.13 (job wallclock)
+total wallclock: 22834.8s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=24, tokens=21770
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=14, tokens=17342
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=17, tokens=15074
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=12, tokens=20753
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=19, tokens=21955
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=0, tokens=0
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=7, tokens=21717
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=7, tokens=14522
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=22, tokens=20377
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=2.22, levels=1.0/9, actions=30, tokens=18669
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=21, tokens=20661
+
+benchmark: regenerated diagnostics in /home/ignaz/github/arc-prize-2026/runs/route_a/franzen_verbatim in 0.50s
+benchmark: inference
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-01 09:27:28
+ended:     in progress
+mean score:    1.18
+median score:  0.00
+total actions: 178
+total tokens:  194453
+generated tokens/sec: 53.90 (job wallclock)
+total wallclock: 23570.7s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=24, tokens=21770
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=14, tokens=17342
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=17, tokens=15074
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=12, tokens=20753
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=19, tokens=21955
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=0, tokens=0
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=7, tokens=21717
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=7, tokens=14522
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=22, tokens=20377
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=2.22, levels=1.0/9, actions=30, tokens=18669
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=26, tokens=22274
+
+benchmark: regenerated diagnostics in /home/ignaz/github/arc-prize-2026/runs/route_a/franzen_verbatim in 0.55s
+benchmark: inference
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-01 09:27:28
+ended:     in progress
+mean score:    1.18
+median score:  0.00
+total actions: 183
+total tokens:  208055
+generated tokens/sec: 49.44 (job wallclock)
+total wallclock: 28609.2s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=24, tokens=21770
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=14, tokens=17342
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=18, tokens=22801
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=15, tokens=24333
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=20, tokens=24250
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=0, tokens=0
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=7, tokens=21717
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=7, tokens=14522
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=22, tokens=20377
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=2.22, levels=1.0/9, actions=30, tokens=18669
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=26, tokens=22274
+
+benchmark: regenerated diagnostics in /home/ignaz/github/arc-prize-2026/runs/route_a/franzen_verbatim in 0.41s
+benchmark: inference
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-01 09:27:28
+ended:     in progress
+mean score:    1.18
+median score:  0.00
+total actions: 188
+total tokens:  212919
+generated tokens/sec: 44.28 (job wallclock)
+total wallclock: 30781.1s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=24, tokens=21770
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=14, tokens=17342
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=18, tokens=22801
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=15, tokens=24333
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=20, tokens=24250
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=0, tokens=0
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=7, tokens=21717
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=7, tokens=14522
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=22, tokens=20377
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=2.22, levels=1.0/9, actions=35, tokens=23533
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=26, tokens=22274
+
+benchmark: regenerated diagnostics in /home/ignaz/github/arc-prize-2026/runs/route_a/franzen_verbatim in 0.59s
+benchmark: inference
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-01 09:27:28
+ended:     in progress
+mean score:    1.18
+median score:  0.00
+total actions: 190
+total tokens:  219088
+generated tokens/sec: 40.50 (job wallclock)
+total wallclock: 33372.9s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=24, tokens=21770
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=14, tokens=17342
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=18, tokens=22801
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=16, tokens=26071
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=20, tokens=24250
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=0, tokens=0
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=7, tokens=21717
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=7, tokens=14522
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=22, tokens=20377
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=2.22, levels=1.0/9, actions=35, tokens=23533
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=27, tokens=26705
+
+benchmark: regenerated diagnostics in /home/ignaz/github/arc-prize-2026/runs/route_a/franzen_verbatim in 0.65s
+benchmark: inference
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-01 09:27:28
+ended:     in progress
+mean score:    1.18
+median score:  0.00
+total actions: 197
+total tokens:  224203
+generated tokens/sec: 37.30 (job wallclock)
+total wallclock: 38283.9s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=24, tokens=21770
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=14, tokens=17342
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=18, tokens=22801
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=18, tokens=28591
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=20, tokens=24250
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=0, tokens=0
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=7, tokens=21717
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=7, tokens=14522
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=26, tokens=22558
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=2.22, levels=1.0/9, actions=35, tokens=23533
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=28, tokens=27119
+
+benchmark: regenerated diagnostics in /home/ignaz/github/arc-prize-2026/runs/route_a/franzen_verbatim in 0.35s
+benchmark: inference
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-01 09:27:28
+ended:     in progress
+mean score:    1.18
+median score:  0.00
+total actions: 197
+total tokens:  224203
+generated tokens/sec: 33.91 (job wallclock)
+total wallclock: 38283.9s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=24, tokens=21770
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=14, tokens=17342
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=18, tokens=22801
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=18, tokens=28591
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=20, tokens=24250
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=0, tokens=0
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=7, tokens=21717
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=7, tokens=14522
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=26, tokens=22558
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=2.22, levels=1.0/9, actions=35, tokens=23533
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=28, tokens=27119
+
+benchmark: regenerated diagnostics in /home/ignaz/github/arc-prize-2026/runs/route_a/franzen_verbatim in 0.49s
+benchmark: inference
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-01 09:27:28
+ended:     in progress
+mean score:    1.18
+median score:  0.00
+total actions: 200
+total tokens:  225907
+generated tokens/sec: 31.33 (job wallclock)
+total wallclock: 39771.6s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=24, tokens=21770
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=14, tokens=17342
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=18, tokens=22801
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=18, tokens=28591
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=20, tokens=24250
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=0, tokens=0
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=7, tokens=21717
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=7, tokens=14522
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=26, tokens=22558
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=2.22, levels=1.0/9, actions=35, tokens=23533
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=31, tokens=28823
+
+benchmark: regenerated diagnostics in /home/ignaz/github/arc-prize-2026/runs/route_a/franzen_verbatim in 0.44s
+benchmark: inference
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-01 09:27:28
+ended:     in progress
+mean score:    1.18
+median score:  0.00
+total actions: 202
+total tokens:  227881
+generated tokens/sec: 29.17 (job wallclock)
+total wallclock: 41641.3s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=24, tokens=21770
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=14, tokens=17342
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=18, tokens=22801
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=20, tokens=30565
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=20, tokens=24250
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=0, tokens=0
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=7, tokens=21717
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=7, tokens=14522
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=26, tokens=22558
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=2.22, levels=1.0/9, actions=35, tokens=23533
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=31, tokens=28823
+
+benchmark: regenerated diagnostics in /home/ignaz/github/arc-prize-2026/runs/route_a/franzen_verbatim in 0.43s
+benchmark: inference
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-01 09:27:28
+ended:     in progress
+mean score:    1.18
+median score:  0.00
+total actions: 203
+total tokens:  229630
+generated tokens/sec: 27.30 (job wallclock)
+total wallclock: 42095.0s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=24, tokens=21770
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=14, tokens=17342
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=18, tokens=22801
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=21, tokens=32314
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=20, tokens=24250
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=0, tokens=0
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=7, tokens=21717
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=7, tokens=14522
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=26, tokens=22558
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=2.22, levels=1.0/9, actions=35, tokens=23533
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=31, tokens=28823
+
+[finished] ar25-0c556536 state=gave_up level=1/8 score=2.78 actions=24 tokens=21770 per-level=19/32,5/50,0/75,0/37,0/89,0/159,0/233,0/73 note="tokens=21770"
+[finished] m0r0-492f87ba state=gave_up level=0/6 score=0.00 actions=0 tokens=0 per-level=0/30,0/111,0/203,0/26,0/500,0/237 note="tokens=0"
+[finished] vc33-5430563c state=gave_up level=0/7 score=0.00 actions=0 tokens=0 per-level=0/7,0/18,0/44,0/61,0/131,0/34,0/152 note="tokens=0"
+[finished] ka59-38d34dbb state=gave_up level=0/7 score=0.00 actions=0 tokens=0 per-level=0/28,0/109,0/51,0/51,0/33,0/132,0/326 note="tokens=0"
+[finished] sc25-635fd71a state=gave_up level=0/6 score=0.00 actions=0 tokens=0 per-level=0/36,0/6,0/32,0/83,0/143,0/50 note="tokens=0"
+[finished] sk48-d8078629 state=gave_up level=0/8 score=0.00 actions=0 tokens=0 per-level=0/61,0/177,0/101,0/103,0/230,0/181,0/125,0/92 note="tokens=0"
+[finished] dc22-fdcac232 state=gave_up level=0/6 score=0.00 actions=0 tokens=0 per-level=0/59,0/102,0/67,0/98,0/324,0/578 note="tokens=0"
+[finished] cd82-fb555c5d state=gave_up level=0/6 score=0.00 actions=0 tokens=0 per-level=0/55,0/8,0/41,0/21,0/23,0/23 note="tokens=0"
+[finished] ft09-0d8bbf25 state=gave_up level=0/6 score=0.00 actions=0 tokens=0 per-level=0/43,0/12,0/23,0/28,0/65,0/37 note="tokens=0"
+[finished] g50t-5849a774 state=gave_up level=0/7 score=0.00 actions=0 tokens=0 per-level=0/78,0/175,0/179,0/230,0/96,0/54,0/67 note="tokens=0"
+[finished] ls20-9607627b state=gave_up level=0/7 score=0.00 actions=0 tokens=0 per-level=0/22,0/123,0/73,0/84,0/96,0/192,0/186 note="tokens=0"
+[finished] re86-8af5384d state=gave_up level=0/8 score=0.00 actions=0 tokens=0 per-level=0/26,0/42,0/86,0/108,0/189,0/139,0/424,0/241 note="tokens=0"
+[finished] s5i5-18d95033 state=gave_up level=0/8 score=0.00 actions=0 tokens=0 per-level=0/20,0/89,0/106,0/54,0/162,0/38,0/86,0/83 note="tokens=0"
+[finished] sb26-7fbdac44 state=gave_up level=0/8 score=0.00 actions=0 tokens=0 per-level=0/18,0/28,0/18,0/19,0/31,0/23,0/58,0/18 note="tokens=0"
+[finished] su15-1944f8ab state=gave_up level=0/9 score=0.00 actions=0 tokens=0 per-level=0/22,0/42,0/26,0/115,0/36,0/31,0/8,0/40,0/41 note="tokens=0"
+[finished] tr87-cd924810 state=gave_up level=0/6 score=0.00 actions=0 tokens=0 per-level=0/54,0/58,0/40,0/45,0/71,0/146 note="tokens=0"
+[finished] lf52-271a04aa state=gave_up level=1/10 score=1.82 actions=21 tokens=32314 per-level=11/32,10/81,0/60,0/71,0/205,0/148,0/244,0/109,0/164,0/225 note="tokens=32314"
+[finished] bp35-0a0ad940 state=gave_up level=0/9 score=0.00 actions=14 tokens=17342 per-level=14/21,0/48,0/44,0/38,0/33,0/87,0/86,0/131,0/163 note="tokens=22696"
+[finished] tn36-ef4dde99 state=gave_up level=0/7 score=0.00 actions=26 tokens=22558 per-level=26/32,0/72,0/26,0/40,0/30,0/55,0/62 note="tokens=22558"
+[finished] cn04-2fe56bfb state=gave_up level=1/6 score=4.76 actions=18 tokens=22801 per-level=16/29,2/54,0/85,0/300,0/208,0/113 note="tokens=25626"
+[finished] r11l-495a7899 state=gave_up level=1/6 score=4.76 actions=7 tokens=21717 per-level=7/22,0/33,0/51,0/26,0/52,0/49 note="tokens=22211"
+[finished] tu93-0768757b state=gave_up level=1/9 score=2.22 actions=35 tokens=23533 per-level=18/19,17/16,0/34,0/42,0/123,0/80,0/14,0/23,0/111 note="tokens=23533"
+[finished] sp80-589a99af state=gave_up level=1/6 score=4.76 actions=7 tokens=14522 per-level=7/39,0/58,0/25,0/148,0/96,0/152 note="tokens=14824"
+[finished] wa30-ee6fef47 state=gave_up level=0/9 score=0.00 actions=31 tokens=28823 per-level=31/71,0/119,0/183,0/98,0/368,0/68,0/79,0/442,0/415 note="tokens=28823"
+[finished] lp85-305b61c3 state=gave_up level=2/8 score=8.33 actions=20 tokens=24250 per-level=7/17,12/38,1/31,0/16,0/41,0/60,0/26,0/159 note="tokens=24250"
+benchmark: regenerated diagnostics in /home/ignaz/github/arc-prize-2026/runs/route_a/franzen_verbatim in 2.72s
+benchmark: inference
+solver:    inference
+games:     25
+passes:    1
+runs:      25 (won: 0)
+started:   2026-10-01 09:27:28
+ended:     2026-10-01 11:57:29
+duration:  2h 30m 0s
+mean score:    1.18
+median score:  0.00
+total actions: 203
+total tokens:  229630
+generated tokens/sec: 25.51 (job wallclock)
+total wallclock: 225008.3s
+
+per-game (mean across passes):
+  ar25-0c556536: score=2.78, levels=1.0/8, actions=24, tokens=21770
+  bp35-0a0ad940: score=0.00, levels=0.0/9, actions=14, tokens=17342
+  cd82-fb555c5d: score=0.00, levels=0.0/6, actions=0, tokens=0
+  cn04-2fe56bfb: score=4.76, levels=1.0/6, actions=18, tokens=22801
+  dc22-fdcac232: score=0.00, levels=0.0/6, actions=0, tokens=0
+  ft09-0d8bbf25: score=0.00, levels=0.0/6, actions=0, tokens=0
+  g50t-5849a774: score=0.00, levels=0.0/7, actions=0, tokens=0
+  ka59-38d34dbb: score=0.00, levels=0.0/7, actions=0, tokens=0
+  lf52-271a04aa: score=1.82, levels=1.0/10, actions=21, tokens=32314
+  lp85-305b61c3: score=8.33, levels=2.0/8, actions=20, tokens=24250
+  ls20-9607627b: score=0.00, levels=0.0/7, actions=0, tokens=0
+  m0r0-492f87ba: score=0.00, levels=0.0/6, actions=0, tokens=0
+  r11l-495a7899: score=4.76, levels=1.0/6, actions=7, tokens=21717
+  re86-8af5384d: score=0.00, levels=0.0/8, actions=0, tokens=0
+  s5i5-18d95033: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sb26-7fbdac44: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sc25-635fd71a: score=0.00, levels=0.0/6, actions=0, tokens=0
+  sk48-d8078629: score=0.00, levels=0.0/8, actions=0, tokens=0
+  sp80-589a99af: score=4.76, levels=1.0/6, actions=7, tokens=14522
+  su15-1944f8ab: score=0.00, levels=0.0/9, actions=0, tokens=0
+  tn36-ef4dde99: score=0.00, levels=0.0/7, actions=26, tokens=22558
+  tr87-cd924810: score=0.00, levels=0.0/6, actions=0, tokens=0
+  tu93-0768757b: score=2.22, levels=1.0/9, actions=35, tokens=23533
+  vc33-5430563c: score=0.00, levels=0.0/7, actions=0, tokens=0
+  wa30-ee6fef47: score=0.00, levels=0.0/9, actions=31, tokens=28823
+
+diagnostics: /home/ignaz/github/arc-prize-2026/runs/route_a/franzen_verbatim/diagnostics.html
